@@ -452,7 +452,7 @@ Css: span.textso{letter-spacing: 0.3em; word-spacing: 0.3em}
 Css: span.textul{text-decoration:underline}
 Css: span.textst{text-decoration:line-through}
 Css: span.textcaps{font-variant:small-caps}
-File: ../Pictures/Lynx_chasing_hare.jpeg
+File: ../../Pictures/Lynx_chasing_hare.jpeg
 --- needs --- Sheet_4.idv[2] ==> Sheet_40x.png ---
 --- needs --- Sheet_4.idv[4] ==> Sheet_41x.png ---
 --- needs --- Sheet_4.idv[5] ==> Sheet_42x.png ---

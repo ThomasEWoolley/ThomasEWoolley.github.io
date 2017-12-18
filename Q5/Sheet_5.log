@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=latex 2017.9.28)  18 DEC 2017 17:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=latex 2017.9.28)  18 DEC 2017 18:28
 entering extended mode
 **\makeatletter\def\HCode{\futurelet\HCode\HChar}\def\HChar{\ifx\HCode\def\HCod
 e##1{\Link##1}\expandafter\HCode\else\expandafter\Link\fi}\def\Link#1.a.b.c.{\g
 @addto@macro\@documentclasshook{\RequirePackage[#1,html]{tex4ht}}\let\HCode\doc
 umentstyle\def\documentstyle{\let\documentstyle\HCode\expandafter\def\csname te
 x4ht\endcsname{#1,html}\def\HCode####1{\documentstyle[tex4ht,}\@ifnextchar[{\HC
-ode}{\documentstyle[tex4ht]}}}\makeatother\HCode myconf.cfg.a.b.c.\input  Sheet
-_5.tex
+ode}{\documentstyle[tex4ht]}}}\makeatother\HCode ../myconf.cfg.a.b.c.\input  Sh
+eet_5.tex
 (Sheet_5.tex ("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
@@ -818,7 +818,7 @@ Package: authblk 2001/02/27 1.3 (PWD)
 \c@authors=\count142
 \c@affil=\count143
 )
-(myconf.cfg ("C:\Program Files\MiKTeX 2.9\tex\generic\tex4ht\tex4ht.4ht"
+(../myconf.cfg ("C:\Program Files\MiKTeX 2.9\tex\generic\tex4ht\tex4ht.4ht"
 version 2017-05-09-09:21
 --------------------------------------
 --- Note --- for additional information, use the command line option `info'
@@ -1484,11 +1484,11 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [3] [4
 
 ]
-l.127 --- TeX4ht warning --- File `"../Pictures/red-squirrel-v-squirrel.xbb"' n
-ot found ---
-l.127 --- TeX4ht warning --- Cannot determine size of graphic in "../Pictures/r
-ed-squirrel-v-squirrel.xbb" (no BoundingBox) ---
-l. 127 --- needs --- ../Pictures/red-squirrel-v-squirrel.jpg ---
+l.127 --- TeX4ht warning --- File `"../../Pictures/red-squirrel-v-squirrel.xbb"
+' not found ---
+l.127 --- TeX4ht warning --- Cannot determine size of graphic in "../../Picture
+s/red-squirrel-v-squirrel.xbb" (no BoundingBox) ---
+l. 127 --- needs --- ../../Pictures/red-squirrel-v-squirrel.jpg ---
 [5
 
 ]
@@ -1521,11 +1521,11 @@ l. 160 Writing Sheet_5.idv[3] (Sheet_52x.png)
 Excluding 'Answ' comment.
 l. 257 Writing Sheet_5.idv[4] (Sheet_53x.png)
  Excluding 'Answ' comment. [8]
-l.306 --- TeX4ht warning --- File `"../Pictures/Fitzhugh_Nagumo_sims.xbb"' not 
-found ---
-l.306 --- TeX4ht warning --- Cannot determine size of graphic in "../Pictures/F
-itzhugh_Nagumo_sims.xbb" (no BoundingBox) ---
-l. 306 --- needs --- ../Pictures/Fitzhugh_Nagumo_sims.png ---
+l.306 --- TeX4ht warning --- File `"../../Pictures/Fitzhugh_Nagumo_sims.xbb"' n
+ot found ---
+l.306 --- TeX4ht warning --- Cannot determine size of graphic in "../../Picture
+s/Fitzhugh_Nagumo_sims.xbb" (no BoundingBox) ---
+l. 306 --- needs --- ../../Pictures/Fitzhugh_Nagumo_sims.png ---
 Excluding 'Answ' comment.
 l. 324 Writing Sheet_5.idv[5] (Sheet_54x.png)
  [9]
@@ -1538,12 +1538,12 @@ l. 384 Writing Sheet_5.idv[10] (Sheet_59x.png)
  [10]
 Excluding 'Answ' comment. [11] (Sheet_5.aux) ) 
 Here is how much of TeX's memory you used:
- 12046 strings out of 493324
- 155264 string characters out of 3139089
- 356043 words of memory out of 3000000
+ 12047 strings out of 493324
+ 155291 string characters out of 3139089
+ 356055 words of memory out of 3000000
  15117 multiletter control sequences out of 15000+200000
  88149 words of font info for 94 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,12n,72p,1667b,474s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,12n,72p,1670b,474s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Sheet_5.dvi (11 pages, 39148 bytes).
+Output written on Sheet_5.dvi (11 pages, 39152 bytes).
