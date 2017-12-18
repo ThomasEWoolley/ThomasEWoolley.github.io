@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=latex 2017.9.28)  18 DEC 2017 13:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=latex 2017.9.28)  18 DEC 2017 17:29
 entering extended mode
 **\makeatletter\def\HCode{\futurelet\HCode\HChar}\def\HChar{\ifx\HCode\def\HCod
 e##1{\Link##1}\expandafter\HCode\else\expandafter\Link\fi}\def\Link#1.a.b.c.{\g
@@ -1354,32 +1354,32 @@ version 2017-03-30-16:04
 )) (Sheet_1.aux)
 \openout1 = `Sheet_1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 26.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 \c@lstlisting=\count145
-LaTeX Info: Redefining \celsius on input line 24.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 24.
+LaTeX Info: Redefining \celsius on input line 26.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 26.
 
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 24.
-Package gensymb Info: Using \Omega for \ohm on input line 24.
+LaTeX Info: Redefining \ohm on input line 26.
+Package gensymb Info: Using \Omega for \ohm on input line 26.
 
 Package gensymb Warning: Not defining \micro.
 
@@ -1426,141 +1426,135 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 [1
 
 ] [2]
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 120.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 121.
 
  ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 120.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 121.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 120
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 121
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 120
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 121
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 120.
+(Font)              <12> on input line 121.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 120.
+(Font)              <8> on input line 121.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 120.
-LaTeX Font Info:    Try loading font information for U+lasy on input line 120.
+(Font)              <6> on input line 121.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 121.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 120.
+LaTeX Font Info:    Try loading font information for U+msa on input line 121.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 120.
+LaTeX Font Info:    Try loading font information for U+msb on input line 121.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 120.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 121.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 120.
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 120.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 121.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 121.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 128.
+(Font)              <10> on input line 129.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 128.
+(Font)              <7> on input line 129.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 128.
+(Font)              <5> on input line 129.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 128.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 129.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 128.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 129.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <24.88> on input line 129.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <20.74> on input line 129.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 129.
-l. 129 Writing Sheet_1.idv[1] (Sheet_10x.png)
- [3]
-l.141 --- TeX4ht warning --- File `"../Pictures/Turin_shroud.xbb"' not found --
+(Font)              <14.4> on input line 130.
+l. 130 Writing Sheet_1.idv[1] (Sheet_10x.png)
+
+l.142 --- TeX4ht warning --- File `"../Pictures/Turin_shroud.xbb"' not found --
 -
-l.141 --- TeX4ht warning --- Cannot determine size of graphic in "../Pictures/T
+l.142 --- TeX4ht warning --- Cannot determine size of graphic in "../Pictures/T
 urin_shroud.xbb" (no BoundingBox) ---
-l. 141 --- needs --- ../Pictures/Turin_shroud.jpg ---
-Excluding 'Answ' comment.
-l. 166 Writing Sheet_1.idv[2] (Sheet_11x.png)
- [4]
-l. 173 Writing Sheet_1.idv[3] (Sheet_12x.png)
- Excluding 'Answ' comment.
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 204.
+l. 142 --- needs --- ../Pictures/Turin_shroud.jpg ---
+[3] Excluding 'Answ' comment.
+l. 167 Writing Sheet_1.idv[2] (Sheet_11x.png)
+l. 174 Writing Sheet_1.idv[3] (Sheet_12x.png)
+ [4] Excluding 'Answ' comment.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 205.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 204.
- [5]
-l. 214 Writing Sheet_1.idv[4] (Sheet_13x.png)
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 205.
+l. 215 Writing Sheet_1.idv[4] (Sheet_13x.png)
 
-l.220 --- TeX4ht warning --- File `"../Pictures/True_lies.xbb"' not found ---
-l.220 --- TeX4ht warning --- Cannot determine size of graphic in "../Pictures/T
+l.221 --- TeX4ht warning --- File `"../Pictures/True_lies.xbb"' not found ---
+l.221 --- TeX4ht warning --- Cannot determine size of graphic in "../Pictures/T
 rue_lies.xbb" (no BoundingBox) ---
-l. 220 --- needs --- ../Pictures/True_lies.png ---
-[6] Excluding 'Answ' comment. [7] [8
+l. 221 --- needs --- ../Pictures/True_lies.png ---
+[5] Excluding 'Answ' comment. [6] [7
 
 ]
-l.300 --- TeX4ht warning --- File `"../Pictures/Possible_trajectories.xbb"' not
+l.301 --- TeX4ht warning --- File `"../Pictures/Possible_trajectories.xbb"' not
  found ---
-l.300 --- TeX4ht warning --- Cannot determine size of graphic in "../Pictures/P
+l.301 --- TeX4ht warning --- Cannot determine size of graphic in "../Pictures/P
 ossible_trajectories.xbb" (no BoundingBox) ---
-l. 300 --- needs --- ../Pictures/Possible_trajectories.png ---
-[9
+l. 301 --- needs --- ../Pictures/Possible_trajectories.png ---
+[8
 
 ] Excluding 'Answ' comment.
-l. 315 Writing Sheet_1.idv[5] (Sheet_14x.png)
-l. 320 Writing Sheet_1.idv[6] (Sheet_15x.png)
-l. 324 Writing Sheet_1.idv[7] (Sheet_16x.png)
- [10
+l. 316 Writing Sheet_1.idv[5] (Sheet_14x.png)
+l. 321 Writing Sheet_1.idv[6] (Sheet_15x.png)
+l. 325 Writing Sheet_1.idv[7] (Sheet_16x.png)
+ Excluding 'Answ' comment. [9
 
-] Excluding 'Answ' comment.
-l.369 --- TeX4ht warning --- File `"../Pictures/TBP_orbits.xbb"' not found ---
-l.369 --- TeX4ht warning --- Cannot determine size of graphic in "../Pictures/T
-BP_orbits.xbb" (no BoundingBox) ---
-l. 369 --- needs --- ../Pictures/TBP_orbits.png ---
-l.370 --- TeX4ht warning --- File `"../Pictures/TBP_circle.xbb"' not found ---
+]
+l.370 --- TeX4ht warning --- File `"../Pictures/TBP_orbits.xbb"' not found ---
 l.370 --- TeX4ht warning --- Cannot determine size of graphic in "../Pictures/T
+BP_orbits.xbb" (no BoundingBox) ---
+l. 370 --- needs --- ../Pictures/TBP_orbits.png ---
+l.371 --- TeX4ht warning --- File `"../Pictures/TBP_circle.xbb"' not found ---
+l.371 --- TeX4ht warning --- Cannot determine size of graphic in "../Pictures/T
 BP_circle.xbb" (no BoundingBox) ---
-l. 370 --- needs --- ../Pictures/TBP_circle.png ---
-[11] Excluding 'Answ' comment.
-l. 395 Writing Sheet_1.idv[8] (Sheet_17x.png)
- Excluding 'Answ' comment. [12]
-l. 422 Writing Sheet_1.idv[9] (Sheet_18x.png)
-
-Excluding 'Answ' comment. [13] Excluding 'Answ' comment. [14] (Sheet_1.aux) ) 
+l. 371 --- needs --- ../Pictures/TBP_circle.png ---
+Excluding 'Answ' comment. [10]
+l. 396 Writing Sheet_1.idv[8] (Sheet_17x.png)
+ Excluding 'Answ' comment.
+l. 423 Writing Sheet_1.idv[9] (Sheet_18x.png)
+ [11]
+Excluding 'Answ' comment. Excluding 'Answ' comment. [12] (Sheet_1.aux) ) 
 Here is how much of TeX's memory you used:
- 12094 strings out of 493324
- 156276 string characters out of 3139089
- 354035 words of memory out of 3000000
- 15162 multiletter control sequences out of 15000+200000
- 109909 words of font info for 116 fonts, out of 3000000 for 9000
+ 12072 strings out of 493324
+ 155874 string characters out of 3139089
+ 355037 words of memory out of 3000000
+ 15140 multiletter control sequences out of 15000+200000
+ 91158 words of font info for 95 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,11n,72p,1261b,474s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Sheet_1.dvi (14 pages, 44120 bytes).
+Output written on Sheet_1.dvi (12 pages, 43976 bytes).

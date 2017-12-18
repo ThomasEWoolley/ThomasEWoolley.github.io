@@ -66,40 +66,6 @@ htfcss: ec-lmvtl  font-weight: light; font-family: monospace;
 htfcss: ec-lmvtlo  font-weight: light; font-style: oblique; font-family: monospace;
 htfcss: ec-lmvtt  font-family: monospace;
 htfcss: ec-lmvtto  font-style: oblique; font-family: monospace;
-htfcss: ec-lmbo  font-style: oblique;
-htfcss: ec-lmbx  font-weight: bold;
-htfcss: ec-lmbxi  font-style:italic; font-weight: bold;
-htfcss: ec-lmbxo  font-style: oblique; font-weight: bold;
-htfcss: ec-lmcsco  font-style: oblique;
-htfcss: ec-lmri  font-style:italic;
-htfcss: ec-lmro  font-style: oblique;
-htfcss: ec-lmss  font-family: sans-serif;
-htfcss: ec-lmssbo  font-family: sans-serif; font-style: oblique; font-weight: bold;
-htfcss: ec-lmssbx  font-family: sans-serif; font-weight: bold;
-htfcss: ec-lmssdc  font-family: sans-serif;
-htfcss: ec-lmssdo  font-family: sans-serif; font-style: oblique;
-htfcss: ec-lmsso  font-family: sans-serif; font-style: oblique;
-htfcss: ec-lmssq  font-family: sans-serif;
-htfcss: ec-lmssqbo  font-family: sans-serif; font-style: oblique; font-weight: bold;
-htfcss: ec-lmssqbx  font-family: sans-serif; font-weight: bold;
-htfcss: ec-lmssqo  font-family: sans-serif; font-style: oblique;
-htfcss: ec-lmtcsc  font-family: monospace;
-htfcss: ec-lmtcso  font-style: oblique; font-family: monospace;
-htfcss: ec-lmtk  font-family: monospace;
-htfcss: ec-lmtko  font-style: oblique; font-family: monospace;
-htfcss: ec-lmtl  font-weight: light; font-family: monospace;
-htfcss: ec-lmtlc  font-weight: light; font-family: monospace;
-htfcss: ec-lmtlco  font-weight: light; font-style: oblique; font-family: monospace;
-htfcss: ec-lmtlo  font-weight: light; font-style: oblique; font-family: monospace;
-htfcss: ec-lmtt  font-family: monospace;
-htfcss: ec-lmtti  font-family: monospace; font-style:italic;
-htfcss: ec-lmtto  font-style: oblique; font-family: monospace;
-htfcss: ec-lmvtk  font-family: monospace;
-htfcss: ec-lmvtko  font-style: oblique; font-family: monospace;
-htfcss: ec-lmvtl  font-weight: light; font-family: monospace;
-htfcss: ec-lmvtlo  font-weight: light; font-style: oblique; font-family: monospace;
-htfcss: ec-lmvtt  font-family: monospace;
-htfcss: ec-lmvtto  font-style: oblique; font-family: monospace;
 htfcss: lmmib font_weight:bold;
 htfcss: cmmi font-style: italic;
 htfcss: cmmib font-style: italic; font-weight: bold;
@@ -119,6 +85,8 @@ htfcss: rm-lmssq  font-family: sans-serif;
 htfcss: rm-lmssqbo  font-family: sans-serif; font-style: oblique; font-weight: bold;
 htfcss: rm-lmssqbx  font-family: sans-serif; font-weight: bold;
 htfcss: rm-lmssqo  font-family: sans-serif; font-style: oblique;
+htfcss: lmmib font_weight:bold;
+htfcss: lmmib font_weight:bold;
 htfcss: ec-lmbo  font-style: oblique;
 htfcss: ec-lmbx  font-weight: bold;
 htfcss: ec-lmbxi  font-style:italic; font-weight: bold;
@@ -153,8 +121,6 @@ htfcss: ec-lmvtl  font-weight: light; font-family: monospace;
 htfcss: ec-lmvtlo  font-weight: light; font-style: oblique; font-family: monospace;
 htfcss: ec-lmvtt  font-family: monospace;
 htfcss: ec-lmvtto  font-style: oblique; font-family: monospace;
-htfcss: lmmib font_weight:bold;
-htfcss: lmmib font_weight:bold;
 htfcss: ec-lmbo  font-style: oblique;
 htfcss: ec-lmbx  font-weight: bold;
 htfcss: ec-lmbxi  font-style:italic; font-weight: bold;
@@ -491,15 +457,16 @@ Css: span.textcaps{font-variant:small-caps}
 --- needs --- Sheet_1.idv[8] ==> Sheet_13x.png ---
 --- needs --- Sheet_1.idv[10] ==> Sheet_14x.png ---
 --- needs --- Sheet_1.idv[12] ==> Sheet_15x.png ---
---- needs --- Sheet_1.idv[14] ==> Sheet_16x.png ---
---- needs --- Sheet_1.idv[16] ==> Sheet_17x.png ---
---- needs --- Sheet_1.idv[18] ==> Sheet_18x.png ---
+--- needs --- Sheet_1.idv[13] ==> Sheet_16x.png ---
+--- needs --- Sheet_1.idv[15] ==> Sheet_17x.png ---
+--- needs --- Sheet_1.idv[17] ==> Sheet_18x.png ---
 --- characters ---
 Font("ec-lmr","10","10","100")
 Font("ec-lmr","17","17","100")
 Font("ec-lmr","12","12","100")
 Font("lmex","10","10","100")
 Font("ec-lmtt","12","12","100")
+Font("ec-lmr","12","12","120")
 Font("ec-lmtt","10","10","100")
 Font("rm-lmr","10","10","100")
 Font("rm-lmr","7","7","100")
@@ -507,12 +474,8 @@ Font("lmmi","10","10","100")
 Font("lmmi","7","7","100")
 Font("lmsy","10","10","100")
 Font("lmsy7","","7","100")
-Font("ec-lmr","17","17","143")
-Font("rm-lmr","17","17","143")
-Font("rm-lmr","17","17","120")
-Font("lmmi","12","12","207")
-Font("lmsy","10","10","248")
-Font("lmsy","10","10","207")
-Font("ec-lmr","17","17","120")
+Font("rm-lmr","12","12","120")
+Font("lmmi","12","12","120")
+Font("lmsy","10","10","144")
 Font("ec-lmri","10","10","100")
 Font("ec-lmr","8","8","100")

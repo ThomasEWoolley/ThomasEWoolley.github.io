@@ -1,0 +1,994 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<!-- html,xhtml --> 
+<meta name="src" content="Sheet_3.tex" /> 
+<link rel="stylesheet" type="text/css" href="Sheet_3.css" /> 
+</head><body 
+>
+<!--l. 122--><p class="noindent" >
+                                                                                                     
+                                                                                                     
+</p><!--l. 122--><p class="indent" >
+                                                                                                     
+                                                                                                     
+</p>
+<div class="center" 
+>
+<!--l. 122--><p class="noindent" >
+</p><!--l. 122--><p class="noindent" ><span 
+class="ec-lmr-17">Problem sheet 3</span>
+</p>
+<div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1" /></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-1"  
+class="td11"> <span 
+class="ec-lmr-12">Thomas E. Woolley  </span></td>
+</tr><tr 
+class="vspace" style="font-size:9.99756pt"><td 
+>&nbsp;</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-2-1"  
+class="td11">   <span 
+class="ec-lmr-12">Last edited on:     </span></td></tr></table></div>
+<!--l. 122--><p class="noindent" ><span 
+class="ec-lmr-12">December 18, 2017</span></p></div>
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-10001"></a>Michaelis-Menten Enzyme dynamics</h3>
+<!--l. 125--><p class="noindent" >Enzymes are biological molecules (typically proteins) that significantly speed up the rate of virtually all of the chemical reactions
+that take place within cells. They are vital for life and serve a wide range of important functions in the body, such as aiding in
+digestion and metabolism. </p><hr class="figure" /><div class="figure" 
+>
+                                                                                                     
+                                                                                                     
+<a 
+ id="x1-10011"></a>
+                                                                                                     
+                                                                                                     
+<!--l. 128--><p class="noindent" ><img 
+src="../Pictures/Michaelis-Menten_schematic.png" alt="pict"  
+ width="528.93675pt"  />
+<br /> </p><div class="caption" 
+><span class="id">Figure&#x00A0;1: </span><span  
+class="content"> Schematic diagram of the Michaelis-Menten enzyme-substrate reaction.</span></div><!--tex4ht:label?: x1-10011 -->
+                                                                                                     
+                                                                                                     
+   </div><hr class="endfigure" />
+<!--l. 132--><p class="indent" >   In 1913 Leonor Michaelis and Maud Menten proposed a mathematical model of how enzymes work. The process involves an
+enzyme, <span 
+class="lmmi-10">E</span>, binding to a substrate, <span 
+class="lmmi-10">S</span>, to form a complex, <span 
+class="lmmi-10">C</span>, which in turn releases a product, <span 
+class="lmmi-10">P</span>, regenerating the original enzyme.
+This may be represented schematically as (see Figure <a 
+href="#x1-10011">1<!--tex4ht:ref: Michaelis-Menten_schematic --></a>)
+</p>
+   <table 
+class="equation"><tr><td><a 
+ id="x1-1002r1"></a>
+   <center class="math-display" >
+<img 
+src="Sheet_30x.png" alt="         k1    k2
+E  +  S &#x21C4;   C  &#x2192;  E  +  P.
+        k-1
+" class="math-display"  /></center></td><td class="equation-label"><span 
+class="ec-lmr-12x-x-120">(1)</span></td></tr></table>
+<!--l. 135--><p class="nopar" >
+     </p><dl class="enumerate"><dt class="enumerate">
+  1. </dt><dd 
+class="enumerate">Use the Law of Mass Action to right down the ODE formulation of the dynamics. The initial conditions
+     are
+     <table 
+class="equation"><tr><td><a 
+ id="x1-1004r2"></a>
+     <center class="math-display" >
+     <img 
+src="Sheet_31x.png" alt="S(0 ) = S0,    E (0 ) = E0,    C (0 ) = 0,   P  (0) =  0.
+     " class="math-display"  /></center></td><td class="equation-label"><span 
+class="ec-lmr-12x-x-120">(2)</span></td></tr></table>
+     <!--l. 140--><p class="nopar" >
+     </p></dd><dt class="enumerate">
+  2. </dt><dd 
+class="enumerate">Show <span 
+class="lmmi-10">E </span><span 
+class="rm-lmr-10">+ </span><span 
+class="lmmi-10">C </span><span 
+class="rm-lmr-10">=</span>constant<span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">E</span><sub><span 
+class="rm-lmr-7">0</span></sub>.
+     </dd><dt class="enumerate">
+  3. </dt><dd 
+class="enumerate">Why can we ignore the equations for <span 
+class="lmmi-10">&#x1E56;</span> and <span 
+class="lmmi-10">&#x0116;</span>? Specifically, show that we only need to consider the equations
+                                                                                                     
+                                                                                                     
+     <table 
+class="align">
+                                                      <tr><td 
+class="align-odd"><span 
+class="lmmi-10">&#x1E60;</span></td>                                              <td 
+class="align-even"> <span 
+class="rm-lmr-10">= </span><span 
+class="lmsy-10">-</span><span 
+class="lmmi-10">k</span><sub><span 
+class="rm-lmr-7">1</span></sub><span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">E</span><sub><span 
+class="rm-lmr-7">0</span></sub> <span 
+class="lmsy-10">- </span><span 
+class="lmmi-10">C</span><span 
+class="rm-lmr-10">)</span><span 
+class="lmmi-10">S </span><span 
+class="rm-lmr-10">+ </span><span 
+class="lmmi-10">k</span><sub><span 
+class="lmsy7-">-</span><span 
+class="rm-lmr-7">1</span></sub><span 
+class="lmmi-10">C,</span></td>                                                                                                 <td 
+class="align-label"><a 
+ id="x1-1007r3"></a>(3)
+                                                      </td></tr><tr><td 
+class="align-odd"><span 
+class="lmmi-10">&#x010A;</span></td>                                              <td 
+class="align-even"> <span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">k</span><sub><span 
+class="rm-lmr-7">1</span></sub><span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">E</span><sub><span 
+class="rm-lmr-7">0</span></sub> <span 
+class="lmsy-10">- </span><span 
+class="lmmi-10">C</span><span 
+class="rm-lmr-10">)</span><span 
+class="lmmi-10">S </span><span 
+class="lmsy-10">- </span><span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">k</span><sub><span 
+class="lmsy7-">-</span><span 
+class="rm-lmr-7">1</span></sub> <span 
+class="rm-lmr-10">+ </span><span 
+class="lmmi-10">k</span><sub><span 
+class="rm-lmr-7">2</span></sub><span 
+class="rm-lmr-10">)</span><span 
+class="lmmi-10">C.</span></td>                                                                                            <td 
+class="align-label"><a 
+ id="x1-1008r4"></a>(4)                                                      </td></tr></table>
+     </dd><dt class="enumerate">
+  4. </dt><dd 
+class="enumerate">Use the following scales to non-dimensionalise the equations
+     <table 
+class="equation"><tr><td><a 
+ id="x1-1010r5"></a>
+     <center class="math-display" >
+     <img 
+src="Sheet_32x.png" alt="       &#x03C4;
+t =  -----,   S  =  uS0,    C  = vE0,
+     k1E0
+     " class="math-display"  /></center></td><td class="equation-label"><span 
+class="ec-lmr-12x-x-120">(5)</span></td></tr></table>
+     <!--l. 150--><p class="nopar" >
+     to produce the following system
+                                                                                                     
+                                                                                                     
+     </p><table 
+class="align">
+                                    <tr><td 
+class="align-odd"><img 
+src="Sheet_33x.png" alt="du-
+d&#x03C4;"  class="frac" align="middle" /></td>                                     <td 
+class="align-even"> <span 
+class="rm-lmr-10">= </span><span 
+class="lmsy-10">-</span><span 
+class="lmmi-10">u </span><span 
+class="rm-lmr-10">+ (</span><span 
+class="lmmi-10">u </span><span 
+class="rm-lmr-10">+ </span><span 
+class="lmmi-10">K </span><span 
+class="lmsy-10">- </span><span 
+class="lmmi-10">&#x03BB;</span><span 
+class="rm-lmr-10">)</span><span 
+class="lmmi-10">v,</span></td>                                                                        <td 
+class="align-label"><a 
+ id="x1-1011r6"></a>(6)
+                                    </td></tr><tr><td 
+class="align-odd"><span 
+class="lmmi-10">&#x03F5;</span><img 
+src="Sheet_34x.png" alt="-dv
+ d&#x03C4;"  class="frac" align="middle" /></td>                                    <td 
+class="align-even"> <span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">u </span><span 
+class="lmsy-10">- </span><span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">u </span><span 
+class="rm-lmr-10">+ </span><span 
+class="lmmi-10">K</span><span 
+class="rm-lmr-10">)</span><span 
+class="lmmi-10">v.</span></td>                                                                             <td 
+class="align-label"><a 
+ id="x1-1012r7"></a>(7)                                    </td></tr></table>
+     <!--l. 156--><p class="noindent" >What are <span 
+class="lmmi-10">&#x03F5;</span>, <span 
+class="lmmi-10">&#x03BB; </span>and <span 
+class="lmmi-10">K</span>? Show that <span 
+class="lmmi-10">&#x03F5;</span>, <span 
+class="lmmi-10">&#x03BB; </span>and <span 
+class="lmmi-10">K </span>are non-dimensional.
+     </p></dd><dt class="enumerate">
+  5. </dt><dd 
+class="enumerate">What are the initial conditions?
+     </dd><dt class="enumerate">
+  6. </dt><dd 
+class="enumerate">Suppose <span 
+class="lmmi-10">E</span><sub><span 
+class="rm-lmr-7">0</span></sub> <span 
+class="lmsy-10">« </span><span 
+class="lmmi-10">S</span><sub><span 
+class="rm-lmr-7">0</span></sub> (what does this mean?) and so let <span 
+class="lmmi-10">&#x03F5; </span><span 
+class="lmsy-10">&#x2192; </span><span 
+class="rm-lmr-10">0</span>. Show that we can write <span 
+class="lmmi-10">v </span>as a function of <span 
+class="lmmi-10">u</span>, which simplifies the
+     d<span 
+class="lmmi-10">u&#x2215;</span> d<span 
+class="lmmi-10">&#x03C4; </span>equation to
+     <table 
+class="equation"><tr><td><a 
+ id="x1-1015r8"></a>
+     <center class="math-display" >
+     <img 
+src="Sheet_35x.png" alt="du                               u
+----=  - u  + (u +  K  -  &#x03BB; )---------,   u (0) =  1.
+d &#x03C4;                          (u +  K )
+     " class="math-display"  /></center></td><td class="equation-label"><span 
+class="ec-lmr-12x-x-120">(8)</span></td></tr></table>
+     <!--l. 161--><p class="nopar" >
+     <a 
+ id="x1-10146"></a> This is known as the system on the &#8216;outer&#8217; time-scale.
+     </p></dd><dt class="enumerate">
+  7. </dt><dd 
+class="enumerate"><a 
+ id="x1-10167"></a> Substitute the time scale <span 
+class="lmmi-10">&#x03C3; </span><span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">&#x03C4;&#x2215;&#x03F5; </span>into equations (<a 
+href="#x1-1011r6">6<!--tex4ht:ref: u --></a>) and (<a 
+href="#x1-1012r7">7<!--tex4ht:ref: v --></a>). Rearrange the system and, once again, let <span 
+class="lmmi-10">&#x03F5; </span><span 
+class="lmsy-10">&#x2192; </span><span 
+class="rm-lmr-10">0</span>. You should be
+     able to show that the solution of the system is
+                                                                                                     
+                                                                                                     
+     <table 
+class="align">
+                                                   <tr><td 
+class="align-odd"><span 
+class="lmmi-10">u</span><span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">&#x03C3;</span><span 
+class="rm-lmr-10">)</span></td>                                                   <td 
+class="align-even"> <span 
+class="rm-lmr-10">= 1</span><span 
+class="lmmi-10">,</span></td>                                                                           <td 
+class="align-label"></td>                                           <td 
+class="align-label">
+                                           </td></tr><tr><td 
+class="align-odd"><span 
+class="lmmi-10">v</span><span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">&#x03C3;</span><span 
+class="rm-lmr-10">)</span></td>                                                   <td 
+class="align-even"> <span 
+class="rm-lmr-10">=</span> <img 
+src="Sheet_36x.png" alt="--1---
+1 + K"  class="frac" align="middle" /><img 
+src="Sheet_37x.png" alt="(1- exp(- (1+ K )&#x03C3;))"  class="left" align="middle" /><span 
+class="lmmi-10">.</span></td>                                                                                      <td 
+class="align-label"><a 
+ id="x1-1017r9"></a>(9)                                                   </td></tr></table>
+     <!--l. 168--><p class="noindent" >This is known as the system on the &#8216;inner&#8217; time-scale.</p></dd></dl>
+<!--l. 172--><p class="noindent" >In questions <a 
+href="#x1-10167">7<!--tex4ht:ref: Inner --></a>-<a 
+href="#x1-10146">6<!--tex4ht:ref: Outer --></a> you have done a multiple scales simplification of the Michaelis-Menton problem. Namely, the whole equation is hard
+to solve. However, we can solve for what the equation looks like for small time, <span 
+class="lmmi-10">&#x03C3; </span>(question <a 
+href="#x1-10167">7<!--tex4ht:ref: Inner --></a>) and we can solve for what
+the equations looks like for large time, question (<a 
+href="#x1-10146">6<!--tex4ht:ref: Outer --></a>). In the computation question, which is next, we check these
+approximations.
+</p>
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-20002"></a>Computer simulation</h3>
+<!--l. 234--><p class="noindent" >Let <span 
+class="lmmi-10">K </span><span 
+class="rm-lmr-10">= 2</span>, <span 
+class="lmmi-10">&#x03BB; </span><span 
+class="rm-lmr-10">= 1 </span>and <span 
+class="lmmi-10">&#x03F5; </span><span 
+class="rm-lmr-10">= 0</span><span 
+class="lmmi-10">.</span><span 
+class="rm-lmr-10">001</span>. Simulate
+</p><table 
+class="align">
+                                  <tr><td 
+class="align-odd"><img 
+src="Sheet_38x.png" alt="du-
+d&#x03C4;"  class="frac" align="middle" /></td>                                   <td 
+class="align-even"> <span 
+class="rm-lmr-10">= </span><span 
+class="lmsy-10">-</span><span 
+class="lmmi-10">u </span><span 
+class="rm-lmr-10">+ (</span><span 
+class="lmmi-10">u </span><span 
+class="rm-lmr-10">+ </span><span 
+class="lmmi-10">K </span><span 
+class="lmsy-10">- </span><span 
+class="lmmi-10">&#x03BB;</span><span 
+class="rm-lmr-10">)</span><span 
+class="lmmi-10">v,   u</span><span 
+class="rm-lmr-10">(0) = 1</span></td>                                                                    <td 
+class="align-label"><a 
+ id="x1-2001r10"></a>(10)
+                                  </td></tr><tr><td 
+class="align-odd"><span 
+class="lmmi-10">&#x03F5;</span><img 
+src="Sheet_39x.png" alt="-dv
+ d&#x03C4;"  class="frac" align="middle" /></td>                                  <td 
+class="align-even"> <span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">u </span><span 
+class="lmsy-10">- </span><span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">u </span><span 
+class="rm-lmr-10">+ </span><span 
+class="lmmi-10">K</span><span 
+class="rm-lmr-10">)</span><span 
+class="lmmi-10">v   v</span><span 
+class="rm-lmr-10">(0) = 0</span><span 
+class="lmmi-10">.</span></td>                                                                          <td 
+class="align-label"><a 
+ id="x1-2002r11"></a>(11)                                  </td></tr></table>
+<!--l. 239--><p class="indent" >   and
+</p>
+   <table 
+class="equation"><tr><td><a 
+ id="x1-2003r12"></a>
+   <center class="math-display" >
+                                                                                                     
+                                                                                                     
+<img 
+src="Sheet_310x.png" alt="du--
+d &#x03C4; =  - u  + (u +  K  -  &#x03BB; )u&#x2215;(u  + K  ),   u(0 ) = 1.
+" class="math-display"  /></center></td><td class="equation-label"><span 
+class="ec-lmr-12x-x-120">(12)</span></td></tr></table>
+<!--l. 242--><p class="nopar" >
+with <span 
+class="lmmi-10">v </span><span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">u&#x2215;</span><span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">u </span><span 
+class="rm-lmr-10">+ </span><span 
+class="lmmi-10">K</span><span 
+class="rm-lmr-10">) </span>over the time <span 
+class="lmmi-10">t </span><span 
+class="lmsy-10">&#x2208; </span><span 
+class="rm-lmr-10">[0</span><span 
+class="lmmi-10">,</span><span 
+class="rm-lmr-10">20]</span>. How well do these curves approximate each other?
+</p><!--l. 255--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+ id="x1-30003"></a>Spruce budworm</h3>
+   <hr class="figure" /><div class="figure" 
+>
+                                                                                                     
+                                                                                                     
+<a 
+ id="x1-30012"></a>
+                                                                                                     
+                                                                                                     
+<!--l. 258--><p class="noindent" ><img 
+src="../Pictures/Spruce_budworm.jpg" alt="pict"  
+ width="238.01991pt.5"  />
+<br /> </p><div class="caption" 
+><span class="id">Figure&#x00A0;2: </span><span  
+class="content"> Spruce budworm in moth and larval stages.</span></div><!--tex4ht:label?: x1-30012 -->
+                                                                                                     
+                                                                                                     
+   </div><hr class="endfigure" />
+<!--l. 261--><p class="indent" >   Spruce budworm (see Figure <a 
+href="#x1-30012">2<!--tex4ht:ref: Spruce_budworm --></a>) are preyed upon by spiders, miscellaneous insects, and birds. A model for their population size,
+<span 
+class="lmmi-10">N </span>is given by
+</p>
+   <table 
+class="equation"><tr><td><a 
+ id="x1-3002r13"></a>
+   <center class="math-display" >
+<img 
+src="Sheet_311x.png" alt="           (      N )       BN  2
+N&#x02D9;  = RN     1 -  ---  -  ----------.
+                  K       A2 +  N 2
+" class="math-display"  /></center></td><td class="equation-label"><span 
+class="ec-lmr-12x-x-120">(13)</span></td></tr></table>
+<!--l. 264--><p class="nopar" >
+     </p><dl class="enumerate"><dt class="enumerate">
+  1. </dt><dd 
+class="enumerate">What does each term in the equation mean?
+     </dd><dt class="enumerate">
+  2. </dt><dd 
+class="enumerate">Describe, with a sketch, three properties of the predation term
+     <table 
+class="equation"><tr><td><a 
+ id="x1-3005r14"></a>
+     <center class="math-display" >
+     <img 
+src="Sheet_312x.png" alt="  BN   2
+----------.
+A2  + N  2
+     " class="math-display"  /></center></td><td class="equation-label"><span 
+class="ec-lmr-12x-x-120">(14)</span></td></tr></table>
+     <!--l. 270--><p class="nopar" >
+     Hint: consider low, medium and high values of <span 
+class="lmmi-10">N</span>.
+     </p></dd><dt class="enumerate">
+  3. </dt><dd 
+class="enumerate">Non-dimensionalise the equation to give the form
+     <table 
+class="equation"><tr><td><a 
+ id="x1-3007r15"></a>
+                                                                                                     
+                                                                                                     
+     <center class="math-display" >
+     <img 
+src="Sheet_313x.png" alt="           (       )        2
+-du-             u-     ---u----
+ d&#x03C4;  =  ru   1 - k   -  1 +  u2 .
+     " class="math-display"  /></center></td><td class="equation-label"><span 
+class="ec-lmr-12x-x-120">(15)</span></td></tr></table>
+     <!--l. 275--><p class="nopar" >
+     What are the scales of the population and time in terms of <span 
+class="lmmi-10">A</span>, <span 
+class="lmmi-10">B</span>, <span 
+class="lmmi-10">K </span>and <span 
+class="lmmi-10">R</span>? What are the parameters <span 
+class="lmmi-10">r</span>, <span 
+class="lmmi-10">k </span>in terms of <span 
+class="lmmi-10">A</span>, <span 
+class="lmmi-10">B</span>,
+     <span 
+class="lmmi-10">K </span>and <span 
+class="lmmi-10">R</span>?
+     </p></dd><dt class="enumerate">
+  4. </dt><dd 
+class="enumerate">Show the population and time scales have the right dimension. Show that <span 
+class="lmmi-10">r </span>and <span 
+class="lmmi-10">k </span>are dimensionless.</dd></dl>
+   <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
+ id="x1-40004"></a>Spruce budworm population stability</h3>
+<!--l. 299--><p class="noindent" >You can find more about the spruce budworm population equation and an online applet that allows you to simulate the system
+quickly and easily at the following website:
+</p>
+   <table 
+class="equation"><tr><td><a 
+ id="x1-4001r16"></a>
+   <center class="math-display" >
+<img 
+src="Sheet_314x.png" alt="http  : &#x2215;&#x2215;mathinsight.org     &#x2215;spruce  -budworm    -outbreak  -model
+" class="math-display"  /></center></td><td class="equation-label"><span 
+class="ec-lmr-12x-x-120">(16)</span></td></tr></table>
+<!--l. 302--><p class="nopar" >
+</p><!--l. 304--><p class="indent" >   The above website may aid in the following questions as we are going to consider the steady states of
+</p>
+   <table 
+class="equation"><tr><td><a 
+ id="x1-4002r17"></a>
+   <center class="math-display" >
+                                                                                                     
+                                                                                                     
+<img 
+src="Sheet_315x.png" alt="           (       )        2
+-du-             u-     --u-----
+     =  ru  1 -      -        2 =  f (u).
+ d&#x03C4;              k      1 +  u
+" class="math-display"  /></center></td><td class="equation-label"><span 
+class="ec-lmr-12x-x-120">(17)</span></td></tr></table>
+<!--l. 307--><p class="nopar" >
+We could solve <span 
+class="lmmi-10">f</span><span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">u</span><span 
+class="rm-lmr-10">) = 0</span>, however, this leads to a cubic in <span 
+class="lmmi-10">u</span>. This can be solved, but it is not very fun. Instead, we are going to
+consider sketches of the system.
+</p><!--l. 310--><p class="indent" >   We could sketch <span 
+class="lmmi-10">f</span><span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">u</span><span 
+class="rm-lmr-10">)</span>, directly, and draw arrows on the diagram, such that <span 
+class="lmmi-10">u </span>is increasing if <span 
+class="lmmi-10">f</span><span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">u</span><span 
+class="rm-lmr-10">) </span><span 
+class="lmmi-10">&#x003E; </span><span 
+class="rm-lmr-10">0 </span>and <span 
+class="lmmi-10">u </span>is decreasing if
+<span 
+class="lmmi-10">f</span><span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">u</span><span 
+class="rm-lmr-10">) </span><span 
+class="lmmi-10">&#x003C; </span><span 
+class="rm-lmr-10">0</span>. This will immediately tell us how many stationary states there are and inform us of their stability. We will do this
+towards the end of this question, however, going straight into the full sketch may cause us to miss certain cases,
+as we have two parameters, <span 
+class="lmmi-10">r </span>and <span 
+class="lmmi-10">K</span>, to worry about. However, if you feel confident shoot straight to question
+<a 
+href="#x1-40073">3<!--tex4ht:ref: sketch_f --></a>.
+</p><!--l. 312--><p class="indent" >   Critically, the following questions only deal with sketches. Thus, you do not have to be exactly accurate in your plotted
+values. We are just need to provide the general shape of the curve. This means little, if any, calculation should
+be required. Namely, an exact analytical result is not required, only approximate sketches backed up by logical
+thought.
+</p><!--l. 315--><p class="indent" >
+     </p><dl class="enumerate"><dt class="enumerate">
+  1. </dt><dd 
+class="enumerate">By inspection <span 
+class="lmmi-10">u</span><sub><span 
+class="rm-lmr-7">0</span></sub> <span 
+class="rm-lmr-10">= 0 </span>is always a steady state of <span 
+class="lmmi-10">f</span><span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">u</span><span 
+class="rm-lmr-10">) </span>(make sure you understand why). Instead of considering <span 
+class="lmmi-10">f</span><span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">u</span><span 
+class="rm-lmr-10">) </span>let us
+     consider the two functions
+     <table 
+class="equation"><tr><td><a 
+ id="x1-4004r18"></a>
+     <center class="math-display" >
+     <img 
+src="Sheet_316x.png" alt="            (     u )                 u
+f1 (u) =  r  1 -  --  ,   f2(u ) =  -------.
+                  k                 1 + u2
+     " class="math-display"  /></center></td><td class="equation-label"><span 
+class="ec-lmr-12x-x-120">(18)</span></td></tr></table>
+     <!--l. 318--><p class="nopar" >
+     Sketch <span 
+class="lmmi-10">f</span><sub><span 
+class="rm-lmr-7">2</span></sub> on three different axes. Fix the value of <span 
+class="lmmi-10">r&#x2215;k </span>to be greater than zero (say <span 
+class="lmmi-10">r&#x2215;k </span><span 
+class="rm-lmr-10">= 0</span><span 
+class="lmmi-10">.</span><span 
+class="rm-lmr-10">05</span>), but allow <span 
+class="lmmi-10">r </span>to vary (with <span 
+class="lmmi-10">k </span>being
+     defined by, say, <span 
+class="lmmi-10">k </span><span 
+class="rm-lmr-10">= 0</span><span 
+class="lmmi-10">.</span><span 
+class="rm-lmr-10">05</span><span 
+class="lmmi-10">&#x2215;r</span>). Sketch on these three different plots <span 
+class="lmmi-10">f</span><sub><span 
+class="rm-lmr-7">1</span></sub> for different values of <span 
+class="lmmi-10">r</span>, namely consider <span 
+class="lmmi-10">r </span>small, medium and
+     large<span class="footnote-mark"><a 
+href="Sheet_32.html#fn1x0"><sup class="textsuperscript">1</sup></a></span><a 
+ id="x1-4005f1"></a> 
+     </p></dd><dt class="enumerate">
+  2. </dt><dd 
+class="enumerate">Draw on your above diagrams regions where <span 
+class="lmmi-10">f</span><sub><span 
+class="rm-lmr-7">1</span></sub> <span 
+class="lmmi-10">&#x003E; f</span><sub><span 
+class="rm-lmr-7">2</span></sub> and regions where <span 
+class="lmmi-10">f</span><sub><span 
+class="rm-lmr-7">2</span></sub> <span 
+class="lmmi-10">&#x003E; f</span><sub><span 
+class="rm-lmr-7">1</span></sub>.
+     </dd><dt class="enumerate">
+  3. </dt><dd 
+class="enumerate">Noting that a steady state, <span 
+class="lmmi-10">u</span><span 
+class="lmsy-10">&#x2032;</span>, satisfies
+     <table 
+class="equation"><tr><td><a 
+ id="x1-4008r19"></a>
+                                                                                                     
+                                                                                                     
+     <center class="math-display" >
+     <img 
+src="Sheet_317x.png" alt="f (u&#x2032;) =  0 =  u&#x2032;(f1(u &#x2032;) -  f2(u &#x2032;)),
+     " class="math-display"  /></center></td><td class="equation-label"><span 
+class="ec-lmr-12x-x-120">(19)</span></td></tr></table>
+     <!--l. 328--><p class="nopar" >
+     use your sketches of <span 
+class="lmmi-10">f</span><sub><span 
+class="rm-lmr-7">1</span></sub> and <span 
+class="lmmi-10">f</span><sub><span 
+class="rm-lmr-7">2</span></sub> to plot three situations of <span 
+class="lmmi-10">f</span><span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">u</span><span 
+class="rm-lmr-10">)</span><a 
+ id="x1-40073"></a>.
+     </p></dd><dt class="enumerate">
+  4. </dt><dd 
+class="enumerate">You should be able to show that (depending on the value of the parameters) there can be as few as two steady
+     states and as many as 4 steady states. Name the four steady states <span 
+class="rm-lmr-10">0 = </span><span 
+class="lmmi-10">u</span><sub><span 
+class="rm-lmr-7">0</span></sub> <span 
+class="lmmi-10">&#x003C; u</span><sub><span 
+class="lmsy7-">-</span></sub> <span 
+class="lmmi-10">&#x003C; u</span><sub><span 
+class="lmmi-7">s</span></sub> <span 
+class="lmmi-10">&#x003C; u</span><sub><span 
+class="rm-lmr-7">+</span></sub>, in the obvious way.
+     Specify on your diagrams these four steady states. The middling value of <span 
+class="lmmi-10">r </span>sketch is given in Figure <a 
+href="#x1-40103">3<!--tex4ht:ref: r_medium --></a>. <hr class="figure" /><div class="figure" 
+><a 
+ id="x1-40103"></a> <img 
+src="../Pictures/Spruce_budworm_r_medium.png" alt="pict"  
+ width="238.01991pt"  />
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;3: </span><span  
+class="content"> Plots of <span 
+class="lmmi-10">f </span>for a middling value of <span 
+class="lmmi-10">r</span>.</span></div><!--tex4ht:label?: x1-40103 -->
+     </div><hr class="endfigure" />
+     </dd><dt class="enumerate">
+  5. </dt><dd 
+class="enumerate">Use each sketch of <span 
+class="lmmi-10">f</span><span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">u</span><span 
+class="rm-lmr-10">) </span>to state the stability of each steady state, <span 
+class="lmmi-10">u</span><sub><span 
+class="rm-lmr-7">0</span></sub>, <span 
+class="lmmi-10">u</span><sub><span 
+class="lmsy7-">-</span></sub>, <span 
+class="lmmi-10">u</span><sub><span 
+class="lmmi-7">s</span></sub> and <span 
+class="lmmi-10">u</span><sub><span 
+class="rm-lmr-7">+</span></sub> (when they exist).
+     </dd><dt class="enumerate">
+  6. </dt><dd 
+class="enumerate">Does the system exhibit hysteresis? To solve this follow these steps:
+         <dl class="enumerate"><dt class="enumerate">
+      (a) </dt><dd 
+class="enumerate">start with a low value of <span 
+class="lmmi-10">r</span>, such that only <span 
+class="lmmi-10">u</span><sub><span 
+class="rm-lmr-7">0</span></sub> and <span 
+class="lmmi-10">u</span><sub><span 
+class="lmsy7-">-</span></sub> exist. Suppose we start with a small initial condition,
+         where do you evolve to?
+         </dd><dt class="enumerate">
+     (b) </dt><dd 
+class="enumerate">increase <span 
+class="lmmi-10">r </span>until <span 
+class="lmmi-10">u</span><sub><span 
+class="rm-lmr-7">0</span></sub>, <span 
+class="lmmi-10">u</span><sub><span 
+class="lmsy7-">-</span></sub>, <span 
+class="lmmi-10">u</span><sub><span 
+class="lmmi-7">s</span></sub>, <span 
+class="lmmi-10">u</span><sub><span 
+class="rm-lmr-7">+</span></sub> all exist, what happens to the point you evolve to?<a 
+ id="x1-40142"></a>
+         </dd><dt class="enumerate">
+      (c) </dt><dd 
+class="enumerate">increase <span 
+class="lmmi-10">r </span>further until only <span 
+class="lmmi-10">u</span><sub><span 
+class="rm-lmr-7">0</span></sub> <span 
+class="lmmi-10">u</span><sub><span 
+class="rm-lmr-7">+</span></sub> exist, what happens to the point you evolve to?
+         </dd><dt class="enumerate">
+     (d) </dt><dd 
+class="enumerate">decrease <span 
+class="lmmi-10">r </span>until <span 
+class="lmmi-10">u</span><sub><span 
+class="rm-lmr-7">0</span></sub>, <span 
+class="lmmi-10">u</span><sub><span 
+class="lmsy7-">-</span></sub>, <span 
+class="lmmi-10">u</span><sub><span 
+class="lmmi-7">s</span></sub>, <span 
+class="lmmi-10">u</span><sub><span 
+class="rm-lmr-7">+</span></sub> all exist, what happens to the point you evolve to?<a 
+ id="x1-40164"></a>
+         </dd><dt class="enumerate">
+      (e) </dt><dd 
+class="enumerate">is the point you evolve to in step <a 
+href="#x1-40142">6b<!--tex4ht:ref: 1 --></a> the same as the point you evolve to in step <a 
+href="#x1-40164">6d<!--tex4ht:ref: 2 --></a>? Use this to answer the
+         original question.</dd></dl>
+     </dd></dl>
+<!--l. 390--><p class="noindent" >
+</p>
+   <h3 class="likesectionHead"><a 
+ id="x1-50004"></a>Exam revision</h3>
+<!--l. 391--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
+ id="x1-60005"></a>Stability of a one variable system</h3>
+<!--l. 392--><p class="noindent" >Consider the following equation
+</p>
+   <table 
+class="equation"><tr><td><a 
+ id="x1-6001r20"></a>
+                                                                                                     
+                                                                                                     
+   <center class="math-display" >
+<img 
+src="Sheet_318x.png" alt="               3        2
+&#x02D9;u =  u (1 - u ) (u -  2) (3 -  u )(4 - u ).
+" class="math-display"  /></center></td><td class="equation-label"><span 
+class="ec-lmr-12x-x-120">(20)</span></td></tr></table>
+<!--l. 395--><p class="nopar" >
+     </p><dl class="enumerate"><dt class="enumerate">
+  1. </dt><dd 
+class="enumerate">What are the steady states?
+     </dd><dt class="enumerate">
+  2. </dt><dd 
+class="enumerate">Linearise around each steady state. Which steady states are stable and which are unstable? Why can you not
+     categorise the stability of <span 
+class="lmmi-10">u </span><span 
+class="rm-lmr-10">= 1 </span>and <span 
+class="lmmi-10">u </span><span 
+class="rm-lmr-10">= 2</span>?
+     </dd><dt class="enumerate">
+  3. </dt><dd 
+class="enumerate">Sketch the phase plane <span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">u,</span><img 
+src="Sheet_319x.png" alt="&#x02D9;u"  class="dot"  /><span 
+class="rm-lmr-10">) </span>and show that your linear analysis tallies with the stability information gained from
+     the sketch.
+     </dd><dt class="enumerate">
+  4. </dt><dd 
+class="enumerate">Use the sketch to categorise the stability of <span 
+class="lmmi-10">u </span><span 
+class="rm-lmr-10">= 1 </span>and <span 
+class="lmmi-10">u </span><span 
+class="rm-lmr-10">= 2</span>.</dd></dl>
+<!--l. 429--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6   </span> <a 
+ id="x1-70006"></a>Infections</h3>
+<!--l. 430--><p class="noindent" >The interaction dynamics of any disease can be understood by modelling three sections of the population: the susceptible
+population, <span 
+class="lmmi-10">S</span>; the infected population, <span 
+class="lmmi-10">I </span>and the recovered population, <span 
+class="lmmi-10">R</span>. They interact through the following rules:
+</p>
+     <ul class="itemize1">
+     <li class="itemize">whenever a susceptible agent interacts with an infective agent the result is two infective agents at a rate <span 
+class="lmmi-10">r</span><sub><span 
+class="rm-lmr-7">1</span></sub>;
+     </li>
+     <li class="itemize">the  infected  population  recovers  at  a  rate  to  proportional  the  size  of  the  infected  population,  the  rate  of
+     proportionality is <span 
+class="lmmi-10">r</span><sub><span 
+class="rm-lmr-7">2</span></sub>.</li></ul>
+<!--l. 435--><p class="noindent" >Finally, suppose that the initial densities of the susceptible and infectives are <span 
+class="lmmi-10">S</span><sub><span 
+class="rm-lmr-7">0</span></sub> and <span 
+class="lmmi-10">I</span><sub><span 
+class="rm-lmr-7">0</span></sub>, respectively, and that there are no initially
+recovered people.
+     </p><dl class="enumerate"><dt class="enumerate">
+  1. </dt><dd 
+class="enumerate">Convert the above rules into interaction equations.
+     </dd><dt class="enumerate">
+  2. </dt><dd 
+class="enumerate">Use the Law of Mass Action to convert the interaction equations into ODEs.
+     </dd><dt class="enumerate">
+  3. </dt><dd 
+class="enumerate">Show that <span 
+class="lmmi-10">S </span><span 
+class="rm-lmr-10">+ </span><span 
+class="lmmi-10">I </span><span 
+class="rm-lmr-10">+ </span><span 
+class="lmmi-10">R </span><span 
+class="rm-lmr-10">= </span>constant <span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">S</span><sub><span 
+class="rm-lmr-7">0</span></sub> <span 
+class="rm-lmr-10">+ </span><span 
+class="lmmi-10">I</span><sub><span 
+class="rm-lmr-7">0</span></sub>. What does this mean?
+     </dd><dt class="enumerate">
+  4. </dt><dd 
+class="enumerate">What are the dimensions of <span 
+class="lmmi-10">S</span>, <span 
+class="lmmi-10">I</span>, <span 
+class="lmmi-10">R</span>, <span 
+class="lmmi-10">&#x1E60;</span>, <span 
+class="lmmi-10">&#x0130;</span>, <span 
+class="lmmi-10">&#x1E58;</span>, <span 
+class="lmmi-10">r</span><sub><span 
+class="rm-lmr-7">1</span></sub> and <span 
+class="lmmi-10">r</span><sub><span 
+class="rm-lmr-7">2</span></sub> in terms of density and time?
+                                                                                                     
+                                                                                                     
+     </dd><dt class="enumerate">
+  5. </dt><dd 
+class="enumerate">Let <span 
+class="lmmi-10">S </span><span 
+class="rm-lmr-10">= [</span><span 
+class="lmmi-10">S</span><span 
+class="rm-lmr-10">]</span><span 
+class="lmmi-10">S</span><span 
+class="lmsy-10">&#x2032;</span>, <span 
+class="lmmi-10">I </span><span 
+class="rm-lmr-10">= [</span><span 
+class="lmmi-10">I</span><span 
+class="rm-lmr-10">]</span><span 
+class="lmmi-10">I</span><span 
+class="lmsy-10">&#x2032;</span>, <span 
+class="lmmi-10">R </span><span 
+class="rm-lmr-10">= [</span><span 
+class="lmmi-10">R</span><span 
+class="rm-lmr-10">]</span><span 
+class="lmmi-10">R</span><span 
+class="lmsy-10">&#x2032; </span>and <span 
+class="lmmi-10">t </span><span 
+class="rm-lmr-10">= [</span><span 
+class="lmmi-10">t</span><span 
+class="rm-lmr-10">]</span><span 
+class="lmmi-10">t</span><span 
+class="lmsy-10">&#x2032; </span>where the bracketed variable is the dimensional part and the primed variable
+     be the non-dimensional part. Further, suppose we non-dimensionalise the system as
+     <table 
+class="align">
+                                                         <tr><td 
+class="align-odd"><img 
+src="Sheet_320x.png" alt=" &#x02D9;&#x2032;
+S"  class="dot"  /></td>                                         <td 
+class="align-even"> <span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">S</span><span 
+class="lmsy-10">&#x2032;</span><span 
+class="lmmi-10">I</span><span 
+class="lmsy-10">&#x2032;</span><span 
+class="lmmi-10">,   S</span><span 
+class="lmsy-10">&#x2032;</span><span 
+class="rm-lmr-10">(0) = </span><span 
+class="lmmi-10">S</span><span 
+class="lmsy-10">&#x2032;</span><sub><span 
+class="rm-lmr-7">0</span></sub><span 
+class="lmmi-10">,</span></td>                                                     <td 
+class="align-label"></td>                                                 <td 
+class="align-label">
+                                                 </td></tr><tr><td 
+class="align-odd"><img 
+src="Sheet_321x.png" alt="I&#x02D9;&#x2032;"  class="dot"  /></td>                                         <td 
+class="align-even"> <span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">S</span><span 
+class="lmsy-10">&#x2032;</span><span 
+class="lmmi-10">I</span><span 
+class="lmsy-10">&#x2032;- </span><span 
+class="lmmi-10">I</span><span 
+class="lmsy-10">&#x2032;</span><span 
+class="lmmi-10">,   I</span><span 
+class="lmsy-10">&#x2032;</span><span 
+class="rm-lmr-10">(0) = </span><span 
+class="lmmi-10">I</span><span 
+class="lmsy-10">&#x2032;</span><sub><span 
+class="rm-lmr-7">0</span></sub><span 
+class="lmmi-10">,</span></td>                                                 <td 
+class="align-label"></td>                                                 <td 
+class="align-label">
+                                                 </td></tr><tr><td 
+class="align-odd"><img 
+src="Sheet_322x.png" alt="R&#x02D9;&#x2032;"  class="dot"  /></td>                                         <td 
+class="align-even"> <span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">I</span><span 
+class="lmsy-10">&#x2032;</span><span 
+class="lmmi-10">,   R</span><span 
+class="lmsy-10">&#x2032;</span><span 
+class="rm-lmr-10">(0) = 0</span><span 
+class="lmmi-10">,</span></td>                                                         <td 
+class="align-label"></td>                                                 <td 
+class="align-label"></td></tr></table>
+     <!--l. 453--><p class="noindent" >where the <span 
+class="rm-lmr-10">&#x02D9;</span> symbol now stands for  d<span 
+class="lmmi-10">&#x2215;</span> d<span 
+class="lmmi-10">t</span><span 
+class="lmsy-10">&#x2032;</span>. What are the scales <span 
+class="rm-lmr-10">[</span><span 
+class="lmmi-10">S</span><span 
+class="rm-lmr-10">]</span>, <span 
+class="rm-lmr-10">[</span><span 
+class="lmmi-10">I</span><span 
+class="rm-lmr-10">]</span>, <span 
+class="rm-lmr-10">[</span><span 
+class="lmmi-10">R</span><span 
+class="rm-lmr-10">] </span>and <span 
+class="rm-lmr-10">[</span><span 
+class="lmmi-10">t</span><span 
+class="rm-lmr-10">] </span>in terms of <span 
+class="lmmi-10">r</span><sub><span 
+class="rm-lmr-7">1</span></sub> and <span 
+class="lmmi-10">r</span><sub><span 
+class="rm-lmr-7">2</span></sub>? Show that they have
+     the right dimension, <span 
+class="ec-lmri-10">i.e. </span><span 
+class="rm-lmr-10">[</span><span 
+class="lmmi-10">S</span><span 
+class="rm-lmr-10">] </span>has the same dimension as <span 
+class="lmmi-10">S</span>, as specified in question 4.
+     </p></dd><dt class="enumerate">
+  6. </dt><dd 
+class="enumerate">What are the forms of <span 
+class="lmmi-10">S</span><span 
+class="lmsy-10">&#x2032;</span><sub><span 
+class="rm-lmr-7">0</span></sub> and <span 
+class="lmmi-10">I</span><span 
+class="lmsy-10">&#x2032;</span><sub><span 
+class="rm-lmr-7">0</span></sub> in terms of <span 
+class="lmmi-10">r</span><sub><span 
+class="rm-lmr-7">1</span></sub>, <span 
+class="lmmi-10">r</span><sub><span 
+class="rm-lmr-7">2</span></sub>, <span 
+class="lmmi-10">S</span><sub><span 
+class="rm-lmr-7">0</span></sub> and <span 
+class="lmmi-10">I</span><sub><span 
+class="rm-lmr-7">0</span></sub>?
+     </dd><dt class="enumerate">
+  7. </dt><dd 
+class="enumerate">By integrating
+     <table 
+class="equation"><tr><td><a 
+ id="x1-7008r21"></a>
+     <center class="math-display" >
+     <img 
+src="Sheet_323x.png" alt=" dI &#x2032;    I&#x02D9;&#x2032;     dR &#x2032;    R&#x02D9;&#x2032;
+----- =  ---,   ------=  ---,
+ dS &#x2032;    S&#x02D9;&#x2032;     dS &#x2032;    S&#x02D9;&#x2032;
+     " class="math-display"  /></center></td><td class="equation-label"><span 
+class="ec-lmr-12x-x-120">(21)</span></td></tr></table>
+     <!--l. 458--><p class="nopar" >
+     find expressions for <span 
+class="lmmi-10">I</span><span 
+class="lmsy-10">&#x2032;</span><span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">S</span><span 
+class="lmsy-10">&#x2032;</span><span 
+class="rm-lmr-10">) </span>and <span 
+class="lmmi-10">R</span><span 
+class="lmsy-10">&#x2032;</span><span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">S</span><span 
+class="lmsy-10">&#x2032;</span><span 
+class="rm-lmr-10">)</span>. Do not forget about the initial conditions.</p></dd></dl>
+   <div id="disqus_thread"></div><script>var disqus_config = function () {this.page.url = thomaswoolley.co.uk;};(function() {var d = document, s = d.createElement('script');s.src = 'https://lecturing.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow"> comments powered by Disqus. </a></noscript> 
+</body></html> 
+
+                                                                                                     
+
+

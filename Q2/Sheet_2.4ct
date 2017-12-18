@@ -1,0 +1,14 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi 
+\doTocEntry\tocsection{1}{\csname a:TocLink\endcsname{1}{x1-10001}{QQ2-1-1}{Time derivatives of polar coordinates}}{3}\relax 
+\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-10021}{}{\ignorespaces  Cartesian and polar coordinates.}}{figure}\relax 
+\doTocEntry\toclof{2}{\csname a:TocLink\endcsname{1}{x1-10202}{}{\ignorespaces  Illustrating Kepler's Second Law of Planetary motion. Suppose $A_1$ and $A_2$ are areas swept out by the line connecting the red planet to the yellow sun in the same amount of time. Then equation \textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces 9\hbox {}\unskip \@@italiccorr )}} proves $A_1=A_2$.}}{figure}\relax 
+\doTocEntry\tocsection{2}{\csname a:TocLink\endcsname{1}{x1-20002}{QQ2-1-4}{Two body problem}}{9}\relax 
+\doTocEntry\toclof{3}{\csname a:TocLink\endcsname{1}{x1-20033}{}{\ignorespaces  (a) Positions and forces in the two body problem. The position $(\bm  {r}_1+\bm  {r}_2)/2$ is the centre of mass of the two body system. (b) Redefining the system so that planet 1 is the origin.}}{figure}\relax 
+\doTocEntry\tocsection{3}{\csname a:TocLink\endcsname{1}{x1-30003}{QQ2-1-6}{Two body problem continued}}{12}\relax 
+\doTocEntry\tocsection{4}{\csname a:TocLink\endcsname{1}{x1-40004}{QQ2-1-7}{Computer simulation or plot by hand}}{15}\relax 
+\doTocEntry\toclof{4}{\csname a:TocLink\endcsname{1}{x1-40114}{}{\ignorespaces  Possible trajectories of equation \textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces 18\hbox {}\unskip \@@italiccorr )}}.}}{figure}\relax 
+\doTocEntry\tocsection{5}{\csname a:TocLink\endcsname{1}{x1-50005}{QQ2-1-9}{Law of Mass Action}}{16}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-60005}{QQ2-1-10}{Exam revision}}{17}\relax 
+\doTocEntry\tocsection{6}{\csname a:TocLink\endcsname{1}{x1-70006}{QQ2-1-11}{More two body problem}}{18}\relax 
+\doTocEntry\tocsection{7}{\csname a:TocLink\endcsname{1}{x1-80007}{QQ2-1-12}{More Law of Mass Action}}{20}\relax 
+\par 

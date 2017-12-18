@@ -1,0 +1,11 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
+\doTocEntry\tocsection{1}{\csname a:TocLink\endcsname{1}{x1-10001}{QQ2-1-1}{Michaelis-Menten Enzyme dynamics}}{3}\relax 
+\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-10011}{}{\ignorespaces  Schematic diagram of the Michaelis-Menten enzyme-substrate reaction.}}{figure}\relax 
+\doTocEntry\tocsection{2}{\csname a:TocLink\endcsname{1}{x1-20002}{QQ2-1-3}{Computer simulation}}{9}\relax 
+\doTocEntry\tocsection{3}{\csname a:TocLink\endcsname{1}{x1-30003}{QQ2-1-4}{Spruce budworm}}{10}\relax 
+\doTocEntry\toclof{2}{\csname a:TocLink\endcsname{1}{x1-30012}{}{\ignorespaces  Spruce budworm in moth and larval stages.}}{figure}\relax 
+\doTocEntry\tocsection{4}{\csname a:TocLink\endcsname{1}{x1-40004}{QQ2-1-6}{Spruce budworm population stability}}{14}\relax 
+\doTocEntry\toclof{3}{\csname a:TocLink\endcsname{1}{x1-40103}{}{\ignorespaces  Plots of $f$ for a middling value of $r$.}}{figure}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-50004}{QQ2-1-8}{Exam revision}}{16}\relax 
+\doTocEntry\tocsection{5}{\csname a:TocLink\endcsname{1}{x1-60005}{QQ2-1-9}{Stability of a one variable system}}{16}\relax 
+\doTocEntry\tocsection{6}{\csname a:TocLink\endcsname{1}{x1-70006}{QQ2-1-10}{Infections}}{17}\relax 
