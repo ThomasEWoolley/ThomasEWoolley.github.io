@@ -1,0 +1,9 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
+\doTocEntry\tocsection{1}{\csname a:TocLink\endcsname{1}{x1-10001}{QQ2-1-1}{Squirrels}}{3}\relax 
+\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-10011}{}{\ignorespaces Squirrels do not like each other.}}{figure}\relax 
+\doTocEntry\tocsection{2}{\csname a:TocLink\endcsname{1}{x1-20002}{QQ2-1-3}{Fitzhugh-Nagumo}}{8}\relax 
+\doTocEntry\tocsection{3}{\csname a:TocLink\endcsname{1}{x1-30003}{QQ2-1-4}{Computer simulation}}{9}\relax 
+\doTocEntry\toclof{2}{\csname a:TocLink\endcsname{1}{x1-30052}{}{\ignorespaces Simulation of equations \textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces 6\hbox {}\unskip \@@italiccorr )}} and \textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces 7\hbox {}\unskip \@@italiccorr )}} with parameters $\gamma =2$ and $\epsilon =0.001$.}}{figure}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-40003}{QQ2-1-6}{Exam revision}}{9}\relax 
+\doTocEntry\tocsection{4}{\csname a:TocLink\endcsname{1}{x1-50004}{QQ2-1-7}{Damped pendulum}}{9}\relax 
+\doTocEntry\tocsection{5}{\csname a:TocLink\endcsname{1}{x1-60005}{QQ2-1-8}{Similar systems}}{10}\relax 

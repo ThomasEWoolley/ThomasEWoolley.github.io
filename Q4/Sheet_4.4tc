@@ -1,0 +1,10 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
+\doTocEntry\tocsection{1}{\csname a:TocLink\endcsname{1}{x1-10001}{QQ2-1-1}{Lotka-Volterra equations}}{3}\relax 
+\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-10041}{}{\ignorespaces  (a) Lynx and hare in action. (b) Number of pelts recorded over time.}}{figure}\relax 
+\doTocEntry\tocsection{2}{\csname a:TocLink\endcsname{1}{x1-20002}{QQ2-1-3}{Computer simulation}}{8}\relax 
+\doTocEntry\tocsection{3}{\csname a:TocLink\endcsname{1}{x1-30003}{QQ2-1-4}{Bifurcations}}{8}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-40003}{QQ2-1-5}{Exam revision}}{9}\relax 
+\doTocEntry\tocsection{4}{\csname a:TocLink\endcsname{1}{x1-50004}{QQ2-1-6}{Predator competition}}{10}\relax 
+\doTocEntry\tocsection{5}{\csname a:TocLink\endcsname{1}{x1-60005}{QQ2-1-7}{The Lorenz equations}}{10}\relax 
+\doTocEntry\toclof{2}{\csname a:TocLink\endcsname{1}{x1-60092}{}{\ignorespaces  Simulating the Lorenz equations with $\sigma =1$, $\beta =1$ and $\rho $ given beneath each figure, for a variety of initial conditions. The black circles indicate the initial conditions. On the left is the full, three-dimensional realisation, whilst the rest of the plots in the row are the $(x,y)$, $(x,z)$ and $(y,z)$ projections.}}{figure}\relax 
+\doTocEntry\toclof{3}{\csname a:TocLink\endcsname{1}{x1-60123}{}{\ignorespaces  Simulating the Lorenz equations with $\sigma =10$, $\beta =3$ and $\rho =28$ for two initial conditions that start very close together. Top: the black circles indicate the initial conditions. On the left is the full, three-dimensional realisation, whilst the rest of the plots in the row are the $(x,y)$, $(x,z)$ and $(y,z)$ projections. Bottom: time series of $x$, where we observe the two trajectories diverging.}}{figure}\relax 

@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<!-- html,xhtml --> 
+<meta name="src" content="Sheet_4.tex" /> 
+<link rel="stylesheet" type="text/css" href="Sheet_4.css" /> 
+</head><body 
+>
+<!--l. 123--><p class="noindent" >
+                                                                                                     
+                                                                                                     
+</p><!--l. 123--><p class="indent" >
+                                                                                                     
+                                                                                                     
+</p>
+<div class="center" 
+>
+<!--l. 123--><p class="noindent" >
+</p><!--l. 123--><p class="noindent" ><span 
+class="ec-lmr-17">Problem sheet 4</span>
+</p>
+<div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1" /></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-1"  
+class="td11"> <span 
+class="ec-lmr-12">Thomas E. Woolley  </span></td>
+</tr><tr 
+class="vspace" style="font-size:9.99756pt"><td 
+>&nbsp;</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-2-1"  
+class="td11">   <span 
+class="ec-lmr-12">Last edited on:     </span></td></tr></table></div>
+<!--l. 123--><p class="noindent" ><span 
+class="ec-lmr-12">December 18, 2017</span></p></div>
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-10001"></a>Lotka-Volterra equations</h3>
+<!--l. 125--><p class="noindent" >Data on the number of Canadian lynx and snowshoe hair pelts traded where collected by the Hudson Bay trading
+company<span class="footnote-mark"><a 
+href="Sheet_42.html#fn1x0"><sup class="textsuperscript">1</sup></a></span><a 
+ id="x1-1001f1"></a> .
+The data are presented in Figure <a 
+href="#x1-1003r2">1(b)<!--tex4ht:ref: Lynx_hare --></a> and has been used as a proxy for population data. </p><hr class="figure" /><div class="figure" 
+>
+                                                                                                     
+                                                                                                     
+<a 
+ id="x1-10041"></a>
+                                                                                                     
+                                                                                                     
+<a 
+ id="x1-1002r1"></a>
+<div class="subfigure"><table><tr><td style="text-align:left"><img 
+src="../Pictures/Lynx_chasing_hare.jpeg" alt="PIC"  
+ />
+ <div class="subfigcaption"><span 
+class="ec-lmr-8">(a) </span></div> </td></tr></table></div> <a 
+ id="x1-1003r2"></a><div class="subfigure"><table><tr><td style="text-align:left"><img 
+src="../Pictures/Lynx_hare.png" alt="pict"  
+ width="169.2736pt"  />
+<div class="subfigcaption"><span 
+class="ec-lmr-8">(b) </span></div></td></tr></table></div>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;1: </span><span  
+class="content">(a) Lynx and hare in action. (b) Number of pelts recorded over time.</span></div><!--tex4ht:label?: x1-10041 -->
+                                                                                                     
+                                                                                                     
+   </div><hr class="endfigure" />
+<!--l. 132--><p class="indent" >   In this question we consider a mathematical model that has been suggested to describe the features seen in the data.
+Specifically, it is a predator-prey interaction model called the Lotka-Volterra model. Let <span 
+class="lmmi-10">L </span>be the lynx population and <span 
+class="lmmi-10">H </span>be the
+hare population. The interaction equations are
+</p>
+   <table 
+class="equation"><tr><td><a 
+ id="x1-1005r1"></a>
+   <center class="math-display" >
+<img 
+src="Sheet_40x.png" alt=" H   k&#x2192;1 2H    ,          H  + L  k&#x2192;2  2L        ,     L &#x2192;k3 &#x2215;0  .
+ &#x25DF;----&#x25DD;&#x25DC;---&#x25DE;             &#x25DF;-----&#x25DD;&#x25DC;------&#x25DE;             &#x25DF;--&#x25DD;&#x25DC;--&#x25DE;
+Hares reproduce.   Lynx reproduce through predation.  Lynx die out.
+" class="math-display"  /></center></td><td class="equation-label"><span 
+class="ec-lmr-12x-x-120">(1)</span></td></tr></table>
+<!--l. 135--><p class="nopar" >
+     </p><dl class="enumerate"><dt class="enumerate">
+  1. </dt><dd 
+class="enumerate">Describe two features seen in the population data of Figure <a 
+href="#x1-1003r2">1(b)<!--tex4ht:ref: Lynx_hare --></a>.
+     </dd><dt class="enumerate">
+  2. </dt><dd 
+class="enumerate">Name two troubling assumptions behind the Lotka-Volterra interaction equations and suggest how they could be
+     fixed.
+     </dd><dt class="enumerate">
+  3. </dt><dd 
+class="enumerate">Write down the ODEs representing the interaction system.
+     </dd><dt class="enumerate">
+  4. </dt><dd 
+class="enumerate">Let <span 
+class="lmmi-10">u </span>and <span 
+class="lmmi-10">v </span>be non-dimensional variables of the hare and lynx, respectively. Non-dimensionalise the system to produce a
+     system of the form:
+     <table 
+class="align">
+                                                                  <tr><td 
+class="align-odd"><img 
+src="Sheet_41x.png" alt="&#x02D9;u"  class="dot"  /></td>                                                        <td 
+class="align-even"> <span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">u </span><span 
+class="lmsy-10">- </span><span 
+class="lmmi-10">uv,</span></td>                                                                                                                   <td 
+class="align-label"><a 
+ id="x1-1010r2"></a>(2)
+                                                                  </td></tr><tr><td 
+class="align-odd"><img 
+src="Sheet_42x.png" alt="&#x02D9;v"  class="dot"  /></td>                                                        <td 
+class="align-even"> <span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">&#x03B1;</span><span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">uv </span><span 
+class="lmsy-10">- </span><span 
+class="lmmi-10">v</span><span 
+class="rm-lmr-10">)</span><span 
+class="lmmi-10">,</span></td>                                                                                                                <td 
+class="align-label"><a 
+ id="x1-1011r3"></a>(3)                                                                  </td></tr></table>
+                                                                                                     
+                                                                                                     
+     <!--l. 145--><p class="noindent" >where the time derivative is with respect to some non-dimensionalised time.
+     </p><!--l. 147--><p class="noindent" >Provide the dimensional scales of the population (i.e. <span 
+class="rm-lmr-10">[</span><span 
+class="lmmi-10">L</span><span 
+class="rm-lmr-10">]</span>, <span 
+class="rm-lmr-10">[</span><span 
+class="lmmi-10">H</span><span 
+class="rm-lmr-10">] </span>and <span 
+class="rm-lmr-10">[</span><span 
+class="lmmi-10">t</span><span 
+class="rm-lmr-10">]</span>) as well as the definition of <span 
+class="lmmi-10">&#x03B1;</span>. Note, that you are not
+     required to show that <span 
+class="rm-lmr-10">[</span><span 
+class="lmmi-10">L</span><span 
+class="rm-lmr-10">] </span>and <span 
+class="rm-lmr-10">[</span><span 
+class="lmmi-10">H</span><span 
+class="rm-lmr-10">] </span>have the right dimension and <span 
+class="lmmi-10">&#x03B1; </span>is dimensionless, but it is a good way to check your
+     working.
+     </p></dd><dt class="enumerate">
+  5. </dt><dd 
+class="enumerate">What are the steady states?
+     </dd><dt class="enumerate">
+  6. </dt><dd 
+class="enumerate">What is the linear stability of the states?
+     </dd><dt class="enumerate">
+  7. </dt><dd 
+class="enumerate">Consider
+     <table 
+class="equation"><tr><td><a 
+ id="x1-1015r4"></a>
+     <center class="math-display" >
+     <img 
+src="Sheet_43x.png" alt="-du-    &#x02D9;u-
+ dv  =  &#x02D9;v .
+     " class="math-display"  /></center></td><td class="equation-label"><span 
+class="ec-lmr-12x-x-120">(4)</span></td></tr></table>
+     <!--l. 153--><p class="nopar" >
+     Show that equation (<a 
+href="#x1-1015r4">4<!--tex4ht:ref: LV_solvable --></a>) can be directly integrated to show that the populations must satisfy the constraint
+</p>
+     <table 
+class="equation"><tr><td><a 
+ id="x1-1016r5"></a>
+     <center class="math-display" >
+     <img 
+src="Sheet_44x.png" alt="(   ) (   )
+  ev-   eu- &#x03B1;     C
+              =  e  ,
+  v     u
+     " class="math-display"  /></center></td><td class="equation-label"><span 
+class="ec-lmr-12x-x-120">(5)</span></td></tr></table>
+     <!--l. 157--><p class="nopar" >
+     where <span 
+class="lmmi-10">C </span>is a constant of integration that depends on the initial conditions. (Hint: rearrange  d<span 
+class="lmmi-10">u&#x2215;</span> d<span 
+class="lmmi-10">v </span>such that one side
+     contains all <span 
+class="lmmi-10">u </span>terms and the other contains all <span 
+class="lmmi-10">v </span>terms).</p></dd></dl>
+                                                                                                     
+                                                                                                     
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-20002"></a>Computer simulation</h3>
+<!--l. 236--><p class="noindent" >Let <span 
+class="lmmi-10">&#x03B1; </span><span 
+class="rm-lmr-10">= 1</span><span 
+class="lmmi-10">&#x2215;</span><span 
+class="rm-lmr-10">2 </span>and simulate equations (<a 
+href="#x1-1010r2">2<!--tex4ht:ref: LV1 --></a>) and (<a 
+href="#x1-1011r3">3<!--tex4ht:ref: LV2 --></a>). Plot the results in the <span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">u,v</span><span 
+class="rm-lmr-10">) </span>plane along with equation (<a 
+href="#x1-1016r5">5<!--tex4ht:ref: LV_conserved --></a>). Note you will have to
+choose appropriate initial conditions, specify <span 
+class="lmmi-10">C </span>in terms of these initial conditions and use an implicit plotting algorithm such as
+<span 
+class="ec-lmtt-10">fimplicit </span>in MatLab.
+     </p><dl class="enumerate"><dt class="enumerate">
+  1. </dt><dd 
+class="enumerate">Vary the initial conditions, what do you notice?
+     </dd><dt class="enumerate">
+  2. </dt><dd 
+class="enumerate">Do your discoveries accord with the results from question <a 
+href="#x1-10001">1<!--tex4ht:ref: Lotka-Volterra equations --></a>?
+     </dd><dt class="enumerate">
+  3. </dt><dd 
+class="enumerate">Now consider the plot of <span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">t,u</span><span 
+class="rm-lmr-10">) </span>and <span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">t,v</span><span 
+class="rm-lmr-10">)</span>. Do the simulated curves match the data seen in Figure <a 
+href="#x1-1003r2">1(b)<!--tex4ht:ref: Lynx_hare --></a>?</dd></dl>
+<!--l. 265--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+ id="x1-30003"></a>Bifurcations</h3>
+<!--l. 266--><p class="noindent" >Consider the following set of equations which model the interactions of two populations <span 
+class="lmmi-10">N</span><sub><span 
+class="rm-lmr-7">1</span></sub> and <span 
+class="lmmi-10">N</span><sub><span 
+class="rm-lmr-7">2</span></sub>:
+</p><table 
+class="align">
+                                     <tr><td 
+class="align-odd"><span 
+class="lmmi-10">&#x1E44;</span><sub><span 
+class="rm-lmr-7">1</span></sub></td>                                     <td 
+class="align-even"> <span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">r</span><sub><span 
+class="rm-lmr-7">1</span></sub><span 
+class="lmmi-10">N</span><sub><span 
+class="rm-lmr-7">1</span></sub><img 
+src="Sheet_45x.png" alt="(              )
+ 1 - ---N1-----
+     K1 + b12N2"  class="left" align="middle" /><span 
+class="lmmi-10">,</span></td>                                                                          <td 
+class="align-label"><a 
+ id="x1-3001r6"></a>(6)
+                                     </td></tr><tr><td 
+class="align-odd"><span 
+class="lmmi-10">&#x1E44;</span><sub><span 
+class="rm-lmr-7">2</span></sub></td>                                     <td 
+class="align-even"> <span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">r</span><sub><span 
+class="rm-lmr-7">2</span></sub><span 
+class="lmmi-10">N</span><sub><span 
+class="rm-lmr-7">2</span></sub><img 
+src="Sheet_46x.png" alt="(              )
+     ---N2-----
+ 1 - K1 + b21N1"  class="left" align="middle" /><span 
+class="lmmi-10">.</span></td>                                                                          <td 
+class="align-label"><a 
+ id="x1-3002r7"></a>(7)                                     </td></tr></table>
+<!--l. 272--><p class="indent" >
+     </p><dl class="enumerate"><dt class="enumerate">
+  1. </dt><dd 
+class="enumerate">What dynamics are occurring between the species <span 
+class="lmmi-10">N</span><sub><span 
+class="rm-lmr-7">1</span></sub> and <span 
+class="lmmi-10">N</span><sub><span 
+class="rm-lmr-7">2</span></sub>?
+     <!--l. 274--><p class="noindent" >Hint 1: by the symmetry of <span 
+class="lmmi-10">N</span><sub><span 
+class="rm-lmr-7">1</span></sub> and <span 
+class="lmmi-10">N</span><sub><span 
+class="rm-lmr-7">2</span></sub> in the equations whatever <span 
+class="lmmi-10">N</span><sub><span 
+class="rm-lmr-7">1</span></sub> is doing to <span 
+class="lmmi-10">N</span><sub><span 
+class="rm-lmr-7">2</span></sub>, <span 
+class="lmmi-10">N</span><sub><span 
+class="rm-lmr-7">2</span></sub> is doing to <span 
+class="lmmi-10">N</span><sub><span 
+class="rm-lmr-7">1</span></sub>. This means
+     that the dynamics could be mutual creation (mutualism) or mutual destruction (competition).
+     </p><!--l. 276--><p class="noindent" >Hint 2: Compare the above equations to regular logistic curve <img 
+src="Sheet_47x.png" alt="u&#x02D9;"  class="dot"  /> <span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">ru</span><span 
+class="rm-lmr-10">(1 </span><span 
+class="lmsy-10">- </span><span 
+class="lmmi-10">u&#x2215;K</span><span 
+class="rm-lmr-10">)</span>. What happens if we increase or
+     decrease <span 
+class="lmmi-10">K</span>? Thus, what influence does increasing or decreasing <span 
+class="lmmi-10">N</span><sub><span 
+class="rm-lmr-7">1</span></sub> have on <span 
+class="lmmi-10">N</span><sub><span 
+class="rm-lmr-7">2</span></sub>?
+     </p></dd><dt class="enumerate">
+  2. </dt><dd 
+class="enumerate">Use <span 
+class="lmmi-10">N</span><sub><span 
+class="rm-lmr-7">1</span></sub> <span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">K</span><sub><span 
+class="rm-lmr-7">1</span></sub><span 
+class="lmmi-10">u</span><sub><span 
+class="rm-lmr-7">1</span></sub>, <span 
+class="lmmi-10">N</span><sub><span 
+class="rm-lmr-7">2</span></sub> <span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">K</span><sub><span 
+class="rm-lmr-7">2</span></sub><span 
+class="lmmi-10">u</span><sub><span 
+class="rm-lmr-7">2</span></sub>, <span 
+class="lmmi-10">&#x03C4; </span><span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">r</span><sub><span 
+class="rm-lmr-7">1</span></sub><span 
+class="lmmi-10">t </span>to non-dimensionalise the equations. Define <span 
+class="lmmi-10">&#x03C1; </span><span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">r</span><sub><span 
+class="rm-lmr-7">2</span></sub><span 
+class="lmmi-10">&#x2215;r</span><sub><span 
+class="rm-lmr-7">1</span></sub>, <span 
+class="lmmi-10">&#x03B1;</span><sub><span 
+class="rm-lmr-7">12</span></sub> <span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">b</span><sub><span 
+class="rm-lmr-7">12</span></sub><span 
+class="lmmi-10">k</span><sub><span 
+class="rm-lmr-7">2</span></sub><span 
+class="lmmi-10">&#x2215;k</span><sub><span 
+class="rm-lmr-7">1</span></sub> and
+     <span 
+class="lmmi-10">&#x03B1;</span><sub><span 
+class="rm-lmr-7">21</span></sub> <span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">b</span><sub><span 
+class="rm-lmr-7">21</span></sub><span 
+class="lmmi-10">k</span><sub><span 
+class="rm-lmr-7">1</span></sub><span 
+class="lmmi-10">&#x2215;k</span><sub><span 
+class="rm-lmr-7">2</span></sub>. Rewrite the system parameters in terms of <span 
+class="lmmi-10">&#x03B1;</span><sub><span 
+class="rm-lmr-7">12</span></sub>, <span 
+class="lmmi-10">&#x03B1;</span><sub><span 
+class="rm-lmr-7">21</span></sub> and <span 
+class="lmmi-10">&#x03C1;</span>.
+                                                                                                     
+                                                                                                     
+     </dd><dt class="enumerate">
+  3. </dt><dd 
+class="enumerate">Show that the system has four steady states:
+     <table 
+class="equation"><tr><td><a 
+ id="x1-3006r8"></a>
+     <center class="math-display" >
+     <img 
+src="Sheet_48x.png" alt="(0, 0),   (0, 1),   (1, 0),   (¯u1, ¯u2),
+     " class="math-display"  /></center></td><td class="equation-label"><span 
+class="ec-lmr-12x-x-120">(8)</span></td></tr></table>
+     <!--l. 283--><p class="nopar" >
+     where
+</p>
+     <table 
+class="equation"><tr><td><a 
+ id="x1-3007r9"></a>
+     <center class="math-display" >
+     <img 
+src="Sheet_49x.png" alt="      --1-+--&#x03B1;12---          --1-+--&#x03B1;21---
+¯u1 =  1 -  &#x03B1;   &#x03B1;   ,   ¯u2 =  1 -  &#x03B1;   &#x03B1;  .
+             12  21                 12  21
+     " class="math-display"  /></center></td><td class="equation-label"><span 
+class="ec-lmr-12x-x-120">(9)</span></td></tr></table>
+     <!--l. 287--><p class="nopar" >
+     What restrictions (if any) do we need to place of the steady states?
+     </p></dd><dt class="enumerate">
+  4. </dt><dd 
+class="enumerate">Determine the linear stability of the steady states. Taking care to note any bifurcation conditions and how they relate to the
+     restrictions on the steady state existence.</dd></dl>
+<!--l. 346--><p class="noindent" >
+</p>
+   <h3 class="likesectionHead"><a 
+ id="x1-40003"></a>Exam revision</h3>
+                                                                                                     
+                                                                                                     
+<!--l. 347--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
+ id="x1-50004"></a>Predator competition</h3>
+<!--l. 348--><p class="noindent" >One of the assumptions in the Lotka-Volterra equation is that the predation effect is proportional to both the predator and prey
+population. However, as the number of prey increases the competition between predators will increase, thus, we consider the
+adapted equations
+</p><table 
+class="align">
+                                          <tr><td 
+class="align-odd"><img 
+src="Sheet_410x.png" alt="u&#x02D9;"  class="dot"  /> <span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">u </span><span 
+class="lmsy-10">- </span><span 
+class="lmmi-10">uv,</span></td>                                                 <td 
+class="align-even"></td>                                          <td 
+class="align-label"><a 
+ id="x1-5001r10"></a>(10)
+                                          </td></tr><tr><td 
+class="align-odd"><img 
+src="Sheet_411x.png" alt="v&#x02D9;"  class="dot"  /> <span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">b</span><span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">uv </span><span 
+class="lmsy-10">- </span><span 
+class="lmmi-10">v</span><span 
+class="rm-lmr-10">) </span><span 
+class="lmsy-10">- </span><span 
+class="lmmi-10">bv</span><sup><span 
+class="rm-lmr-7">2</span></sup><span 
+class="lmmi-10">.</span></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-label"><a 
+ id="x1-5002r11"></a>(11)                                          </td></tr></table>
+<!--l. 354--><p class="indent" >
+     </p><dl class="enumerate"><dt class="enumerate">
+  1. </dt><dd 
+class="enumerate">What are the steady states of the system?
+     </dd><dt class="enumerate">
+  2. </dt><dd 
+class="enumerate">Characterise the stability of the valid steady states, noting any dependences on the parameter <span 
+class="lmmi-10">b</span>.
+     </dd><dt class="enumerate">
+  3. </dt><dd 
+class="enumerate">How does predator competition change the outcome of the situation, compared to the basic Lotka-Volterra equation
+     shown in question <a 
+href="#x1-10001">1<!--tex4ht:ref: Lotka-Volterra equations --></a>?</dd></dl>
+<!--l. 394--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
+ id="x1-60005"></a>The Lorenz equations</h3>
+<!--l. 395--><p class="noindent" >In 1963, Edward Lorenz developed a simplified mathematical model for atmospheric convection. The model is a system of three
+ordinary differential equations now known as the Lorenz equations:
+                                                                                                     
+                                                                                                     
+</p><table 
+class="align">
+                                           <tr><td 
+class="align-odd"><span 
+class="lmmi-10">&#x1E8B;</span></td>                                           <td 
+class="align-even"> <span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">&#x03C3;</span><span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">y </span><span 
+class="lmsy-10">- </span><span 
+class="lmmi-10">x</span><span 
+class="rm-lmr-10">)</span><span 
+class="lmmi-10">,</span></td>                                                                                         <td 
+class="align-label"><a 
+ id="x1-6001r12"></a>(12)
+                                           </td></tr><tr><td 
+class="align-odd"><span 
+class="lmmi-10">&#x1E8F;</span></td>                                           <td 
+class="align-even"> <span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">x</span><span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">&#x03C1; </span><span 
+class="lmsy-10">- </span><span 
+class="lmmi-10">z</span><span 
+class="rm-lmr-10">) </span><span 
+class="lmsy-10">- </span><span 
+class="lmmi-10">y,</span></td>                                                                                      <td 
+class="align-label"><a 
+ id="x1-6002r13"></a>(13)
+                                           </td></tr><tr><td 
+class="align-odd"><span 
+class="lmmi-10">&#380;</span></td>                                           <td 
+class="align-even"> <span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">xy </span><span 
+class="lmsy-10">- </span><span 
+class="lmmi-10">&#x03B2;z.</span></td>                                                                                          <td 
+class="align-label"><a 
+ id="x1-6003r14"></a>(14)                                           </td></tr></table>
+<!--l. 401--><p class="indent" >   The equations relate the properties of a two-dimensional fluid layer uniformly warmed from below and cooled from above. In
+particular, the equations describe the rate of change of three quantities with respect to time: <span 
+class="lmmi-10">x </span>is proportional to the rate of
+convection; <span 
+class="lmmi-10">y </span>is proportional to the horizontal temperature variation; <span 
+class="lmmi-10">z </span>is proportional to the vertical temperature variation. The
+constants <span 
+class="lmmi-10">&#x03C3;</span>, <span 
+class="lmmi-10">&#x03C1;</span>, and <span 
+class="lmmi-10">&#x03B2; </span>are system parameters proportional to the Prandtl number, Rayleigh number, and certain physical
+dimensions of the layer itself.
+</p><!--l. 403--><p class="indent" >   For simplicity, let <span 
+class="lmmi-10">&#x03C3; </span><span 
+class="rm-lmr-10">= </span><span 
+class="lmmi-10">&#x03B2; </span><span 
+class="rm-lmr-10">= 1</span>.
+     </p><dl class="enumerate"><dt class="enumerate">
+  1. </dt><dd 
+class="enumerate">What are the steady states, noting dependencies of <span 
+class="lmmi-10">&#x03C1;</span>?
+     </dd><dt class="enumerate">
+  2. </dt><dd 
+class="enumerate">Characterise the stability of the zero steady state only, noting dependencies of <span 
+class="lmmi-10">&#x03C1;</span>. Note that you will have to find
+     the eigenvalues of a <span 
+class="rm-lmr-10">3 </span><span 
+class="lmsy-10">&#x00D7; </span><span 
+class="rm-lmr-10">3 </span>matrix. Substituting in the values of the steady state will help you. The non-zero steady
+     states are always either stable nodes or stable spirals when they exist.
+     </dd><dt class="enumerate">
+  3. </dt><dd 
+class="enumerate">Simulations for <span 
+class="lmmi-10">&#x03C1; &#x003E; </span><span 
+class="rm-lmr-10">1 </span>and <span 
+class="lmmi-10">&#x03C1; &#x003C; </span><span 
+class="rm-lmr-10">1 </span>are illustrated in Figure <a 
+href="#x1-60092">2<!--tex4ht:ref: Lorenz_stable --></a>. Do these accord with your findings?</dd></dl>
+<!--l. 410--><p class="indent" >   EXTENSION 1: If you are brave enough calculate the eigenvalues corresponding to the non-zero steady states and show that
+they always have negative real part when <span 
+class="lmmi-10">&#x03C1; &#x003E; </span><span 
+class="rm-lmr-10">1</span>, but they may be complex.
+</p><!--l. 412--><p class="indent" >   EXTENSION 2: If you are even braver rerun the analysis with variables <span 
+class="lmmi-10">&#x03C3; </span><span 
+class="rm-lmr-10">= 10</span>, <span 
+class="lmmi-10">&#x03C1; </span><span 
+class="rm-lmr-10">= 28 </span>and <span 
+class="lmmi-10">&#x03B2; </span><span 
+class="rm-lmr-10">= 3</span>. This causes the system to
+act chaotically. Categorise the steady states in this case. What happens? An image of the chaotic trajectory can be seen in Figure
+<a 
+href="#x1-60123">3<!--tex4ht:ref: Lorenz_chaotic --></a>. </p><hr class="figure" /><div class="figure" 
+>
+                                                                                                     
+                                                                                                     
+<a 
+ id="x1-60092"></a>
+                                                                                                     
+                                                                                                     
+<a 
+ id="x1-6007r1"></a>
+<div class="subfigure"><table><tr><td style="text-align:left"><img 
+src="../Pictures/Lorenz_sims_rho_5.png" alt="pict"  
+ width="528.93675pt"  />
+<div class="subfigcaption"><span 
+class="ec-lmr-8">(a)</span>
+<span 
+class="lmmi-8">&#x03C1;  </span><span 
+class="rm-lmr-8">=</span>
+<span 
+class="rm-lmr-8">0</span><span 
+class="lmmi-8">.</span><span 
+class="rm-lmr-8">5</span></div> </td></tr></table></div> <a 
+ id="x1-6008r2"></a><div class="subfigure"><table><tr><td style="text-align:left"><img 
+src="../Pictures/Lorenz_sims_rho_20.png" alt="pict"  
+ width="528.93675pt"  />
+<div class="subfigcaption"><span 
+class="ec-lmr-8">(b)</span>
+<span 
+class="lmmi-8">&#x03C1;  </span><span 
+class="rm-lmr-8">=</span>
+<span 
+class="rm-lmr-8">2</span></div>    </td></tr></table></div>
+ <div class="caption" 
+><span class="id">Figure&#x00A0;2: </span><span  
+class="content"> Simulating the Lorenz equations with <span 
+class="lmmi-10">&#x03C3; </span><span 
+class="rm-lmr-10">= 1</span>, <span 
+class="lmmi-10">&#x03B2; </span><span 
+class="rm-lmr-10">= 1 </span>and <span 
+class="lmmi-10">&#x03C1; </span>given beneath each figure, for a variety of initial
+conditions. The black circles indicate the initial conditions. On the left is the full, three-dimensional realisation, whilst the
+rest of the plots in the row are the <span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">x,y</span><span 
+class="rm-lmr-10">)</span>, <span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">x,z</span><span 
+class="rm-lmr-10">) </span>and <span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">y,z</span><span 
+class="rm-lmr-10">) </span>projections.</span></div><!--tex4ht:label?: x1-60092 -->
+                                                                                                     
+                                                                                                     
+   </div><hr class="endfigure" />
+   <hr class="figure" /><div class="figure" 
+>
+                                                                                                     
+                                                                                                     
+<a 
+ id="x1-60123"></a>
+                                                                                                     
+                                                                                                     
+<a 
+ id="x1-6010r1"></a>
+<div class="subfigure"><table><tr><td style="text-align:left"><img 
+src="../Pictures/Lorenz_sims_rho_280.png" alt="pict"  
+ width="528.93675pt"  />
+<div class="subfigcaption"><span 
+class="ec-lmr-8">(a) </span></div></td></tr></table></div> <a 
+ id="x1-6011r2"></a><div class="subfigure"><table><tr><td style="text-align:left"><img 
+src="../Pictures/Lorenz_chaos.png" alt="pict"  
+ width="528.93675pt"  />
+<div class="subfigcaption"><span 
+class="ec-lmr-8">(b) </span></div></td></tr></table></div>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;3: </span><span  
+class="content"> Simulating the Lorenz equations with <span 
+class="lmmi-10">&#x03C3; </span><span 
+class="rm-lmr-10">= 10</span>, <span 
+class="lmmi-10">&#x03B2; </span><span 
+class="rm-lmr-10">= 3 </span>and <span 
+class="lmmi-10">&#x03C1; </span><span 
+class="rm-lmr-10">= 28 </span>for two initial conditions that start very close
+together. Top: the black circles indicate the initial conditions. On the left is the full, three-dimensional realisation, whilst
+the rest of the plots in the row are the <span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">x,y</span><span 
+class="rm-lmr-10">)</span>, <span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">x,z</span><span 
+class="rm-lmr-10">) </span>and <span 
+class="rm-lmr-10">(</span><span 
+class="lmmi-10">y,z</span><span 
+class="rm-lmr-10">) </span>projections. Bottom: time series of <span 
+class="lmmi-10">x</span>, where we observe the
+two trajectories diverging.</span></div><!--tex4ht:label?: x1-60123 -->
+                                                                                                     
+                                                                                                     
+   </div><hr class="endfigure" />
+   <div id="disqus_thread"></div><script>var disqus_config = function () {this.page.url = thomaswoolley.co.uk;};(function() {var d = document, s = d.createElement('script');s.src = 'https://lecturing.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow"> comments powered by Disqus. </a></noscript> 
+</body></html> 
+
+                                                                                                     
+
+
