@@ -1,0 +1,64 @@
+\subsection{Answers}
+\subsubsection{}
+There are three steady states:
+\bb
+(0,0,0), \quad(\pm\sqrt{\rho-1},\pm\sqrt{\rho-1},\rho-1).
+\ee
+and we note that we need $\rho>1$ for the non-zero states to exist.
+\subsubsection{}
+The Jacobian is
+\bb
+J(x,y,z)=\left[ {\begin{array}{ccc}
+   -1 & 1 & 0 \\
+   r-z & -1 & -x \\
+   y  & x & -1 \\
+  \end{array} } \right].
+\ee
+\bb
+J(0,0,0)=\left[ {\begin{array}{ccc}
+   -1 & 1 & 0 \\
+   \rho & -1 & 0 \\
+   0 & 0 & -1 \\
+  \end{array} } \right],
+\ee
+thus, the eigenvalues satisfy the equation
+\bb
+(-1-\lambda)((-1-\lambda)^2-\rho)=0,\quad \implies\lambda_{-1}=-1,\quad\lambda_{\pm}=-1\pm\sqrt{\rho}.
+\ee
+Hence, $(0,0,0)$ is stable if $0<\rho<1$ and unstable if $\rho>1$.
+\subsubsection{}
+The simulations in \fig{Lorenz_stable} show that when $0<\rho<1$ the steady state always tends to the origin. However, for $\rho>1$, the trajectory tends to one of the non-zero steady states depending on the initial condition.
+
+
+
+\subsubsection{EXTENSION 1}
+The stability of the $(\pm\sqrt{\rho-1},\pm\sqrt{\rho-1},\rho-1)$ states are both the same. Here, we will illustrate how to extract the eigenvalues of $(\sqrt{\rho-1},\sqrt{\rho-1},\rho-1)$, the negative case is similar.
+\bb
+J(\sqrt{\rho-1},\sqrt{\rho-1},\rho-1)=\left[ {\begin{array}{ccc}
+   -1 & 1 & 0 \\
+   1 & -1 & -\sqrt{\rho-1} \\
+   \sqrt{\rho-1}  & \sqrt{\rho-1} & -1 \\
+  \end{array} } \right],
+\ee
+thus, the eigenvalues satisfy the equation
+\begin{align}
+0&=(-1-\lambda)((-1-\lambda)^2+(\rho-1))-((-1-\lambda)+(\rho-1)),\\
+&=\lambda^3+3\lambda^2+(1+\rho)\lambda+2(\rho-1),\\
+&=(\lambda+2)(\lambda^2+\lambda+\rho-1).\\
+\end{align}
+Hence,
+\bb
+\lambda_{-2}=-2,\quad\lambda_{\pm}=\frac{-1\pm\sqrt{5-4\rho}}{2},
+\ee
+and all eigenvalues have negative real part whenever $\rho>1$.
+
+\subsubsection{EXTENSION 2}
+In the case that  $\sigma=10$, $\rho=28$ and $\beta=3$ the eigenvalues relating to $(0,0,0)$ are
+\bb
+\lambda_1\approx-22.8,\quad\lambda_2\approx 11.8\quad\lambda_3=-3.
+\ee
+So the state is unstable. The non-zero steady states are $(\pm9,\pm9,27)$, the accompanying eigenvalues are
+\bb
+\lambda_1\approx-14.1,\quad\lambda_2\approx 0.04+10.7I\quad\lambda_3=0.04-10.7I.
+\ee
+Thus, these states are also unstable. Normally, when all steady steady states are unstable we would expect the trajectory to tend to infinity along one of the coordinates, creating a singularity. However, the trajectories in these simulations are always bounded, thus, they cannot escape to infinity. Equally, they can not oscillate around one of the critical point because otherwise it would be a centre and not unstable. Thus, something more complicated must be occurring. Namely, chaos!
