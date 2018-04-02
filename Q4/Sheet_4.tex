@@ -155,7 +155,7 @@ Show that \eqn{LV_solvable} can be directly integrated to show that the populati
 \bb
 \l\frac{e^{v}}{v}\r\l\frac{e^{u}}{u}\r^\alpha=e^{C},\label{LV_conserved}
 \ee
-where $C$ is a constant of integration that depends on the initial conditions. (Hint: rearrange $\rd u/\rd v$ such that one side contains all $u$ terms and the other contains all $v$ terms).
+where $C$ is a constant of integration that depends on the initial conditions, which you should specify explicitly. (Hint: rearrange $\rd u/\rd v$ such that one side contains all $u$ terms and the other contains all $v$ terms).
 \end{enumerate}
 \begin{Answ}
 \subsection{Answers}
@@ -275,7 +275,7 @@ Hint 1: by the symmetry of $N_1$ and $N_2$ in the equations whatever $N_1$ is do
 
 Hint 2: Compare the above equations to regular logistic curve $\dot{u}=ru(1-u/K)$. What happens if we increase or decrease $K$? Thus, what influence does increasing or decreasing $N_1$ have on $N_2$?
 
-\item Use $N_1=K_1u_1$, $N_2=K_2u_2$, $\tau=r_1t$ to non-dimensionalise the equations. Define $\rho=r_2/r_1$, $\alpha_{12}=b_{12}k_2/k_1$ and $\alpha_{21}=b_{21}k_1/k_2$. Rewrite the system parameters in terms of $\alpha_{12}$, $\alpha_{21}$ and $\rho$.
+\item Use $N_1=K_1u_1$, $N_2=K_2u_2$, $t=\tau/r_1$ to non-dimensionalise the equations. Define $\rho=r_2/r_1$, $\alpha_{12}=b_{12}K_2/K_1$ and $\alpha_{21}=b_{21}K_1/K_2$. Rewrite the system parameters in terms of $\alpha_{12}$, $\alpha_{21}$ and $\rho$.
 
 \item Show that the system has four steady states:
 \bb
@@ -304,8 +304,8 @@ Setting $\dot{u}_1=\dot{u}_2=0$ provides the given steady states. Note that we n
 The Jacobian is
 \bb
 J(u_1,u_2)=\left[ {\begin{array}{cc}
-   1-\frac{2u_1}{1+\alpha_{12}\alpha_{21}u_2} & \frac{a u_1^2}{\l 1+\alpha_{12}\alpha_{21}u_2\r^2} \\
-   \frac{\rho u_2^2}{\l 1+\alpha_{12}\alpha_{21}u_1\r^2} & \rho -\frac{2\rho u_2}{1+\alpha_{12}\alpha_{21}u_1} \\
+   1-\frac{2u_1}{1+\alpha_{12}u_2} & \frac{a u_1^2}{\l 1+\alpha_{12}u_2\r^2} \\
+   \frac{\rho u_2^2}{\l 1+\alpha_{21}u_1\r^2} & \rho -\frac{2\rho u_2}{1+\alpha_{21}u_1} \\
   \end{array} } \right],
 \ee
 and so
