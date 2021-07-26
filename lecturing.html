@@ -11,54 +11,7 @@
         
         <link rel="stylesheet" href="http://cdn2.editmysite.com/css/sites.css?buildTime=1234" type="text/css" /><link rel='stylesheet' type='text/css' href='http://cdn1.editmysite.com/editor/libraries/fancybox/fancybox.css?1234' />
         <link rel='stylesheet' type='text/css' href='files/main_style.css?1422996432' title='wsite-theme-css' />
-        <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
-        <link href='http://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
-        <style type='text/css'>
-            .wsite-elements.wsite-not-footer div.paragraph, .wsite-elements.wsite-not-footer p, .wsite-elements.wsite-not-footer .product-block .product-title, .wsite-elements.wsite-not-footer .product-description, .wsite-elements.wsite-not-footer .wsite-form-field label, .wsite-elements.wsite-not-footer .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
-            #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
-            .wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{}
-            .wsite-elements.wsite-not-footer h2, .wsite-elements.wsite-not-footer .product-long .product-title, .wsite-elements.wsite-not-footer .product-large .product-title, .wsite-elements.wsite-not-footer .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
-            #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
-            .wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title{}
-            #wsite-title {}
-            .wsite-menu-default a {}
-            .wsite-menu a {}
-            .wsite-image div, .wsite-caption {}
-            .galleryCaptionInnerText {}
-            .fancybox-title {}
-            .wslide-caption-text {}
-            .wsite-phone {}
-            .wsite-headline {color:#d5d5d5 !important;}
-            .wsite-headline-paragraph {font-size:14px !important;}
-            .wsite-button-inner {}
-            .wsite-not-footer blockquote, #wsite-com-product-tab blockquote {}
-            .wsite-footer blockquote {}
-            .blog-header h2 a {}
-            #wsite-content h2.wsite-product-title {}
-            .wsite-product .wsite-product-price a {}
-        </style>
         
-        <script><!--
-var STATIC_BASE = '//cdn1.editmysite.com/';
-var STYLE_PREFIX = 'wsite';
-            //-->
-        </script>
-        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
-        <script src='http://cdn2.editmysite.com/js/site/main.js?buildTime=1234'></script>
-        <script>_W.relinquish && _W.relinquish()</script>
-        <script type='text/javascript'><!--
-var IS_ARCHIVE=1;
-(function(jQuery){
-function initFlyouts(){initPublishedFlyoutMenus([{"id":"297418739414173150","title":"Home","url":"index.html","target":""},{"id":"717788780661935566","title":"Academia","url":"academia.html","target":""},{"id":"647907902180315503","title":"Outreach","url":"outreach.html","target":""},{"id":"190952460566322614","title":"Contact","url":"contact.html","target":""}],"717788780661935566","<li><a href=\"#\" data-membership-required=\"\" >{{title}}<\/a><\/li>",'active',false)}
-if (jQuery) {
-jQuery(document).ready(function() { jQuery(initFlyouts); });
-}else{
-if (Prototype.Browser.IE) window.onload = initFlyouts;
-else document.observe('dom:loaded', initFlyouts);
-}
-})(window._W && _W.jQuery)
-            //-->
-        </script>
     </head>
     <body class='no-header-page wsite-theme-light wsite-page-academia'>
         <div id="header-wrap">
@@ -71,6 +24,7 @@ else document.observe('dom:loaded', initFlyouts);
             </div><!-- end container -->
         </div><!-- end header-wrap -->  
     
+       
         <div id="logo-wrap">
             <div class="container">
                 <div id="logo"><span class='wsite-logo'><a href='index.html'><span id="wsite-title">Dr Thomas E. Woolley</span></a></span></div>
@@ -81,13 +35,22 @@ else document.observe('dom:loaded', initFlyouts);
             <div class="container">
                 <table>
                     <tr>
-                        <td class="nav"><ul class='wsite-menu-default'><li id='pg297418739414173150'><a href="index.html" data-membership-required="0" >Home</a></li><li id="pg717788780661935566"><a href="academia.html">Academia</a></li><li id='pg647907902180315503'><a href="outreach.html" data-membership-required="0" >Outreach</a></li><li><a href="lecturing.html" data-membership-required="0" >Teaching</a></li><li id='pg190952460566322614'><a href="contact.html" data-membership-required="0" >Contact</a></li></ul></td>
+                        <td class="nav">
+                            <ul class='wsite-menu-default'>
+                                <li id='pg297418739414173150'>
+                                <a href="index.html" data-membership-required="0" >Home</a></li>
+                                <li id="pg717788780661935566"><a href="academia.html">Academia</a></li>
+                                <li id='pg647907902180315503'><a href="outreach.html" data-membership-required="0" >Outreach</a></li>
+                                <li><a href="lecturing.html" data-membership-required="0" >Teaching</a></li>
+                                <li><a href="apps.html" data-membership-required="0" >Interactive apps</a></li>
+                                <li id='pg190952460566322614'><a href="contact.html" data-membership-required="0" >Contact</a></li>
+                        </ul></td>
                         <td class="search"></td>
                     </tr>
                 </table>
             </div><!-- end container -->
         </div><!-- end nav-wrap -->
-
+        
         <div id="banner-wrap">
             <div id="banner-wrap-inner">
                 <div class="container">
@@ -99,7 +62,7 @@ else document.observe('dom:loaded', initFlyouts);
                 </div><!-- end container -->
             </div>
         </div><!-- end banner-wrap -->
-
+        
         <div id="main-wrap">
             <div class="container">
                 <div id='wsite-content' class='wsite-elements wsite-not-footer'>
@@ -156,6 +119,8 @@ else document.observe('dom:loaded', initFlyouts);
                                                 
                                                 
                                                 
+                                                
+                                                
                                         </td>			</tr>
                                     </tbody>
                                 </table>
@@ -163,7 +128,62 @@ else document.observe('dom:loaded', initFlyouts);
                     
                     
                     
+                    <h2 class="wsite-content-title" style="text-align:left;">
+                        <span style='text-decoration:none; font-style:normal; font-weight:400; color:rgb(72, 56, 45); '>
+                            MA4309 Mathematical Biology<span style="text-decoration:none; font-style:normal; font-weight:400; color:rgb(72, 56, 45); "></span></span></h2>
                     
+                    <div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+                                <table class="wsite-multicol-table">
+                                    <tbody class="wsite-multicol-tbody">
+                                        <tr class="wsite-multicol-tr">
+                                            <td class="wsite-multicol-col" style="width:17.798353909465%; padding:0 15px;">
+                                                
+                                                
+                                                
+                                                <div><div class="wsite-image wsite-image-border-thin wsite-image-border-black" style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:left">
+                                                        <a>
+                                                            
+                                                        </a>
+                                                        <div style="display:block;font-size:90%"></div>
+                                                </div></div>
+                                                
+                                                
+                                                
+                                            </td>				<td class="wsite-multicol-col" style="width:82.201646090535%; padding:0 15px;">
+                                                
+                                                
+                                                <div class="paragraph" style="text-align:justify;">
+                                                    <span style="text-decoration:none; font-style:normal; font-weight:400; color:rgb(72, 56, 45); ">
+                                                        <ul style="">Originally based on the James D. Murray book, Volumes <a href="https://amzn.to/3iMnuqJ">1</a> and <a href="https://amzn.to/3BH37DX">2</a>. Filtered through the minds of Prof. Eamonn A. Gaffney, Prof. Ruth E. Baker and Prof. Philip Maini.
+                                                            <li style="">
+                                                                <span style="" "font-size:11.0pt;font-family:&quot;arial&quot;,&quot;sans-serif&quot;;="" mso-fareast-font-family:arial;mso-bidi-font-weight:bold"="">
+                                                            <a href="./Math_bio/Master.pdf">Lecture notes</a></span></li>
+                                                            <li style="">
+                                                                <span style="" "font-size:11.0pt;font-family:&quot;arial&quot;,&quot;sans-serif&quot;;="" mso-fareast-font-family:arial;mso-bidi-font-weight:bold"="">
+                                                            Sheet 1 <a href="./Math_bio/Sheet_1.pdf">Download</a> </span></li>
+                                                            <li style="">
+                                                                <span style="" "font-size:11.0pt;font-family:&quot;arial&quot;,&quot;sans-serif&quot;;="" mso-fareast-font-family:arial;mso-bidi-font-weight:bold"="">
+                                                            Sheet 2 <a href="./Math_bio/Sheet_2.pdf">Download</a> </span></li>
+                                                            <li style="">
+                                                                <span style="" "font-size:11.0pt;font-family:&quot;arial&quot;,&quot;sans-serif&quot;;="" mso-fareast-font-family:arial;mso-bidi-font-weight:bold"="">
+                                                            Sheet 3 <a href="./Math_bio/Sheet_3.pdf">Download</a> </span></li>
+                                                            <li style="">
+                                                                <span style="" "font-size:11.0pt;font-family:&quot;arial&quot;,&quot;sans-serif&quot;;="" mso-fareast-font-family:arial;mso-bidi-font-weight:bold"="">
+                                                            Sheet 4 <a href="./Math_bio/Sheet_4.pdf">Download</a> </span></li>
+                                                            <li style="">
+                                                                <span style="" "font-size:11.0pt;font-family:&quot;arial&quot;,&quot;sans-serif&quot;;="" mso-fareast-font-family:arial;mso-bidi-font-weight:bold"="">
+                                                            Sheet 5 <a href="./Math_bio/Sheet_5.pdf">Download</a> </span></li>
+                                                    </ul></span>
+                                                </div>
+                                                
+                                                
+                                                
+                                                
+                                                
+                                        </td>			</tr>
+                                    </tbody>
+                                </table>
+                    </div></div></div>
                     
                     
                 </div>
