@@ -1,0 +1,14 @@
+Send to WhereGoes v1.2.0, Firefox Manifest V3, unlisted/self-distribution.
+
+Function: A user deliberately selects “Trace link with WhereGoes” from a link’s context menu or submits an HTTP(S) URL in the toolbar popup. The extension opens https://wheregoes.com with that URL encoded in a fragment; a content script limited to WhereGoes fills its own trace form, removes the fragment from the address bar and attempts to submit the form. No unrelated webpage content is modified and no direct redirect checks are made by the extension.
+
+Permissions: menus for the explicit right-click action; activeTab to prefill the popup on demand; host permission only for https://wheregoes.com/* to interact with the trace form.
+
+Data transmitted: A submitted link may include browsing information and website content, hence browsingActivity and websiteContent are declared as required. WhereGoes is an independent third-party service. No developer analytics, logging or external scripts are used.
+
+Manual verification: Install temporarily; right-click an HTTP(S) hyperlink and select “Trace link with WhereGoes”. Test with an ordinary test URL or paste one into the toolbar popup. The site’s own form should receive and trace that URL. If WhereGoes modifies its form, a manual click may be necessary.
+
+This add-on has plain, unminified JavaScript/HTML/CSS/SVG, requires no build tools or third-party packages and is unaffiliated with WhereGoes.
+
+Privacy notice: https://thomasewoolley.github.io/firefox-addons/send-to-wheregoes/privacy.html
+Automatic update manifest: https://thomasewoolley.github.io/firefox-addons/send-to-wheregoes/updates.json
