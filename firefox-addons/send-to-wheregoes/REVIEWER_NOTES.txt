@@ -10,5 +10,7 @@ Manual verification: Install temporarily; right-click an HTTP(S) hyperlink and s
 
 This add-on has plain, unminified JavaScript/HTML/CSS/SVG, requires no build tools or third-party packages and is unaffiliated with WhereGoes.
 
-Privacy notice: https://thomasewoolley.github.io/firefox-addons/send-to-wheregoes/privacy.html
-Automatic update manifest: https://thomasewoolley.github.io/firefox-addons/send-to-wheregoes/updates.json
+Privacy notice: https://thomaswoolley.co.uk/firefox-addons/send-to-wheregoes/privacy.html
+Automatic update manifest: https://thomaswoolley.co.uk/firefox-addons/send-to-wheregoes/updates.json
+
+Submission archive: send-to-wheregoes-v1.2.0-MOZILLA-SUBMISSION.zip (the ZIP manifest uses the custom-domain update_url; older unsigned ZIP archives may not).
