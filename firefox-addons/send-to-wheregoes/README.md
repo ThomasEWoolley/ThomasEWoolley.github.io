@@ -7,8 +7,8 @@ This directory is dedicated to the **Send to WhereGoes** Firefox extension. It i
 - Version: 1.2.0
 - Add-on ID: `send-to-wheregoes@thomasewoolley.github.io`
 - Distribution: Mozilla Add-on Developer Hub, unlisted/self-distribution
-- Update manifest: https://thomasewoolley.github.io/firefox-addons/send-to-wheregoes/updates.json
-- Privacy notice: https://thomasewoolley.github.io/firefox-addons/send-to-wheregoes/privacy.html
+- Update manifest: https://thomaswoolley.co.uk/firefox-addons/send-to-wheregoes/updates.json
+- Privacy notice: https://thomaswoolley.co.uk/firefox-addons/send-to-wheregoes/privacy.html
 
 The initial update manifest deliberately contains an empty `updates` array. **This directory does not contain a signed or installable extension.** Mozilla signing is required for permanent Firefox installation.
 
@@ -34,7 +34,7 @@ Example `updates.json` for an eventual v1.2.1:
       "updates": [
         {
           "version": "1.2.1",
-          "update_link": "https://thomasewoolley.github.io/firefox-addons/send-to-wheregoes/send-to-wheregoes-1.2.1.xpi"
+          "update_link": "https://thomaswoolley.co.uk/firefox-addons/send-to-wheregoes/send-to-wheregoes-1.2.1.xpi"
         }
       ]
     }
@@ -51,3 +51,11 @@ The add-on performs a user-triggered hand-off to WhereGoes. It does not intercep
 ## Maintenance caution
 
 This folder lives within the existing GitHub Pages site because the linked GitHub integration supports writing to an existing repository but not creating a new repository. Do not modify the website root files, `CNAME`, publishing configuration or unrelated pages to maintain this add-on.
+
+## Pre-submission verification
+
+The Mozilla submission package must contain `manifest.json` at the ZIP root and must point `browser_specific_settings.gecko.update_url` to the custom domain URL above. The add-on ID remains `send-to-wheregoes@thomasewoolley.github.io` and must match the sole key in `updates.json`.
+
+Opening a GitHub repository link confirms the files exist in GitHub, **not** that GitHub Pages is serving their public HTTPS URLs. Before submitting, open the two URLs above in Firefox and check that `updates.json` displays JSON and `privacy.html` displays the notice. If either fails, the update mechanism is not yet verified.
+
+The initial Firefox package requires Mozilla signing. No signed `.xpi` or live-update release has been published in this folder.
