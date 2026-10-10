@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#07111f">
+    <title>Miley's 18th Birthday Puzzle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #07111f;
+            --panel: rgba(15, 23, 42, 0.84);
+            --panel-strong: rgba(15, 23, 42, 0.96);
+            --line: rgba(148, 163, 184, 0.22);
+            --text: #f8fafc;
+            --muted: #94a3b8;
+            --cyan: #67e8f9;
+            --amber: #fbbf24;
+            --rose: #fb7185;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            min-height: 100%;
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type="number"] {
+            appearance: textfield;
+            -moz-appearance: textfield;
+        }
+
+        .page-a-bg {
+            background:
+                radial-gradient(circle at 12% 18%, rgba(34, 211, 238, 0.13), transparent 30rem),
+                radial-gradient(circle at 86% 78%, rgba(251, 191, 36, 0.10), transparent 26rem),
+                linear-gradient(145deg, #07111f 0%, #0b1628 48%, #07111f 100%);
+        }
+
+        .glass-panel {
+            background: linear-gradient(160deg, rgba(15, 23, 42, 0.90), rgba(15, 23, 42, 0.72));
+            border: 1px solid rgba(148, 163, 184, 0.18);
+            box-shadow: 0 28px 80px rgba(0, 0, 0, 0.38);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .answer-card {
+            background: rgba(15, 23, 42, 0.64);
+            border: 1px solid var(--line);
+            transition: border-color 180ms ease, background 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+        }
+
+        .answer-card:focus-within {
+            border-color: rgba(103, 232, 249, 0.72);
+            box-shadow: 0 0 0 3px rgba(103, 232, 249, 0.10);
+            transform: translateY(-1px);
+        }
+
+        .answer-card.is-correct {
+            border-color: rgba(103, 232, 249, 0.74);
+            background: rgba(8, 47, 73, 0.44);
+        }
+
+        .answer-card.is-wrong {
+            border-color: rgba(251, 191, 36, 0.68);
+            background: rgba(69, 26, 3, 0.26);
+        }
+
+        .answer-input {
+            width: 100%;
+            min-width: 0;
+            background: transparent;
+            border: 0;
+            outline: 0;
+            color: #ffffff;
+            font-size: 1.15rem;
+            font-weight: 650;
+            letter-spacing: 0.02em;
+        }
+
+        .answer-input::placeholder {
+            color: #475569;
+            font-weight: 500;
+        }
+
+        .status-icon {
+            width: 2rem;
+            height: 2rem;
+            display: grid;
+            place-items: center;
+            flex: 0 0 auto;
+            opacity: 0;
+            transform: scale(0.72);
+            transition: opacity 140ms ease, transform 140ms ease;
+        }
+
+        .status-icon.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .progress-fill {
+            width: 0%;
+            background: linear-gradient(90deg, #22d3ee, #60a5fa, #a78bfa);
+            box-shadow: 0 0 18px rgba(34, 211, 238, 0.26);
+            transition: width 260ms cubic-bezier(.2,.8,.2,1);
+        }
+
+        #page-b {
+            background:
+                radial-gradient(circle at 50% 35%, rgba(30, 41, 59, 0.36), transparent 38rem),
+                #020617;
+        }
+
+        #fireworks-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            cursor: crosshair;
+        }
+
+        .celebration-vignette {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at center, transparent 30%, rgba(2, 6, 23, 0.14) 62%, rgba(2, 6, 23, 0.66) 100%),
+                linear-gradient(to bottom, rgba(2, 6, 23, 0.15), transparent 35%, rgba(2, 6, 23, 0.28));
+        }
+
+        .birthday-title {
+            color: #fff7d6;
+            text-shadow:
+                0 0 12px rgba(253, 230, 138, 0.88),
+                0 0 34px rgba(251, 191, 36, 0.52),
+                0 0 72px rgba(96, 165, 250, 0.26);
+            animation: titleGlow 3.2s ease-in-out infinite;
+        }
+
+        .glitter-line {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glitter-line::after {
+            content: "";
+            position: absolute;
+            inset: -120% -30%;
+            background: linear-gradient(110deg, transparent 42%, rgba(255,255,255,0.76) 50%, transparent 58%);
+            transform: translateX(-70%);
+            animation: sweep 4.6s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { transform: scale(1); filter: brightness(1); }
+            50% { transform: scale(1.015); filter: brightness(1.13); }
+        }
+
+        @keyframes sweep {
+            0%, 18% { transform: translateX(-72%); opacity: 0; }
+            32% { opacity: 0.72; }
+            58%, 100% { transform: translateX(72%); opacity: 0; }
+        }
+
+        .fade-in {
+            animation: fadeIn 900ms ease both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behaviour: auto !important;
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- PAGE A: ANSWER LOCK -->
+    <main id="page-a" class="page-a-bg min-h-screen px-4 py-8 sm:px-6 sm:py-12 flex items-center justify-center">
+        <section class="glass-panel w-full max-w-5xl rounded-3xl p-5 sm:p-8 lg:p-10" aria-labelledby="page-a-title">
+            <header class="mb-7 sm:mb-9">
+                <div class="flex flex-wrap items-center justify-between gap-4 mb-5">
+                    <div class="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/5 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-cyan-200">
+                        Final answer lock
+                    </div>
+                    <div id="progress-text" class="text-sm font-semibold text-slate-300" aria-live="polite">0 / 9 correct</div>
+                </div>
+
+                <h1 id="page-a-title" class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">Enter your nine answers</h1>
+                <p class="mt-3 max-w-2xl text-sm sm:text-base leading-7 text-slate-400">Each answer is checked as you type. Get all nine right to unlock the final page.</p>
+
+                <div class="mt-6 h-2.5 overflow-hidden rounded-full border border-slate-700/80 bg-slate-950/70" aria-hidden="true">
+                    <div id="progress-fill" class="progress-fill h-full rounded-full"></div>
+                </div>
+            </header>
+
+            <form id="answer-form" class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3" autocomplete="off" novalidate>
+                <div class="answer-card rounded-2xl p-4" data-answer-card="0">
+                    <label for="answer-1" class="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-400">Answer 1</label>
+                    <div class="flex items-center gap-3">
+                        <input id="answer-1" class="answer-input" type="number" min="0" step="1" inputmode="numeric" placeholder="Enter value" aria-describedby="status-1">
+                        <span id="status-1" class="status-icon" aria-live="polite"></span>
+                    </div>
+                </div>
+
+                <div class="answer-card rounded-2xl p-4" data-answer-card="1">
+                    <label for="answer-2" class="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-400">Answer 2</label>
+                    <div class="flex items-center gap-3">
+                        <input id="answer-2" class="answer-input" type="number" min="0" step="1" inputmode="numeric" placeholder="Enter value" aria-describedby="status-2">
+                        <span id="status-2" class="status-icon" aria-live="polite"></span>
+                    </div>
+                </div>
+
+                <div class="answer-card rounded-2xl p-4" data-answer-card="2">
+                    <label for="answer-3" class="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-400">Answer 3</label>
+                    <div class="flex items-center gap-3">
+                        <input id="answer-3" class="answer-input" type="number" min="0" step="1" inputmode="numeric" placeholder="Enter value" aria-describedby="status-3">
+                        <span id="status-3" class="status-icon" aria-live="polite"></span>
+                    </div>
+                </div>
+
+                <div class="answer-card rounded-2xl p-4" data-answer-card="3">
+                    <label for="answer-4" class="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-400">Answer 4</label>
+                    <div class="flex items-center gap-3">
+                        <input id="answer-4" class="answer-input" type="number" min="0" step="1" inputmode="numeric" placeholder="Enter value" aria-describedby="status-4">
+                        <span id="status-4" class="status-icon" aria-live="polite"></span>
+                    </div>
+                </div>
+
+                <div class="answer-card rounded-2xl p-4" data-answer-card="4">
+                    <label for="answer-5" class="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-400">Answer 5</label>
+                    <div class="flex items-center gap-3">
+                        <input id="answer-5" class="answer-input" type="number" min="0" step="1" inputmode="numeric" placeholder="Enter value" aria-describedby="status-5">
+                        <span id="status-5" class="status-icon" aria-live="polite"></span>
+                    </div>
+                </div>
+
+                <div class="answer-card rounded-2xl p-4" data-answer-card="5">
+                    <label for="answer-6" class="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-400">Answer 6</label>
+                    <div class="flex items-center gap-3">
+                        <input id="answer-6" class="answer-input" type="number" min="0" step="1" inputmode="numeric" placeholder="Enter value" aria-describedby="status-6">
+                        <span id="status-6" class="status-icon" aria-live="polite"></span>
+                    </div>
+                </div>
+
+                <div class="answer-card rounded-2xl p-4" data-answer-card="6">
+                    <label for="answer-7" class="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-400">Answer 7</label>
+                    <div class="flex items-center gap-3">
+                        <input id="answer-7" class="answer-input" type="number" min="0" step="1" inputmode="numeric" placeholder="Enter value" aria-describedby="status-7">
+                        <span id="status-7" class="status-icon" aria-live="polite"></span>
+                    </div>
+                </div>
+
+                <div class="answer-card rounded-2xl p-4" data-answer-card="7">
+                    <label for="answer-8" class="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-400">Answer 8</label>
+                    <div class="flex items-center gap-3">
+                        <input id="answer-8" class="answer-input" type="number" min="0" step="1" inputmode="numeric" placeholder="Enter value" aria-describedby="status-8">
+                        <span id="status-8" class="status-icon" aria-live="polite"></span>
+                    </div>
+                </div>
+
+                <div class="answer-card rounded-2xl p-4" data-answer-card="8">
+                    <label for="answer-9" class="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-slate-400">Answer 9</label>
+                    <div class="flex items-center gap-3">
+                        <input id="answer-9" class="answer-input" type="number" min="0" step="1" inputmode="numeric" placeholder="Enter value" aria-describedby="status-9">
+                        <span id="status-9" class="status-icon" aria-live="polite"></span>
+                    </div>
+                </div>
+            </form>
+
+            <p class="mt-6 text-center text-xs sm:text-sm text-slate-500">The celebration unlocks automatically when every answer is correct.</p>
+        </section>
+    </main>
+
+    <!-- PAGE B: BIRTHDAY FIREWORKS -->
+    <section id="page-b" class="fixed inset-0 hidden overflow-hidden" aria-labelledby="birthday-title">
+        <canvas id="fireworks-canvas" aria-hidden="true"></canvas>
+        <div class="celebration-vignette"></div>
+
+        <div class="pointer-events-none relative z-10 flex h-full items-center justify-center px-5 text-center">
+            <div class="fade-in max-w-6xl">
+                <div class="mx-auto mb-5 inline-flex items-center gap-2 rounded-full border border-amber-300/25 bg-slate-950/45 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-amber-200 backdrop-blur-md">
+                    All nine solved
+                </div>
+                <div class="glitter-line rounded-3xl px-3 py-2">
+                    <h1 id="birthday-title" class="birthday-title text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight leading-[0.95]">
+                        Happy 18th Birthday, Miley
+                    </h1>
+                </div>
+                <p class="mt-7 text-sm sm:text-base font-medium tracking-wide text-slate-300/90">Click or tap anywhere for another firework.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        (function () {
+            "use strict";
+
+            /* ------------------------------------------------------------------
+               PAGE A: ANSWER VALIDATION
+               ------------------------------------------------------------------ */
+
+            const expectedAnswers = [100, 37710, 15, 30, 18, 18, 17, 3, 26];
+            const inputs = Array.from(document.querySelectorAll(".answer-input"));
+            const cards = Array.from(document.querySelectorAll(".answer-card"));
+            const progressText = document.getElementById("progress-text");
+            const progressFill = document.getElementById("progress-fill");
+            const pageA = document.getElementById("page-a");
+            const pageB = document.getElementById("page-b");
+            let unlocked = false;
+
+            const tickIcon = '<svg viewBox="0 0 24 24" class="h-8 w-8" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="rgba(34,211,238,.14)" stroke="#67e8f9" stroke-width="1.8"></circle><path d="M7.6 12.2l2.8 2.8 6-6.3" stroke="#cffafe" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
+            const crossIcon = '<svg viewBox="0 0 24 24" class="h-8 w-8" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="rgba(251,191,36,.12)" stroke="#fbbf24" stroke-width="1.8"></circle><path d="M8.6 8.6l6.8 6.8M15.4 8.6l-6.8 6.8" stroke="#fde68a" stroke-width="2.2" stroke-linecap="round"></path></svg>';
+
+            function setStatus(index, state) {
+                const card = cards[index];
+                const status = document.getElementById("status-" + (index + 1));
+
+                card.classList.remove("is-correct", "is-wrong");
+                status.classList.remove("visible");
+                status.innerHTML = "";
+                status.removeAttribute("aria-label");
+
+                if (state === "correct") {
+                    card.classList.add("is-correct");
+                    status.innerHTML = tickIcon;
+                    status.classList.add("visible");
+                    status.setAttribute("aria-label", "Correct");
+                } else if (state === "wrong") {
+                    card.classList.add("is-wrong");
+                    status.innerHTML = crossIcon;
+                    status.classList.add("visible");
+                    status.setAttribute("aria-label", "Incorrect");
+                }
+            }
+
+            function validateAll() {
+                let correctCount = 0;
+
+                inputs.forEach(function (input, index) {
+                    const rawValue = input.value.trim();
+
+                    if (rawValue === "") {
+                        setStatus(index, "empty");
+                        return;
+                    }
+
+                    const value = Number(rawValue);
+                    const isCorrect = Number.isFinite(value) && value === expectedAnswers[index];
+
+                    if (isCorrect) {
+                        correctCount += 1;
+                        setStatus(index, "correct");
+                    } else {
+                        setStatus(index, "wrong");
+                    }
+                });
+
+                progressText.textContent = correctCount + " / 9 correct";
+                progressFill.style.width = ((correctCount / expectedAnswers.length) * 100) + "%";
+
+                if (correctCount === expectedAnswers.length && !unlocked) {
+                    unlocked = true;
+                    progressText.textContent = "9 / 9 correct · unlocked";
+                    window.setTimeout(showCelebration, 650);
+                }
+            }
+
+            inputs.forEach(function (input) {
+                input.addEventListener("keydown", function (event) {
+                    if (["e", "E", "+", "-", "."].includes(event.key)) {
+                        event.preventDefault();
+                    }
+                });
+
+                input.addEventListener("input", validateAll);
+            });
+
+            document.getElementById("answer-form").addEventListener("submit", function (event) {
+                event.preventDefault();
+            });
+
+            function showCelebration() {
+                pageA.classList.add("hidden");
+                pageB.classList.remove("hidden");
+                document.body.style.overflow = "hidden";
+                resizeCanvas();
+                initStars();
+                startFireworks();
+                grandFinale();
+            }
+
+            /* ------------------------------------------------------------------
+               PAGE B: FIREWORKS
+               Adapted into a lighter full-screen particle system.
+               ------------------------------------------------------------------ */
+
+            const canvas = document.getElementById("fireworks-canvas");
+            const ctx = canvas.getContext("2d");
+            let width = 0;
+            let height = 0;
+            let dpr = 1;
+            let animationStarted = false;
+            let lastLaunch = 0;
+            let stars = [];
+            let rockets = [];
+            let particles = [];
+
+            const palettes = [
+                ["#fde68a", "#fbbf24", "#ffffff", "#fef3c7"],
+                ["#67e8f9", "#38bdf8", "#ffffff", "#bae6fd"],
+                ["#c4b5fd", "#8b5cf6", "#ffffff", "#ddd6fe"],
+                ["#93c5fd", "#2563eb", "#ffffff", "#dbeafe"],
+                ["#f9a8d4", "#e879f9", "#ffffff", "#fae8ff"]
+            ];
+
+            function resizeCanvas() {
+                dpr = Math.min(window.devicePixelRatio || 1, 2);
+                width = window.innerWidth;
+                height = window.innerHeight;
+                canvas.width = Math.floor(width * dpr);
+                canvas.height = Math.floor(height * dpr);
+                canvas.style.width = width + "px";
+                canvas.style.height = height + "px";
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            }
+
+            function initStars() {
+                stars = [];
+                const count = Math.max(65, Math.floor((width * height) / 15000));
+
+                for (let i = 0; i < count; i += 1) {
+                    stars.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        size: Math.random() * 1.35 + 0.35,
+                        phase: Math.random() * Math.PI * 2,
+                        speed: Math.random() * 0.018 + 0.006
+                    });
+                }
+            }
+
+            class Particle {
+                constructor(x, y, colour, angle, speed, size, decay) {
+                    this.x = x;
+                    this.y = y;
+                    this.prevX = x;
+                    this.prevY = y;
+                    this.colour = colour;
+                    this.vx = Math.cos(angle) * speed;
+                    this.vy = Math.sin(angle) * speed;
+                    this.gravity = 0.065 + Math.random() * 0.045;
+                    this.friction = 0.985;
+                    this.alpha = 1;
+                    this.decay = decay || (0.010 + Math.random() * 0.010);
+                    this.size = size || (1.0 + Math.random() * 1.7);
+                    this.twinkle = Math.random() > 0.35;
+                    this.twinkleOffset = Math.random() * Math.PI * 2;
+                }
+
+                update() {
+                    this.prevX = this.x;
+                    this.prevY = this.y;
+                    this.vx *= this.friction;
+                    this.vy *= this.friction;
+                    this.vy += this.gravity;
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    this.alpha -= this.decay;
+                }
+
+                draw(time) {
+                    const shimmer = this.twinkle ? 0.66 + 0.34 * Math.sin(time * 0.018 + this.twinkleOffset) : 1;
+                    const alpha = Math.max(0, this.alpha * shimmer);
+
+                    ctx.save();
+                    ctx.globalCompositeOperation = "lighter";
+                    ctx.globalAlpha = alpha;
+                    ctx.strokeStyle = this.colour;
+                    ctx.lineWidth = this.size;
+                    ctx.beginPath();
+                    ctx.moveTo(this.prevX, this.prevY);
+                    ctx.lineTo(this.x, this.y);
+                    ctx.stroke();
+
+                    ctx.globalAlpha = alpha * 0.38;
+                    ctx.fillStyle = this.colour;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size * 2.2, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.restore();
+                }
+            }
+
+            class Rocket {
+                constructor(startX, targetX, targetY, palette) {
+                    this.x = startX;
+                    this.y = height + 12;
+                    this.targetX = targetX;
+                    this.targetY = targetY;
+                    this.palette = palette;
+                    const dx = targetX - this.x;
+                    const dy = targetY - this.y;
+                    const distance = Math.max(1, Math.hypot(dx, dy));
+                    const speed = 9.5 + Math.random() * 2.5;
+                    this.vx = (dx / distance) * speed;
+                    this.vy = (dy / distance) * speed;
+                    this.trail = [];
+                    this.exploded = false;
+                }
+
+                update() {
+                    this.trail.push({ x: this.x, y: this.y });
+                    if (this.trail.length > 9) this.trail.shift();
+
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    if (this.y <= this.targetY || Math.hypot(this.targetX - this.x, this.targetY - this.y) < 14) {
+                        this.explode();
+                    }
+                }
+
+                draw() {
+                    ctx.save();
+                    ctx.globalCompositeOperation = "lighter";
+                    ctx.strokeStyle = "#fef3c7";
+                    ctx.lineWidth = 1.6;
+                    ctx.beginPath();
+                    ctx.moveTo(this.x, this.y);
+
+                    for (let i = this.trail.length - 1; i >= 0; i -= 1) {
+                        ctx.lineTo(this.trail[i].x, this.trail[i].y);
+                    }
+
+                    ctx.stroke();
+                    ctx.fillStyle = "#ffffff";
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, 2.2, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.restore();
+                }
+
+                explode() {
+                    if (this.exploded) return;
+                    this.exploded = true;
+                    createBurst(this.x, this.y, this.palette);
+                }
+            }
+
+            function createBurst(x, y, palette) {
+                const count = 86 + Math.floor(Math.random() * 44);
+                const ringBias = Math.random() < 0.34;
+
+                for (let i = 0; i < count; i += 1) {
+                    const colour = palette[Math.floor(Math.random() * palette.length)];
+                    const angle = ringBias ? (Math.PI * 2 * i / count) + (Math.random() - 0.5) * 0.055 : Math.random() * Math.PI * 2;
+                    const speed = ringBias ? 4.2 + Math.random() * 2.8 : 1.6 + Math.random() * 6.4;
+                    particles.push(new Particle(x, y, colour, angle, speed));
+                }
+
+                const glitterCount = 24;
+                for (let j = 0; j < glitterCount; j += 1) {
+                    const glitterAngle = Math.random() * Math.PI * 2;
+                    const glitterSpeed = 0.7 + Math.random() * 3.5;
+                    particles.push(new Particle(x, y, "#ffffff", glitterAngle, glitterSpeed, 0.8, 0.018 + Math.random() * 0.012));
+                }
+            }
+
+            function launchFirework(targetX, targetY) {
+                const palette = palettes[Math.floor(Math.random() * palettes.length)];
+                const startX = Math.max(40, Math.min(width - 40, targetX + (Math.random() * 120 - 60)));
+                rockets.push(new Rocket(startX, targetX, targetY, palette));
+            }
+
+            function launchRandom() {
+                const x = width * (0.12 + Math.random() * 0.76);
+                const y = height * (0.11 + Math.random() * 0.43);
+                launchFirework(x, y);
+            }
+
+            function grandFinale() {
+                for (let i = 0; i < 10; i += 1) {
+                    window.setTimeout(function () {
+                        if (!pageB.classList.contains("hidden")) launchRandom();
+                    }, i * 150);
+                }
+            }
+
+            function drawStars(time) {
+                ctx.save();
+                ctx.fillStyle = "#ffffff";
+
+                stars.forEach(function (star) {
+                    const alpha = 0.22 + 0.72 * (0.5 + 0.5 * Math.sin(time * star.speed + star.phase));
+                    ctx.globalAlpha = alpha;
+                    ctx.beginPath();
+                    ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+                    ctx.fill();
+                });
+
+                ctx.restore();
+            }
+
+            function render(time) {
+                if (!animationStarted) return;
+                window.requestAnimationFrame(render);
+
+                ctx.globalCompositeOperation = "source-over";
+                ctx.fillStyle = "rgba(2, 6, 23, 0.22)";
+                ctx.fillRect(0, 0, width, height);
+
+                drawStars(time);
+
+                if (time - lastLaunch > 540) {
+                    launchRandom();
+                    lastLaunch = time;
+                }
+
+                for (let i = rockets.length - 1; i >= 0; i -= 1) {
+                    rockets[i].update();
+                    rockets[i].draw();
+                    if (rockets[i].exploded) rockets.splice(i, 1);
+                }
+
+                for (let i = particles.length - 1; i >= 0; i -= 1) {
+                    particles[i].update();
+                    particles[i].draw(time);
+                    if (particles[i].alpha <= 0) particles.splice(i, 1);
+                }
+            }
+
+            function startFireworks() {
+                if (animationStarted) return;
+                animationStarted = true;
+                lastLaunch = performance.now() - 600;
+                window.requestAnimationFrame(render);
+            }
+
+            canvas.addEventListener("pointerdown", function (event) {
+                if (pageB.classList.contains("hidden")) return;
+                const rect = canvas.getBoundingClientRect();
+                const x = event.clientX - rect.left;
+                const y = Math.max(height * 0.08, Math.min(height * 0.68, event.clientY - rect.top));
+                launchFirework(x, y);
+            });
+
+            window.addEventListener("resize", function () {
+                if (pageB.classList.contains("hidden")) return;
+                resizeCanvas();
+                initStars();
+            });
+
+            validateAll();
+        }());
+    </script>
+</body>
+</html>
