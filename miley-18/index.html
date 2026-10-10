@@ -188,13 +188,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 1.5rem;
+            padding: clamp(2.5rem, 6vh, 5rem) clamp(1.5rem, 4vw, 4rem);
             text-align: center;
             pointer-events: none;
         }
 
         .birthday-title {
-            max-width: 96vw;
+            max-width: 90vw;
             margin: 0 auto;
             color: #fff7d6;
             font-size: clamp(4.5rem, 11vw, 11rem);
@@ -211,6 +211,23 @@
         .glitter-line {
             position: relative;
             overflow: hidden;
+            padding: clamp(1.75rem, 3.5vh, 3.25rem) clamp(0.75rem, 2vw, 2rem);
+        }
+
+        .celebration-hint {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: clamp(1.75rem, 4vh, 3.5rem);
+            z-index: 10;
+            margin: 0;
+            padding: 0 1.5rem;
+            text-align: center;
+            color: rgba(203, 213, 225, 0.9);
+            font-size: clamp(0.85rem, 1.4vw, 1rem);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            pointer-events: none;
         }
 
         .glitter-line::after {
@@ -362,7 +379,7 @@
             </div>
         </div>
 
-        <p class="fade-in pointer-events-none absolute bottom-7 left-0 right-0 z-10 px-5 text-center text-sm sm:text-base font-medium tracking-wide text-slate-300/90">
+        <p class="celebration-hint fade-in">
             Click or tap anywhere for another firework.
         </p>
     </section>
@@ -579,7 +596,7 @@
             class Rocket {
                 constructor(startX, targetX, targetY, palette) {
                     this.x = startX;
-                    this.y = height + 12;
+                    this.y = height - Math.max(24, height * 0.025);
                     this.targetX = targetX;
                     this.targetY = targetY;
                     this.palette = palette;
@@ -659,7 +676,7 @@
 
             function launchRandom() {
                 const x = width * (0.12 + Math.random() * 0.76);
-                const y = height * (0.11 + Math.random() * 0.43);
+                const y = height * (0.16 + Math.random() * 0.36);
                 launchFirework(x, y);
             }
 
