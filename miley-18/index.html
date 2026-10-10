@@ -24,6 +24,31 @@
             box-sizing: border-box;
         }
 
+        /* Critical visibility rules do not depend on Tailwind loading. */
+        [hidden],
+        .hidden {
+            display: none !important;
+        }
+
+        #page-a {
+            position: relative;
+            z-index: 1;
+        }
+
+        #page-b {
+            z-index: 50;
+        }
+
+        #page-b[hidden] {
+            display: none !important;
+            pointer-events: none !important;
+        }
+
+        #page-b:not([hidden]) {
+            display: block;
+            pointer-events: auto;
+        }
+
         html,
         body {
             min-height: 100%;
@@ -95,6 +120,10 @@
             font-size: 1.15rem;
             font-weight: 650;
             letter-spacing: 0.02em;
+            pointer-events: auto;
+            user-select: text;
+            -webkit-user-select: text;
+            caret-color: #ffffff;
         }
 
         .answer-input::placeholder {
@@ -302,7 +331,7 @@
     </main>
 
     <!-- PAGE B: BIRTHDAY FIREWORKS -->
-    <section id="page-b" class="fixed inset-0 hidden overflow-hidden" aria-labelledby="birthday-title">
+    <section id="page-b" class="fixed inset-0 overflow-hidden" hidden aria-labelledby="birthday-title">
         <canvas id="fireworks-canvas" aria-hidden="true"></canvas>
         <div class="celebration-vignette"></div>
 
@@ -336,6 +365,12 @@
             const progressFill = document.getElementById("progress-fill");
             const pageA = document.getElementById("page-a");
             const pageB = document.getElementById("page-b");
+
+            // Always begin on the answer page. The celebration remains completely
+            // hidden and non-interactive until all nine answers are correct.
+            pageA.hidden = false;
+            pageB.hidden = true;
+
             let unlocked = false;
 
             const tickIcon = '<svg viewBox="0 0 24 24" class="h-8 w-8" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="rgba(34,211,238,.14)" stroke="#67e8f9" stroke-width="1.8"></circle><path d="M7.6 12.2l2.8 2.8 6-6.3" stroke="#cffafe" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
@@ -396,6 +431,9 @@
             }
 
             inputs.forEach(function (input) {
+                input.disabled = false;
+                input.readOnly = false;
+
                 input.addEventListener("keydown", function (event) {
                     if (["e", "E", "+", "-", "."].includes(event.key)) {
                         event.preventDefault();
@@ -410,8 +448,8 @@
             });
 
             function showCelebration() {
-                pageA.classList.add("hidden");
-                pageB.classList.remove("hidden");
+                pageA.hidden = true;
+                pageB.hidden = false;
                 document.body.style.overflow = "hidden";
                 resizeCanvas();
                 initStars();
@@ -611,7 +649,7 @@
             function grandFinale() {
                 for (let i = 0; i < 10; i += 1) {
                     window.setTimeout(function () {
-                        if (!pageB.classList.contains("hidden")) launchRandom();
+                        if (!pageB.hidden) launchRandom();
                     }, i * 150);
                 }
             }
@@ -667,7 +705,7 @@
             }
 
             canvas.addEventListener("pointerdown", function (event) {
-                if (pageB.classList.contains("hidden")) return;
+                if (pageB.hidden) return;
                 const rect = canvas.getBoundingClientRect();
                 const x = event.clientX - rect.left;
                 const y = Math.max(height * 0.08, Math.min(height * 0.68, event.clientY - rect.top));
@@ -675,7 +713,7 @@
             });
 
             window.addEventListener("resize", function () {
-                if (pageB.classList.contains("hidden")) return;
+                if (pageB.hidden) return;
                 resizeCanvas();
                 initStars();
             });
