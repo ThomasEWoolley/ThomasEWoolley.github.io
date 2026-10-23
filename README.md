@@ -31,3 +31,16 @@ It checks internal links and fragments, referenced local assets, LaTeX image pat
 - `Pictures/` contains figures used by the teaching material.
 - `files/Master_2.pdf` contains the lecture notes.
 - `scripts/check_site.py` validates the static site.
+
+## Updating the outreach archive
+
+Edit `data/outreach-media.json` to add or amend a YouTube video or Instagram post. Use an ISO publication date (`YYYY-MM-DD`) and a unique platform/ID pair. Instagram entries can also include a short description and `kind` (`Reel` or `Post`).
+
+Regenerate the static page and check all local links:
+
+```sh
+python scripts/render_outreach_media.py
+python scripts/check_site.py
+```
+
+The renderer sorts entries newest first, groups them by year, and preserves the rest of the outreach page. The recorded dates are platform publication dates, which can differ from the dates of talks or events.
