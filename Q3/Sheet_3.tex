@@ -51,7 +51,6 @@
 \newcommand{\eqnto}[2]{equations \eqref{#1}-\eqref{#2}}
 %\usepackage{authblk}
 \usepackage{url}
-\usepackage{soul}
 \newcommand{\eg}{\emph{e.g.} }
 \newcommand{\bn}{\bm{n}}
 \newcommand{\bu}{\bm{u}}
@@ -62,7 +61,6 @@
 \newcommand{\Subsubsection}[1]{\subsubsection{#1}\label{#1}}
 \newcommand{\Appendix}[1]{\appendix{#1}\label{#1}}
 \usepackage[margin=1.5cm,centering]{geometry}
-\usepackage[geometry]{ifsym}
 \makeatletter
 \newcommand\restr[2]{{% we make the whole thing an ordinary symbol
   \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
@@ -76,7 +74,6 @@
 \urlstyle{leo}
 \usepackage{multirow}
 \usepackage{blkarray}
-\usepackage{soul}
 \usepackage{framed}
 \usepackage{color}
 \usepackage{setspace}
@@ -113,7 +110,7 @@
     numberstyle={\tiny \color{black}},% size of the numbers
     numbersep=9pt, % this defines how far the numbers are from the text
     emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
-    %emph=[2]{word1,word2}, emphstyle=[2]{style},    
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},
 }
 
 
@@ -125,7 +122,7 @@
 Enzymes are biological molecules (typically proteins) that significantly speed up the rate of virtually all of the chemical reactions that take place within cells. They are vital for life and serve a wide range of important functions in the body, such as aiding in digestion and metabolism.
 \begin{figure}[h!!!tb]
 \centering
-\includegraphics[width=\textwidth]{../../Pictures/Michaelis-Menten_schematic.png}
+\includegraphics[width=\textwidth]{../Pictures/Michaelis-Menten_schematic.png}
 \caption{\label{Michaelis-Menten_schematic} Schematic diagram of the Michaelis-Menten enzyme-substrate reaction.}
 \end{figure}
 
@@ -135,7 +132,7 @@ E+S\mathrel{\mathop{\rightleftarrows}^{k_1}_{k_{-1}}}C\stackrel{k_2}{\rightarrow
 \ee
 \begin{enumerate}
 \item Use the Law of Mass Action to right down the ODE formulation of the dynamics. The initial conditions are
-\bb 
+\bb
 S(0) = S_0,\quad E(0) = E_0,\quad C(0) = 0,\quad P(0) = 0.
 \ee
 \item Show $E+C=$constant$=E_0$.
@@ -214,7 +211,7 @@ which can be substituted into \eqn{u} to produce
 \bb
 \frac{\rd u}{\rd \tau}=-u+(u+K-\lambda)u/(u+K),\quad u(0)=1.\ee
 \subsubsection{}
-On substituting $\sigma=\tau/\epsilon$ into \eqns{u}{v} we have 
+On substituting $\sigma=\tau/\epsilon$ into \eqns{u}{v} we have
 \begin{align}
 \frac{\rd u}{\rd \sigma}&=\epsilon\l-u+(u+K-\lambda)v\r\approx 0,\quad u(0)=1\label{u_inner}\\
 \frac{\rd v}{\rd \sigma}&=u-(u+K)v\quad v(0)=0.\label{v_inner}
@@ -236,7 +233,7 @@ Let $K=2$, $\lambda=1$ and $\epsilon=0.001$. Simulate
 \frac{\rd u}{\rd \tau}&=-u+(u+K-\lambda)v, \quad u(0)=1\\
 \epsilon\frac{\rd v}{\rd \tau}&=u-(u+K)v \quad v(0)=0.
 \end{align}
-and 
+and
 \bb
 \frac{\rd u}{\rd \tau}=-u+(u+K-\lambda)u/(u+K),\quad u(0)=1.
 \ee
@@ -246,7 +243,7 @@ with $v=u/(u+K)$ over the time $t\in[0,20]$. How well do these curves approximat
 The simulations are shown below.
 \begin{figure}[h!!!tb]
 \centering
-\includegraphics[width=\textwidth]{../../Pictures/Michaelis-Menten_approximation.png}
+\includegraphics[width=\textwidth]{../Pictures/Michaelis-Menten_approximation.png}
 \caption{\label{Michaelis-Menten} Full and approximate solutions to the Michaelis-Menten problem.}
 \end{figure}
 \end{Answ}
@@ -255,7 +252,7 @@ The simulations are shown below.
 \section{Spruce budworm}
 \begin{figure}[h!!!tb]
 \centering
-\includegraphics[width=\ttp]{../../Pictures/Spruce_budworm.jpg}
+\includegraphics[width=\ttp]{../Pictures/Spruce_budworm.jpg}
 \caption{\label{Spruce_budworm} Spruce budworm in moth and larval stages.}
 \end{figure}
 Spruce budworm \see{Spruce_budworm} are preyed upon by spiders, miscellaneous insects, and birds. A model for their population size, $N$ is given by
@@ -298,14 +295,14 @@ Substituting these into the scales in \sect{Scales} we find that $[N]$ and $[t]$
 \section{Spruce budworm population stability}
 You can find more about the spruce budworm population equation and an online applet that allows you to simulate the system quickly and easily at the following website:
 \bb
-http://mathinsight.org/spruce\_budworm\_outbreak\_model
+https://mathinsight.org/spruce\_budworm\_outbreak\_model
 \ee
 
 The above website may aid in the following questions as we are going to consider the steady states of
 \bb
 \frac{\rd u}{\rd \tau}=ru\l 1-\frac{u}{k}\r-\frac{u^2}{1+u^2}=f(u).\label{Spruce}
 \ee
-We could solve $f(u)=0$, however, this leads to a cubic in $u$. This can be solved, but it is not very fun. Instead, we are going to consider sketches of the system. 
+We could solve $f(u)=0$, however, this leads to a cubic in $u$. This can be solved, but it is not very fun. Instead, we are going to consider sketches of the system.
 
 We could sketch $f(u)$, directly, and draw arrows on the diagram, such that $u$ is increasing if $f(u)>0$ and $u$ is decreasing if $f(u)<0$. This will immediately tell us how many stationary states there are and inform us of their stability. We will do this towards the end of this question, however, going straight into the full sketch may cause us to miss certain cases, as we have two parameters, $r$ and $K$, to worry about. However, if you feel confident shoot straight to question \ref{sketch_f}.
 
@@ -331,7 +328,7 @@ use your sketches of $f_1$ and $f_2$ to plot three situations of $f(u)$\label{sk
 \item You should be able to show that (depending on the value of the parameters) there can be as few as two steady states and as many as 4 steady states. Name the four steady states $0=u_0<u_-<u_s<u_+$, in the obvious way. Specify on your diagrams these four steady states.  The middling value of $r$ sketch is given in \fig{r_medium}.
 \begin{figure}[h!!!tb]
 \centering
-\includegraphics[width=\ttp]{../../Pictures/Spruce_budworm_r_medium.png}
+\includegraphics[width=\ttp]{../Pictures/Spruce_budworm_r_medium.png}
 \caption{\label{r_medium} Plots of $f$ for a middling value of $r$.}
 \end{figure}
 
@@ -345,7 +342,7 @@ use your sketches of $f_1$ and $f_2$ to plot three situations of $f(u)$\label{sk
 \item increase $r$ further until only $u_0$ $u_+$ exist, what happens to the point you evolve to?
 \item decrease $r$ until $u_0$, $u_-$, $u_s$, $u_+$ all exist, what happens to the point you evolve to?\label{2}
 \item is the point you evolve to in step \ref{1} the same as the point you evolve to in step \ref{2}? Use this to answer the original question.
-\end{enumerate} 
+\end{enumerate}
 
 \end{enumerate}
 
@@ -355,22 +352,22 @@ use your sketches of $f_1$ and $f_2$ to plot three situations of $f(u)$\label{sk
 $u=0$ is a solution of $f(u)=0$, thus, it is always a steady state. See \fig{f1_f2} for the sketches.
 \begin{figure}[h!!!tb]
 \centering
-\includegraphics[width=\textwidth]{../../Pictures/f1_f2.png}
+\includegraphics[width=\textwidth]{../Pictures/f1_f2.png}
 \caption{\label{f1_f2} Plots of $f_1$ and $f_2$, for varying $r$ and fixed $r/k$. $r$ increases left to right.}
 \end{figure}
 \subsubsection{}
 See \fig{f1_f2_positivity} for the sketches.
 \begin{figure}[h!!!tb]
-\includegraphics[width=\textwidth]{../../Pictures/f1_f2_positivity.png}
+\includegraphics[width=\textwidth]{../Pictures/f1_f2_positivity.png}
 \caption{\label{f1_f2_positivity} Plots of $f_1$ and $f_2$, for varying $r$ and fixed $r/k$. $r$ increases left to right. The brackets along the $u$ axis delineate the regions over which $f_1>f_2$ and $f_2>f_1$.}
 \end{figure}
 \subsubsection{}
 See \fig{Spruce_budworm_arrowed} for the sketches.
 \begin{figure}[h!!!]
 \centering
-\subfigure[\label{r_small_arrowed}]{\includegraphics[width=\tttp]{../../Pictures/Spruce_budworm_r_small_arrowed.png}}
-\subfigure[\label{r_medium_arrowed}]{\includegraphics[width=\tttp]{../../Pictures/Spruce_budworm_r_medium_arrowed.png}}
-\subfigure[\label{r_large_arrowed}]{\includegraphics[width=\tttp]{../../Pictures/Spruce_budworm_r_large_arrowed.png}}
+\subfigure[\label{r_small_arrowed}]{\includegraphics[width=\tttp]{../Pictures/Spruce_budworm_r_small_arrowed.png}}
+\subfigure[\label{r_medium_arrowed}]{\includegraphics[width=\tttp]{../Pictures/Spruce_budworm_r_medium_arrowed.png}}
+\subfigure[\label{r_large_arrowed}]{\includegraphics[width=\tttp]{../Pictures/Spruce_budworm_r_large_arrowed.png}}
 \caption{\label{Spruce_budworm_arrowed} Three potential sketches of the spruce budworm phase plane depending on the parameter $r$, with fixed $r/k$. $r$ increases left to right.}
 \end{figure}
 \subsubsection{}
@@ -384,7 +381,7 @@ Using \fig{Spruce_budworm_arrowed} $u_0$ is always unstable and always exists. $
 \item for large $r$ $u_-$ disappears. The system then evolves to $u_+$.
 \item reducing $r$ to the previous value brings back $u_-$, but $u_+$ still exists and is stable so the system stays at $u_+$.
 \item originally we were at $u_-$ now we are at $u_+$, even though we have reduced $r$ back to the previous position. Since these are different steady states the model presents hysteresis.
-\end{enumerate} 
+\end{enumerate}
 \end{Answ}
 
 \section*{Exam revision}
@@ -421,7 +418,7 @@ Thus, $u_s=0,3$ are unstable, $u_s=4$ is stable and we can not categorise $u_s=1
 \fig{Revision_stability_one_variable} illustrates that $u_s=0,2,3$ are unstable, whilst $u_s=1,4$ are stable.
 \begin{figure}[h!!!tb]
 \centering
-\includegraphics[width=\ttp]{../../Pictures/Revision_stability_one_variable.png}
+\includegraphics[width=\ttp]{../Pictures/Revision_stability_one_variable.png}
 \caption{\label{Revision_stability_one_variable} Phase plane plot of \eqn{Stability_test}.}
 \end{figure}
 \end{Answ}
@@ -483,7 +480,7 @@ dim($S$)=dim($I$)=dim($R$)=density.
 
 \noindent dim($r_2$)=1/time.
 \subsubsection{}
-Substituting $S=[S]S'$, $I=[I]I'$, $R=[R]R'$ and $t=[t]t'$, into the system we find that 
+Substituting $S=[S]S'$, $I=[I]I'$, $R=[R]R'$ and $t=[t]t'$, into the system we find that
 \begin{align}
 \frac{[S]}{[t]}&=r_1[S][I],\\
 \frac{[I]}{[t]}&=r_1[S][I]=r_2[I],\\

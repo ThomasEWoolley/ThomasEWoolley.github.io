@@ -50,7 +50,6 @@
 \newcommand{\eqnto}[2]{equations \eqref{#1}-\eqref{#2}}
 %\usepackage{authblk}
 \usepackage{url}
-\usepackage{soul}
 \newcommand{\eg}{\emph{e.g.} }
 \newcommand{\bn}{\bm{n}}
 \newcommand{\bu}{\bm{u}}
@@ -61,7 +60,6 @@
 \newcommand{\Subsubsection}[1]{\subsubsection{#1}\label{#1}}
 \newcommand{\Appendix}[1]{\appendix{#1}\label{#1}}
 \usepackage[margin=1.5cm,centering]{geometry}
-\usepackage[geometry]{ifsym}
 \makeatletter
 \newcommand\restr[2]{{% we make the whole thing an ordinary symbol
   \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
@@ -75,7 +73,6 @@
 \urlstyle{leo}
 \usepackage{multirow}
 \usepackage{blkarray}
-\usepackage{soul}
 \usepackage{framed}
 \usepackage{color}
 \usepackage{setspace}
@@ -112,7 +109,7 @@
     numberstyle={\tiny \color{black}},% size of the numbers
     numbersep=9pt, % this defines how far the numbers are from the text
     emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
-    %emph=[2]{word1,word2}, emphstyle=[2]{style},    
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},
 }
 
 
@@ -139,7 +136,7 @@ In 1988 the Vatican authorized the British Museum to date a cloth relic known as
 \end{enumerate}
 \begin{figure}[h!!!tb]
 \centering
-\includegraphics[width=0.4\textwidth]{../../Pictures/Turin_shroud.jpg}
+\includegraphics[width=0.4\textwidth]{../Pictures/Turin_shroud.jpg}
 \caption{\label{Turing_shroud} The Turin Shroud.}
 \end{figure}
 \begin{Answ}
@@ -200,9 +197,9 @@ Since $a>0$ and the trig functions are bounded this solution also tends to zero,
 We want fire doors to be over damped because we do not want them to oscillate after they have been released. Specifically, this protects anyone approaching the door after us (\ie they will not get hit in the face) and means that if there is a fire then the door will close immediately and not let further oxygen in to feed the flames.
 \end{Answ}
 \section{Motion under gravity}
-In the 1994 film True Lies a terrorist uses a motorbike to jump off of one building onto another. Arnold Schwarzenegger then tries to follow the terrorist on a horse. However, the horse thinks better of this and stops before jumping (see the clip for yourself http://bit.ly/2lf1HgL). Here are some facts to digest:
+In the 1994 film True Lies a terrorist uses a motorbike to jump off of one building onto another. Arnold Schwarzenegger then tries to follow the terrorist on a horse. However, the horse thinks better of this and stops before jumping (see the clip for yourself https://bit.ly/2lf1HgL). Here are some facts to digest:
 \begin{itemize}
-\item The hotel in the film is The Westin Bonaventure Hotel. 
+\item The hotel in the film is The Westin Bonaventure Hotel.
 \item The pool the terrorist lands in is 85m away (horizontally) and 100m below \see{True_lies}.
 \item The motorbike is a Kawasaki EX500.
 \item The bike has a run up of 13m along the hotel roof.
@@ -218,7 +215,7 @@ a=\dot{v}=\ddot{x},
 solve the following questions.
 \begin{figure}[h!!!tb]
 \centering
-\includegraphics[width=0.4\textwidth]{../../Pictures/True_lies.png}
+\includegraphics[width=0.4\textwidth]{../Pictures/True_lies.png}
 \caption{\label{True_lies} Schematic of the jump from True lies. Not to scale.}
 \end{figure}
 \begin{enumerate}
@@ -289,8 +286,8 @@ We have assumed:
 \item constant acceleration;
 \item that the horse is a racehorse.
 \end{itemize}
-Changing all of these to be more realistic would lead to a shorter jumping distance for both bike and horse. Namely, they both still do not make the jump. 
-%Motion under gravity, throwing a ball straight up 
+Changing all of these to be more realistic would lead to a shorter jumping distance for both bike and horse. Namely, they both still do not make the jump.
+%Motion under gravity, throwing a ball straight up
 %
 %In this case we want to consider the vertical displacement of a projectile. We define $u$ to be the more standard coordinate variable $y$. We then know from physics that the acceleration (second) of the particle is equal to the gravitational constant $g=9.8$m/s$^2$.
 \end{Answ}
@@ -298,7 +295,7 @@ Changing all of these to be more realistic would lead to a shorter jumping dista
 Let $u$ be a general population and $t$ be time. For each of the sketches in \fig{Possible_trajectories} classify each trajectory as (strictly) monotonic (increasing or decreasing) or non-monotonic. Further, state whether (i) a single continuously differentiable autonomous ODE, or (ii) a system of continuously differentiable autonomous ODEs could be behind the trajectories (with different colours representing different initial conditions). Alternatively, state when the trajectories could not be specified as a solution of a system of continuously differentiable autonomous ODEs. In each case justify your answer.
 \begin{figure}[h!!!tb]
 \centering
-\includegraphics[width=0.7\textwidth]{../../Pictures/Possible_trajectories.png}
+\includegraphics[width=0.7\textwidth]{../Pictures/Possible_trajectories.png}
 \caption{\label{Possible_trajectories} Which sketches could arise from a set of ODEs?}
 \end{figure}
 \begin{Answ}
@@ -321,7 +318,7 @@ No, not even I can make these interesting. Practice your expansion skills, it is
 \item $\frac{1}{1-x}$.
 \item $\cos(x)\cos(y)-\sin(x)\sin(y)$.
 \end{enumerate}
-Finally, expand 
+Finally, expand
 \bb
 \frac{x}{1-x-x^2}
 \ee
@@ -367,8 +364,8 @@ Hint: Symmetry is key to this question. All masses must be the same. Place the m
 \end{enumerate}
 \begin{figure}[h!!!tb]
 \centering
-\subfigure[\label{TBP_orbits}]{\includegraphics[height=\tttp]{../../Pictures/TBP_orbits.png}}
-\subfigure[\label{TBP_circle}]{\includegraphics[height=\tttp]{../../Pictures/TBP_circle.png}}
+\subfigure[\label{TBP_orbits}]{\includegraphics[height=\tttp]{../Pictures/TBP_orbits.png}}
+\subfigure[\label{TBP_circle}]{\includegraphics[height=\tttp]{../Pictures/TBP_circle.png}}
 \caption{\label{Two_body_problem} (a) An orbiting system. (b) Planets chasing one another.}
 \end{figure}
 \begin{Answ}

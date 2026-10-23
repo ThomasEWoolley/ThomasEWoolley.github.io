@@ -1,0 +1,97 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #f4f7f9;
+}
+
+body {
+  width: min(100% - 2rem, 72rem) !important;
+  max-width: none !important;
+  margin: 0 auto !important;
+  padding: 1.25rem 0 3rem;
+  overflow-wrap: break-word;
+  color: #172a3a;
+  background: #ffffff;
+  box-shadow: 0 0 0 100vmax #ffffff;
+  clip-path: inset(0 -100vmax);
+}
+
+a {
+  color: #005f73;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
+}
+
+a:hover {
+  color: #8b4a00;
+}
+
+a:focus-visible {
+  outline: 3px solid #ee9b00;
+  outline-offset: 3px;
+}
+
+.site-return {
+  margin: 0 0 2rem;
+  padding: 0.75rem 1rem;
+  border-left: 0.3rem solid #0a9396;
+  background: #e9f5f5;
+  font-weight: 700;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  max-width: 100%;
+}
+
+.equation,
+.equation-star,
+.math-display,
+.tabular {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+@media (max-width: 44rem) {
+  body {
+    width: min(100% - 1.25rem, 72rem) !important;
+  }
+
+  img.math {
+    max-width: none;
+  }
+
+  .math-display,
+  .equation,
+  .equation-star {
+    overflow-x: auto;
+  }
+}
+
+@media print {
+  html,
+  body {
+    background: #ffffff;
+  }
+
+  body {
+    width: 100% !important;
+    box-shadow: none;
+  }
+
+  .site-return {
+    display: none;
+  }
+}

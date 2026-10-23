@@ -51,7 +51,6 @@
 \newcommand{\eqnto}[2]{equations \eqref{#1}-\eqref{#2}}
 %\usepackage{authblk}
 \usepackage{url}
-\usepackage{soul}
 \newcommand{\eg}{\emph{e.g.} }
 \newcommand{\bn}{\bm{n}}
 \newcommand{\bu}{\bm{u}}
@@ -62,7 +61,6 @@
 \newcommand{\Subsubsection}[1]{\subsubsection{#1}\label{#1}}
 \newcommand{\Appendix}[1]{\appendix{#1}\label{#1}}
 \usepackage[margin=1.5cm,centering]{geometry}
-\usepackage[geometry]{ifsym}
 \makeatletter
 \newcommand\restr[2]{{% we make the whole thing an ordinary symbol
   \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
@@ -76,7 +74,6 @@
 \urlstyle{leo}
 \usepackage{multirow}
 \usepackage{blkarray}
-\usepackage{soul}
 \usepackage{framed}
 \usepackage{color}
 \usepackage{setspace}
@@ -113,7 +110,7 @@
     numberstyle={\tiny \color{black}},% size of the numbers
     numbersep=9pt, % this defines how far the numbers are from the text
     emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
-    %emph=[2]{word1,word2}, emphstyle=[2]{style},    
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},
 }
 
 
@@ -130,7 +127,7 @@ Consider \fig{Polars}, where we see a point $(x,y)$, which is a distance $r$ awa
 respectively. Further, let $\hat{\bm{r}}$ and $\hat{\bm{\theta}}$ be the normalised polar coordinates along the radial and angular directions as shown.
 \begin{figure}[h!!!tb]
 \centering
-\includegraphics[width=\ttp]{../../Pictures/Polars.png}
+\includegraphics[width=\ttp]{../Pictures/Polars.png}
 \caption{\label{Polars} Cartesian and polar coordinates.}
 \end{figure}
 \begin{enumerate}
@@ -174,7 +171,7 @@ r^2\dot{\theta}=\textrm{constant}.\label{Kepler}
 Having finished question \ref{9} you will have proven Kepler's Second Law of Planetary Motion. Namely, if we consider a planet orbiting a sun then a line segment joining the centres of the planet and the Sun sweeps out equal areas during equal intervals of time. This comes from the above result because the force acting on an orbiting planet will be gravitation, which acts along a line connecting the centres of the planets, \ie there is no angular component to the force. Thus, \eqn{Kepler} holds and $r^2\dot{\theta}$ has the interpretation of being the area swept out by the line connecting the two bodies, which is derived to be constant.
 \begin{figure}[h!!!tb]
 \centering
-\includegraphics[width=\ttp]{../../Pictures/Kepler.png}
+\includegraphics[width=\ttp]{../Pictures/Kepler.png}
 \caption{\label{Kepler_law} Illustrating Kepler's Second Law of Planetary motion. Suppose $A_1$ and $A_2$ are areas swept out by the line connecting the red planet to the yellow sun in the same amount of time. Then \eqn{Kepler} proves $A_1=A_2$.}
 \end{figure}
 \begin{Answ}
@@ -232,8 +229,8 @@ r^2\dot{\theta}=\textrm{constant}.
 Consider two planets with the same mass, $m$, and positions $\bm{r}_1(t)$ and $\bm{r}_2(t)$, respectively. Let the initial positions be $\bm{r}_1(0)=\bm{r}_{10}$ and $\bm{r}_2(0)=\bm{r}_{20}$ and let the initial velocities be $\dot{\bm{r}}_1(0)=\bm{v}_{10}$ and $\dot{\bm{r}}_2(0)=\bm{v}_{20}$.
 \begin{figure}[h!!!tb]
 \centering
-\subfigure[\label{TBP_1}]{\includegraphics[width=\ttp]{../../Pictures/Two_body_problem.png}}
-\subfigure[\label{TBP_2}]{\includegraphics[width=\ttp]{../../Pictures/Two_body_problem_new_origin.png}}
+\subfigure[\label{TBP_1}]{\includegraphics[width=\ttp]{../Pictures/Two_body_problem.png}}
+\subfigure[\label{TBP_2}]{\includegraphics[width=\ttp]{../Pictures/Two_body_problem_new_origin.png}}
 \caption{\label{Two_body_problem} (a) Positions and forces in the two body problem. The position $(\bm{r}_1+\bm{r}_2)/2$ is the centre of mass of the two body system. (b) Redefining the system so that planet 1 is the origin.}
 \end{figure}
 \begin{enumerate}
@@ -376,9 +373,9 @@ over the range $0\leq \Theta\leq 2\pi$ for multiple values of $\alpha$. Plot the
 \end{enumerate}
 \begin{figure}[h!!!tb]
 \centering
-\subfigure[]{\includegraphics[width=\tttp]{../../Pictures/Orbit_a_025.png}}
-\subfigure[]{\includegraphics[width=\tttp]{../../Pictures/Orbit_a_1.png}}
-\subfigure[]{\includegraphics[width=\tttp]{../../Pictures/Orbit_a_4.png}}
+\subfigure[]{\includegraphics[width=\tttp]{../Pictures/Orbit_a_025.png}}
+\subfigure[]{\includegraphics[width=\tttp]{../Pictures/Orbit_a_1.png}}
+\subfigure[]{\includegraphics[width=\tttp]{../Pictures/Orbit_a_4.png}}
 \caption{\label{Orbits} Possible trajectories of \eqn{Radius}.}
 \end{figure}
 \begin{Answ}
@@ -407,11 +404,11 @@ u_1\mathrel{\mathop{\rightleftarrows}^{d}_{d}}u_2\mathrel{\mathop{\rightleftarro
 
 \item Write the following ODEs as interaction equations.
 \begin{enumerate}
-\item 
+\item
 \bb
 \dot{u}=r_1u\l 1- \frac{u}{r_2}\r\nonumber.
 \ee
-\item 
+\item
 \begin{align}
 &\dot{u}=-r_1uv-3r_2u^3,\nonumber\\
 &\dot{v}=-r_1uv+r_3.\nonumber
@@ -448,7 +445,7 @@ An interesting point to note about this last equation is that it is a finite ele
 \end{Answ}
 \section*{Exam revision}
 \section{More two body problem}
-From question \ref{Two body problem continued} we know that 
+From question \ref{Two body problem continued} we know that
 \bb
 \ddot{R}-R\dot{\Theta}^2=-\frac{Gm}{R^2},\quad R^2\dot{\Theta}=C.
 \ee
@@ -471,7 +468,7 @@ From question \ref{Two body problem continued} we know that
 \item Suppose $R_0a<1$, show that in this case if a solution, $R(t)$, exists for all time then $R>R_0$.
 \item Suppose $R_0a>1$, show that in this case if a solution, $R(t)$, exists for all time then
 \bb
-\frac{R_0}{(R_0a-1)}<R<R_0, \quad \textrm{if $R_0a>2$} 
+\frac{R_0}{(R_0a-1)}<R<R_0, \quad \textrm{if $R_0a>2$}
 \ee
  and
 \bb
@@ -522,11 +519,11 @@ If $aR_0>1$ the coefficient of the quadratic term is negative. The roots are $R_
 
 \item Write the following ODEs as interaction equations.
 \begin{enumerate}
-\item 
+\item
 \bb
 \dot{u}=1\nonumber.
 \ee
-\item 
+\item
 \begin{align}
 &\dot{u}=r_1uv/(1+v^2),\nonumber\\
 &\dot{v}=-r_1uv/(1+v^2).\nonumber

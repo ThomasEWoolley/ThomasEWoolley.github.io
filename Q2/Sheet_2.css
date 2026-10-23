@@ -1,4 +1,4 @@
- 
+
 /* start css.sty */
 .ec-lmr-17{font-size:170%;}
 .ec-lmr-12{font-size:120%;}
@@ -110,7 +110,7 @@ div.figure img {text-align:center;}
 .marginpar p{margin-top:0.4em; margin-bottom:0.4em;}
 table.equation {width:100%;}
 .equation td{text-align:center; }
-td.equation { margin-top:1em; margin-bottom:1em; } 
+td.equation { margin-top:1em; margin-bottom:1em; }
 td.equation-label { width:5%; text-align:center; }
 td.eqnarray4 { width:5%; white-space: normal; }
 td.eqnarray2 { width:5%; }

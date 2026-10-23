@@ -1,0 +1,23 @@
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+
+# TeX and TeX4ht build output
+*.4ct
+*.4tc
+*.aux
+*.dvi
+*.idv
+*.lg
+*.log
+*.tmp
+*.xref
+comment.cut
+texput.log
