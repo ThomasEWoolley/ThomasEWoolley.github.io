@@ -954,3 +954,48 @@ figcaption,
     color: #000;
   }
 }
+
+/* Give the outreach introduction a distinct, high-contrast reading surface. */
+.outreach-intro {
+  padding: clamp(1.5rem, 5vw, 3rem);
+  color: #ffffff;
+  background: #17324d;
+  border-top: 0.3rem solid #e9c46a;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.outreach-intro blockquote {
+  margin: 0 0 1.5rem;
+  padding-left: clamp(1rem, 3vw, 1.75rem);
+  color: #e9c46a;
+  border-left: 0.25rem solid #e9c46a;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.65rem, 4vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+.outreach-intro p {
+  max-width: 65ch;
+  margin-bottom: 0;
+  color: #ffffff;
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  line-height: 1.75;
+}
+
+@media print {
+  .outreach-intro {
+    color: #000000;
+    background: #ffffff;
+    border: 1px solid #000000;
+    box-shadow: none;
+  }
+
+  .outreach-intro blockquote,
+  .outreach-intro p {
+    color: #000000;
+    border-color: #000000;
+  }
+}
