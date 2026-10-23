@@ -639,7 +639,7 @@ figcaption,
 
 .media-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
   gap: 1rem;
 }
 
@@ -1057,23 +1057,7 @@ figcaption,
   margin-top: 0.25rem;
 }
 
-.instagram-preview {
-  display: flex;
-  aspect-ratio: 16 / 9;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  background: linear-gradient(135deg, #17324d, #006d77);
-  border-bottom: 0.25rem solid #e9c46a;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.instagram-preview small {
-  margin-top: 0.4rem;
-  color: #e9c46a;
-  font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 0.85rem;
+.media-card .instagram-thumbnail {
+  object-fit: contain;
+  background: var(--ink-deep);
 }

@@ -8,7 +8,8 @@
     "url": "https://www.instagram.com/reel/Dau9dRaiK6q/",
     "published": "2026-07-13",
     "channel": "@cardiffunikazakhstan",
-    "date_source": "Instagram public post metadata"
+    "date_source": "Instagram public post metadata",
+    "thumbnail": "assets/images/instagram/Dau9dRaiK6q.jpg"
   },
   {
     "id": "DYt3bh5gn-C",
@@ -19,7 +20,8 @@
     "url": "https://www.instagram.com/p/DYt3bh5gn-C/",
     "published": "2026-05-24",
     "channel": "@cardiffunikazakhstan",
-    "date_source": "Instagram public post metadata"
+    "date_source": "Instagram public post metadata",
+    "thumbnail": "assets/images/instagram/DYt3bh5gn-C.jpg"
   },
   {
     "id": "PrFY14h_6LM",
@@ -75,7 +77,8 @@
     "url": "https://www.instagram.com/reel/DJ_f1Eutyi0/",
     "published": "2025-05-23",
     "channel": "@cardiffuni",
-    "date_source": "Instagram public post metadata"
+    "date_source": "Instagram public post metadata",
+    "thumbnail": "assets/images/instagram/DJ_f1Eutyi0.jpg"
   },
   {
     "id": "DHtKc0OI75L",
@@ -86,7 +89,8 @@
     "url": "https://www.instagram.com/reel/DHtKc0OI75L/",
     "published": "2025-03-27",
     "channel": "@bbcradio4",
-    "date_source": "Instagram public post metadata"
+    "date_source": "Instagram public post metadata",
+    "thumbnail": "assets/images/instagram/DHtKc0OI75L.jpg"
   },
   {
     "id": "DHK6v_UN0Xr",
@@ -97,7 +101,8 @@
     "url": "https://www.instagram.com/reel/DHK6v_UN0Xr/",
     "published": "2025-03-14",
     "channel": "@cardiffuni",
-    "date_source": "Instagram public post metadata"
+    "date_source": "Instagram public post metadata",
+    "thumbnail": "assets/images/instagram/DHK6v_UN0Xr.jpg"
   },
   {
     "id": "NzXOGasU2Ts",
@@ -232,7 +237,9 @@
     "url": "https://www.youtube.com/watch?v=a5zVyNwBS-4",
     "published": "2017-10-25",
     "channel": "Marvellous Mathemagicians",
-    "date_source": "YouTube publication metadata"
+    "date_source": "YouTube publication metadata",
+    "event_year": 2014,
+    "event_year_source": "Thomas Woolley"
   },
   {
     "id": "Y_rTAxvmupk",
@@ -530,5 +537,14 @@
     "published": "2011-04-10",
     "channel": "Thomas Woolley",
     "date_source": "YouTube publication metadata"
+  },
+  {
+    "id": "DK3njNP-Qz0",
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/watch?v=DK3njNP-Qz0",
+    "date_source": "YouTube publication metadata",
+    "title": "The Mathematics of Surviving Zombies - Numberphile",
+    "published": "2022-02-10",
+    "channel": "Numberphile"
   }
 ]

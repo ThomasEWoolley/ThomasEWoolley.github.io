@@ -11,22 +11,29 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def chronology_key(entry):
+    published = date.fromisoformat(entry['published'])
+    if 'event_year' in entry:
+        return (int(entry['event_year']), 0, 0, entry['id'])
+    return (published.year, published.month, published.day, entry['id'])
+
+
 def render():
     records = json.loads((ROOT / 'data/outreach-media.json').read_text(encoding='utf-8'))
     keys = [(entry['platform'], entry['id']) for entry in records]
     if len(set(keys)) != len(keys):
         raise ValueError('Duplicate media entry')
     years = defaultdict(list)
-    for entry in sorted(records, key=lambda item: (item['published'], item['id']), reverse=True):
+    for entry in sorted(records, key=chronology_key, reverse=True):
         published = date.fromisoformat(entry['published'])
-        years[published.year].append((entry, published))
+        years[int(entry.get('event_year', published.year))].append((entry, published))
 
     lines = [
         '      <section class="section section-tint" id="videos">',
         '        <div class="container">',
         '          <div class="section-heading">',
         '            <h2>Videos and social media</h2>',
-        '            <p>Talks, demonstrations, interviews and social posts, newest first. Dates show when each item was published, rather than when the event took place.</p>',
+        '            <p>Talks, demonstrations, interviews and social posts, newest first. Dates are publication dates unless an event year is shown.</p>',
         '          </div>',
         '          <nav class="media-year-nav" aria-label="Browse media by year">',
         '            ' + ' '.join(f'<a href="#media-{year}">{year}</a>' for year in years),
@@ -44,11 +51,15 @@ def render():
             if platform == 'YouTube':
                 lines.append(f'                <img src="https://i.ytimg.com/vi/{escape(entry["id"], quote=True)}/mqdefault.jpg" width="320" height="180" loading="lazy" alt="">')
             else:
-                lines.append(f'                <div class="instagram-preview" aria-hidden="true">Instagram <small>{escape(entry["kind"])}</small></div>')
+                lines.append(f'                <img class="instagram-thumbnail" src="{escape(entry["thumbnail"], quote=True)}" width="320" height="180" loading="lazy" alt="">')
+            if 'event_year' in entry:
+                date_label = f'{int(entry["event_year"])} (event year)'
+            else:
+                date_label = f'<time datetime="{published.isoformat()}">{published.day} {published.strftime("%B %Y")}</time>'
             lines.extend([
                 '                <div class="media-card-details">',
                 f'                  <span class="media-card-title">{escape(entry["title"])}</span>',
-                f'                  <p class="media-card-date">{platform} · <time datetime="{published.isoformat()}">{published.day} {published.strftime("%B %Y")}</time></p>',
+                f'                  <p class="media-card-date">{platform} · {date_label}</p>',
             ])
             if entry.get('channel'):
                 lines.append(f'                  <p class="media-card-channel">{escape(entry["channel"])}</p>')
