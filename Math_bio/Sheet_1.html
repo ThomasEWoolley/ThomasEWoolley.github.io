@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mathematical Biology MA4309: problem sheet 1, with equations, figures and exercises.">
+  <title>Mathematical Biology: problem sheet 1 | Thomas E. Woolley</title>
+  <link rel="canonical" href="https://thomaswoolley.co.uk/Math_bio/Sheet_1.html">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <link rel="stylesheet" href="../assets/css/problem-sheets.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header"><div class="container header-inner">
+    <a class="site-name" href="../index.html">Dr Thomas E. Woolley</a>
+    <nav aria-label="Course navigation"><a href="../lecturing.html#mathematical-biology">Teaching resources</a></nav>
+  </div></header>
+  <main id="main-content" class="sheet-page">
+    <header class="page-heading"><div class="container narrow">
+      <p class="eyebrow">MA4309 · Mathematical Biology</p>
+      <h1>Problem sheet 1</h1>
+      <p>Thomas E. Woolley</p>
+      <p><a href="Sheet_1.pdf">Download the PDF</a></p>
+      <nav class="sheet-nav" aria-label="Problem sheets"><a href="Sheet_1.html" aria-current="page">Sheet 1</a><a href="Sheet_2.html">Sheet 2</a><a href="Sheet_3.html">Sheet 3</a><a href="Sheet_4.html">Sheet 4</a><a href="Sheet_5.html">Sheet 5</a></nav>
+    </div></header>
+    <article class="container narrow sheet-content">
+      <noscript><p>Enable JavaScript to render the mathematics, or <a href="Sheet_1.pdf">download the PDF</a>.</p></noscript>
+<h2 class="unnumbered" id="early-warfare">1. Early warfare</h2>
+<p><span id="ref-4561726c792077617266617265"></span> Originally<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, warfare was conducted through hand-to-hand combat. Thus, a single person had the ability to despatch only one other person at a time. Namely, the combat was <em>one on one</em> until one person was unable to fight any longer. Consider two opposing armies of size <span class="math inline">\(A(t)\)</span> and <span class="math inline">\(B(t)\)</span> and suppose <span class="math inline">\(A(0)=A_0\)</span>, <span class="math inline">\(B(0)=B_0\)</span>, where <span class="math inline">\(A_0&gt;B_0\)</span>.</p>
+<ol>
+<li><p>Suppose the armies are equally matched such that when members of the <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> armies meet they are both equally likely to win the fight. Further, assume that the interaction rate constant between the two armies is <span class="math inline">\(r\)</span>. Write the above combat interaction down as two interaction equations.</p></li>
+<li><p>Show that the Law of Mass Action can be used to convert the early warfare interactions into the following ODEs,</p>
+<div class="equation"><span id="ref-41"></span><span id="ref-42"></span><p><span class="math display">\[\begin{align}
+\dot{A}=-rAB,\quad A(0)=A_0,\tag{1}\\
+\dot{B}=-rAB,\quad B(0)=B_0.
+\tag{2}
+\end{align}\]</span></p></div></li>
+<li><p><span id="ref-53747374"></span>Derive the steady states of equations <a href="#ref-41">(1)</a> and <a href="#ref-42">(2)</a>. What happens when you try to characterise their stability?</p></li>
+<li><p>Show that</p>
+<div class="equation"><span id="ref-436f6e7374616e74"></span><p><span class="math display">\[A(t)=B(t)+\textrm{Constant},
+\tag{3}\]</span></p></div>
+<p>where you should define the constant explicitly.</p></li>
+<li><p>In question <a href="#ref-53747374">3</a> you should have found that there was an infinite number of steady states. Show how equation <a href="#ref-436f6e7374616e74">(3)</a> collapses all possibilities to just one.</p></li>
+<li><p>Construct the <span class="math inline">\((A,B)\)</span> phase plane and use it to characterise the steady states’ stability.<span id="ref-507071"></span></p></li>
+<li><p>Show that equations <a href="#ref-41">(1)</a> and <a href="#ref-42">(2)</a> can be rewritten as</p>
+<div class="equation"><span id="ref-4141"></span><span id="ref-4242"></span><p><span class="math display">\[\begin{align}
+\dot{A}=-rA(A-A_0+B_0),\tag{4}\\
+\dot{B}=-rB(B+A_0-B_0).
+\tag{5}
+\end{align}\]</span></p></div></li>
+<li><p>Derive the steady states of equations <a href="#ref-4141">(4)</a> and <a href="#ref-4242">(5)</a>.</p></li>
+<li><p>Considering equations <a href="#ref-4141">(4)</a> and <a href="#ref-4242">(5)</a> as separate scalar ODEs characterise the stability of the previously derived steady states analytically and graphically through constructing the phase planes <span class="math inline">\(\left(A,\dot{A} \right)\)</span> and <span class="math inline">\(\left(B,\dot{B}\right)\)</span>.<span id="ref-5363616c6172"></span></p></li>
+<li><p>Consider equations <a href="#ref-4141">(4)</a> and <a href="#ref-4242">(5)</a> as a system and characterise the stability of the steady states algebraically and graphically by plotting the <span class="math inline">\((A,B)\)</span> phase plane.<span id="ref-53797374656d"></span></p></li>
+<li><p>Do the results from questions <a href="#ref-5363616c6172">(9)</a> and <a href="#ref-53797374656d">(10)</a> correspond to the results from question <a href="#ref-507071">6</a>?</p></li>
+<li><p>Solve equations <a href="#ref-4141">(4)</a> and <a href="#ref-4242">(5)</a> explicitly and sketch the resulting <span class="math inline">\((t,A(t))\)</span> and <span class="math inline">\((t,B(t))\)</span> curves on the same axes.</p></li>
+<li><p>You have now derived the same result in three different ways. Without referring to the mathematics, interpret your result.</p></li>
+</ol>
+<h2 class="unnumbered" id="non-dimensionalisation-and-interpretation">2. Non-dimensionalisation and interpretation</h2>
+<p>Consider the following set of interaction equations for two animal populations <span class="math inline">\(N\)</span> and <span class="math inline">\(P\)</span>.</p>
+<div class="equation"><span id="ref-4e"></span><span id="ref-50"></span><p><span class="math display">\[\begin{align}
+&amp;\frac{\text{ d}N}{\text{ d}t} =rN\left(1- \frac{N}{K}\right)-bNP,\tag{6}\\
+&amp;\frac{\text{ d}P}{\text{ d}t} =ebNP-mP.
+\tag{7}
+\end{align}\]</span></p></div>
+<p>where <span class="math inline">\(b, e, K, r\)</span> and <span class="math inline">\(m\)</span> are positive constants and the initial conditions are <span class="math inline">\(N_0\)</span> and <span class="math inline">\(P_0\)</span>, respectively.</p>
+<ol>
+<li><p>What type of interaction is occurring between <span class="math inline">\(N\)</span> and <span class="math inline">\(P\)</span>?</p></li>
+<li><p>Write down a set of interaction equations that could give rise to equations <a href="#ref-4e">(6)</a> and <a href="#ref-50">(7)</a>.</p></li>
+<li><p>Non-dimensionalise equations <a href="#ref-4e">(6)</a> and <a href="#ref-50">(7)</a> to get the form</p>
+<div class="equation"><span id="ref-75"></span><span id="ref-76"></span><p><span class="math display">\[\begin{align}
+&amp;\frac{\text{ d}u}{\text{ d}\tau} =c_1u\left(1- u\right)-uv,\tag{8}\\
+&amp;\frac{\text{ d}v}{\text{ d}\tau} =c_2uv-v,
+\tag{9}
+\end{align}\]</span></p></div>
+<p>where <span class="math inline">\(c_1\)</span> and <span class="math inline">\(c_2\)</span> should be defined explicitly in terms of <span class="math inline">\(K, b, e, r\)</span> and <span class="math inline">\(m\)</span>.</p></li>
+<li><p>Provide an interpretation of <span class="math inline">\(c_1\)</span> and <span class="math inline">\(c_2\)</span>.</p></li>
+<li><p>Suppose the predator is a pest and we want to wipe the predator out, whilst maintaining a positive prey population (<em>e.g.</em> consider a fox and hen scenario). What strategy best achieves this, in terms of altering the sizes of <span class="math inline">\(c_1\)</span> and <span class="math inline">\(c_2\)</span>? Explicitly, is it best to:</p>
+<ul>
+<li><p>increase <span class="math inline">\(c_1\)</span>?</p></li>
+<li><p>increase <span class="math inline">\(c_2\)</span>?</p></li>
+<li><p>increase both?</p></li>
+<li><p>decrease <span class="math inline">\(c_1\)</span>?</p></li>
+<li><p>decrease <span class="math inline">\(c_2\)</span>?</p></li>
+<li><p>decrease both?</p></li>
+<li><p>increase <span class="math inline">\(c_1\)</span> and decrease <span class="math inline">\(c_2\)</span>?</p></li>
+<li><p>decrease <span class="math inline">\(c_1\)</span> and increase <span class="math inline">\(c_2\)</span>?</p></li>
+</ul>
+<p>Explain your choice.</p></li>
+<li><p>Having chosen a strategy, consider how best to enact the changes of <span class="math inline">\(c_1\)</span> and/or <span class="math inline">\(c_2\)</span> in terms of altering <span class="math inline">\(b, e, K, r\)</span> and <span class="math inline">\(m\)</span>. What are the pros and cons? What would your advice be on the best strategy?</p></li>
+</ol>
+<h2 class="unnumbered" id="using-ode45">3. Using <code>ode45</code></h2>
+<p>As in MA0232 I will be offering you the chance to have a go at understanding Matlab. It is free to download; all you need is to follow this (clickable) link <a href="https://uk.mathworks.com/academia/tah-support-program/eligibility.html" class="uri">https://uk.mathworks.com/academia/tah-support-program/eligibility.html</a> and sign up using your Cardiff email address.</p>
+<p>Throughout this course we will be simulating ODEs of many types and, thus, it is good to be able to check your answers. The more you simulate, the better your intuition. In order to simulate ODEs we are going to use Matlab’s inbuilt command <code>ode45</code>. Matlab has several ODE solvers, but <code>ode45</code> is the most general “catch all” code. Essentially, you try it first and if it does not work you try something more specific. However, for our purposes it will be adequate.</p>
+<p>For a high-level description of <code>ode45</code> type <code>help ode45</code>, or <code>doc ode45</code> into Matlab and it will bring up a brief description and a full description, respectively. Here, I will provide a brief overview of a general code that will work on most systems throughout this course.</p>
+<p>The code below should be available as <code>General_ode45_code.m</code> and it solves problem <a href="#ref-4561726c792077617266617265">1</a>. Either download it directly, or copy and paste it into Matlab. The green text contains comments to help you understand what is going on. Essentially, for different ODE systems you should only really have to change the description in lines 49-50. Note you may also need to change the length of time over which the equations are solved (<code>Tend</code>).</p>
+<pre class="matlab"><code>%% Ensure we start from a blank slate
+clear all
+close all
+clc
+
+%% Initialise variables
+fs=15; % Set fontsize
+
+Tend=0.3; % Set final time
+N=100; % Set number of steps
+t=linspace(0,Tend,N); % Set number of time points at which the solution is to be evaluated
+IC=[200;
+    190]; %Initial conditions as a column vector
+
+%% Solve ODE
+
+% Each component is a row in the matrix y.
+[t,y] = ode45(@ODE_function,t,IC);
+
+%% Plot Solution
+
+%%% (time,solution plots)
+hold on % Allows us to plot multiple graphs at once
+plot(t,y(:,1)) % Plots the first solution
+plot(t,y(:,2)) % Plots the second solution
+legend(&#x27;u&#x27;,&#x27;v&#x27;) % Adds a legend and defines the lines for clarity
+
+% Label axes for clarity
+xlabel(&#x27;t&#x27;) 
+ylabel(&#x27;Solutions&#x27;)
+
+set(gca,&#x27;fontsize&#x27;,fs) % Changes the axis fontsize
+
+%%% Phasespace plots
+figure % Starts a new figure without overwriting the previous one
+plot(y(:,1),y(:,2))
+xlabel(&#x27;u&#x27;) 
+ylabel(&#x27;v&#x27;)
+set(gca,&#x27;fontsize&#x27;,fs)
+
+
+
+
+%% ODE description
+function dydt=ODE_function(t,y)
+r=1; %Interaction parameter
+
+% Defining the ODEs as a column vector. Each row is one of the ODEs.
+dydt=[-r*y(1)*y(2) %Line 49
+      -r*y(1)*y(2)]; %Line 50
+
+end</code></pre>
+<p>Once you have had a play with the above code try and adapt it to solve equations <a href="#ref-75">(8)</a> and <a href="#ref-76">(9)</a>.</p>
+<h2 class="unnumbered" id="exam-revision">Exam Revision</h2>
+<p>Problem sheets 3-5 of course MA0232 contain many examples and solutions that will provide adequate practice at: deriving steady states, non-dimensionalisation, characterising stability and sketching graphs.</p>
+<aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>This question is an adapted version of <a href="https://en.wikipedia.org/wiki/Lanchester&#39;s_laws">Lanchester’s Laws</a>. Have a look into how modern warfare differs from early warfare.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside>
+
+    </article>
+    <nav class="container narrow sheet-nav bottom-nav" aria-label="More problem sheets"><a href="Sheet_1.html" aria-current="page">Sheet 1</a><a href="Sheet_2.html">Sheet 2</a><a href="Sheet_3.html">Sheet 3</a><a href="Sheet_4.html">Sheet 4</a><a href="Sheet_5.html">Sheet 5</a></nav>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner">Copyright Thomas E. Woolley, unless otherwise stated.</div></footer>
+</body>
+</html>

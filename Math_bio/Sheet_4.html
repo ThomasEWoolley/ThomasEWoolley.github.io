@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mathematical Biology MA4309: problem sheet 4, with equations, figures and exercises.">
+  <title>Mathematical Biology: problem sheet 4 | Thomas E. Woolley</title>
+  <link rel="canonical" href="https://thomaswoolley.co.uk/Math_bio/Sheet_4.html">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <link rel="stylesheet" href="../assets/css/problem-sheets.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header"><div class="container header-inner">
+    <a class="site-name" href="../index.html">Dr Thomas E. Woolley</a>
+    <nav aria-label="Course navigation"><a href="../lecturing.html#mathematical-biology">Teaching resources</a></nav>
+  </div></header>
+  <main id="main-content" class="sheet-page">
+    <header class="page-heading"><div class="container narrow">
+      <p class="eyebrow">MA4309 · Mathematical Biology</p>
+      <h1>Problem sheet 4</h1>
+      <p>Thomas E. Woolley</p>
+      <p><a href="Sheet_4.pdf">Download the PDF</a></p>
+      <nav class="sheet-nav" aria-label="Problem sheets"><a href="Sheet_1.html">Sheet 1</a><a href="Sheet_2.html">Sheet 2</a><a href="Sheet_3.html">Sheet 3</a><a href="Sheet_4.html" aria-current="page">Sheet 4</a><a href="Sheet_5.html">Sheet 5</a></nav>
+    </div></header>
+    <article class="container narrow sheet-content">
+      <noscript><p>Enable JavaScript to render the mathematics, or <a href="Sheet_4.pdf">download the PDF</a>.</p></noscript>
+<h2 class="unnumbered" id="french-flag-threshold">1. French flag threshold</h2>
+<p><span id="ref-4672656e636820666c6167207468726573686f6c64"></span> Consider an empty one-dimensional domain, <span class="math inline">\([0,L]\)</span>, such that <span class="math inline">\(x=0\)</span> is insulated. At time <span class="math inline">\(t=0\)</span> the boundary <span class="math inline">\(x=L\)</span> is turned into a source of morphogen, <span class="math inline">\(M\)</span>, of constant strength <span class="math inline">\(S\)</span>. The morphogen is able to diffuse away from the boundary at a rate <span class="math inline">\(D\)</span> and decays at a rate proportional to itself with constant of proportionality <span class="math inline">\(r\)</span>.</p>
+<ol>
+<li><p>Justify the following model of this set-up,</p>
+<div class="equation"><span id="ref-446966667573696f6e"></span><p><span class="math display">\[\frac{\partial M}{\partial t}=D\frac{\partial^2 M}{\partial x^2}-rM,\quad 0&lt;x&lt;L,
+\tag{1}\]</span></p></div>
+<div class="equation"><p><span class="math display">\[M(x,0)=0,
+\tag{2}\]</span></p></div>
+<div class="equation"><p><span class="math display">\[\frac{\partial M(0,t)}{\partial x}=0,\quad M(L,t)=S.
+\tag{3}\]</span></p></div></li>
+<li><p>Determine the steady state distribution, <span class="math inline">\(M(x,t)=M_s(x)\)</span>.</p></li>
+</ol>
+<p>Suppose the domain is filled with cells that are able to sense the concentration of <span class="math inline">\(M\)</span> and that the cells can differentiate into two different forms based on the concentration of <span class="math inline">\(M\)</span> that they sense. Namely, if <span class="math inline">\(M_s&lt;S/2\)</span> then cells differentiate into form 1, whilst if <span class="math inline">\(M_s&gt;S/2\)</span> then cells differentiate into form 2. Define <span class="math inline">\(x_s\in[0,L]\)</span> to be the point which delineates the regions between cells of form 1 and cells of form 2.</p>
+<ol start="3">
+<li><p>Draw two sketches of <span class="math inline">\(M_s(x)\)</span> to show that <span class="math inline">\(x_s\)</span> may, or may not exist.<span id="ref-736b65637463687873"></span></p></li>
+<li><p>Show that</p>
+<div class="equation"><span id="ref-7873"></span><p><span class="math display">\[x_s=\sqrt{\frac{D}{r}}\cosh^{-1}\left(\frac{1}{2}\cosh\left(\sqrt{\frac{r}{D}}L\right)\right).
+\tag{4}\]</span></p></div></li>
+<li><p>Using equation <a href="#ref-7873">(4)</a> and the intuition from question <a href="#ref-736b65637463687873">3</a>, under what parameter conditions does <span class="math inline">\(x_s\)</span> exist? Hint: the inverse of <span class="math inline">\(\cosh\)</span> does not output real values for all input values.</p></li>
+<li><p>By sketching <span class="math inline">\(M_s\)</span> for multiple values of <span class="math inline">\(L\)</span>, suggest what happens to <span class="math inline">\(x_s\)</span> as <span class="math inline">\(L\)</span> gets larger.<span id="ref-536b657463687873"></span></p></li>
+<li><p>Follow the following steps to derive a first-order approximation of <span class="math inline">\(x_s\)</span> in <span class="math inline">\(L\)</span>, for large <span class="math inline">\(L\)</span>.</p>
+<ol>
+<li><p>Noting that:</p>
+<ul>
+<li><p><span class="math inline">\(\cosh(x)=\frac{1}{2}\left(\exp(x)+\exp(-x)\right)\)</span>;</p></li>
+<li><p><span class="math inline">\(\cosh^{-1}(x)=\ln\left(x+\sqrt{x^2-1}\right).\)</span></p></li>
+</ul>
+<p>what is <span class="math inline">\(\cosh\left(L\sqrt{r/D}\right)\)</span> for large <span class="math inline">\(L\)</span>?<span id="ref-4c617267654c"></span></p></li>
+<li><p>Using the answer from part <a href="#ref-4c617267654c">a</a> show that, for large <span class="math inline">\(L\)</span>,</p>
+<div class="equation"><span id="ref-78735f617070726f78"></span><p><span class="math display">\[x_s\approx\sqrt{\frac{D}{r}}\ln\left(\frac{1}{2}\exp\left({\sqrt{\frac{r}{D}}L}\right)\right).
+\tag{5}\]</span></p></div></li>
+<li><p>Rearrange equation <a href="#ref-78735f617070726f78">(5)</a> to generate a form</p>
+<div class="equation"><span id="ref-436f6e7374616e745f64696666"></span><p><span class="math display">\[x_s\approx L-C,
+\tag{6}\]</span></p></div>
+<p>where <span class="math inline">\(C\)</span> is a positive constant that should be defined.</p></li>
+</ol></li>
+<li><p>Does solution <a href="#ref-436f6e7374616e745f64696666">(6)</a> confirm the intuition gained from the question <a href="#ref-536b657463687873">6</a>?</p></li>
+<li><p>What does equation <a href="#ref-436f6e7374616e745f64696666">(6)</a> mean for the cell populations on a large domain?</p></li>
+<li><p>(Optional) Using computer software you are comfortable with plot equations <a href="#ref-7873">(4)</a> and <a href="#ref-436f6e7374616e745f64696666">(6)</a> with values <span class="math inline">\(D=10\)</span> and <span class="math inline">\(r=1\)</span> for <span class="math inline">\(0\leq L \leq 10\)</span>. Be careful of where the solution <span class="math inline">\(x_s\)</span> becomes imaginary. How good is the approximation? Estimate the length, <span class="math inline">\(L\)</span>, at which <span class="math inline">\(M_s\)</span> is always above <span class="math inline">\(S/2\)</span>.</p></li>
+</ol>
+<h2 class="unnumbered" id="patterning">2. Patterning</h2>
+<p>Alongside the Schnakenberg system, which we have seen throughout the course, the Gierer-Meinhardt kinetics<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> are a well-known system of morphogen kinetics that produce Turing patterns.</p>
+<p>The Gierer-Meinhardt reaction-diffusion system on an infinite one-dimensional domain is</p>
+<div class="equation"><span id="ref-474d31"></span><span id="ref-474d32"></span><p><span class="math display">\[\begin{align}
+\frac{\partial A}{\partial t}=&amp;f(A,H)+ D_A \frac{\partial^2 A}{\partial x^2},\tag{7}\\
+\frac{\partial H}{\partial t}=&amp;g(A,H)+ D_H \frac{\partial^2 H}{\partial x^2},
+\tag{8}
+\end{align}\]</span></p></div>
+<p>where</p>
+<div class="equation"><p><span class="math display">\[\begin{align}
+f(A,H)=&amp;\frac{\rho_1 A^2}{\left(1+KA^2\right)H}-\mu_1 A,\tag{9}\\
+g(A,H)=&amp;\rho_2 A^2-\mu_2 H.
+\tag{10}
+\end{align}\]</span></p></div>
+<p>where <span class="math inline">\(A\)</span> and <span class="math inline">\(H\)</span> are the morphogen populations and <span class="math inline">\(K, \rho_1, \rho_2, \mu_1, \mu_2, D_A\)</span> and <span class="math inline">\(D_H\)</span> are positive constants. We assume that <span class="math inline">\(A\)</span> and <span class="math inline">\(H\)</span> remain finite over the domain and appropriate initial conditions are provided. <strong>Initially, let us fix <span class="math inline">\(\boldsymbol{K=0}\)</span></strong>.</p>
+<p>As on sheet 2 this question is a good chance to practise deriving the Turing inequalities. However, if you are confident that you know what you are doing<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> then you can simply write down the required answers.</p>
+<ol>
+<li><p>(0,0) is a homogeneous steady state of equations <a href="#ref-474d31">(7)</a> and <a href="#ref-474d32">(8)</a>. What is the positive steady state, <span class="math inline">\((A_s,H_s)\)</span>?</p></li>
+<li><p>Write down two inequalities that the positive steady state must satisfy in order to be stable, in the absence of diffusion.</p></li>
+<li><p>Derive conditions under which the non-zero homogeneous steady state is stable in the absence of diffusion, but unstable when diffusion is included<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> (<em>i.e.</em> derive the Turing conditions).<span id="ref-547572696e67"></span></p></li>
+</ol>
+<p><strong>Now assume that <span class="math inline">\(\boldsymbol{K\neq 0}\)</span></strong>.</p>
+<ol start="4">
+<li><p>Show that the positive homogeneous steady state must satisfy</p>
+<div class="equation"><span id="ref-537473745f637269746572696f6e"></span><p><span class="math display">\[\frac{\mu_1\rho_2 A_s}{\rho_1\mu_2}(1+KA_s^2)=1.
+\tag{11}\]</span></p></div></li>
+<li><p>Sketch the phase plane with nullclines <span class="math inline">\(f=0\)</span> and <span class="math inline">\(g=0\)</span> and demonstrate that there is still only one positive homogeneous steady state. Be sure to draw the two nullcline arrangements that can occur. Namely, the quadratic defined by <span class="math inline">\(g=0\)</span> can cut <span class="math inline">\(f=0\)</span> either before or after the maximum of <span class="math inline">\(f=0\)</span>. Do not forget to add the directional arrows specifying the signs of <span class="math inline">\(A_t\)</span> and <span class="math inline">\(H_t\)</span>.</p></li>
+<li><p>What Jacobian sign structures are necessary for a Turing instability to take place?</p></li>
+<li><p>Near the non-zero steady state the derivatives of <span class="math inline">\((A_t,H_t)\)</span> change sign. Use the nullcline plot to extract the signs of <span class="math inline">\(f_A, f_H, g_A\)</span> and <span class="math inline">\(g_H\)</span> and, thus, show that a diffusion-driven instability can occur in only one of the two situations. Hint: in an <span class="math inline">\((A,H)\)</span> phase plane the signs of <span class="math inline">\(f_A\)</span> and <span class="math inline">\(g_A\)</span> are defined by changes in signs of <span class="math inline">\((A_t,H_t)\)</span> along a horizontal path through <span class="math inline">\((A_s,H_s)\)</span>, whereas the signs of <span class="math inline">\(f_H\)</span> and <span class="math inline">\(g_H\)</span> are defined by changes in the signs of <span class="math inline">\((A_t,H_t)\)</span> along a vertical path through <span class="math inline">\((A_s,H_s)\)</span>.</p></li>
+</ol>
+<h2 class="unnumbered" id="simulating-turing-patterns">3. Simulating Turing patterns</h2>
+<p>No Matlab this time. Simulating partial differential equations is not a simple task. However, there are websites out there that have done the heavy lifting for you.</p>
+<p>The Gray-Scott reaction-diffusion model is</p>
+<div class="equation"><span id="ref-45475331"></span><span id="ref-45475332"></span><p><span class="math display">\[\begin{align}
+&amp;\frac{\partial u}{\partial t}=D_u\nabla^2u -uv^2+F(1-u),\tag{12}\\
+&amp;\frac{\partial v}{\partial t}=D_v\nabla^2v +uv^2-(F+k)v,
+\tag{13}
+\end{align}\]</span></p></div>
+<p>where appropriate boundary and initial conditions are assumed to be given and <span class="math inline">\(D_u, D_v, F\)</span> and <span class="math inline">\(k\)</span> are constants. <span class="math inline">\(F\)</span> is known as the feed rate as it causes more <span class="math inline">\(u\)</span> to be added to the system. <span class="math inline">\(k\)</span> is the death rate as it controls the rate at which <span class="math inline">\(v\)</span> is removed from the system.</p>
+<p>You can play around with the feed rate, death rate and initial conditions through this <a href="https://pmneila.github.io/jsexp/grayscott/">online applet</a>. What patterns can you create? As a base level try and find spots, labyrinthine patterns and constantly evolving patterns, like those shown in Figure <a href="#ref-477261792d53636f7474">1</a>. For those feeling more adventurous try and find other patterns contained within these equations.</p>
+<figure><span id="ref-477261792d53636f7474"></span><div class="figure-panels"><div class="subfigure"><span id="ref-475331"></span><img src="images/Spots_GS.png" loading="lazy" alt="Spotted pattern in the Gray–Scott model."><p>(a)</p></div><div class="subfigure"><span id="ref-475332"></span><img src="images/Labyrinthine_GS.png" loading="lazy" alt="Labyrinthine pattern in the Gray–Scott model."><p>(b)</p></div><div class="subfigure"><span id="ref-475333"></span><img src="images/Chaotic_GS.png" loading="lazy" alt="Example of an evolving pattern in the Gray–Scott model."><p>(c)</p></div></div><figcaption><strong>Figure 1.</strong> <p>Possible patterns in the Gray-Scott equations <a href="#ref-45475331">(12)</a> and <a href="#ref-45475332">(13)</a>.</p></figcaption></figure>
+<h2 class="unnumbered" id="exam-revision">Exam Revision</h2>
+<h2 class="unnumbered" id="properties-of-turing-patterns">4. Properties of Turing patterns</h2>
+<p>Consider a two-species reaction-diffusion system with Neumann boundary conditions on a domain <span class="math inline">\(B\)</span>, which has boundary <span class="math inline">\(\partial B\)</span>,</p>
+<div class="equation"><span id="ref-67656e6572616c31"></span><span id="ref-67656e6572616c32"></span><p><span class="math display">\[\begin{align}
+&amp;\frac{\partial u}{\partial t}=D_u\nabla^2u + f(u,v),\tag{14}\\
+&amp;\frac{\partial v}{\partial t}=D_v\nabla^2v + g(u,v),\tag{15}\\
+&amp;\frac{\partial u}{\partial n}=\frac{\partial v}{\partial n}=0 \textrm{ on } \partial B.
+\tag{16}
+\end{align}\]</span></p></div>
+<p>and random initial conditions. Further, assume that the kinetics and diffusion parameters are chosen such that the populations <span class="math inline">\((u,v)\)</span> undergo Turing patterning.</p>
+<ol>
+<li><p>Specify the Jacobian structures behind “cross” and “pure” kinetics.</p></li>
+<li><p>Explain why the resulting morphogen patterns of <span class="math inline">\((u,v)\)</span> are in phase when pure kinetics are used and out of phase when cross kinetics are used. Note: <em>in phase</em> means that the peaks and troughs of <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> occur at the same positions, whereas <em>out of phase</em> means that the peaks of <span class="math inline">\(u\)</span> correspond to the troughs of <span class="math inline">\(v\)</span> and vice versa. Hint: consider the signs of <span class="math inline">\(\epsilon_1\)</span> and <span class="math inline">\(\epsilon_2\)</span>. Under what conditions are they the same/different? What does this mean?</p></li>
+<li><p>Explain why spatial oscillations can never occur at a Turing bifurcation point. Namely, show that the unstable eigenvalue <span class="math inline">\(\lambda\)</span> must always be real at the onset of patterning.</p></li>
+<li><p>Why must <span class="math inline">\(D_u\neq D_v\)</span>? (Hint: assume they are equal and derive a contradiction).</p></li>
+</ol>
+<h2 class="unnumbered" id="creating-the-model">5. Creating the model</h2>
+<p>For each of the following images in Figure <a href="#ref-71312d33">2</a> write down a set of reaction-diffusion equations that could provide the images as a steady state solution. Do not forget to provide boundary conditions. For initial conditions assume that there is a small spatially random amount of morphogen throughout the domain.</p>
+<figure><span id="ref-71312d33"></span><div class="figure-panels"><div class="subfigure"><span id="ref-7131"></span><img src="images/PDE_q1.png" loading="lazy" alt="First steady state morphogen profile for the model construction question."><p>(a)</p></div><div class="subfigure"><span id="ref-7132"></span><img src="images/PDE_q2.png" loading="lazy" alt="Second steady state morphogen profile for the model construction question."><p>(b)</p></div><div class="subfigure"><span id="ref-7133"></span><img src="images/PDE_q3.png" loading="lazy" alt="Third steady state morphogen profile for the model construction question."><p>(c)</p></div></div><figcaption><strong>Figure 2.</strong> <p>Three steady state morphogen profiles.</p></figcaption></figure>
+<aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Meinhardt always maintained that the Schnakenberg system should be named after him and Gierer, as well, as it appeared as a specific case of one of their results in their original paper.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Trust me, you don’t.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>As a personal hint I suggest keeping the system as <span class="math inline">\(A_t=f(A,H)+D_A A_{xx}\)</span> and <span class="math inline">\(H_t=g(A,H)+D_H H_{xx}\)</span>, derive the inequalities in generality and then substitute the functional forms of <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> in at the end.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside>
+
+    </article>
+    <nav class="container narrow sheet-nav bottom-nav" aria-label="More problem sheets"><a href="Sheet_1.html">Sheet 1</a><a href="Sheet_2.html">Sheet 2</a><a href="Sheet_3.html">Sheet 3</a><a href="Sheet_4.html" aria-current="page">Sheet 4</a><a href="Sheet_5.html">Sheet 5</a></nav>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner">Copyright Thomas E. Woolley, unless otherwise stated.</div></footer>
+</body>
+</html>

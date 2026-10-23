@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mathematical Biology MA4309: problem sheet 5, with equations, figures and exercises.">
+  <title>Mathematical Biology: problem sheet 5 | Thomas E. Woolley</title>
+  <link rel="canonical" href="https://thomaswoolley.co.uk/Math_bio/Sheet_5.html">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <link rel="stylesheet" href="../assets/css/problem-sheets.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header"><div class="container header-inner">
+    <a class="site-name" href="../index.html">Dr Thomas E. Woolley</a>
+    <nav aria-label="Course navigation"><a href="../lecturing.html#mathematical-biology">Teaching resources</a></nav>
+  </div></header>
+  <main id="main-content" class="sheet-page">
+    <header class="page-heading"><div class="container narrow">
+      <p class="eyebrow">MA4309 · Mathematical Biology</p>
+      <h1>Problem sheet 5</h1>
+      <p>Thomas E. Woolley</p>
+      <p><a href="Sheet_5.pdf">Download the PDF</a></p>
+      <nav class="sheet-nav" aria-label="Problem sheets"><a href="Sheet_1.html">Sheet 1</a><a href="Sheet_2.html">Sheet 2</a><a href="Sheet_3.html">Sheet 3</a><a href="Sheet_4.html">Sheet 4</a><a href="Sheet_5.html" aria-current="page">Sheet 5</a></nav>
+    </div></header>
+    <article class="container narrow sheet-content">
+      <noscript><p>Enable JavaScript to render the mathematics, or <a href="Sheet_5.pdf">download the PDF</a>.</p></noscript>
+<h2 class="unnumbered" id="fixing-the-logistic-map">1. Fixing the logistic map</h2>
+<p><span id="ref-466978696e6720746865206c6f676973746963206d6170"></span> One of the big problems with the discrete logistic equation is that if your initial population is too high then the population will become negative, namely, you can never start with more than the carrying capacity. Many equations have been suggested to correct for this phenomenon. We will be investigating the following:</p>
+<div class="equation"><span id="ref-496e76657273655f6375626963"></span><p><span class="math display">\[x_{n+1}=f(x_n)=\frac{\mu^3 x_n}{(1+x_n)^3},
+\tag{1}\]</span></p></div>
+<p>where <span class="math inline">\(\mu\)</span> is a positive constant.</p>
+<ol>
+<li><p>Draw a sketch of <span class="math inline">\((x,f(x))\)</span> and <span class="math inline">\((x,x)\)</span> on the same axes. How many non-negative steady states do we expect?</p></li>
+<li><p>Derive the non-negative steady states, noting any parameter dependencies.<span id="ref-7374737471"></span></p></li>
+<li><p>Derive the stability of the steady states, noting any parameter dependencies.</p></li>
+<li><p>Show that period two oscillatory points, <span class="math inline">\(x_p\)</span>, satisfy</p>
+<div class="equation"><span id="ref-7870"></span><p><span class="math display">\[\left(1+x_p \right)\left(1+\frac {\mu^3 x_p}{ \left(1+x_p \right)^3} \right)=\mu^2.
+\tag{2}\]</span></p></div></li>
+<li><p>Solve for <span class="math inline">\(x_p\)</span> by following the following steps.</p>
+<ol>
+<li><p>Rewrite equation <a href="#ref-7870">(2)</a> as a cubic in <span class="math inline">\(y=1+x_p\)</span>.</p></li>
+<li><p>Note that <span class="math inline">\(x_s=\mu-1\)</span> is a steady state (that you should have found in question <a href="#ref-7374737471">2</a>) and remember that any steady state is also a solution of equation <a href="#ref-7870">(2)</a>. Using this knowledge rewrite the cubic in <span class="math inline">\(y\)</span> in the form</p>
+<div class="equation"><p><span class="math display">\[(y-\mu)(y^2+ay+b)=0
+\tag{3}\]</span></p></div>
+<p>where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> should be defined in terms of <span class="math inline">\(\mu\)</span>.</p></li>
+<li><p>Solve <span class="math inline">\(y^2+ay+b=0\)</span> and hence derive <span class="math inline">\(x_p\)</span>, noting any parameter dependencies.</p></li>
+<li><p>Calculating the stability of the period two states is very hard to do by hand. However, explain how it would be done. Namely, define the inequality that would have to be calculated.</p></li>
+<li><p>The bifurcation diagram of equation <a href="#ref-496e76657273655f6375626963">(1)</a> is shown in Figure <a href="#ref-44697363726574655f696e76657273655f6375626963">1</a>; note the logarithmic <span class="math inline">\(y\)</span>-axis. Explain what it shows and how it compares with the results you have generated in this question.</p>
+<figure><span id="ref-44697363726574655f696e76657273655f6375626963"></span><div class="figure-panels"><div class="subfigure"><img src="images/Discrete_inverse_cubic.png" loading="lazy" alt="Bifurcation diagram for the inverse cubic population map, with a logarithmic vertical axis."></div></div><figcaption><strong>Figure 1.</strong> <p>Bifurcation diagram of equation <a href="#ref-496e76657273655f6375626963">(1)</a>; note the logarithmic <span class="math inline">\(y\)</span>-axis.</p></figcaption></figure></li>
+</ol></li>
+</ol>
+<h2 class="unnumbered" id="squirrels">2. Squirrels</h2>
+<span id="ref-537175697272656c73"></span>
+<figure><span id="ref-537175697272656c4d6170"></span><div class="figure-panels"><div class="subfigure"><img src="images/SquirrelMap.png" loading="lazy" alt="Maps showing changes in the distribution of red and grey squirrels in the United Kingdom."></div></div><figcaption><strong>Figure 2.</strong> <p>Evolution of the spatial distribution of red and grey squirrels over time from the UK government’s <a href="https://aphascience.blog.gov.uk/2018/10/09/red-squirrel/">science blog</a>.</p></figcaption></figure>
+<p>Consider an infinite one-dimensional domain, in which grey, <span class="math inline">\(G\)</span>, and red, <span class="math inline">\(R\)</span>, squirrel populations undergo the following interactions:</p>
+<ul>
+<li><p>Both grey and red squirrel populations move randomly through their domains with rates <span class="math inline">\(D_G\)</span> and <span class="math inline">\(D_R\)</span>, respectively.</p></li>
+<li><p>Grey squirrels are born at a rate proportional to their population, where the proportionality constant is <span class="math inline">\(b_1\)</span>.</p></li>
+<li><p>Red squirrels are born at a rate proportional to their population, where the proportionality constant is <span class="math inline">\(b_2\)</span>.</p></li>
+<li><p>Both squirrel populations compete internally with members of their own population (<em>i.e.</em> grey compete with grey and red compete with red, respectively). Namely, whenever two members of the same population interact one of the members is suppressed. The constant of proportionality is <span class="math inline">\(d_1\)</span> for the grey squirrels and <span class="math inline">\(d_2\)</span> for the red squirrels.</p></li>
+<li><p>The squirrels also compete across species. Namely, a grey and a red squirrel interaction can lead to a reduction in red squirrels, or a reduction in grey squirrels. The rate of proportionality for the reduction of grey squirrels is <span class="math inline">\(c_1\)</span>, whilst the rate of proportionality for the reduction of red squirrels is <span class="math inline">\(c_2\)</span>.</p></li>
+</ul>
+<ol>
+<li><p>Ignoring movement for a moment, write down the interaction equations specified by the above description.</p></li>
+<li><p>Show that the interaction equations and movement description lead to the following PDEs,</p>
+<div class="equation"><span id="ref-47"></span><span id="ref-52"></span><p><span class="math display">\[\begin{align}
+\frac{\partial G}{\partial t}&amp;=D_G\frac{\partial^2 G}{\partial x^2}+b_1G-d_1G^2-c_1RG,\tag{4}\\
+\frac{\partial R}{\partial t}&amp;=D_R\frac{\partial^2 R}{\partial x^2}+b_2R-d_2R^2-c_2RG.
+\tag{5}
+\end{align}\]</span></p></div></li>
+<li><p>Non-dimensionalise the system to produce the following equations,</p>
+<div class="equation"><span id="ref-75"></span><span id="ref-76"></span><p><span class="math display">\[\begin{align}
+\frac{\partial u}{\partial \tau}=&amp;\frac{\partial^2 u}{\partial X^2}+u(1-u-\alpha_{12}v),\tag{6}\\
+\frac{\partial v}{\partial \tau}=&amp;D\frac{\partial^2 v}{\partial X^2}+\rho v(1-v-\alpha_{21}u).
+\tag{7}
+\end{align}\]</span></p></div></li>
+<li><p>What are the parameter groupings <span class="math inline">\(D\)</span>, <span class="math inline">\(\rho\)</span>, <span class="math inline">\(\alpha_{12}\)</span> and <span class="math inline">\(\alpha_{21}\)</span> in terms of <span class="math inline">\(b_1\)</span>, <span class="math inline">\(b_2\)</span>, <span class="math inline">\(d_1\)</span>, <span class="math inline">\(d_2\)</span>, <span class="math inline">\(c_1\)</span> and <span class="math inline">\(c_2\)</span>?</p></li>
+<li><p>Find all homogeneous steady states of the system, noting any parameter dependencies that need to be satisfied for the steady state to exist.</p></li>
+<li><p>Calculate the stability of the trivial homogeneous steady states. Namely, those in which one of the populations is zero, noting parameter dependencies of the stability criterion.</p>
+<p>Hint: you should find there are four cases:</p>
+<ol>
+<li><p><span class="math inline">\(\alpha_{12}&lt;1\)</span> and <span class="math inline">\(\alpha_{21}&lt;1\)</span>;</p></li>
+<li><p><span class="math inline">\(\alpha_{12}&lt;1\)</span> and <span class="math inline">\(\alpha_{21}&gt;1\)</span>;</p></li>
+<li><p><span class="math inline">\(\alpha_{12}&gt;1\)</span> and <span class="math inline">\(\alpha_{21}&lt;1\)</span>;</p></li>
+<li><p><span class="math inline">\(\alpha_{12}&gt;1\)</span> and <span class="math inline">\(\alpha_{21}&gt;1\)</span>.</p></li>
+</ol></li>
+</ol>
+<p>Calculating the stability of the fourth steady state,</p>
+<div class="equation"><p><span class="math display">\[(u_s,v_s)=\frac{1}{1-\alpha_{12}\alpha_{21}}(1-\alpha_{12},1-\alpha_{21}),
+\tag{8}\]</span></p></div>
+<p>leads to a complicated eigenvalue calculation and we will use curve sketching in the next question to consider the stability of this steady state.</p>
+<ol start="7">
+<li><p>Sketch the <span class="math inline">\((u,v)\)</span> phase plane in each of the cases (a)-(d). You should include: the nullclines; annotations regarding the signs of <span class="math inline">\(\text{ d}u/\text{ d}\tau\)</span> and <span class="math inline">\(\text{ d}v/\text{ d}\tau\)</span> in each region delineated by the nullclines; accompanying directional arrows in each region; directional arrows on the nullclines; and, finally, trajectories illustrating the expected evolution with initial conditions taken from each region.</p>
+<p>Use these sketches to determine the stability of <span class="math inline">\((u_s,v_s)\)</span>, when it exists.</p></li>
+<li><p>Describe what happens to the grey and red squirrels in each of the cases (a)-(d).<span id="ref-537175697272656c5f706172616d5f726567696f6e"></span></p></li>
+<li><p>By considering Figure <a href="#ref-537175697272656c4d6170">2</a> and question <a href="#ref-537175697272656c5f706172616d5f726567696f6e">8</a> what parameter region do you think we are in?</p></li>
+<li><p>Can the non-zero steady state, <span class="math inline">\((u_s,v_s)\)</span>, undergo a Turing instability?</p></li>
+</ol>
+<p>Now suppose we fix some constants and begin to consider the spatial aspects of the problem. Namely, let <span class="math inline">\(D=1\)</span>, <span class="math inline">\(\rho=1\)</span>, <span class="math inline">\(\alpha_{12}=1/2\)</span>, <span class="math inline">\(\alpha_{21}=3/2\)</span>. Further, suppose we supply the boundary conditions <span class="math inline">\(u(-\infty)=1\)</span>, <span class="math inline">\(v(-\infty)=0\)</span> and <span class="math inline">\(u(\infty)=0\)</span>, <span class="math inline">\(v(\infty)=1\)</span> and initial condition <span class="math inline">\(u=0\)</span>, <span class="math inline">\(v=1\)</span> almost everywhere.</p>
+<ol start="11">
+<li><p>What do these parameters, boundary and initial conditions mean in terms of the biology of the problem?</p></li>
+<li><p>Provide a guess as to how the population will evolve.<span id="ref-7175657374696f6e"></span></p></li>
+<li><p>Convert equations <a href="#ref-75">(6)</a> and <a href="#ref-76">(7)</a> into a moving frame of reference by converting the coordinates <span class="math inline">\((X,\tau)\)</span> into <span class="math inline">\((z,\tau)\)</span> where <span class="math inline">\(z=X-c\tau\)</span> and <span class="math inline">\(c\)</span> is a positive constant.</p></li>
+<li><p>If we define <span class="math inline">\(s=u+v\)</span> then show that a travelling wave with a stationary profile satisfies</p>
+<div class="equation"><span id="ref-73"></span><p><span class="math display">\[0=\frac{\text{ d}^2 s}{\text{ d}z^2}+c\frac{\text{ d}s}{\text{ d}z}+s(1-s),
+\tag{9}\]</span></p></div>
+<p>where you should also specify the boundary and initial conditions.</p></li>
+<li><p>By inspection offer a simple solution to equation <a href="#ref-73">(9)</a>.</p></li>
+<li><p>Deduce that, under the given conditions,</p>
+<div class="equation"><span id="ref-755f736f6c6f"></span><p><span class="math display">\[0=\frac{\text{ d}^2 u}{\text{ d}z^2}+c\frac{\text{ d}u}{\text{ d}z}+(1-\alpha_{12})u(1-u).
+\tag{10}\]</span></p></div></li>
+<li><p>Show that equation <a href="#ref-755f736f6c6f">(10)</a> can support a travelling wave solution if <span class="math inline">\(c\geq 2\sqrt{1-\alpha_{12}}\)</span>.</p></li>
+<li><p>Having looked at equations <a href="#ref-47">(4)</a> and <a href="#ref-52">(5)</a> in a number of ways return to question <a href="#ref-7175657374696f6e">12</a>. Have your thoughts about the spatio-temporal evolution of the red and grey squirrel populations changed? Does this model represent what is happening in Figure <a href="#ref-537175697272656c4d6170">2</a>?</p></li>
+</ol>
+<h2 class="unnumbered" id="amoebae-movement">3. Amoebae movement</h2>
+<p><span id="ref-416d6f65626165206d6f76656d656e74"></span> The amoebae of the slime mould <em>Dictyostelium discoideum</em> secrete a chemical attractant, cyclic-AMP. The attractant diffuses away from the amoebae source and attracts other amoebae to it, causing spatial aggregations to form, see Figure <a href="#ref-44696374796f">3</a> and the linked YouTube video.</p>
+<figure><span id="ref-44696374796f"></span><div class="figure-panels"><div class="subfigure"><img src="images/Dictyo_pattern.jpg" loading="lazy" alt="Frame from a video of spatial waves formed by aggregating Dictyostelium discoideum."></div></div><figcaption><strong>Figure 3.</strong> <p>Single frame of a spatio-temporal wave pattern made by Dictyostelium discoideum. The full video can be found on <a href="https://www.youtube.com/watch?v=oYRF7BaaaJY">YouTube</a>. Have a watch to see how the pattern is generated from randomness.</p></figcaption></figure>
+<p>In the following assume that we are on an infinite, one-dimensional domain so that we can be loose with boundary conditions.</p>
+<p>The attractant (concentration denoted <span class="math inline">\(a\)</span>) is secreted by the amoebae (concentration denoted <span class="math inline">\(n\)</span>) at a rate proportional to the amoebae concentration. The attractant is able to diffuse and the attractant decays at a rate proportional to the attractant’s concentration.</p>
+<ol>
+<li><p>Justify the following equation for the attractant population,</p>
+<div class="equation"><p><span class="math display">\[\frac{\partial a}{\partial t}=D_a\frac{\partial^2 a}{\partial x^2}+k_1n-k_2a.
+\tag{11}\]</span></p></div></li>
+</ol>
+<p>The amoebae do not reproduce or degrade; however, alongside their diffusive motion (Figure <a href="#ref-4469666675736976655f6d6f74696f6e">4(a)</a>) they also undergo attractant-controlled motion (chemotaxis, as shown in Figure <a href="#ref-41747472616374616e745f636f6e74726f6c6c65645f6d6f74696f6e">4(b)</a>).</p>
+<figure><span id="ref-4d6f74696f6e5f7479706573"></span><div class="figure-panels"><div class="subfigure"><span id="ref-4469666675736976655f6d6f74696f6e"></span><img src="images/Diffusive_motion.png" loading="lazy" alt="Schematic of unbiased diffusive movement between neighbouring populations."><p>(a) Schematic of diffusive motion</p></div><div class="subfigure"><span id="ref-41747472616374616e745f636f6e74726f6c6c65645f6d6f74696f6e"></span><img src="images/Attractant_controlled_motion.png" loading="lazy" alt="Schematic of chemotactic movement controlled by attractant at neighbouring positions."><p>(b) Schematic of chemotaxis</p></div></div><figcaption><strong>Figure 4.</strong> <p>Different motion types of the amoebae.</p></figcaption></figure>
+<ol start="2">
+<li><p>Using the process of considering an infinite discretised domain, derive the equation of the amoebae movement. Show that, upon taking a continuum spatial limit the equations can be simplified to</p>
+<div class="equation"><p><span class="math display">\[\frac{\partial n}{\partial t}=D_n\frac{\partial^2 n}{\partial x^2}-\chi\frac{\partial }{\partial x}\left(n\frac{\partial a}{\partial x}\right).
+\tag{12}\]</span></p></div>
+<p>where <span class="math inline">\(D_n\)</span> and <span class="math inline">\(\chi\)</span> should be defined in terms of <span class="math inline">\(D&#39;_n\)</span>, <span class="math inline">\(\chi&#39;\)</span> and <span class="math inline">\(\Delta x\)</span>.</p></li>
+</ol>
+<p>We now consider the system</p>
+<div class="equation"><span id="ref-6e"></span><span id="ref-61"></span><p><span class="math display">\[\begin{align}
+&amp;\frac{\partial n}{\partial t}=D_n\frac{\partial^2 n}{\partial x^2}-\chi\frac{\partial }{\partial x}\left(n\frac{\partial a}{\partial x}\right),\tag{13}\\
+&amp;\frac{\partial a}{\partial t}=D_a\frac{\partial^2 a}{\partial x^2}+n-a.
+\tag{14}
+\end{align}\]</span></p></div>
+<p>where we have set <span class="math inline">\(k_1=1=k_2\)</span>. The system is on an infinite one-dimensional domain. The boundary conditions are zero-flux and the initial conditions are uniformly distributed random perturbations about a mean of <span class="math inline">\(n=a=1\)</span> and range 1/10.</p>
+<ol start="3">
+<li><p>What are the spatially homogeneous steady states <span class="math inline">\((n_s,a_s)\)</span> of system <a href="#ref-6e">(13)</a>-<a href="#ref-61">(14)</a>?</p></li>
+<li><p>Perturb around this homogeneous steady state using a spatial perturbation and derive conditions under which the homogeneous steady state will evolve to a patterned state.</p></li>
+<li><p>Experimentally, <span class="math inline">\(\chi\)</span> is seen to increase during the life cycle of the slime mould. What does this mean? What would you expect to see over the course of the experiment?</p></li>
+</ol>
+
+    </article>
+    <nav class="container narrow sheet-nav bottom-nav" aria-label="More problem sheets"><a href="Sheet_1.html">Sheet 1</a><a href="Sheet_2.html">Sheet 2</a><a href="Sheet_3.html">Sheet 3</a><a href="Sheet_4.html">Sheet 4</a><a href="Sheet_5.html" aria-current="page">Sheet 5</a></nav>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner">Copyright Thomas E. Woolley, unless otherwise stated.</div></footer>
+</body>
+</html>

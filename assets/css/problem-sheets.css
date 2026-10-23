@@ -1,0 +1,29 @@
+.sheet-content { padding-block: 2.5rem; overflow-wrap: break-word; }
+.sheet-content h2 { margin-top: 3rem; font-size: clamp(1.6rem, 4vw, 2.2rem); }
+.sheet-content h2:first-of-type { margin-top: 0; }
+.sheet-content li { padding-left: .35rem; margin-block: .8rem; }
+.sheet-content li p { margin-block: .6rem; }
+.sheet-content ol ol { list-style-type: lower-alpha; }
+.sheet-content figure { margin: 2rem 0; padding: 1rem; border: 1px solid var(--line); border-radius: var(--radius); }
+.figure-panels { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; align-items: start; }
+.subfigure { flex: 1 1 15rem; max-width: 100%; text-align: center; }
+.subfigure img { margin-inline: auto; max-height: 36rem; object-fit: contain; }
+.subfigure p { margin-block: .5rem; }
+.sheet-content figcaption { margin-top: 1rem; font-size: .95rem; }
+.sheet-content figcaption p { display: inline; }
+.sheet-content .equation { overflow-x: auto; padding-block: .5rem; }
+.sheet-content mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; padding-block: .3rem; }
+.sheet-content pre { max-width: 100%; overflow-x: auto; padding: 1.25rem; background: var(--surface); border: 1px solid var(--line); border-radius: .5rem; font-size: .88rem; line-height: 1.5; tab-size: 4; }
+.sheet-content code { font-family: Consolas, "Cascadia Code", monospace; }
+.sheet-content [id] { scroll-margin-top: 2rem; }
+.sheet-nav { display: flex; flex-wrap: wrap; gap: .6rem; margin-block: 1.5rem 0; }
+.sheet-nav a { padding: .4rem .8rem; border: 1px solid var(--line); border-radius: .35rem; text-decoration: none; }
+.sheet-nav a[aria-current="page"] { color: white; background: var(--ink); border-color: var(--ink); }
+.bottom-nav { margin-block: 0 3rem; }
+.footnotes { border-top: 1px solid var(--line); margin-top: 3rem; font-size: .95rem; }
+@media print {
+  .site-header, .skip-link, .sheet-nav, .site-footer { display: none; }
+  .page-heading { padding-block: 1rem; }
+  .sheet-content { padding-top: 0; }
+  .sheet-content figure, .sheet-content pre { break-inside: avoid; }
+}

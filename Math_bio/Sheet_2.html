@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mathematical Biology MA4309: problem sheet 2, with equations, figures and exercises.">
+  <title>Mathematical Biology: problem sheet 2 | Thomas E. Woolley</title>
+  <link rel="canonical" href="https://thomaswoolley.co.uk/Math_bio/Sheet_2.html">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <link rel="stylesheet" href="../assets/css/problem-sheets.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header"><div class="container header-inner">
+    <a class="site-name" href="../index.html">Dr Thomas E. Woolley</a>
+    <nav aria-label="Course navigation"><a href="../lecturing.html#mathematical-biology">Teaching resources</a></nav>
+  </div></header>
+  <main id="main-content" class="sheet-page">
+    <header class="page-heading"><div class="container narrow">
+      <p class="eyebrow">MA4309 · Mathematical Biology</p>
+      <h1>Problem sheet 2</h1>
+      <p>Thomas E. Woolley</p>
+      <p><a href="Sheet_2.pdf">Download the PDF</a></p>
+      <nav class="sheet-nav" aria-label="Problem sheets"><a href="Sheet_1.html">Sheet 1</a><a href="Sheet_2.html" aria-current="page">Sheet 2</a><a href="Sheet_3.html">Sheet 3</a><a href="Sheet_4.html">Sheet 4</a><a href="Sheet_5.html">Sheet 5</a></nav>
+    </div></header>
+    <article class="container narrow sheet-content">
+      <noscript><p>Enable JavaScript to render the mathematics, or <a href="Sheet_2.pdf">download the PDF</a>.</p></noscript>
+<h2 class="unnumbered" id="flattening-the-curve">1. Flattening the curve</h2>
+<span id="ref-466c617474656e696e6720746865206375727665"></span>
+<figure><span id="ref-434443"></span><div class="figure-panels"><div class="subfigure"><img src="images/CDC_image.jpg" loading="lazy" alt="Flattening the epidemic curve: a lower peak spreads cases over a longer period."></div></div><figcaption><strong>Figure 1.</strong> <p>Image taken from the website of the <a href="https://www.cdc.gov/hiv/covid-19/index.html">“Centers for Disease Control and Prevention”</a>.</p></figcaption></figure>
+<p>Consider the SIR equations for modelling an infectious disease and assume that the parameter values are such that we are in a pandemic scenario, <em>i.e.</em> <span class="math inline">\(\rho=rS_0/a&gt;1\)</span>,</p>
+<div class="equation"><p><span class="math display">\[\begin{align}
+&amp;\dot{S}=-rSI, \quad S(0)=S_0,\tag{1}\\
+&amp;\dot{I}=rSI-aI,\quad I(0)=I_0,\tag{2}\\
+&amp;\dot{R}=aI, \quad R(0)=0.
+\tag{3}
+\end{align}\]</span></p></div>
+<p>Note the following questions are easier if you have a good grip on the manipulations performed on the SIR model, as seen in the notes. Thus, this would be a good time to practise deriving the following quantities. However, if you are confident that you know what you are doing<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> then you can simply write down the required answers.</p>
+<ol>
+<li><p>Write down expressions for the maximum number of infected people, <span class="math inline">\(I_{\textrm{max}}\)</span>, and total number of infected people, <span class="math inline">\(I_\Sigma\)</span>, in terms of <span class="math inline">\(a, r, S_0, I_0\)</span> and <span class="math inline">\(S_\infty\)</span>.</p></li>
+<li><p>Write down the expression that <span class="math inline">\(S_\infty\)</span> must satisfy; call this the consistency equation.</p></li>
+<li><p>Plot the left- and right-hand sides of the consistency equation on the same axes with <span class="math inline">\(S_\infty\)</span> on the <span class="math inline">\(x\)</span>-axis. Demonstrate that there are, generally, two possible roots and highlight which root we are interested in.<span id="ref-47726170686963616c5f7175657374696f6e"></span></p></li>
+</ol>
+<p>In the early stages of the corona pandemic much was made of the “Flatten the Curve” idea. Namely, if you can reduce the infection rate then it was reported that although it would make the disease last longer it would reduce the maximum number of infections, thus, allowing the health care system to cope (see Figure <a href="#ref-434443">1</a>).</p>
+<ol start="4">
+<li><p>Consider two infection rates <span class="math inline">\(r_1\)</span>, <span class="math inline">\(r_2\)</span>, such that <span class="math inline">\(r_1&gt;r_2\)</span>. Show that <span class="math inline">\(I_{\textrm{max}}(r_1)&gt;I_{\textrm{max}}(r_2)\)</span>.</p>
+<p>Hint 1: we are considering a pandemic situation, so the reproduction number, <span class="math inline">\(\rho\)</span>, is greater than one.</p>
+<p>Hint 2: consider the derivative of <span class="math inline">\(I_{\textrm{max}}(r)\)</span> with respect to <span class="math inline">\(r\)</span>.</p></li>
+</ol>
+<p>As shown in the last question, reducing the infection rate does reduce the maximum number of infections. However, it also extends the infection period (see Figure <a href="#ref-434443">1</a>). Thus, are we sure that the total number of infectives is smaller? For example, instead of infecting 10 people in week 1 are we infecting 1 person per week and making the infection last 10 weeks? Namely, are we just delaying the inevitable, or does reducing the infection rate actually reduce the total number of infectives?</p>
+<ol start="5">
+<li><p>Show that if <span class="math inline">\(r_1&gt;r_2\)</span> then <span class="math inline">\(I_{\Sigma}(r_1)&gt;I_{\Sigma}(r_2)\)</span>.</p>
+<p>Hint 1: Approach this equation graphically using the result from question <a href="#ref-47726170686963616c5f7175657374696f6e">3</a>.</p></li>
+</ol>
+<h2 class="unnumbered" id="discrete-dynamics">2. Discrete dynamics</h2>
+<p>Consider the following discrete evolution equation of a population <span class="math inline">\(N_t\)</span> at generation <span class="math inline">\(t\)</span>,</p>
+<div class="equation"><span id="ref-4e74"></span><p><span class="math display">\[N_{t+1}=\frac{bN_t^2}{1+N_t^2}-EN_t=f(N_t),
+\tag{4}\]</span></p></div>
+<p>where <span class="math inline">\(b&gt;2\)</span> and <span class="math inline">\(E&gt;0\)</span> are constants.</p>
+<ol>
+<li><p>Suggest a biological interpretation of equation <a href="#ref-4e74">(4)</a>.</p></li>
+<li><p>Determine the three steady states of equation <a href="#ref-4e74">(4)</a>. Define them to be <span class="math inline">\(N_0&lt;N_-\leq N_+\)</span>. You should be able to show that <span class="math inline">\(N_\pm\)</span> only exist if <span class="math inline">\(E&lt;(b-2)/2=E_M\)</span>.</p></li>
+<li><p>Draw <span class="math inline">\((x,y)\)</span> graphs of</p>
+<div class="equation"><span id="ref-436f6d706f6e656e7473"></span><p><span class="math display">\[y=\frac{bx^2}{1+x^2} \text{ and }y=Ex
+\tag{5}\]</span></p></div>
+<p>for a variety of <span class="math inline">\(b\)</span> and <span class="math inline">\(E\)</span>. Using these graphs draw three <span class="math inline">\((N_t,N_{t+1})\)</span> plots for the three cases</p>
+<ol>
+<li><p><span class="math inline">\(E&lt;E_M\)</span>,</p></li>
+<li><p><span class="math inline">\(E=E_M\)</span>,</p></li>
+<li><p><span class="math inline">\(E&gt;E_M\)</span>.</p></li>
+</ol></li>
+<li><p>Focusing now on the case of <span class="math inline">\(E&lt;E_M=(b-2)/2\)</span>, show by cobwebbing, or otherwise, that the model is realistic only if the population, <span class="math inline">\(N_t\)</span>, always lies between the two positive values <span class="math inline">\([N_-,N_2]\)</span>, where you should analytically derive the form of <span class="math inline">\(N_2\)</span>.</p></li>
+<li><p>By cobwebbing, or otherwise, discuss the stability of the steady states <span class="math inline">\(N_0, N_\pm\)</span>.</p></li>
+</ol>
+<h2 class="unnumbered" id="cobwebbing-in-matlab">3. Cobwebbing in Matlab</h2>
+<p>The code below simulates the dynamics as presented in question 2. Once again, you can download this code from Learning Central, or copy and paste it from here.</p>
+<p>Simulating discrete dynamics is, in some ways, easier than simulating ODEs. Given a value for <span class="math inline">\(N_t\)</span> and a function <span class="math inline">\(f\)</span> you simply evaluate <span class="math inline">\(f(N_t)\)</span> to calculate <span class="math inline">\(N_{t+1}\)</span>. Thus, most of the cobwebbing code below is for plotting purposes. The actual calculation step occurs in lines 43-46.</p>
+<p>Have a go at altering the parameters <span class="math inline">\(b\)</span> and <span class="math inline">\(E\)</span> in lines 9-10. Equally, change the initial conditions in lines 36-38 to see where you will end up.</p>
+<p>If you are really feeling adventurous, alter the code to work with the discrete logistic equation and simulate chaos!</p>
+<pre class="matlab"><code>%% Ensure we start from a blank slate
+clear all
+close all
+clc
+
+%% Initialise variables
+fs=15; % Set fontsize
+
+b=4;
+E=0.8;
+
+Np=(b+sqrt(b^2-4*(1+E)^2))/(2*(1+E)); %N+ from question 2.
+Nn=(b-sqrt(b^2-4*(1+E)^2))/(2*(1+E)); %N- from question 2.
+N1=(b-sqrt(b^2-4*E*(1+Nn^2)*(E*(1+Nn^2)-b*Nn)))/(2*E*(1+Nn^2)); %N1 from question 2.
+N2=(b+sqrt(b^2-4*E*(1+Nn^2)*(E*(1+Nn^2)-b*Nn)))/(2*E*(1+Nn^2)); %N2 from question 2.
+
+%% Set up the basic plotting space
+N=linspace(-1,8);
+
+hold on
+plot(N,N,&#x27;k&#x27;) % Plot N(t)=N(t+1)
+plot(N,b*N.^2./(1+N.^2)-E*N,&#x27;b&#x27;) % Plot N(t+1)=f(N(t))
+plot(N,Nn*ones(1,length(N)),&#x27;--k&#x27;,&#x27;linewidth&#x27;,1) % Plot N(t+1)=N-
+plot([N1 N1],[0 Nn],&#x27;--k&#x27;,&#x27;linewidth&#x27;,1) % Plot N(t)=N1
+plot([Nn Nn],[0 Nn],&#x27;--k&#x27;,&#x27;linewidth&#x27;,1) % Plot N(t)=N-
+plot([N2 N2],[0 Nn],&#x27;--k&#x27;,&#x27;linewidth&#x27;,1) % Plot N(t)=N2
+axis([0 5 0 2])
+xlabel(&#x27;$N_t$&#x27;)
+ylabel(&#x27;$N_{t+1}$&#x27;)
+
+%% Calculate the cobweb diagram
+% The Cobweb(x1,x2,x3,x4) function has 4 arguments x1-x4.
+% x1 is the initial point from which the cobweb starts.
+% x2 and x3 are the parameters b and E, respectively.
+% x4 is the colour of the cobweb.
+Cobweb(3,b,E,&#x27;b&#x27;)
+Cobweb(0.5,b,E,&#x27;r&#x27;)
+Cobweb(4.5,b,E,&#x27;r&#x27;)
+set(gca,&#x27;fontsize&#x27;,fs) % Set fontsize.
+
+function Cobweb(N0,b,E,c)
+% The following for loop computes the first 100 iteration values.
+Nt(1)=N0;
+for i=1:100
+    Nt(i+1)=b*Nt(i)^2/(1+Nt(i)^2)-E*Nt(i);
+end
+
+
+% The following code plots the cobweb.
+plot([Nt(1) Nt(1)],[0 Nt(2)],c,&#x27;linewidth&#x27;,1)
+for i=1:100-2
+    plot([Nt(i) Nt(i+1)],[Nt(i+1) Nt(i+1)],c,&#x27;linewidth&#x27;,1)
+    plot([Nt(i+1) Nt(i+1)],[Nt(i+1) Nt(i+2)],c,&#x27;linewidth&#x27;,1)
+end
+end</code></pre>
+<h2 class="unnumbered" id="exam-revision">Exam Revision</h2>
+<h2 class="unnumbered" id="a-different-infection-model">4. A different infection model</h2>
+<p>An animal population is prone to a fatal disease. There is a limited vaccine that creates immunity in the susceptible population but has no effect on infected animals. The higher the number of infected animals observed, the more vigorously vaccinations are administered.</p>
+<p>Let <span class="math inline">\(I\)</span> denote the number of infected animals, <span class="math inline">\(S\)</span> the number of susceptible animals, <span class="math inline">\(V\)</span> the number of vaccinated animals and <span class="math inline">\(R\)</span> the number of dead animals. An ordinary differential equation description of these interactions can be written</p>
+<div class="equation"><p><span class="math display">\[\begin{align}
+\frac{\text{ d}S}{\text{ d}T} =&amp;-\beta SI-pSI,\tag{6}\\
+\frac{\text{ d}I}{\text{ d}T} =&amp;\beta SI-aI,\tag{7}\\
+\frac{\text{ d}R}{\text{ d}T} =&amp;aI,\tag{8}\\
+\frac{\text{ d}V}{\text{ d}T} =&amp;pSI.
+\tag{9}
+\end{align}\]</span></p></div>
+<ol>
+<li><p>Explain the biological interpretation of each of the terms in the model.</p></li>
+<li><p>Non-dimensionalise the model to give</p>
+<div class="equation"><span id="ref-4e6f6e64696d7331"></span><span id="ref-4e6f6e64696d7631"></span><p><span class="math display">\[\begin{align}
+\frac{\text{ d}s}{\text{ d}t} =&amp;-si(1+\eta),\tag{10}\\
+\frac{\text{ d}i}{\text{ d}t} =&amp;i(s-1),\tag{11}\\
+\frac{\text{ d}r}{\text{ d}t} =&amp;i,\tag{12}\\
+\frac{\text{ d}v}{\text{ d}t} =&amp;\eta si.
+\tag{13}
+\end{align}\]</span></p></div>
+<p>where <span class="math inline">\(s, i, r, v\)</span> and <span class="math inline">\(t\)</span> are the non-dimensional variables corresponding to the upper-case dimensional variables. The parameter <span class="math inline">\(\eta&gt;0\)</span> should be given in terms of <span class="math inline">\(a, \beta\)</span> and <span class="math inline">\(p\)</span>.</p></li>
+</ol>
+<p>Suppose that the initial conditions are</p>
+<div class="equation"><p><span class="math display">\[s(0)=s_0, i(0)=i_0, r(0)=0, v(0)=0,\]</span></p></div>
+<p>where <span class="math inline">\(s_0, i_0&gt;0\)</span> and assume that <span class="math inline">\(i\rightarrow 0\)</span> as <span class="math inline">\(t\rightarrow\infty\)</span>.</p>
+<ol start="3">
+<li><p>Show</p>
+<div class="equation"><span id="ref-436f6e736572766564"></span><p><span class="math display">\[s+i+r+v=\textrm{constant},
+\tag{14}\]</span></p></div>
+<p>where the constant should be defined.</p></li>
+<li><p>What does equation <a href="#ref-436f6e736572766564">(14)</a> mean? Is this physically correct?</p></li>
+<li><p>Define <span class="math inline">\(r_\infty=\lim_{t\rightarrow\infty}r(t)\)</span> and <span class="math inline">\(s_\infty=\lim_{t\rightarrow\infty}s(t)\)</span>. What do <span class="math inline">\(r_\infty\)</span> and <span class="math inline">\(s_\infty\)</span> represent?</p></li>
+<li><p>By considering <span class="math inline">\(\text{ d}i/\text{ d}s\)</span> and <span class="math inline">\(\text{ d}v/\text{ d}s\)</span> show that</p>
+<div class="equation"><p><span class="math display">\[r_\infty=\frac{1}{1+\eta}\ln\left(\frac{s_0}{s_\infty}\right).
+\tag{15}\]</span></p></div></li>
+</ol>
+<h2 class="unnumbered" id="discrete-ricker-model">5. Discrete Ricker model</h2>
+<p>Suppose that the evolution of a population can be described by a discrete-time Ricker model of the form</p>
+<div class="equation"><p><span class="math display">\[N_{t+1} = N_t \exp\left(r\left(1-\frac{N_t}{K}\right)\right)=f(N_t),
+\tag{16}\]</span></p></div>
+<p>where <span class="math inline">\(r,K&gt;0\)</span> are constants.</p>
+<ol>
+<li><p>Describe the biological interpretation of the model.</p></li>
+<li><p>Determine any non-negative steady states and their linear stability.</p></li>
+</ol>
+<p>Let us now fix <span class="math inline">\(K=1\)</span>.</p>
+<ol start="3">
+<li><p>Construct a cobweb map for the model when <span class="math inline">\(0&lt;r&lt;2\)</span> and discuss the global qualitative behaviour of the solutions.</p></li>
+<li><p>Using Figure <a href="#ref-5269636b6572">2</a>, or otherwise, specify the steady states and their stability in the three cases of the discrete Ricker model when <span class="math inline">\(r=1\)</span>, 2.1 and 3.</p>
+<figure><span id="ref-5269636b6572"></span><div class="figure-panels"><div class="subfigure"><span id="ref-725f31"></span><img src="images/Ricker_r1.png" loading="lazy" alt="Ricker map with r = 1."><p>(a) <span class="math inline">\(r=1\)</span></p></div><div class="subfigure"><span id="ref-725f3231"></span><img src="images/Ricker_r21.png" loading="lazy" alt="Ricker map with r = 2.1."><p>(b) <span class="math inline">\(r=2.1\)</span></p></div><div class="subfigure"><span id="ref-725f33"></span><img src="images/Ricker_r3.png" loading="lazy" alt="Ricker map with r = 3."><p>(c) <span class="math inline">\(r=3\)</span></p></div></div><figcaption><strong>Figure 2.</strong> <p>Plot of the discrete Ricker model for different values of <span class="math inline">\(r\)</span> (specified beneath each figure). In all cases <span class="math inline">\(K=1\)</span>.</p></figcaption></figure></li>
+</ol>
+<aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Trust me, you don’t.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside>
+
+    </article>
+    <nav class="container narrow sheet-nav bottom-nav" aria-label="More problem sheets"><a href="Sheet_1.html">Sheet 1</a><a href="Sheet_2.html" aria-current="page">Sheet 2</a><a href="Sheet_3.html">Sheet 3</a><a href="Sheet_4.html">Sheet 4</a><a href="Sheet_5.html">Sheet 5</a></nav>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner">Copyright Thomas E. Woolley, unless otherwise stated.</div></footer>
+</body>
+</html>
