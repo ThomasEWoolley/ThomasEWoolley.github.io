@@ -27,3 +27,9 @@
   .sheet-content { padding-top: 0; }
   .sheet-content figure, .sheet-content pre { break-inside: avoid; }
 }
+/* Keep download and navigation links readable on the dark teaching headers. */
+.sheet-page .page-heading a,
+body:has(.sheet-page) .site-header nav a { color: #ffe29a; }
+.sheet-page .page-heading a:hover,
+body:has(.sheet-page) .site-header nav a:hover { color: white; }
+.sheet-page .page-heading .sheet-nav a[aria-current="page"] { color: white; border-color: #ffe29a; }
