@@ -15,6 +15,12 @@
     <link rel="canonical" href="https://thomaswoolley.co.uk/">
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="stylesheet" href="assets/css/site.css">
+    <style>
+      .pattern-toggle { display:flex; gap:0.5rem; margin-bottom:0.8rem; }
+      .pattern-toggle button { flex:1; padding:0.6rem 0.4rem; border:2px solid #17324d; border-radius:0.4rem; background:#fff; color:#17324d; font:inherit; font-weight:600; cursor:pointer; }
+      .pattern-toggle button[aria-pressed="true"] { background:#17324d; color:#fff; }
+      .pattern-toggle button:focus-visible { outline:3px solid #b56500; outline-offset:3px; }
+    </style>
   </head>
   <body class="home-page">
 
@@ -50,11 +56,13 @@
       <section class="section">
         <div class="container feature-grid">
           <figure class="feature-figure">
-            <!-- Fixed Schnakenberg model: a=0.05, b=0.95, D_u=1, D_v=8;
-                 zero-flux boundaries; L=80, dx=0.5, dt=0.004.
-                 The URL stores the complete VisualPDE configuration. -->
-            <iframe title="Interactive Schnakenberg Turing pattern. Press or drag to disturb the pattern." src="https://visualpde.com/sim/?no_ui&amp;options=N4IgDgTgpgzlAuIBcIDKBjAFgOwIYGspsAjKCAcxABoRsBXAW1TCnQEtZkAmGmF92ADlcDTijoACAG7UQ0XOnhsA9tlTwIAfQCMyELgC0dANR0AelwBUMmvMUq1GzVz3EjF67IAmbAGa+6GAd1LW0dPV0aH39A4KcuZz0AEU0bEHw2bAQ2dAAFXAgRGD1cCQBeCQAGADpKgFYAbmJyquqATkaUqRaADgbZYmU6bC8CgE8AYVUfJVUYcJQsxlxsbAGhkfGpkbZZ7HmXRahl1dlM3e2vBf1jYmMa+ssACgAlAEFBJIMauoBKM+wF2miRQxAA9E9cLdfhZvMoGLhMhhcAAbKB6HqVWR8XBKVHqKBgPQ-byIJAPSoAFho9AYABU2KIYPBCTBcmQAGKFUTcSqVGjECCBTAAUTwxDRXmQGjoUAFQpgmDe9lUemgYBRCnR8uFdLGLD07Ag6DRAwVmBeuB8gT0AGYzcKAGqo2V6LjVOqyADumFxdOUSUKXr0dG9vvg-tyKOUZJAoZo6GU0boEARRJQUjYEDYPmKNAYmSmyYgzpRrpQNVtnvzuAAHkWhiWXeiUNpqgB2WRQBiDGDFJC+VFwBNJxvEArIQco4cgGAARzoBSgExWUlw-Zlcrkw0B2HIAHlsAAZZRW6VCrcwOhgSCwGB0iCTFE5DJ73LKMDX8+y3iMhnwU0UAwHACCIUgKAkOkU0ycgJDAXEWQgNYAF8gA" width="300" height="300" loading="lazy" style="display:block;width:100%;height:auto;aspect-ratio:1;border:0;border-radius:0.5rem;" allow="fullscreen" aria-describedby="turing-caption"></iframe>
-            <figcaption id="turing-caption">A live Turing pattern. Press or drag to disturb it, then watch it reform.<br>
+            <!-- Fixed Schnakenberg presets. Switching restarts from random initial conditions. -->
+            <div class="pattern-toggle" role="group" aria-label="Choose a Turing pattern">
+              <button type="button" aria-pressed="false" aria-controls="turing-simulation" data-pattern="Spots" data-src="https://visualpde.com/sim/?no_ui&amp;options=N4IgDgTgpgzlAuIBcIDKBjAFgOwIYGspsAjKCAcxABoRsBXAW1TCnQEtZkAmGmF92ADlcDTijoACAG7UQ0XOnhsA9tlTwIAfQCMyELgC0dANR0AelwBUMmvMUq1GzVz3EjF67IAmbAGa+6GAd1LW0dPV0aH39A4KcuZz0AEU0bEHw2bAQ2dAAFXAgRGD1cCQBeCQAGADptAG5icqrqgE46lKkmgBZKutliZTpsLwKATwBhVR8lVRhwlCzGXGxsfsHhscnhthnsOZcFqCWV2Uydra95-WNiYxrKgFZLAAoAJQBBQSSDGoeASlO2HOU0SKGIAHpnrgbn8LN5lAxcJkMLgADZQPQANkqsj4uCUaPUUDAel+3kQSHulW0NHoDAAKmxRDB4MSYLkyAAxQqibiVSo0YgQQKYACieGI6K8yA0dCgguFMEw73sqj00DAqIUGIVIvpoxYenYEHQ6P6iswr1wPkCegAzOaRQA1NFyvRcaoPWQAd0w+PpyiShW9ejoPr98ADuVRygpIDDNHQyhjdAgiJJKCkbAgbB8xRoDEykxTEBdqLdKBxBdwAA9i4NS66MSgup7ZFAGAMYMUkL40XBE8mG8QCsg+6iByAYABHOgFKDjZZSXA92XyuRDIHYcgAeWwABllNaZcL1zA6GBILAYPSIBNUTkMtvcsowBeT3LeEzGfAzSgMDgBBEKQFASPSqaZOQEhgPirIQKsAC+QA">Spots</button>
+              <button type="button" aria-pressed="true" aria-controls="turing-simulation" data-pattern="Labyrinth" data-src="https://visualpde.com/sim/?no_ui&amp;options=N4IgDgTgpgzlAuIBcIDKBjAFgOwIYGspsAjKCAcxABoRsBXAW1TCnQEtZkAmGmF92ADlcDTijoACAG7UQ0XOnhsA9tlTwIAfQCMyELgC0dANR0AelwBUMmvMUq1GzVz3EjF67IAmbAGa+6GAd1LW0dPV0aH39A4KcuZz0AEU0bEHw2bAQ2dAAFXAgRGD1cCQBeCQAGADpKgFYAbmJyquqATkaUqRaADgbZYmU6bC8CgE8AYVUfJVUYcJQsxlxsbAGhkfGpkbZZ7HmXRahl1dlM3e2vBf1jYmMa+ssACgAlAEFBJIMauoBKM+wF2miRQxAA9E9cLdfhZvMoGLhMhhcAAbKB6HqVWR8XBKVHqKBgPQ-byIJAPSoAFho9AYABU2KIYPBCTBcmQAGKFUTcSqVGjECCBTAAUTwxDRXmQGjoUAFQpgmDe9lUemgYBRCnR8uFdLGLD07Ag6DRAwVmBeuB8gT0AGYzcKAGqo2V6LjVOqyADumFxdOUSUKXr0dG9vvg-tyKOUZJAoZo6GU0boEARRJQUjYEDYPmKNAYmSmyYgzpRrpQNVtnvzuAAHkWhiWXeiUNpqgB2WRQBiDGDFJC+VFwBNJxvEArIQco4cgGAARzoBSgExWUlw-Zlcrkw0B2HIAHlsAAZZRW6VCrcwOhgSCwGB0iCTFE5DJ73LKMDX8+y3iMhnwU0UAwHACCIUgKAkOkU0ycgJDAXEWQgNYAF8gA">Labyrinth</button>
+            </div>
+            <iframe id="turing-simulation" title="Interactive Schnakenberg labyrinth pattern. Press or drag to disturb the pattern." src="https://visualpde.com/sim/?no_ui&amp;options=N4IgDgTgpgzlAuIBcIDKBjAFgOwIYGspsAjKCAcxABoRsBXAW1TCnQEtZkAmGmF92ADlcDTijoACAG7UQ0XOnhsA9tlTwIAfQCMyELgC0dANR0AelwBUMmvMUq1GzVz3EjF67IAmbAGa+6GAd1LW0dPV0aH39A4KcuZz0AEU0bEHw2bAQ2dAAFXAgRGD1cCQBeCQAGADpKgFYAbmJyquqATkaUqRaADgbZYmU6bC8CgE8AYVUfJVUYcJQsxlxsbAGhkfGpkbZZ7HmXRahl1dlM3e2vBf1jYmMa+ssACgAlAEFBJIMauoBKM+wF2miRQxAA9E9cLdfhZvMoGLhMhhcAAbKB6HqVWR8XBKVHqKBgPQ-byIJAPSoAFho9AYABU2KIYPBCTBcmQAGKFUTcSqVGjECCBTAAUTwxDRXmQGjoUAFQpgmDe9lUemgYBRCnR8uFdLGLD07Ag6DRAwVmBeuB8gT0AGYzcKAGqo2V6LjVOqyADumFxdOUSUKXr0dG9vvg-tyKOUZJAoZo6GU0boEARRJQUjYEDYPmKNAYmSmyYgzpRrpQNVtnvzuAAHkWhiWXeiUNpqgB2WRQBiDGDFJC+VFwBNJxvEArIQco4cgGAARzoBSgExWUlw-Zlcrkw0B2HIAHlsAAZZRW6VCrcwOhgSCwGB0iCTFE5DJ73LKMDX8+y3iMhnwU0UAwHACCIUgKAkOkU0ycgJDAXEWQgNYAF8gA" width="300" height="300" loading="lazy" style="display:block;width:100%;height:auto;aspect-ratio:1;border:0;border-radius:0.5rem;" allow="fullscreen" aria-describedby="turing-caption"></iframe>
+            <figcaption id="turing-caption">Press or drag to disturb the pattern, then watch it reform. Changing pattern restarts the simulation.<br>
               <a href="https://visualpde.com/" target="_blank" rel="noopener">Powered by VisualPDE</a>.
             </figcaption>
             <noscript><img src="assets/images/turing-pattern.gif" width="200" height="200" alt="A simulated Turing pattern developing from random initial conditions"></noscript>
@@ -79,5 +87,19 @@
         <span>Copyright Thomas E. Woolley, unless otherwise stated.</span>
       </div>
     </footer>
+    <script>
+      (() => {
+        const simulation = document.getElementById('turing-simulation');
+        const buttons = document.querySelectorAll('.pattern-toggle button');
+        buttons.forEach(button => {
+          button.addEventListener('click', () => {
+            if (button.getAttribute('aria-pressed') === 'true') return;
+            buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+            simulation.title = 'Interactive Schnakenberg ' + button.dataset.pattern.toLowerCase() + ' pattern. Press or drag to disturb the pattern.';
+            simulation.src = button.dataset.src;
+          });
+        });
+      })();
+    </script>
   </body>
 </html>
