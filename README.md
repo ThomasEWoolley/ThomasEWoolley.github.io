@@ -58,3 +58,14 @@ python scripts/check_site.py
 The converter also accepts a flat directory containing `Sheet_1.tex` to `Sheet_5.tex`. It preserves the questions, continued list numbering, equation and figure references, footnotes, and MATLAB listings. The `Answ` environments remain excluded, as in the source documents. Original sources, including the excluded answers, are not copied into this public repository. Figures used by the online sheets live in `Math_bio/images/`; add any new figures there and provide their alternative text in the converter.
 
 The five HTML pages use MathJax 3.2.2 to render equations. Their existing PDF downloads remain linked from the teaching page and each online sheet. Regeneration does not update those PDFs.
+
+## Updating the online lecture notes
+
+The two complete HTML books are generated from the chapter files included by each course's `Latex/Master.tex` in Dropbox. Arrange local source folders as `Math_bio_course/Latex`, `Math_bio_course/Pictures`, `ODE_course/Latex` and `ODE_course/Pictures`, then run:
+
+```sh
+python scripts/convert_lecture_notes.py /path/to/source-root
+python scripts/check_site.py
+```
+
+The build requires Pandoc, pdfLaTeX with the source documents' packages, Pillow and PyMuPDF. It leaves the LaTeX sources unchanged, renders TikZ diagrams as SVG, and records source hashes in each course's `notes-build.json`. The HTML includes the complete worked text, equations, tables, figures and linked contents. PDF downloads remain available.

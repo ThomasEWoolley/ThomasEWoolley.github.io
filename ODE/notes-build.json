@@ -1,0 +1,36 @@
+{
+  "sources": [
+    {
+      "source": "Introduction.tex",
+      "sha256": "e89ace920c50d8349902c2b23d26f9cf6318c7401dfbe528c1e9d04526fd221f"
+    },
+    {
+      "source": "How_to_model_a_system.tex",
+      "sha256": "b94ca086488c48766f1a46ca46d9b91009171f1c59c14038c63d3ed6a20e29a1"
+    },
+    {
+      "source": "Non-dimensionalisation.tex",
+      "sha256": "c451654c091f66ed477c51fd3798f944faffc8b5e845a9e3e3a965e0afe224ca"
+    },
+    {
+      "source": "Stationary_states_and_stability.tex",
+      "sha256": "98c27994e4659becda00db3f10cd911e3119e96ce051bf0c34b3af402c3267a2"
+    },
+    {
+      "source": "Stability_of_ODE_systems.tex",
+      "sha256": "9d15d0f08b462e7ea23dde00da7521db6c49a3b5e16fd027976110bd38c173d1"
+    },
+    {
+      "source": "Phase_plane_analysis.tex",
+      "sha256": "8d072346d9000ec2f5e59affede74b7a5b0c69727def61102dbfd638c74ed353"
+    },
+    {
+      "source": "Putting_it_all_together.tex",
+      "sha256": "a7f807700b8c66ed27b037278530b8404a41beaf13417538ec6e030fb00c36af"
+    }
+  ],
+  "chapters": 7,
+  "labels": 164,
+  "diagrams": 6,
+  "images": 50
+}

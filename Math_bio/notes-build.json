@@ -1,0 +1,28 @@
+{
+  "sources": [
+    {
+      "source": "Introduction.tex",
+      "sha256": "0ef861df734d3179e43721798725a3ecaa90830a8ead4962ca7b84061cfe85f2"
+    },
+    {
+      "source": "Population_modelling.tex",
+      "sha256": "45e9e9d96ce52166561097317481cd3b5878c9126b46e0a52988a6839efa4858"
+    },
+    {
+      "source": "Spatial_systems.tex",
+      "sha256": "bdbd01c45b7b49a298e401388a1f3eb8aa7c6f113e840d3a26417b6633d96805"
+    },
+    {
+      "source": "Pattern_formation.tex",
+      "sha256": "307c56bdf522528280c97c6e20fa16656bbc2f1ec701e96b472a9a78de1fabd9"
+    },
+    {
+      "source": "Appendices.tex",
+      "sha256": "df17ce30563dcb2c2690319b83d0df27c349154aa7c4dfc5e84cc379aaba6ec4"
+    }
+  ],
+  "chapters": 8,
+  "labels": 233,
+  "diagrams": 3,
+  "images": 72
+}

@@ -1,0 +1,23 @@
+.notes-layout { display: grid; grid-template-columns: minmax(14rem, 19rem) minmax(0, 1fr); gap: 3rem; align-items: start; }
+.notes-contents { position: sticky; top: 1rem; max-height: calc(100vh - 2rem); overflow-y: auto; padding-block: 2.5rem; font-size: .9rem; }
+.notes-contents summary { font-size: 1.2rem; font-weight: 700; cursor: pointer; }
+.notes-contents ol { list-style: none; padding: 0; }
+.notes-contents li { margin-block: .5rem; }
+.notes-contents .toc-level-1 { padding-left: 1rem; font-size: .85rem; }
+.notes-content { min-width: 0; max-width: 58rem; }
+.notes-content h2 { border-top: 2px solid var(--line); padding-top: 2rem; }
+.notes-content h3 { margin-top: 2rem; }
+.note-block { margin-block: 1.5rem; padding: 1.1rem 1.3rem; border-left: 3px solid #496f9e; background: #f1f5fa; }
+.note-block .note-block { background: white; }
+.note-block.proof { border-left-color: #8b6800; background: #fff9e8; }
+.note-block.aquote { font-style: italic; }
+.note-block.cboxed, .note-block.tcolorbox { border: 2px solid #496f9e; }
+.block-title { font-weight: 700; }
+.notes-content .latex-diagram { width: 100%; background: white; }
+.notes-content .table-scroll table { min-width: 0; width: 100%; }
+.notes-content .table-scroll th, .notes-content .table-scroll td { padding: .5rem; }
+.notes-content figure { background: white; }
+.notes-content h2, .notes-content h3, .notes-content h4, .notes-content h5 { scroll-margin-top: 1rem; }
+.back-to-contents { position: fixed; bottom: 1rem; right: 1rem; padding: .6rem 1rem; border: 1px solid #17324d; border-radius: .4rem; background: #fff9e8; z-index: 5; font-size: .9rem; }
+@media (max-width: 900px) { .notes-layout { display: block; } .notes-contents { position: static; max-height: none; padding-bottom: 0; } .notes-content { padding-top: 1rem; } }
+@media print { .notes-layout { display: block; } .notes-contents, .back-to-contents { display: none; } .note-block { background: white; } }
