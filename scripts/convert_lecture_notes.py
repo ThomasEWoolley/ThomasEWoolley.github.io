@@ -44,6 +44,8 @@ def unwrap(s,command,nargs=1):
  return s
 
 def clean_math(s):
+ s=re.sub(r'\\ie\b',lambda m:r'\textit{i.e.} ',s)
+ s=re.sub(r'\\eg\b',lambda m:r'\textit{e.g.} ',s)
  s=re.sub(r'\\noalign\s*\{\\medskip\}', '', s)
  s=re.sub(r'\\(begin|end)\s+\{',r'\\\1{',s)
  while m:=re.search(r'\\colvec\s*\{',s):
