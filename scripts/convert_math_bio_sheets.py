@@ -246,7 +246,7 @@ class Sheet:
                 return m[0]
             if m[7]:
                 name, source = m[7], m[8]
-                if name.startswith('Counter'):
+                if name.startswith('Counter') or source.startswith('enum'):
                     self.counters[name] = self.lists[-1]
                     return ''
                 value = self.counters[source]

@@ -1,657 +1,131 @@
 <!doctype html>
 <html lang="en-GB">
 <head>
-<title>MA0232 Question Sheet 4</title>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="generator" content="TeX4ht" />
-<meta name="originator" content="TeX4ht" />
-<!-- html,xhtml -->
-<meta name="src" content="Sheet_4.tex" />
-<link rel="stylesheet" type="text/css" href="Sheet_4.css" />
-<link rel="stylesheet" href="../assets/css/teaching-notes.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Modelling with Differential Equations MA0232: problem sheet 4, with equations, figures and exercises.">
+  <title>Modelling with Differential Equations: problem sheet 4 | Thomas E. Woolley</title>
+  <link rel="canonical" href="https://thomaswoolley.co.uk/Q4/Sheet_4.html">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <link rel="stylesheet" href="../assets/css/problem-sheets.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-<nav class="site-return" aria-label="Course navigation"><a href="../lecturing.html">← Back to teaching resources</a></nav>
-<!--l. 123--><p class="noindent" >
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header"><div class="container header-inner">
+    <a class="site-name" href="../index.html">Dr Thomas E. Woolley</a>
+    <nav aria-label="Course navigation"><a href="../lecturing.html#modelling-with-differential-equations">Teaching resources</a></nav>
+  </div></header>
+  <main id="main-content" class="sheet-page">
+    <header class="page-heading"><div class="container narrow">
+      <p class="eyebrow">MA0232 · Modelling with Differential Equations</p>
+      <h1>Problem sheet 4</h1>
+      <p>Thomas E. Woolley</p>
+      <p><a href="Sheet_4.pdf">Download the PDF</a></p>
+      <nav class="sheet-nav" aria-label="Problem sheets"><a href="../Q1/Sheet_1.html">Sheet 1</a><a href="../Q2/Sheet_2.html">Sheet 2</a><a href="../Q3/Sheet_3.html">Sheet 3</a><a href="../Q4/Sheet_4.html" aria-current="page">Sheet 4</a><a href="../Q5/Sheet_5.html">Sheet 5</a></nav>
+    </div></header>
+    <article class="container narrow sheet-content">
+      <noscript><p>Enable JavaScript to render the mathematics, or <a href="Sheet_4.pdf">download the PDF</a>.</p></noscript>
+<h2 class="unnumbered" id="lotka-volterra-equations">1. Lotka-Volterra equations</h2>
+<p><span id="ref-4c6f746b612d566f6c7465727261206571756174696f6e73"></span> Data on the number of Canadian lynx and snowshoe hare pelts traded were collected by the Hudson Bay trading company<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. The data are presented in Figure <a href="#ref-4c796e785f68617265">1(b)</a> and have been used as a proxy for population data.</p>
+<figure><div class="figure-panels"><div class="subfigure"><img src="../Pictures/Lynx_chasing_hare.jpeg" loading="lazy" alt="A lynx chasing a hare."><p>(a)</p></div><div class="subfigure"><span id="ref-4c796e785f68617265"></span><img src="../Pictures/Lynx_hare.png" loading="lazy" alt="Historical records of lynx and hare pelts over time."><p>(b)</p></div></div><figcaption><strong>Figure 1.</strong> <p>(a) Lynx and hare in action. (b) Number of pelts recorded over time.</p></figcaption></figure>
+<p>In this question we consider a mathematical model that has been suggested to describe the features seen in the data. Specifically, it is a predator-prey interaction model called the Lotka-Volterra model. Let <span class="math inline">\(L\)</span> be the lynx population and <span class="math inline">\(H\)</span> be the hare population. The interaction equations are</p>
+<div class="equation"><p><span class="math display">\[\underbrace{H\stackrel{k_1}{\rightarrow}2H}_{\textrm{Hares reproduce.}}, \quad \underbrace{H+L\stackrel{k_2}{\rightarrow}2L}_{\textrm{Lynx reproduce through predation.}}, \quad \underbrace{L\stackrel{k_3}{\rightarrow}\not{0}}_{\textrm{Lynx die out.}}.
+\tag{1}\]</span></p></div>
+<ol>
+<li><p>Describe two features seen in the population data of Figure <a href="#ref-4c796e785f68617265">1(b)</a>.</p></li>
+<li><p>Name two troubling assumptions behind the Lotka-Volterra interaction equations and suggest how they could be fixed.</p></li>
+<li><p>Write down the ODEs representing the interaction system.</p></li>
+<li><p>Let <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> be non-dimensional variables of the hare and lynx, respectively. Non-dimensionalise the system to produce a system of the form:</p>
+<div class="equation"><span id="ref-4c5631"></span><span id="ref-4c5632"></span><p><span class="math display">\[\begin{align}
+\dot{u}&amp;=u-uv,\tag{2}\\
+\dot{v}&amp;=\alpha(uv-v),
+\tag{3}
+\end{align}\]</span></p></div>
+<p>where the time derivative is with respect to some non-dimensionalised time.</p>
+<p>Provide the dimensional scales of the population (i.e. <span class="math inline">\([L]\)</span>, <span class="math inline">\([H]\)</span> and <span class="math inline">\([t]\)</span>) as well as the definition of <span class="math inline">\(\alpha\)</span>. Note that you are not required to show that <span class="math inline">\([L]\)</span> and <span class="math inline">\([H]\)</span> have the right dimension and <span class="math inline">\(\alpha\)</span> is dimensionless, but it is a good way to check your working.</p></li>
+<li><p>What are the steady states?</p></li>
+<li><p>What is the linear stability of the states?</p></li>
+<li><p>Consider</p>
+<div class="equation"><span id="ref-4c565f736f6c7661626c65"></span><p><span class="math display">\[\frac{\text{ d}u}{\text{ d}v}=\frac{\dot{u}}{\dot{v}}.
+\tag{4}\]</span></p></div>
+<p>Show that equation <a href="#ref-4c565f736f6c7661626c65">(4)</a> can be directly integrated to show that the populations must satisfy the constraint</p>
+<div class="equation"><span id="ref-4c565f636f6e736572766564"></span><p><span class="math display">\[\left(\frac{e^{v}}{v}\right)\left(\frac{e^{u}}{u}\right)^\alpha=e^{C},
+\tag{5}\]</span></p></div>
+<p>where <span class="math inline">\(C\)</span> is a constant of integration that depends on the initial conditions, which you should specify explicitly. (Hint: rearrange <span class="math inline">\(\text{ d}u/\text{ d}v\)</span> such that one side contains all <span class="math inline">\(u\)</span> terms and the other contains all <span class="math inline">\(v\)</span> terms).</p></li>
+</ol>
+<h2 class="unnumbered" id="computer-simulation">2. Computer simulation</h2>
+<p>Let <span class="math inline">\(\alpha=1/2\)</span> and simulate equations <a href="#ref-4c5631">(2)</a> and <a href="#ref-4c5632">(3)</a>. Plot the results in the <span class="math inline">\((u,v)\)</span> plane along with equation <a href="#ref-4c565f636f6e736572766564">(5)</a>. Note you will have to choose appropriate initial conditions, specify <span class="math inline">\(C\)</span> in terms of these initial conditions and use an implicit plotting algorithm such as <code>fimplicit</code> in MATLAB.</p>
+<ol>
+<li><p>Vary the initial conditions, what do you notice?</p></li>
+<li><p>Do your discoveries accord with the results from question <a href="#ref-4c6f746b612d566f6c7465727261206571756174696f6e73">1</a>?</p></li>
+<li><p>Now consider the plot of <span class="math inline">\((t,u)\)</span> and <span class="math inline">\((t,v)\)</span>. Do the simulated curves match the data seen in Figure <a href="#ref-4c796e785f68617265">1(b)</a>?</p></li>
+</ol>
+<h2 class="unnumbered" id="bifurcations">3. Bifurcations</h2>
+<p>Consider the following set of equations which model the interactions of two populations <span class="math inline">\(N_1\)</span> and <span class="math inline">\(N_2\)</span>, where <span class="math inline">\(r_1, r_2, K_1, K_2, b_{12}\)</span> and <span class="math inline">\(b_{21}\)</span> are non-negative:</p>
+<div class="equation"><p><span class="math display">\[\begin{align}
+\dot{N}_1&amp;=r_1N_1\left(1-\frac{N_1}{K_1+b_{12}N_2}\right),\tag{6}\\
+\dot{N}_2&amp;=r_2N_2\left(1-\frac{N_2}{K_2+b_{21}N_1}\right).
+\tag{7}
+\end{align}\]</span></p></div>
+<ol>
+<li><p>What is the biological interpretation of the dynamics occurring between species <span class="math inline">\(N_1\)</span> and <span class="math inline">\(N_2\)</span>?</p>
+<p>Hint 1: by the symmetry of <span class="math inline">\(N_1\)</span> and <span class="math inline">\(N_2\)</span> in the equations whatever <span class="math inline">\(N_1\)</span> is doing to <span class="math inline">\(N_2\)</span>, <span class="math inline">\(N_2\)</span> is doing to <span class="math inline">\(N_1\)</span>. This means that the dynamics could be mutual creation (mutualism) or mutual destruction (competition).</p>
+<p>Hint 2: Compare the above equations to the regular logistic curve <span class="math inline">\(\dot{u}=ru(1-u/K)\)</span>. What happens if we increase or decrease <span class="math inline">\(K\)</span>? Thus, what influence does increasing or decreasing <span class="math inline">\(N_1\)</span> have on <span class="math inline">\(N_2\)</span>?</p></li>
+<li><p>Use <span class="math inline">\(N_1=K_1u_1\)</span>, <span class="math inline">\(N_2=K_2u_2\)</span>, <span class="math inline">\(t=\tau/r_1\)</span> to non-dimensionalise the equations. Define <span class="math inline">\(\rho=r_2/r_1\)</span>, <span class="math inline">\(\alpha_{12}=b_{12}K_2/K_1\)</span> and <span class="math inline">\(\alpha_{21}=b_{21}K_1/K_2\)</span>. Rewrite the system parameters in terms of <span class="math inline">\(\alpha_{12}\)</span>, <span class="math inline">\(\alpha_{21}\)</span> and <span class="math inline">\(\rho\)</span>.</p></li>
+<li><p>Show that the system has four steady states:</p>
+<div class="equation"><p><span class="math display">\[(0,0), \quad (0,1), \quad (1,0), \quad (\bar{u}_1,\bar{u}_2), \quad
+\tag{8}\]</span></p></div>
+<p>where</p>
+<div class="equation"><p><span class="math display">\[\bar{u}_1=\frac{1+\alpha_{12}}{1-\alpha_{12}\alpha_{21}},\quad\bar{u}_2=\frac{1+\alpha_{21}}{1-\alpha_{12}\alpha_{21}}.
+\tag{9}\]</span></p></div>
+<p>What restrictions (if any) do we need to place on the steady states?</p></li>
+<li><p>Determine the linear stability of the steady states. Take care to note any bifurcation conditions and how they relate to the restrictions on the steady state existence.</p></li>
+</ol>
+<h2 class="unnumbered" id="exam-revision">Exam revision</h2>
+<h2 class="unnumbered" id="predator-competition">4. Predator competition</h2>
+<p>One of the assumptions in the Lotka-Volterra equation is that the predation effect is proportional to both the predator and prey population. However, as the number of prey increases the competition between predators will increase, thus, we consider the adapted equations</p>
+<div class="equation"><p><span class="math display">\[\begin{align}
+\dot{u}=u-uv,\tag{10}\\
+\dot{v}=b(uv-v)-bv^2,
+\tag{11}
+\end{align}\]</span></p></div>
+<p>where <span class="math inline">\(b&gt;0\)</span>.</p>
+<ol>
+<li><p>What are the steady states of the system?</p></li>
+<li><p>Characterise the stability of the valid steady states, noting any dependences on the parameter <span class="math inline">\(b\)</span>.</p></li>
+<li><p>How does predator competition change the outcome of the situation, compared to the basic Lotka-Volterra equation shown in question <a href="#ref-4c6f746b612d566f6c7465727261206571756174696f6e73">1</a>?</p></li>
+</ol>
+<h2 class="unnumbered" id="the-lorenz-equations">5. The Lorenz equations</h2>
+<p>In 1963, Edward Lorenz developed a simplified mathematical model for atmospheric convection. The model is a system of three ordinary differential equations now known as the Lorenz equations:</p>
+<div class="equation"><p><span class="math display">\[\begin{align}
+\dot{x}&amp;=\sigma (y-x),\tag{12}\\
+\dot{y}&amp;=x(\rho -z)-y,\tag{13}\\
+\dot{z}&amp;=xy-\beta z.
+\tag{14}
+\end{align}\]</span></p></div>
+<p>The equations relate the properties of a two-dimensional fluid layer uniformly warmed from below and cooled from above. In particular, the equations describe the rate of change of three quantities with respect to time: <span class="math inline">\(x\)</span> is proportional to the rate of convection; <span class="math inline">\(y\)</span> is proportional to the horizontal temperature variation; <span class="math inline">\(z\)</span> is proportional to the vertical temperature variation. The constants <span class="math inline">\(\sigma\)</span>, <span class="math inline">\(\rho\)</span>, and <span class="math inline">\(\beta\)</span> are system parameters proportional to the Prandtl number, Rayleigh number, and certain physical dimensions of the layer itself.</p>
+<p>For simplicity, let <span class="math inline">\(\sigma=\beta=1\)</span>.</p>
+<ol>
+<li><p>What are the steady states, noting dependence on <span class="math inline">\(\rho\)</span>?</p></li>
+<li><p>Characterise the stability of the zero steady state only, noting dependence on <span class="math inline">\(\rho\)</span>. Note that you will have to find the eigenvalues of a <span class="math inline">\(3\times 3\)</span> matrix. Substituting in the values of the steady state will help you. The non-zero steady states are always either stable nodes or stable spirals when they exist.</p></li>
+<li><p>Simulations for <span class="math inline">\(\rho&gt;1\)</span> and <span class="math inline">\(\rho&lt;1\)</span> are illustrated in Figure <a href="#ref-4c6f72656e7a5f737461626c65">2</a>. Do these accord with your findings?</p></li>
+</ol>
+<p>EXTENSION 1: If you are brave enough calculate the eigenvalues corresponding to the non-zero steady states and show that they always have negative real part when <span class="math inline">\(\rho&gt;1\)</span>, but they may be complex.</p>
+<p>EXTENSION 2: If you are even braver rerun the analysis with variables <span class="math inline">\(\sigma=10\)</span>, <span class="math inline">\(\rho=28\)</span> and <span class="math inline">\(\beta=3\)</span>. This causes the system to act chaotically. Categorise the steady states in this case. What happens? An image of the chaotic trajectory can be seen in Figure <a href="#ref-4c6f72656e7a5f6368616f746963">3</a>.</p>
+<figure><span id="ref-4c6f72656e7a5f737461626c65"></span><div class="figure-panels"><div class="subfigure"><span id="ref-72686f5f302e35"></span><img src="../Pictures/Lorenz_sims_rho_5.png" loading="lazy" alt="Lorenz trajectories and coordinate projections for rho = 0.5."><p>(a) <span class="math inline">\(\rho=0.5\)</span></p></div><div class="subfigure"><span id="ref-72686f5f32"></span><img src="../Pictures/Lorenz_sims_rho_20.png" loading="lazy" alt="Lorenz trajectories and coordinate projections for rho = 2."><p>(b) <span class="math inline">\(\rho=2\)</span></p></div></div><figcaption><strong>Figure 2.</strong> <p>Simulating the Lorenz equations with <span class="math inline">\(\sigma=1\)</span>, <span class="math inline">\(\beta=1\)</span> and <span class="math inline">\(\rho\)</span> given beneath each figure, for a variety of initial conditions. The black circles indicate the initial conditions. On the left is the full, three-dimensional realisation, whilst the rest of the plots in the row are the <span class="math inline">\((x,y)\)</span>, <span class="math inline">\((x,z)\)</span> and <span class="math inline">\((y,z)\)</span> projections.</p></figcaption></figure>
+<figure><span id="ref-4c6f72656e7a5f6368616f746963"></span><div class="figure-panels"><div class="subfigure"><img src="../Pictures/Lorenz_sims_rho_280.png" loading="lazy" alt="Chaotic Lorenz trajectories for two nearby initial conditions."><p>(a)</p></div><div class="subfigure"><img src="../Pictures/Lorenz_chaos.png" loading="lazy" alt="Time series showing divergence of two nearby Lorenz trajectories."><p>(b)</p></div></div><figcaption><strong>Figure 3.</strong> <p>Simulating the Lorenz equations with <span class="math inline">\(\sigma=10\)</span>, <span class="math inline">\(\beta=3\)</span> and <span class="math inline">\(\rho=28\)</span> for two initial conditions that start very close together. Top: the black circles indicate the initial conditions. On the left is the full, three-dimensional realisation, whilst the rest of the plots in the row are the <span class="math inline">\((x,y)\)</span>, <span class="math inline">\((x,z)\)</span> and <span class="math inline">\((y,z)\)</span> projections. Bottom: time series of <span class="math inline">\(x\)</span>, where we observe the two trajectories diverging.</p></figcaption></figure>
+<aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Caution about the data: I have not been able to verify this data, but this is the data (or rather the graph) that is always cited. This particular set of data came from scanning in the graph from Odum’s "Fundamentals of Ecology", p. 191 which is often cited. Odum says that his graph is taken from MacLulich’s "Fluctuations in the numbers of varying hare", 1937, which is not widely available. Some authors caution that this data is actually a composition of several time series, and should probably not be analysed as a whole, and that some of the lynx data was actually missing. It is said that the data was collected from Hudson’s Bay historical records, and does not reflect animal populations, but rather the number of pelts turned in for trading (a large number of which came from Native Americans- mentioned because there were some medical outbreaks during these years which could account for skewed data). The data are presented here with these cautions.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside>
 
-
-</p><!--l. 123--><p class="indent" >
-
-
-</p>
-<div class="center"
->
-<!--l. 123--><p class="noindent" >
-</p><!--l. 123--><p class="noindent" ><span
-class="ec-lmr-17">Problem sheet 4</span>
-</p>
-<div class="tabular"> <table id="TBL-1" class="tabular"
-cellspacing="0" cellpadding="0"
-><colgroup id="TBL-1-1g"><col
-id="TBL-1-1" /></colgroup><tr
- style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-1"
-class="td11"> <span
-class="ec-lmr-12">Thomas E. Woolley  </span></td>
-</tr><tr
-class="vspace" style="font-size:9.99756pt"><td
->&nbsp;</td></tr><tr
- style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-2-1"
-class="td11">   <span
-class="ec-lmr-12">Last edited on:     </span></td></tr></table></div>
-<!--l. 123--><p class="noindent" ><span
-class="ec-lmr-12">April 2, 2018</span></p></div>
-   <h3 class="sectionHead"><span class="titlemark">1   </span> <a
- id="x1-10001"></a>Lotka-Volterra equations</h3>
-<!--l. 125--><p class="noindent" >Data on the number of Canadian lynx and snowshoe hair pelts traded where collected by the Hudson Bay trading
-company<span class="footnote-mark"><a
-href="Sheet_42.html#fn1x0"><sup class="textsuperscript">1</sup></a></span><a
- id="x1-1001f1"></a> .
-The data are presented in Figure <a
-href="#x1-1003r2">1(b)<!--tex4ht:ref: Lynx_hare --></a> and has been used as a proxy for population data. </p><hr class="figure" /><div class="figure"
->
-
-
-<a
- id="x1-10041"></a>
-
-
-<a
- id="x1-1002r1"></a>
-<div class="subfigure"><table><tr><td style="text-align:left"><img
-src="../Pictures/Lynx_chasing_hare.jpeg" alt="PIC"
- />
- <div class="subfigcaption"><span
-class="ec-lmr-8">(a) </span></div> </td></tr></table></div> <a
- id="x1-1003r2"></a><div class="subfigure"><table><tr><td style="text-align:left"><img
-src="../Pictures/Lynx_hare.png" alt="pict"
- width="169.2736pt"  />
-<div class="subfigcaption"><span
-class="ec-lmr-8">(b) </span></div></td></tr></table></div>
-<br /> <div class="caption"
-><span class="id">Figure&#x00A0;1: </span><span
-class="content">(a) Lynx and hare in action. (b) Number of pelts recorded over time.</span></div><!--tex4ht:label?: x1-10041 -->
-
-
-   </div><hr class="endfigure" />
-<!--l. 132--><p class="indent" >   In this question we consider a mathematical model that has been suggested to describe the features seen in the data.
-Specifically, it is a predator-prey interaction model called the Lotka-Volterra model. Let <span
-class="lmmi-10">L </span>be the lynx population and <span
-class="lmmi-10">H </span>be the
-hare population. The interaction equations are
-</p>
-   <table
-class="equation"><tr><td><a
- id="x1-1005r1"></a>
-   <center class="math-display" >
-<img
-src="Sheet_40x.png" alt=" H   k&#x2192;1 2H    ,          H  + L  k&#x2192;2  2L        ,     L &#x2192;k3 &#x2215;0  .
- &#x25DF;----&#x25DD;&#x25DC;---&#x25DE;             &#x25DF;-----&#x25DD;&#x25DC;------&#x25DE;             &#x25DF;--&#x25DD;&#x25DC;--&#x25DE;
-Hares reproduce.   Lynx reproduce through predation.  Lynx die out.
-" class="math-display"  /></center></td><td class="equation-label"><span
-class="ec-lmr-12x-x-120">(1)</span></td></tr></table>
-<!--l. 135--><p class="nopar" >
-     </p><dl class="enumerate"><dt class="enumerate">
-  1. </dt><dd
-class="enumerate">Describe two features seen in the population data of Figure <a
-href="#x1-1003r2">1(b)<!--tex4ht:ref: Lynx_hare --></a>.
-     </dd><dt class="enumerate">
-  2. </dt><dd
-class="enumerate">Name two troubling assumptions behind the Lotka-Volterra interaction equations and suggest how they could be
-     fixed.
-     </dd><dt class="enumerate">
-  3. </dt><dd
-class="enumerate">Write down the ODEs representing the interaction system.
-     </dd><dt class="enumerate">
-  4. </dt><dd
-class="enumerate">Let <span
-class="lmmi-10">u </span>and <span
-class="lmmi-10">v </span>be non-dimensional variables of the hare and lynx, respectively. Non-dimensionalise the system to produce a
-     system of the form:
-     <table
-class="align">
-                                                                  <tr><td
-class="align-odd"><img
-src="Sheet_41x.png" alt="&#x02D9;u"  class="dot"  /></td>                                                        <td
-class="align-even"> <span
-class="rm-lmr-10">= </span><span
-class="lmmi-10">u </span><span
-class="lmsy-10">- </span><span
-class="lmmi-10">uv,</span></td>                                                                                                                   <td
-class="align-label"><a
- id="x1-1010r2"></a>(2)
-                                                                  </td></tr><tr><td
-class="align-odd"><img
-src="Sheet_42x.png" alt="&#x02D9;v"  class="dot"  /></td>                                                        <td
-class="align-even"> <span
-class="rm-lmr-10">= </span><span
-class="lmmi-10">&#x03B1;</span><span
-class="rm-lmr-10">(</span><span
-class="lmmi-10">uv </span><span
-class="lmsy-10">- </span><span
-class="lmmi-10">v</span><span
-class="rm-lmr-10">)</span><span
-class="lmmi-10">,</span></td>                                                                                                                <td
-class="align-label"><a
- id="x1-1011r3"></a>(3)                                                                  </td></tr></table>
-
-
-     <!--l. 145--><p class="noindent" >where the time derivative is with respect to some non-dimensionalised time.
-     </p><!--l. 147--><p class="noindent" >Provide the dimensional scales of the population (i.e. <span
-class="rm-lmr-10">[</span><span
-class="lmmi-10">L</span><span
-class="rm-lmr-10">]</span>, <span
-class="rm-lmr-10">[</span><span
-class="lmmi-10">H</span><span
-class="rm-lmr-10">] </span>and <span
-class="rm-lmr-10">[</span><span
-class="lmmi-10">t</span><span
-class="rm-lmr-10">]</span>) as well as the definition of <span
-class="lmmi-10">&#x03B1;</span>. Note, that you are not
-     required to show that <span
-class="rm-lmr-10">[</span><span
-class="lmmi-10">L</span><span
-class="rm-lmr-10">] </span>and <span
-class="rm-lmr-10">[</span><span
-class="lmmi-10">H</span><span
-class="rm-lmr-10">] </span>have the right dimension and <span
-class="lmmi-10">&#x03B1; </span>is dimensionless, but it is a good way to check your
-     working.
-     </p></dd><dt class="enumerate">
-  5. </dt><dd
-class="enumerate">What are the steady states?
-     </dd><dt class="enumerate">
-  6. </dt><dd
-class="enumerate">What is the linear stability of the states?
-     </dd><dt class="enumerate">
-  7. </dt><dd
-class="enumerate">Consider
-     <table
-class="equation"><tr><td><a
- id="x1-1015r4"></a>
-     <center class="math-display" >
-     <img
-src="Sheet_43x.png" alt="-du-    &#x02D9;u-
- dv  =  &#x02D9;v .
-     " class="math-display"  /></center></td><td class="equation-label"><span
-class="ec-lmr-12x-x-120">(4)</span></td></tr></table>
-     <!--l. 153--><p class="nopar" >
-     Show that equation (<a
-href="#x1-1015r4">4<!--tex4ht:ref: LV_solvable --></a>) can be directly integrated to show that the populations must satisfy the constraint
-</p>
-     <table
-class="equation"><tr><td><a
- id="x1-1016r5"></a>
-     <center class="math-display" >
-     <img
-src="Sheet_44x.png" alt="(   ) (   )
-  ev-   eu- &#x03B1;     C
-              =  e  ,
-  v     u
-     " class="math-display"  /></center></td><td class="equation-label"><span
-class="ec-lmr-12x-x-120">(5)</span></td></tr></table>
-     <!--l. 157--><p class="nopar" >
-     where <span
-class="lmmi-10">C </span>is a constant of integration that depends on the initial conditions, which you should specify explicitly. (Hint:
-     rearrange  d<span
-class="lmmi-10">u&#x2215;</span> d<span
-class="lmmi-10">v </span>such that one side contains all <span
-class="lmmi-10">u </span>terms and the other contains all <span
-class="lmmi-10">v </span>terms).</p></dd></dl>
-
-
-   <h3 class="sectionHead"><span class="titlemark">2   </span> <a
- id="x1-20002"></a>Computer simulation</h3>
-<!--l. 236--><p class="noindent" >Let <span
-class="lmmi-10">&#x03B1; </span><span
-class="rm-lmr-10">= 1</span><span
-class="lmmi-10">&#x2215;</span><span
-class="rm-lmr-10">2 </span>and simulate equations (<a
-href="#x1-1010r2">2<!--tex4ht:ref: LV1 --></a>) and (<a
-href="#x1-1011r3">3<!--tex4ht:ref: LV2 --></a>). Plot the results in the <span
-class="rm-lmr-10">(</span><span
-class="lmmi-10">u,v</span><span
-class="rm-lmr-10">) </span>plane along with equation (<a
-href="#x1-1016r5">5<!--tex4ht:ref: LV_conserved --></a>). Note you will have to
-choose appropriate initial conditions, specify <span
-class="lmmi-10">C </span>in terms of these initial conditions and use an implicit plotting algorithm such as
-<span
-class="ec-lmtt-10">fimplicit </span>in MatLab.
-     </p><dl class="enumerate"><dt class="enumerate">
-  1. </dt><dd
-class="enumerate">Vary the initial conditions, what do you notice?
-     </dd><dt class="enumerate">
-  2. </dt><dd
-class="enumerate">Do your discoveries accord with the results from question <a
-href="#x1-10001">1<!--tex4ht:ref: Lotka-Volterra equations --></a>?
-     </dd><dt class="enumerate">
-  3. </dt><dd
-class="enumerate">Now consider the plot of <span
-class="rm-lmr-10">(</span><span
-class="lmmi-10">t,u</span><span
-class="rm-lmr-10">) </span>and <span
-class="rm-lmr-10">(</span><span
-class="lmmi-10">t,v</span><span
-class="rm-lmr-10">)</span>. Do the simulated curves match the data seen in Figure <a
-href="#x1-1003r2">1(b)<!--tex4ht:ref: Lynx_hare --></a>?</dd></dl>
-<!--l. 265--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">3   </span> <a
- id="x1-30003"></a>Bifurcations</h3>
-<!--l. 266--><p class="noindent" >Consider the following set of equations which model the interactions of two populations <span
-class="lmmi-10">N</span><sub><span
-class="rm-lmr-7">1</span></sub> and <span
-class="lmmi-10">N</span><sub><span
-class="rm-lmr-7">2</span></sub>:
-</p><table
-class="align">
-                                     <tr><td
-class="align-odd"><span
-class="lmmi-10">&#x1E44;</span><sub><span
-class="rm-lmr-7">1</span></sub></td>                                     <td
-class="align-even"> <span
-class="rm-lmr-10">= </span><span
-class="lmmi-10">r</span><sub><span
-class="rm-lmr-7">1</span></sub><span
-class="lmmi-10">N</span><sub><span
-class="rm-lmr-7">1</span></sub><img
-src="Sheet_45x.png" alt="(              )
- 1 - ---N1-----
-     K1 + b12N2"  class="left" align="middle" /><span
-class="lmmi-10">,</span></td>                                                                          <td
-class="align-label"><a
- id="x1-3001r6"></a>(6)
-                                     </td></tr><tr><td
-class="align-odd"><span
-class="lmmi-10">&#x1E44;</span><sub><span
-class="rm-lmr-7">2</span></sub></td>                                     <td
-class="align-even"> <span
-class="rm-lmr-10">= </span><span
-class="lmmi-10">r</span><sub><span
-class="rm-lmr-7">2</span></sub><span
-class="lmmi-10">N</span><sub><span
-class="rm-lmr-7">2</span></sub><img
-src="Sheet_46x.png" alt="(              )
-     ---N2-----
- 1 - K2 + b21N1"  class="left" align="middle" /><span
-class="lmmi-10">.</span></td>                                                                          <td
-class="align-label"><a
- id="x1-3002r7"></a>(7)                                     </td></tr></table>
-<!--l. 272--><p class="indent" >
-     </p><dl class="enumerate"><dt class="enumerate">
-  1. </dt><dd
-class="enumerate">What dynamics are occurring between the species <span
-class="lmmi-10">N</span><sub><span
-class="rm-lmr-7">1</span></sub> and <span
-class="lmmi-10">N</span><sub><span
-class="rm-lmr-7">2</span></sub>?
-     <!--l. 274--><p class="noindent" >Hint 1: by the symmetry of <span
-class="lmmi-10">N</span><sub><span
-class="rm-lmr-7">1</span></sub> and <span
-class="lmmi-10">N</span><sub><span
-class="rm-lmr-7">2</span></sub> in the equations whatever <span
-class="lmmi-10">N</span><sub><span
-class="rm-lmr-7">1</span></sub> is doing to <span
-class="lmmi-10">N</span><sub><span
-class="rm-lmr-7">2</span></sub>, <span
-class="lmmi-10">N</span><sub><span
-class="rm-lmr-7">2</span></sub> is doing to <span
-class="lmmi-10">N</span><sub><span
-class="rm-lmr-7">1</span></sub>. This means
-     that the dynamics could be mutual creation (mutualism) or mutual destruction (competition).
-     </p><!--l. 276--><p class="noindent" >Hint 2: Compare the above equations to regular logistic curve <img
-src="Sheet_47x.png" alt="u&#x02D9;"  class="dot"  /> <span
-class="rm-lmr-10">= </span><span
-class="lmmi-10">ru</span><span
-class="rm-lmr-10">(1 </span><span
-class="lmsy-10">- </span><span
-class="lmmi-10">u&#x2215;K</span><span
-class="rm-lmr-10">)</span>. What happens if we increase or
-     decrease <span
-class="lmmi-10">K</span>? Thus, what influence does increasing or decreasing <span
-class="lmmi-10">N</span><sub><span
-class="rm-lmr-7">1</span></sub> have on <span
-class="lmmi-10">N</span><sub><span
-class="rm-lmr-7">2</span></sub>?
-     </p></dd><dt class="enumerate">
-  2. </dt><dd
-class="enumerate">Use <span
-class="lmmi-10">N</span><sub><span
-class="rm-lmr-7">1</span></sub> <span
-class="rm-lmr-10">= </span><span
-class="lmmi-10">K</span><sub><span
-class="rm-lmr-7">1</span></sub><span
-class="lmmi-10">u</span><sub><span
-class="rm-lmr-7">1</span></sub>, <span
-class="lmmi-10">N</span><sub><span
-class="rm-lmr-7">2</span></sub> <span
-class="rm-lmr-10">= </span><span
-class="lmmi-10">K</span><sub><span
-class="rm-lmr-7">2</span></sub><span
-class="lmmi-10">u</span><sub><span
-class="rm-lmr-7">2</span></sub>, <span
-class="lmmi-10">t </span><span
-class="rm-lmr-10">= </span><span
-class="lmmi-10">&#x03C4;&#x2215;r</span><sub><span
-class="rm-lmr-7">1</span></sub> to non-dimensionalise the equations. Define <span
-class="lmmi-10">&#x03C1; </span><span
-class="rm-lmr-10">= </span><span
-class="lmmi-10">r</span><sub><span
-class="rm-lmr-7">2</span></sub><span
-class="lmmi-10">&#x2215;r</span><sub><span
-class="rm-lmr-7">1</span></sub>, <span
-class="lmmi-10">&#x03B1;</span><sub><span
-class="rm-lmr-7">12</span></sub> <span
-class="rm-lmr-10">= </span><span
-class="lmmi-10">b</span><sub><span
-class="rm-lmr-7">12</span></sub><span
-class="lmmi-10">K</span><sub><span
-class="rm-lmr-7">2</span></sub><span
-class="lmmi-10">&#x2215;K</span><sub><span
-class="rm-lmr-7">1</span></sub> and
-     <span
-class="lmmi-10">&#x03B1;</span><sub><span
-class="rm-lmr-7">21</span></sub> <span
-class="rm-lmr-10">= </span><span
-class="lmmi-10">b</span><sub><span
-class="rm-lmr-7">21</span></sub><span
-class="lmmi-10">K</span><sub><span
-class="rm-lmr-7">1</span></sub><span
-class="lmmi-10">&#x2215;K</span><sub><span
-class="rm-lmr-7">2</span></sub>. Rewrite the system parameters in terms of <span
-class="lmmi-10">&#x03B1;</span><sub><span
-class="rm-lmr-7">12</span></sub>, <span
-class="lmmi-10">&#x03B1;</span><sub><span
-class="rm-lmr-7">21</span></sub> and <span
-class="lmmi-10">&#x03C1;</span>.
-
-
-     </dd><dt class="enumerate">
-  3. </dt><dd
-class="enumerate">Show that the system has four steady states:
-     <table
-class="equation"><tr><td><a
- id="x1-3006r8"></a>
-     <center class="math-display" >
-     <img
-src="Sheet_48x.png" alt="(0, 0),   (0, 1),   (1, 0),   (¯u1, ¯u2),
-     " class="math-display"  /></center></td><td class="equation-label"><span
-class="ec-lmr-12x-x-120">(8)</span></td></tr></table>
-     <!--l. 283--><p class="nopar" >
-     where
-</p>
-     <table
-class="equation"><tr><td><a
- id="x1-3007r9"></a>
-     <center class="math-display" >
-     <img
-src="Sheet_49x.png" alt="      --1-+--&#x03B1;12---          --1-+--&#x03B1;21---
-¯u1 =  1 -  &#x03B1;   &#x03B1;   ,   ¯u2 =  1 -  &#x03B1;   &#x03B1;  .
-             12  21                 12  21
-     " class="math-display"  /></center></td><td class="equation-label"><span
-class="ec-lmr-12x-x-120">(9)</span></td></tr></table>
-     <!--l. 287--><p class="nopar" >
-     What restrictions (if any) do we need to place of the steady states?
-     </p></dd><dt class="enumerate">
-  4. </dt><dd
-class="enumerate">Determine the linear stability of the steady states. Taking care to note any bifurcation conditions and how they relate to the
-     restrictions on the steady state existence.</dd></dl>
-<!--l. 346--><p class="noindent" >
-</p>
-   <h3 class="likesectionHead"><a
- id="x1-40003"></a>Exam revision</h3>
-
-
-<!--l. 347--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">4   </span> <a
- id="x1-50004"></a>Predator competition</h3>
-<!--l. 348--><p class="noindent" >One of the assumptions in the Lotka-Volterra equation is that the predation effect is proportional to both the predator and prey
-population. However, as the number of prey increases the competition between predators will increase, thus, we consider the
-adapted equations
-</p><table
-class="align">
-                                          <tr><td
-class="align-odd"><img
-src="Sheet_410x.png" alt="u&#x02D9;"  class="dot"  /> <span
-class="rm-lmr-10">= </span><span
-class="lmmi-10">u </span><span
-class="lmsy-10">- </span><span
-class="lmmi-10">uv,</span></td>                                                 <td
-class="align-even"></td>                                          <td
-class="align-label"><a
- id="x1-5001r10"></a>(10)
-                                          </td></tr><tr><td
-class="align-odd"><img
-src="Sheet_411x.png" alt="v&#x02D9;"  class="dot"  /> <span
-class="rm-lmr-10">= </span><span
-class="lmmi-10">b</span><span
-class="rm-lmr-10">(</span><span
-class="lmmi-10">uv </span><span
-class="lmsy-10">- </span><span
-class="lmmi-10">v</span><span
-class="rm-lmr-10">) </span><span
-class="lmsy-10">- </span><span
-class="lmmi-10">bv</span><sup><span
-class="rm-lmr-7">2</span></sup><span
-class="lmmi-10">.</span></td>                                          <td
-class="align-even"></td>                                          <td
-class="align-label"><a
- id="x1-5002r11"></a>(11)                                          </td></tr></table>
-<!--l. 354--><p class="indent" >
-     </p><dl class="enumerate"><dt class="enumerate">
-  1. </dt><dd
-class="enumerate">What are the steady states of the system?
-     </dd><dt class="enumerate">
-  2. </dt><dd
-class="enumerate">Characterise the stability of the valid steady states, noting any dependences on the parameter <span
-class="lmmi-10">b</span>.
-     </dd><dt class="enumerate">
-  3. </dt><dd
-class="enumerate">How does predator competition change the outcome of the situation, compared to the basic Lotka-Volterra equation
-     shown in question <a
-href="#x1-10001">1<!--tex4ht:ref: Lotka-Volterra equations --></a>?</dd></dl>
-<!--l. 394--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">5   </span> <a
- id="x1-60005"></a>The Lorenz equations</h3>
-<!--l. 395--><p class="noindent" >In 1963, Edward Lorenz developed a simplified mathematical model for atmospheric convection. The model is a system of three
-ordinary differential equations now known as the Lorenz equations:
-
-
-</p><table
-class="align">
-                                           <tr><td
-class="align-odd"><span
-class="lmmi-10">&#x1E8B;</span></td>                                           <td
-class="align-even"> <span
-class="rm-lmr-10">= </span><span
-class="lmmi-10">&#x03C3;</span><span
-class="rm-lmr-10">(</span><span
-class="lmmi-10">y </span><span
-class="lmsy-10">- </span><span
-class="lmmi-10">x</span><span
-class="rm-lmr-10">)</span><span
-class="lmmi-10">,</span></td>                                                                                         <td
-class="align-label"><a
- id="x1-6001r12"></a>(12)
-                                           </td></tr><tr><td
-class="align-odd"><span
-class="lmmi-10">&#x1E8F;</span></td>                                           <td
-class="align-even"> <span
-class="rm-lmr-10">= </span><span
-class="lmmi-10">x</span><span
-class="rm-lmr-10">(</span><span
-class="lmmi-10">&#x03C1; </span><span
-class="lmsy-10">- </span><span
-class="lmmi-10">z</span><span
-class="rm-lmr-10">) </span><span
-class="lmsy-10">- </span><span
-class="lmmi-10">y,</span></td>                                                                                      <td
-class="align-label"><a
- id="x1-6002r13"></a>(13)
-                                           </td></tr><tr><td
-class="align-odd"><span
-class="lmmi-10">&#380;</span></td>                                           <td
-class="align-even"> <span
-class="rm-lmr-10">= </span><span
-class="lmmi-10">xy </span><span
-class="lmsy-10">- </span><span
-class="lmmi-10">&#x03B2;z.</span></td>                                                                                          <td
-class="align-label"><a
- id="x1-6003r14"></a>(14)                                           </td></tr></table>
-<!--l. 401--><p class="indent" >   The equations relate the properties of a two-dimensional fluid layer uniformly warmed from below and cooled from above. In
-particular, the equations describe the rate of change of three quantities with respect to time: <span
-class="lmmi-10">x </span>is proportional to the rate of
-convection; <span
-class="lmmi-10">y </span>is proportional to the horizontal temperature variation; <span
-class="lmmi-10">z </span>is proportional to the vertical temperature variation. The
-constants <span
-class="lmmi-10">&#x03C3;</span>, <span
-class="lmmi-10">&#x03C1;</span>, and <span
-class="lmmi-10">&#x03B2; </span>are system parameters proportional to the Prandtl number, Rayleigh number, and certain physical
-dimensions of the layer itself.
-</p><!--l. 403--><p class="indent" >   For simplicity, let <span
-class="lmmi-10">&#x03C3; </span><span
-class="rm-lmr-10">= </span><span
-class="lmmi-10">&#x03B2; </span><span
-class="rm-lmr-10">= 1</span>.
-     </p><dl class="enumerate"><dt class="enumerate">
-  1. </dt><dd
-class="enumerate">What are the steady states, noting dependencies of <span
-class="lmmi-10">&#x03C1;</span>?
-     </dd><dt class="enumerate">
-  2. </dt><dd
-class="enumerate">Characterise the stability of the zero steady state only, noting dependencies of <span
-class="lmmi-10">&#x03C1;</span>. Note that you will have to find
-     the eigenvalues of a <span
-class="rm-lmr-10">3 </span><span
-class="lmsy-10">&#x00D7; </span><span
-class="rm-lmr-10">3 </span>matrix. Substituting in the values of the steady state will help you. The non-zero steady
-     states are always either stable nodes or stable spirals when they exist.
-     </dd><dt class="enumerate">
-  3. </dt><dd
-class="enumerate">Simulations for <span
-class="lmmi-10">&#x03C1; &#x003E; </span><span
-class="rm-lmr-10">1 </span>and <span
-class="lmmi-10">&#x03C1; &#x003C; </span><span
-class="rm-lmr-10">1 </span>are illustrated in Figure <a
-href="#x1-60092">2<!--tex4ht:ref: Lorenz_stable --></a>. Do these accord with your findings?</dd></dl>
-<!--l. 410--><p class="indent" >   EXTENSION 1: If you are brave enough calculate the eigenvalues corresponding to the non-zero steady states and show that
-they always have negative real part when <span
-class="lmmi-10">&#x03C1; &#x003E; </span><span
-class="rm-lmr-10">1</span>, but they may be complex.
-</p><!--l. 412--><p class="indent" >   EXTENSION 2: If you are even braver rerun the analysis with variables <span
-class="lmmi-10">&#x03C3; </span><span
-class="rm-lmr-10">= 10</span>, <span
-class="lmmi-10">&#x03C1; </span><span
-class="rm-lmr-10">= 28 </span>and <span
-class="lmmi-10">&#x03B2; </span><span
-class="rm-lmr-10">= 3</span>. This causes the system to
-act chaotically. Categorise the steady states in this case. What happens? An image of the chaotic trajectory can be seen in Figure
-<a
-href="#x1-60123">3<!--tex4ht:ref: Lorenz_chaotic --></a>. </p><hr class="figure" /><div class="figure"
->
-
-
-<a
- id="x1-60092"></a>
-
-
-<a
- id="x1-6007r1"></a>
-<div class="subfigure"><table><tr><td style="text-align:left"><img
-src="../Pictures/Lorenz_sims_rho_5.png" alt="pict"
- width="528.93675pt"  />
-<div class="subfigcaption"><span
-class="ec-lmr-8">(a)</span>
-<span
-class="lmmi-8">&#x03C1;  </span><span
-class="rm-lmr-8">=</span>
-<span
-class="rm-lmr-8">0</span><span
-class="lmmi-8">.</span><span
-class="rm-lmr-8">5</span></div> </td></tr></table></div> <a
- id="x1-6008r2"></a><div class="subfigure"><table><tr><td style="text-align:left"><img
-src="../Pictures/Lorenz_sims_rho_20.png" alt="pict"
- width="528.93675pt"  />
-<div class="subfigcaption"><span
-class="ec-lmr-8">(b)</span>
-<span
-class="lmmi-8">&#x03C1;  </span><span
-class="rm-lmr-8">=</span>
-<span
-class="rm-lmr-8">2</span></div>    </td></tr></table></div>
- <div class="caption"
-><span class="id">Figure&#x00A0;2: </span><span
-class="content"> Simulating the Lorenz equations with <span
-class="lmmi-10">&#x03C3; </span><span
-class="rm-lmr-10">= 1</span>, <span
-class="lmmi-10">&#x03B2; </span><span
-class="rm-lmr-10">= 1 </span>and <span
-class="lmmi-10">&#x03C1; </span>given beneath each figure, for a variety of initial
-conditions. The black circles indicate the initial conditions. On the left is the full, three-dimensional realisation, whilst the
-rest of the plots in the row are the <span
-class="rm-lmr-10">(</span><span
-class="lmmi-10">x,y</span><span
-class="rm-lmr-10">)</span>, <span
-class="rm-lmr-10">(</span><span
-class="lmmi-10">x,z</span><span
-class="rm-lmr-10">) </span>and <span
-class="rm-lmr-10">(</span><span
-class="lmmi-10">y,z</span><span
-class="rm-lmr-10">) </span>projections.</span></div><!--tex4ht:label?: x1-60092 -->
-
-
-   </div><hr class="endfigure" />
-   <hr class="figure" /><div class="figure"
->
-
-
-<a
- id="x1-60123"></a>
-
-
-<a
- id="x1-6010r1"></a>
-<div class="subfigure"><table><tr><td style="text-align:left"><img
-src="../Pictures/Lorenz_sims_rho_280.png" alt="pict"
- width="528.93675pt"  />
-<div class="subfigcaption"><span
-class="ec-lmr-8">(a) </span></div></td></tr></table></div> <a
- id="x1-6011r2"></a><div class="subfigure"><table><tr><td style="text-align:left"><img
-src="../Pictures/Lorenz_chaos.png" alt="pict"
- width="528.93675pt"  />
-<div class="subfigcaption"><span
-class="ec-lmr-8">(b) </span></div></td></tr></table></div>
-<br /> <div class="caption"
-><span class="id">Figure&#x00A0;3: </span><span
-class="content"> Simulating the Lorenz equations with <span
-class="lmmi-10">&#x03C3; </span><span
-class="rm-lmr-10">= 10</span>, <span
-class="lmmi-10">&#x03B2; </span><span
-class="rm-lmr-10">= 3 </span>and <span
-class="lmmi-10">&#x03C1; </span><span
-class="rm-lmr-10">= 28 </span>for two initial conditions that start very close
-together. Top: the black circles indicate the initial conditions. On the left is the full, three-dimensional realisation, whilst
-the rest of the plots in the row are the <span
-class="rm-lmr-10">(</span><span
-class="lmmi-10">x,y</span><span
-class="rm-lmr-10">)</span>, <span
-class="rm-lmr-10">(</span><span
-class="lmmi-10">x,z</span><span
-class="rm-lmr-10">) </span>and <span
-class="rm-lmr-10">(</span><span
-class="lmmi-10">y,z</span><span
-class="rm-lmr-10">) </span>projections. Bottom: time series of <span
-class="lmmi-10">x</span>, where we observe the
-two trajectories diverging.</span></div><!--tex4ht:label?: x1-60123 -->
-
-
-   </div><hr class="endfigure" />
-   <div id="disqus_thread"></div><script>var disqus_config = function () {this.page.url = thomaswoolley.co.uk;};(function() {var d = document, s = d.createElement('script');s.src = 'https://lecturing.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow"> comments powered by Disqus. </a></noscript>
-</body></html>
-
-
-
-
+    </article>
+    <nav class="container narrow sheet-nav bottom-nav" aria-label="More problem sheets"><a href="../Q1/Sheet_1.html">Sheet 1</a><a href="../Q2/Sheet_2.html">Sheet 2</a><a href="../Q3/Sheet_3.html">Sheet 3</a><a href="../Q4/Sheet_4.html" aria-current="page">Sheet 4</a><a href="../Q5/Sheet_5.html">Sheet 5</a></nav>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner">Copyright Thomas E. Woolley, unless otherwise stated.</div></footer>
+</body>
+</html>

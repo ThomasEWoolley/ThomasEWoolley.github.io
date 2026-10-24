@@ -1,533 +1,151 @@
 <!doctype html>
 <html lang="en-GB">
 <head>
-<title>MA0232 Question Sheet 1</title>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="generator" content="TeX4ht" />
-<meta name="originator" content="TeX4ht" />
-<!-- html,xhtml -->
-<meta name="src" content="Sheet_1.tex" />
-<link rel="stylesheet" type="text/css" href="Sheet_1.css" />
-<link rel="stylesheet" href="../assets/css/teaching-notes.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Modelling with Differential Equations MA0232: problem sheet 1, with equations, figures and exercises.">
+  <title>Modelling with Differential Equations: problem sheet 1 | Thomas E. Woolley</title>
+  <link rel="canonical" href="https://thomaswoolley.co.uk/Q1/Sheet_1.html">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <link rel="stylesheet" href="../assets/css/problem-sheets.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-<nav class="site-return" aria-label="Course navigation"><a href="../lecturing.html">← Back to teaching resources</a></nav>
-<!--l. 121--><p class="noindent" >
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header"><div class="container header-inner">
+    <a class="site-name" href="../index.html">Dr Thomas E. Woolley</a>
+    <nav aria-label="Course navigation"><a href="../lecturing.html#modelling-with-differential-equations">Teaching resources</a></nav>
+  </div></header>
+  <main id="main-content" class="sheet-page">
+    <header class="page-heading"><div class="container narrow">
+      <p class="eyebrow">MA0232 · Modelling with Differential Equations</p>
+      <h1>Problem sheet 1</h1>
+      <p>Thomas E. Woolley</p>
+      <p><a href="Sheet_1.pdf">Download the PDF</a></p>
+      <nav class="sheet-nav" aria-label="Problem sheets"><a href="../Q1/Sheet_1.html" aria-current="page">Sheet 1</a><a href="../Q2/Sheet_2.html">Sheet 2</a><a href="../Q3/Sheet_3.html">Sheet 3</a><a href="../Q4/Sheet_4.html">Sheet 4</a><a href="../Q5/Sheet_5.html">Sheet 5</a></nav>
+    </div></header>
+    <article class="container narrow sheet-content">
+      <noscript><p>Enable JavaScript to render the mathematics, or <a href="Sheet_1.pdf">download the PDF</a>.</p></noscript>
+<h2 class="unnumbered" id="carbon-dating">1. Carbon dating</h2>
+<p>Radioactive carbon-14 in the atmosphere combines with oxygen to form carbon dioxide. This carbon dioxide is ingested by plants, which in turn are eaten by animals. In this way all living plants and animals absorb quantities of radioactive carbon-14.</p>
+<p>When a plant or animal dies, the carbon-14 in the tissue begins to decay. Thus, the age of an artefact that contains plant or animal material can be estimated by determining what percentage of its original carbon-14 content remains.</p>
+<p>The carbon-14 content of organic matter decays exponentially. Thus, the percentage, <span class="math inline">\(p\)</span>, of carbon-14 in an artefact is defined by</p>
+<div class="equation"><span id="ref-436172626f6e5f6465636179"></span><p><span class="math display">\[\dot{p}=-0.000121p,\quad p(0)=100\%,
+\tag{1}\]</span></p></div>
+<p>where 0.000121/year is the decay constant for carbon-14.</p>
+<p>In 1988 the Vatican authorised the British Museum to date a cloth relic known as the Shroud of Turin (see Figure <a href="#ref-547572696e675f7368726f7564">1</a>). This cloth, which first surfaced in 1356, contains the negative image of a human body that was widely believed to be that of Jesus. The report of the British Museum showed that the fibres in the cloth contained between 92% and 93% of their original carbon-14.</p>
+<ol>
+<li><p>Use the above information to estimate the age of the shroud.</p></li>
+<li><p>State an assumption that has been made which will cause the answer to be incorrect.</p></li>
+</ol>
+<figure><span id="ref-547572696e675f7368726f7564"></span><div class="figure-panels"><div class="subfigure"><img src="../Pictures/Turin_shroud.jpg" loading="lazy" alt="The Shroud of Turin."></div></div><figcaption><strong>Figure 1.</strong> <p>The Turin Shroud.</p></figcaption></figure>
+<h2 class="unnumbered" id="hinged-door">2. Hinged door</h2>
+<p>Fire doors are usually attached to damped spring hinges so that they cause a door to return to a closed position, rather than stay open. The position, <span class="math inline">\(y\)</span>, of the door can be modelled as a damped oscillator, where the damping is proportional to the door’s speed, <span class="math inline">\(\dot{y}\)</span>,</p>
+<div class="equation"><span id="ref-44616d706564"></span><p><span class="math display">\[\underbrace{\ddot{y}=-ky}_{\textrm{Simple harmonic motion}}-\underbrace{a\dot{y},}_{\textrm{Motion damping}}\quad y(0)=y_0, \dot{y}(0)=0.
+\tag{2}\]</span></p></div>
+<p>where <span class="math inline">\(k\)</span> and <span class="math inline">\(a\)</span> are positive constants.</p>
+<ol>
+<li><p>Substitute the solution form <span class="math inline">\(y(t)=A\exp(\lambda t)\)</span> into equation <a href="#ref-44616d706564">(2)</a>. What values must <span class="math inline">\(\lambda\)</span> take in order for this solution to exist?</p></li>
+<li><p>Describe the solutions you get in the two different cases</p>
+<div class="equation"><p><span class="math display">\[\textrm{(i)} \left(\frac{a}{2}\right)^2&gt;k,\quad\quad \textrm{(ii)} \left(\frac{a}{2}\right)^2&lt;k.
+\tag{3}\]</span></p></div></li>
+<li><p>Which case is preferential for a fire door?</p></li>
+</ol>
+<h2 class="unnumbered" id="motion-under-gravity">3. Motion under gravity</h2>
+<p>In the 1994 film True Lies a terrorist uses a motorbike to jump off of one building onto another. Arnold Schwarzenegger then tries to follow the terrorist on a horse. However, the horse thinks better of this and stops before jumping (see the clip for yourself https://bit.ly/2lf1HgL). Here are some facts to digest:</p>
+<ul>
+<li><p>The hotel in the film is The Westin Bonaventure Hotel.</p></li>
+<li><p>The pool the terrorist lands in is 85m away (horizontally) and 100m below (see Figure <a href="#ref-547275655f6c696573">2</a>).</p></li>
+<li><p>The motorbike is a Kawasaki EX500.</p></li>
+<li><p>The bike has a run-up of 13m along the hotel roof.</p></li>
+<li><p>The bike has a maximum acceleration of 0-60 mph in 3.76 sec.</p></li>
+<li><p>A trained racehorse has a maximum acceleration of 13.4 m/s<span class="math inline">\(^2\)</span>.</p></li>
+<li><p>The acceleration rate due to gravity is 9.81m/s<span class="math inline">\(^2\)</span>.</p></li>
+<li><p>The horse and rider weigh 700kg.</p></li>
+</ul>
+<p>Using the knowledge that acceleration, <span class="math inline">\(a\)</span>, is the rate of change of velocity, <span class="math inline">\(v\)</span>, over time and velocity is the rate of change of displacement, <span class="math inline">\(x\)</span>, over time, <em>i.e.</em></p>
+<div class="equation"><p><span class="math display">\[a=\dot{v}=\ddot{x},
+\tag{4}\]</span></p></div>
+<p>solve the following questions.</p>
+<figure><span id="ref-547275655f6c696573"></span><div class="figure-panels"><div class="subfigure"><img src="../Pictures/True_lies.png" loading="lazy" alt="Schematic of the jump in True Lies, with the horizontal and vertical distances marked."></div></div><figcaption><strong>Figure 2.</strong> <p>Schematic of the jump from True Lies. Not to scale.</p></figcaption></figure>
+<ol>
+<li><p>Assuming the bike has constant acceleration over time, use the data to determine the maximum acceleration of the bike in m/s<span class="math inline">\(^2\)</span>? Hint: the linear acceleration is calculated by change in speed divided by time taken.</p></li>
+<li><p>The acceleration in the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> directions is <span class="math inline">\(\ddot{x}\)</span> and <span class="math inline">\(\ddot{y}\)</span>, namely the second derivative of the coordinate with respect to time. Assuming the bike was initially stationary and the acceleration was constant over the 13m of the flat hotel roof, how fast is the bike going (horizontally and vertically) at the moment it leaves the rooftop?<span id="ref-56656c"></span></p></li>
+<li><p>At the moment the bike leaves the rooftop, what is the acceleration in the horizontal and vertical directions? <span id="ref-616363"></span></p></li>
+<li><p>Using the equations from question <a href="#ref-616363">3</a> and the values from point <a href="#ref-56656c">2</a> as initial data, how long does it take the bike to fall 100m? How far could the bike travel horizontally in that time? Could the motorbike have made the jump?</p></li>
+<li><p>Could the horse have made the jump?</p></li>
+<li><p>What have you assumed? Would altering these assumptions qualitatively change the results of the question?</p></li>
+</ol>
+<h2 class="unnumbered" id="possible-trajectories">4. Possible trajectories</h2>
+<p>Let <span class="math inline">\(u\)</span> be a general population and <span class="math inline">\(t\)</span> be time. For each of the sketches in Figure <a href="#ref-506f737369626c655f7472616a6563746f72696573">3</a> classify each trajectory as (strictly) monotonic (increasing or decreasing) or non-monotonic. Further, state whether (i) a single continuously differentiable autonomous ODE, or (ii) a system of continuously differentiable autonomous ODEs could be behind the trajectories (with different colours representing different initial conditions). Alternatively, state when the trajectories could not be specified as a solution of a system of continuously differentiable autonomous ODEs. In each case justify your answer.</p>
+<figure><span id="ref-506f737369626c655f7472616a6563746f72696573"></span><div class="figure-panels"><div class="subfigure"><img src="../Pictures/Possible_trajectories.png" loading="lazy" alt="Five candidate trajectory sketches for classifying monotonicity and possible ODE models."></div></div><figcaption><strong>Figure 3.</strong> <p>Which sketches could arise from a set of ODEs?</p></figcaption></figure>
+<h2 class="unnumbered" id="taylor-expansion">5. Taylor expansion</h2>
+<p>No, not even I can make these interesting. Practise your expansion skills; it is good for your (mathematical) health. Expand each of the following functions about <span class="math inline">\(x=0\)</span> (and <span class="math inline">\(y=0\)</span> as needed) to quadratic order <em>i.e.</em></p>
+<div class="equation"><p><span class="math display">\[\exp(x)\approx 1+x+\frac{1}{2}x^2.
+\tag{5}\]</span></p></div>
+<ol>
+<li><p><span class="math inline">\(\cos(x)\)</span>.</p></li>
+<li><p><span class="math inline">\(\frac{1}{1-x}\)</span>.</p></li>
+<li><p><span class="math inline">\(\cos(x)\cos(y)-\sin(x)\sin(y)\)</span>.</p></li>
+</ol>
+<p>Finally, using some mathematical software (e.g. Maple, Mathematica, Wolfram Alpha, etc.) expand</p>
+<div class="equation"><p><span class="math display">\[\frac{x}{1-x-x^2}
+\tag{6}\]</span></p></div>
+<p>to sixth order about zero. What is interesting about the coefficients of the powers of <span class="math inline">\(x\)</span>?</p>
+<h2 class="unnumbered" id="computer-simulation">6. Computer simulation</h2>
+<p>I will be putting a simulation problem on each question sheet to help you gain some coding skills. We will build up the skills slowly so you do not have to worry about being dropped in at the deep end.</p>
+<p>If you feel you are ready for a more advanced challenge then all codes in the course are available to modify, have fun.</p>
+<p>Finally, all of my codes are written using MATLAB’s programming language. If you feel more comfortable in Maple, Mathematica, Python, etc. then please feel free to code the problem up using your own abilities.</p>
+<h2 class="unnumbered" id="three-body-problem">Three body problem</h2>
+<p>Open up the function. At the top of the code you will see the lines</p>
+<pre class="matlab"><code>m1=1;m2=1;m3=1; % Masses
 
+G=1; % Gravitational constant
 
-</p><!--l. 121--><p class="indent" >
+r10=1;r20=-1;r30=1i; % Initial positions
 
+v10=1i*0.5;v20=-1i*0.5;v30=1i*0.5; % Initial velocities</code></pre>
+<p>These are the parameters of the code. Currently: all masses are equal to 1; the gravitational coefficient is 1; the initial positions of the masses are (1,0), (-1,0) and (0,1); and the initial velocities are (0,1/2), (0,-1/2) and (0,1/2). Note that the code is written using complex variables as Cartesian coordinates <em>i.e.</em> <span class="math inline">\((x,y)\)</span> is written <span class="math inline">\(x+Iy\)</span>, or <code>x+1i*y</code> in MATLAB.</p>
+<ol>
+<li><p>Have a play around with the parameters and watch chaos unfurl before your eyes.</p></li>
+<li><p>Can you find parameters that will create an orbiting solar system? Hint: Make one mass really large and the others small (<em>i.e.</em> <code>m1=1000, m2=0.01, m3=0.01</code>). Place the first mass at the origin, the second at (10,0) and the third at (20,0) (<em>i.e.</em> <code>r10=0, r20=10, r30=20</code>). Now play with the velocities to try and cause the masses <code>m2</code> and <code>m3</code> to orbit <code>m1</code> (see Figure <a href="#ref-5442505f6f7262697473">4(a)</a>).</p></li>
+<li><p>Can you find an initial set of positions and velocities that will allow all three bodies to orbit each other in a circle (see Figure <a href="#ref-5442505f636972636c65">4(b)</a>)? Hint: Symmetry is key to this question. All masses must be the same. Place the masses initially on the points of an equilateral triangle. Play with the velocities to try and cause the masses to move in a circle.</p></li>
+</ol>
+<figure><span id="ref-54776f5f626f64795f70726f626c656d"></span><div class="figure-panels"><div class="subfigure"><span id="ref-5442505f6f7262697473"></span><img src="../Pictures/TBP_orbits.png" loading="lazy" alt="Simulated planetary orbits around a central mass."><p>(a)</p></div><div class="subfigure"><span id="ref-5442505f636972636c65"></span><img src="../Pictures/TBP_circle.png" loading="lazy" alt="Three equal masses moving around a circle."><p>(b)</p></div></div><figcaption><strong>Figure 4.</strong> <p>(a) An orbiting system. (b) Planets chasing one another.</p></figcaption></figure>
+<h2 class="unnumbered" id="exam-revision">Exam Revision</h2>
+<p>Here are some questions that are along the same lines as the above that can be saved for exam revision.</p>
+<h2 class="unnumbered" id="drag-racing">7. Drag racing</h2>
+<p>In order for an object to move over a flat surface the applied horizontal force required to push the object must overcome the friction between the object and the surface. The friction force is proportional to the object’s weight,</p>
+<div class="equation"><p><span class="math display">\[F=-\mu mg.
+\tag{7}\]</span></p></div>
+<p>Since the entire force pushing a dragster forward is due to friction (between the tyres and the road), we expect the maximum force propelling the dragster forward will be when <span class="math inline">\(\mu=1\)</span>.</p>
+<ol>
+<li><p>Use Newton’s second law of motion, (Force=mass<span class="math inline">\(\times\)</span>acceleration, or <span class="math inline">\(F=m\ddot{x}\)</span>) to calculate the time a drag racer would take to complete a standard quarter-mile course (402.34 metres).</p></li>
+<li><p>On June 2, 2001, Kenny Bernstein set the world record for a quarter-mile track with a time <span class="math inline">\(t = 4.477\)</span> seconds. What assumptions have we made that cause us to overestimate this time?</p></li>
+</ol>
+<h2 class="unnumbered" id="newtons-law-of-cooling">8. Newton’s law of cooling</h2>
+<div class="equation"><span id="ref-4e6577746f6e735f6c61775f636f6f6c696e67"></span><p><span class="math display">\[\dot{T}=k(T_\infty-T).
+\tag{8}\]</span></p></div>
+<p>You can find the temperature inside your refrigerator without putting a thermometer inside. Take an item out of the fridge that has had a chance to acclimatise to the temperature inside the fridge. For example, a can of fizzy drink would be perfect. Let the can warm for one minute and take its temperature. Let it warm for another minute and record its temperature again.</p>
+<p>Suppose that the readings are <span class="math inline">\(T(1) = 5^{\circ}\)</span>C and <span class="math inline">\(T(2)=8^{\circ}\)</span>C and that the ambient temperature is 17<span class="math inline">\(^{\circ}\)</span>C.</p>
+<ol>
+<li><p>What is the temperature inside the fridge?</p></li>
+<li><p>Measurements are prone to error. Suppose your first and second measurements have an error of <span class="math inline">\(\pm10\%\)</span>. Namely, the first measurement could be anywhere in the range [4.5,5.5]<span class="math inline">\(^{\circ}\)</span>C and similarly the second measurement could be anywhere in the range [7.2,8.8]<span class="math inline">\(^{\circ}\)</span>C. What are the possible maximum and minimum temperatures inside the fridge?</p></li>
+<li><p>Why would it be problematic if we measured the second temperature after a much longer time?</p></li>
+</ol>
+<h2 class="unnumbered" id="more-taylor">9. More Taylor</h2>
+<p>Expand to quadratic order</p>
+<ol>
+<li><p><span class="math inline">\(\sin(x)\)</span>.</p></li>
+<li><p><span class="math inline">\(\cos(\sin(x))\)</span>.</p></li>
+<li><p><span class="math inline">\(\sin(\cos(x))\)</span>.</p></li>
+<li><p><span class="math inline">\(1/\cos(x+y)\)</span>.</p></li>
+</ol>
 
-</p>
-<div class="center"
->
-<!--l. 121--><p class="noindent" >
-</p><!--l. 121--><p class="noindent" ><span
-class="ec-lmr-17">Problem sheet 1</span>
-</p>
-<div class="tabular"> <table id="TBL-1" class="tabular"
-cellspacing="0" cellpadding="0"
-><colgroup id="TBL-1-1g"><col
-id="TBL-1-1" /></colgroup><tr
- style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-1"
-class="td11"> <span
-class="ec-lmr-12">Thomas E. Woolley  </span></td>
-</tr><tr
-class="vspace" style="font-size:9.99756pt"><td
->&nbsp;</td></tr><tr
- style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-2-1"
-class="td11">   <span
-class="ec-lmr-12">Last edited on:     </span></td></tr></table></div>
-<!--l. 121--><p class="noindent" ><span
-class="ec-lmr-12">December 18, 2017</span></p></div>
-   <h3 class="sectionHead"><span class="titlemark">1   </span> <a
- id="x1-10001"></a>Carbon dating</h3>
-<!--l. 124--><p class="noindent" >Radioactive carbon-14 in the atmosphere combines with oxygen to form carbon dioxide. This carbon dioxide is ingested by
-plants, which in turn are eaten by animals. In this way all living plants and animals absorb quantities of radioactive
-carbon-14.
-</p><!--l. 127--><p class="indent" >   When a plant or animal dies, the carbon-14 in the tissue begins to decay. Thus, the age of an artefact that
-contains plant or animal material can be estimated by determining what percentage of its original carbon-14 content
-remains.
-</p><!--l. 129--><p class="indent" >   The carbon-14 content of organic matter decays exponentially. Thus, the percentage, <span
-class="lmmi-10">p</span>, of carbon-14 in an artefact is defined
-by
-</p>
-   <table
-class="equation"><tr><td><a
- id="x1-1001r1"></a>
-   <center class="math-display" >
-<img
-src="Sheet_10x.png" alt="p&#x02D9; = -  0.000121p,     p(0 ) = 100%,
-" class="math-display"  /></center></td><td class="equation-label"><span
-class="ec-lmr-12x-x-120">(1)</span></td></tr></table>
-<!--l. 132--><p class="nopar" >
-where 0.000121/year is the decay constant for carbon-14.
-</p><!--l. 135--><p class="indent" >   In 1988 the Vatican authorized the British Museum to date a cloth relic known as the Shroud of Turin (see Figure <a
-href="#x1-10041">1<!--tex4ht:ref: Turing_shroud --></a>). This
-cloth, which first surfaced in 1356, contains the negative image of a human body that was widely believed to be that of Jesus. The
-report of the British Museum showed that the fibres in the cloth contained between 92% and 93% of their original
-carbon-14.
-     </p><dl class="enumerate"><dt class="enumerate">
-  1. </dt><dd
-class="enumerate">Use the above information to estimate the age of the shroud.
-     </dd><dt class="enumerate">
-  2. </dt><dd
-class="enumerate">State an assumption that has been made which will cause the answer to be incorrect.</dd></dl>
-
-
-<hr class="figure" /><div class="figure"
-><a
- id="x1-10041"></a> <img
-src="../Pictures/Turin_shroud.jpg" alt="pict"
- width="211.57147pt.5"  />
-<br /> <div class="caption"
-><span class="id">Figure&#x00A0;1: </span><span
-class="content"> The Turin Shroud.</span></div><!--tex4ht:label?: x1-10041 -->
-   </div><hr class="endfigure" />
-<!--l. 165--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">2   </span> <a
- id="x1-20002"></a>Hinged door</h3>
-<!--l. 166--><p class="noindent" >Fire doors are usually attached to damped spring hinges so that they cause a door to return to a closed position, rather than stay
-open. The position, <span
-class="lmmi-10">y</span>, of the door can be modelled as a damped oscillator, where the damping is proportional to the door&#8217;s speed,
-<span
-class="lmmi-10">&#x1E8F;</span>,
-</p>
-   <table
-class="equation"><tr><td><a
- id="x1-2001r2"></a>
-   <center class="math-display" >
-<img
-src="Sheet_11x.png" alt="     ¨y =  - ky       -      a &#x02D9;y,        y (0) =  y0,y&#x02D9;(0) =  0.
-     &#x25DF;---&#x25DD;&#x25DC;---&#x25DE;             &#x25DF;&#x25DD;&#x25DC;&#x25DE;
-Simple harmonic motion  Motion damping
-" class="math-display"  /></center></td><td class="equation-label"><span
-class="ec-lmr-12x-x-120">(2)</span></td></tr></table>
-<!--l. 169--><p class="nopar" >
-where <span
-class="lmmi-10">k </span>and <span
-class="lmmi-10">a </span>are positive constants.
-     </p><dl class="enumerate"><dt class="enumerate">
-  1. </dt><dd
-class="enumerate">Substitute the solution form <span
-class="lmmi-10">y</span><span
-class="rm-lmr-10">(</span><span
-class="lmmi-10">t</span><span
-class="rm-lmr-10">) = </span><span
-class="lmmi-10">A</span><span
-class="rm-lmr-10">exp</span><span
-class="rm-lmr-10">(</span><span
-class="lmmi-10">&#x03BB;t</span><span
-class="rm-lmr-10">) </span>into equation (<a
-href="#x1-2001r2">2<!--tex4ht:ref: Damped --></a>). What values must <span
-class="lmmi-10">&#x03BB; </span>take in order for this solution
-     to exist?
-     </dd><dt class="enumerate">
-  2. </dt><dd
-class="enumerate">Describe the solutions you get in the two different cases
-     <table
-class="equation"><tr><td><a
- id="x1-2004r3"></a>
-     <center class="math-display" >
-     <img
-src="Sheet_12x.png" alt="   (  )2                 (  )2
-(i)  a-   &#x003E;  k,      (ii)  a-   &#x003C;  k.
-     2                    2
-     " class="math-display"  /></center></td><td class="equation-label"><span
-class="ec-lmr-12x-x-120">(3)</span></td></tr></table>
-
-
-     <!--l. 176--><p class="nopar" >
-     </p></dd><dt class="enumerate">
-  3. </dt><dd
-class="enumerate">Which case is preferential for a fire door?</dd></dl>
-<!--l. 202--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">3   </span> <a
- id="x1-30003"></a>Motion under gravity</h3>
-<!--l. 203--><p class="noindent" >In the 1994 film True Lies a terrorist uses a motorbike to jump off of one building onto another. Arnold Schwarzenegger then tries
-to follow the terrorist on a horse. However, the horse thinks better of this and stops before jumping (see the <a
-href="https://bit.ly/2lf1HgL">film clip</a>). Here are some facts to digest: </p>
-     <ul class="itemize1">
-     <li class="itemize">The hotel in the film is The Westin Bonaventure Hotel.
-     </li>
-     <li class="itemize">The pool the terrorist lands in is 85m away (horizontally) and 100m below (see Figure <a
-href="#x1-30022">2<!--tex4ht:ref: True_lies --></a>).
-     </li>
-     <li class="itemize">The motorbike is a Kawasaki EX500.
-     </li>
-     <li class="itemize">The bike has a run up of 13m along the hotel roof.
-     </li>
-     <li class="itemize">The bike has a maximum acceleration of 0-60 mph in 3.76 sec.
-     </li>
-     <li class="itemize">A trained racehorse has a maximum acceleration of 13.4 m/s<sup><span
-class="rm-lmr-7">2</span></sup>.
-     </li>
-     <li class="itemize">The acceleration rate due to gravity is 9.81m/s<sup><span
-class="rm-lmr-7">2</span></sup>.
-     </li>
-     <li class="itemize">The horse and rider weigh 700kg.</li></ul>
-<!--l. 214--><p class="noindent" >Using the knowledge that acceleration, <span
-class="lmmi-10">a</span>, is the rate of change of velocity, <span
-class="lmmi-10">v</span>, over time and velocity is the rate of change of
-displacement, <span
-class="lmmi-10">x</span>, over time, <span
-class="ec-lmri-10">i.e.</span>
-</p>
-   <table
-class="equation"><tr><td><a
- id="x1-3001r4"></a>
-   <center class="math-display" >
-<img
-src="Sheet_13x.png" alt="a =  v&#x02D9;=  ¨x,
-" class="math-display"  /></center></td><td class="equation-label"><span
-class="ec-lmr-12x-x-120">(4)</span></td></tr></table>
-<!--l. 217--><p class="nopar" >
-solve the following questions. </p><hr class="figure" /><div class="figure"
-><a
- id="x1-30022"></a> <img
-src="../Pictures/True_lies.png" alt="pict"
- width="211.57147pt"  />
-<br /> <div class="caption"
-><span class="id">Figure&#x00A0;2: </span><span
-class="content"> Schematic of the jump from True lies. Not to scale.</span></div><!--tex4ht:label?: x1-30022 -->
-   </div><hr class="endfigure" />
-<!--l. 225--><p class="indent" >
-
-
-     </p><dl class="enumerate"><dt class="enumerate">
-  1. </dt><dd
-class="enumerate">Assuming the bike has constant acceleration over time, use the data to determine the maximum acceleration of the
-     bike in m/s<sup><span
-class="rm-lmr-7">2</span></sup>? Hint: the linear acceleration is calculated by change in speed divided by time taken.
-     </dd><dt class="enumerate">
-  2. </dt><dd
-class="enumerate">The acceleration in the <span
-class="lmmi-10">x </span>and <span
-class="lmmi-10">y </span>directions is <span
-class="lmmi-10">&#x1E8D;</span> and <span
-class="lmmi-10">&#x00FF;</span>, namely the second derivative of the coordinate with respect
-     to time. Assuming the bike was initially stationary and the acceleration was constant over the 13m of the flat hotel
-     roof, how fast is the bike going (horizontally and vertically) at the moment it leaves the roof top?<a
- id="x1-30042"></a>
-     </dd><dt class="enumerate">
-  3. </dt><dd
-class="enumerate">At the moment the bike leaves the roof top, what is the acceleration in the horizontal and vertical directions? <a
- id="x1-30053"></a>
-     </dd><dt class="enumerate">
-  4. </dt><dd
-class="enumerate">Using the equations from question <a
-href="#x1-30053">3<!--tex4ht:ref: acc --></a> and the values from point <a
-href="#x1-30042">2<!--tex4ht:ref: Vel --></a> as initial data, how long does it take the bike to
-     fall 100m? How far could the bike travel horizontally in that time? Could the motorbike have made the jump?
-     </dd><dt class="enumerate">
-  5. </dt><dd
-class="enumerate">Could the horse have made the jump?
-     </dd><dt class="enumerate">
-  6. </dt><dd
-class="enumerate">What have you assumed? Would altering these assumptions qualitatively change the results of the question?</dd></dl>
-<!--l. 297--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">4   </span> <a
- id="x1-40004"></a>Possible trajectories</h3>
-<!--l. 298--><p class="noindent" >Let <span
-class="lmmi-10">u </span>be a general population and <span
-class="lmmi-10">t </span>be time. For each of the sketches in Figure <a
-href="#x1-40013">3<!--tex4ht:ref: Possible_trajectories --></a> classify each trajectory as (strictly) monotonic
-(increasing or decreasing) or non-monotonic. Further, state whether (i) a single continuously differentiable autonomous
-ODE, or (ii) a system of continuously differentiable autonomous ODEs could be behind the trajectories (with
-different colours representing different initial conditions). Alternatively, state when the trajectories could not be
-specified as a solution of a system of continuously differentiable autonomous ODEs. In each case justify your answer.
-</p><hr class="figure" /><div class="figure"
->
-
-
-<a
- id="x1-40013"></a>
-
-
-<!--l. 301--><p class="noindent" ><img
-src="../Pictures/Possible_trajectories.png" alt="pict"
- width="370.2541pt"  />
-<br /> </p><div class="caption"
-><span class="id">Figure&#x00A0;3: </span><span
-class="content"> Which sketches could arise from a set of ODEs?</span></div><!--tex4ht:label?: x1-40013 -->
-
-
-   </div><hr class="endfigure" />
-   <h3 class="sectionHead"><span class="titlemark">5   </span> <a
- id="x1-50005"></a>Taylor expansion</h3>
-<!--l. 315--><p class="noindent" >No, not even I can make these interesting. Practice your expansion skills, it is good for your (mathematical) health. Expand each of
-the following functions about <span
-class="lmmi-10">x </span><span
-class="rm-lmr-10">= 0 </span>to quadratic order <span
-class="ec-lmri-10">i.e.</span>
-</p>
-   <table
-class="equation"><tr><td><a
- id="x1-5001r5"></a>
-   <center class="math-display" >
-<img
-src="Sheet_14x.png" alt="                     1-  2
-exp (x ) &#x2248;  1 + x  +   x  .
-                     2
-" class="math-display"  /></center></td><td class="equation-label"><span
-class="ec-lmr-12x-x-120">(5)</span></td></tr></table>
-<!--l. 318--><p class="nopar" >
-     </p><dl class="enumerate"><dt class="enumerate">
-  1. </dt><dd
-class="enumerate"><span
-class="rm-lmr-10">cos</span><span
-class="rm-lmr-10">(</span><span
-class="lmmi-10">x</span><span
-class="rm-lmr-10">)</span>.
-     </dd><dt class="enumerate">
-  2. </dt><dd
-class="enumerate"><img
-src="Sheet_15x.png" alt="-1-
-1-x"  class="frac" align="middle" />.
-     </dd><dt class="enumerate">
-  3. </dt><dd
-class="enumerate"><span
-class="rm-lmr-10">cos</span><span
-class="rm-lmr-10">(</span><span
-class="lmmi-10">x</span><span
-class="rm-lmr-10">)</span><span
-class="rm-lmr-10">cos</span><span
-class="rm-lmr-10">(</span><span
-class="lmmi-10">y</span><span
-class="rm-lmr-10">) </span><span
-class="lmsy-10">-</span> <span
-class="rm-lmr-10">sin</span><span
-class="rm-lmr-10">(</span><span
-class="lmmi-10">x</span><span
-class="rm-lmr-10">)</span><span
-class="rm-lmr-10">sin</span><span
-class="rm-lmr-10">(</span><span
-class="lmmi-10">y</span><span
-class="rm-lmr-10">)</span>.</dd></dl>
-<!--l. 324--><p class="noindent" >Finally, expand
-</p>
-   <table
-class="equation"><tr><td><a
- id="x1-5005r6"></a>
-   <center class="math-display" >
-<img
-src="Sheet_16x.png" alt="      x
------------2-
-1 -  x -  x
-" class="math-display"  /></center></td><td class="equation-label"><span
-class="ec-lmr-12x-x-120">(6)</span></td></tr></table>
-<!--l. 327--><p class="nopar" >
-to sixth order about zero. What is interesting about the coefficients of the powers of <span
-class="lmmi-10">x</span>?
-
-
-</p>
-   <h3 class="sectionHead"><span class="titlemark">6   </span> <a
- id="x1-60006"></a>Computer simulation</h3>
-<!--l. 340--><p class="noindent" >I will be putting a simulation problem on each question sheet to help get you gain some coding skills. We will build up the skills
-slowly so you do not have to worry about being dropped in at the deep end.
-</p><!--l. 342--><p class="indent" >   If you feel you are ready for a more advanced challenge then all codes in the course are available to modify, have
-fun.
-</p><!--l. 344--><p class="indent" >   Finally, all of my codes are written using MatLab&#8217;s programming language. If you feel more comfortable in Maple,
-Mathematica, Python, etc. then please feel free to code the problem up using your own abilities.
-</p>
-   <h4 class="likesubsectionHead"><a
- id="x1-70006"></a>Three body problem</h4>
-<!--l. 346--><p class="noindent" >Open up the function at the top of the code you will see the lines
-</p><!--l. 350--><p class="indent" >   <span
-class="ec-lmtt-10">m1=1;m2=1;m3=1; % Masses</span>
-</p><!--l. 352--><p class="indent" >   <span
-class="ec-lmtt-10">G=1; % Gravitational constant</span>
-</p><!--l. 354--><p class="indent" >   <span
-class="ec-lmtt-10">r10=1;r20=-1;r30=1i; % Initial positions</span>
-</p><!--l. 356--><p class="indent" >   <span
-class="ec-lmtt-10">v10=1i*0.5;v20=-1i*0.5;v30=1i*0.5; % Initial velocities</span>
-</p><!--l. 360--><p class="indent" >   These are the parameters of the code. Currently: all masses are equal to 1; the gravitational coefficient is 1; the initial
-positions of the masses is (1,0), (-1,0) and (0,1); and the initial velocities are (0,1/2), (0,-1/2) and (0,1/2). Note that
-the code is written using complex variables as Cartesian coordinates <span
-class="ec-lmri-10">i.e. </span><span
-class="rm-lmr-10">(</span><span
-class="lmmi-10">x,y</span><span
-class="rm-lmr-10">) </span>is written <span
-class="lmmi-10">x </span><span
-class="rm-lmr-10">+ </span><span
-class="lmmi-10">Iy</span>, or <span
-class="ec-lmtt-10">x+1i*y </span>in
-MatLab.
-</p><!--l. 363--><p class="indent" >
-     </p><dl class="enumerate"><dt class="enumerate">
-  1. </dt><dd
-class="enumerate">Have a play around with the parameters and watch chaos unfurl before you eyes.
-     </dd><dt class="enumerate">
-  2. </dt><dd
-class="enumerate">Can you find parameters that will create an orbiting solar system? Hint: Make one mass really large and the others
-     small (<span
-class="ec-lmri-10">i.e. </span><span
-class="ec-lmtt-10">m1=1000, m2=0.01, m3=0.01</span>). Place the first mass at the origin, the second at (10,0) and the third at
-     (20,0) (<span
-class="ec-lmri-10">i.e. </span><span
-class="ec-lmtt-10">r10=0, r20=10, r30=20</span>). Now play with the velocities to try and cause the masses <span
-class="ec-lmtt-10">m2 </span>and <span
-class="ec-lmtt-10">m3 </span>to orbit
-     <span
-class="ec-lmtt-10">m1 </span>(see Figure <a
-href="#x1-7004r1">4(a)<!--tex4ht:ref: TBP_orbits --></a>).
-     </dd><dt class="enumerate">
-  3. </dt><dd
-class="enumerate">Can you find an initial set of positions and velocities that will allow all three bodies to orbit each other in a circle
-     (see Figure <a
-href="#x1-7005r2">4(b)<!--tex4ht:ref: TBP_circle --></a>)? Hint: Symmetry is key to this question. All masses must be the same. Place the masses initially
-     on the points of an equilateral triangle. Play with the velocities to try and cause the masses to move in a circle.</dd></dl>
-<hr class="figure" /><div class="figure"
-><a
- id="x1-70064"></a> <a
- id="x1-7004r1"></a><div class="subfigure"><table><tr><td style="text-align:left"><img
-src="../Pictures/TBP_orbits.png" alt="pict"
- width="169.2736pt"  />
-<div class="subfigcaption"><span
-class="ec-lmr-8">(a) </span></div></td></tr></table></div> <a
- id="x1-7005r2"></a><div class="subfigure"><table><tr><td style="text-align:left"><img
-src="../Pictures/TBP_circle.png" alt="pict"
- width="169.2736pt"  />
-<div class="subfigcaption"><span
-class="ec-lmr-8">(b) </span></div></td></tr></table></div>
-<br /> <div class="caption"
-><span class="id">Figure&#x00A0;4: </span><span
-class="content"> (a) An orbiting system. (b) Planets chasing one another.</span></div><!--tex4ht:label?: x1-70064 -->
-   </div><hr class="endfigure" />
-<!--l. 392--><p class="noindent" >
-</p>
-   <h3 class="likesectionHead"><a
- id="x1-80006"></a>Exam Revision</h3>
-<!--l. 393--><p class="noindent" >Here are a some of questions that are along the same lines as the above that can be saved for exam revision.
-</p>
-   <h3 class="sectionHead"><span class="titlemark">7   </span> <a
- id="x1-90007"></a>Drag racing</h3>
-<!--l. 395--><p class="noindent" >In order for an object to move over a flat surface the applied horizontal force required to push the object must overcome the
-friction between the object and the surface. The friction force is proportional to the object&#8217;s weight,
-</p>
-
-
-   <table
-class="equation"><tr><td><a
- id="x1-9001r7"></a>
-   <center class="math-display" >
-<img
-src="Sheet_17x.png" alt="F  =  - &#x03BC;mg.
-" class="math-display"  /></center></td><td class="equation-label"><span
-class="ec-lmr-12x-x-120">(7)</span></td></tr></table>
-<!--l. 398--><p class="nopar" >
-Since the entire force pushing a dragster forward is due to friction (between the tires and the road), we expect the maximum force
-propelling the dragster forward will be when <span
-class="lmmi-10">&#x03BC; </span><span
-class="rm-lmr-10">= 1</span>.
-     </p><dl class="enumerate"><dt class="enumerate">
-  1. </dt><dd
-class="enumerate">Use Newton&#8217;s second law of motion, (Force=mass<span
-class="lmsy-10">&#x00D7;</span>acceleration, or <span
-class="lmmi-10">F </span><span
-class="rm-lmr-10">= </span><span
-class="lmmi-10">m</span><span
-class="lmmi-10">&#x1E8D;</span>) to calculate the time a drag racer would
-     take to complete a standard quarter-mile course (402.34 meters).
-     </dd><dt class="enumerate">
-  2. </dt><dd
-class="enumerate">On June 2, 2001, Kenny Bernstein set the world record for a quarter mile track with a time <span
-class="lmmi-10">t </span><span
-class="rm-lmr-10">= 4</span><span
-class="lmmi-10">.</span><span
-class="rm-lmr-10">477 </span>seconds. What
-     assumptions have we made that causes to over estimate this time?</dd></dl>
-<!--l. 422--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">8   </span> <a
- id="x1-100008"></a>Newton&#8217;s law of cooling</h3>
-   <table
-class="equation"><tr><td><a
- id="x1-10001r8"></a>
-   <center class="math-display" >
-<img
-src="Sheet_18x.png" alt="T&#x02D9; =  k(T &#x221E; -  T ).
-" class="math-display"  /></center></td><td class="equation-label"><span
-class="ec-lmr-12x-x-120">(8)</span></td></tr></table>
-<!--l. 425--><p class="nopar" >
-You can find the temperature inside your refrigerator without putting a thermometer inside. Take an item out of the fridge that
-has had chance to acclimatise to the temperature inside the fridge. For example, a can of fizzy drink would be perfect. Let the
-can warm for one minute and take its temperature. Let it warm for another minute and record its temperature
-again.
-</p><!--l. 428--><p class="noindent" >Suppose that the readings are <span
-class="lmmi-10">T</span><span
-class="rm-lmr-10">(1) = 5</span><span
-class="lmsy7-">&#x2218;</span>C and <span
-class="lmmi-10">T</span><span
-class="rm-lmr-10">(2) = 8</span><span
-class="lmsy7-">&#x2218;</span>C and that the ambient temperature is 17<span
-class="lmsy7-">&#x2218;</span>C.
-</p><!--l. 431--><p class="indent" >
-     </p><dl class="enumerate"><dt class="enumerate">
-  1. </dt><dd
-class="enumerate">What is the temperature inside the fridge?
-
-
-     </dd><dt class="enumerate">
-  2. </dt><dd
-class="enumerate">Measurement are prone to error. Suppose your first and second measurements have an error of <span
-class="lmsy-10">±</span><span
-class="rm-lmr-10">10%</span>. Namely,
-     the first measurement could be anywhere in the range [4.5,5.5]<span
-class="lmsy7-">&#x2218;</span>C and similarly the second measurement could be
-     anywhere in the range [7.2,8.8]<span
-class="lmsy7-">&#x2218;</span>C. What are the possible maximum and minimum temperatures inside the fridge?
-     </dd><dt class="enumerate">
-  3. </dt><dd
-class="enumerate">Why would it be problematic if we left measured the second temperature after a much longer time?</dd></dl>
-<!--l. 465--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">9   </span> <a
- id="x1-110009"></a>More Taylor</h3>
-<!--l. 466--><p class="noindent" >Expand to quadratic order
-     </p><dl class="enumerate"><dt class="enumerate">
-  1. </dt><dd
-class="enumerate"><span
-class="rm-lmr-10">sin</span><span
-class="rm-lmr-10">(</span><span
-class="lmmi-10">x</span><span
-class="rm-lmr-10">)</span>.
-     </dd><dt class="enumerate">
-  2. </dt><dd
-class="enumerate"><span
-class="rm-lmr-10">cos</span><span
-class="rm-lmr-10">(</span><span
-class="rm-lmr-10">sin</span><span
-class="rm-lmr-10">(</span><span
-class="lmmi-10">x</span><span
-class="rm-lmr-10">))</span>.
-     </dd><dt class="enumerate">
-  3. </dt><dd
-class="enumerate"><span
-class="rm-lmr-10">sin</span><span
-class="rm-lmr-10">(</span><span
-class="rm-lmr-10">cos</span><span
-class="rm-lmr-10">(</span><span
-class="lmmi-10">x</span><span
-class="rm-lmr-10">))</span>.
-     </dd><dt class="enumerate">
-  4. </dt><dd
-class="enumerate"><span
-class="rm-lmr-10">1</span><span
-class="lmmi-10">&#x2215;</span><span
-class="rm-lmr-10">cos</span><span
-class="rm-lmr-10">(</span><span
-class="lmmi-10">x </span><span
-class="rm-lmr-10">+ </span><span
-class="lmmi-10">y</span><span
-class="rm-lmr-10">)</span>.</dd></dl>
-   <div id="disqus_thread"></div><script>var disqus_config = function () {this.page.url = thomaswoolley.co.uk;};(function() {var d = document, s = d.createElement('script');s.src = 'https://lecturing.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow"> comments powered by Disqus. </a></noscript>
-</body></html>
-
-
-
+    </article>
+    <nav class="container narrow sheet-nav bottom-nav" aria-label="More problem sheets"><a href="../Q1/Sheet_1.html" aria-current="page">Sheet 1</a><a href="../Q2/Sheet_2.html">Sheet 2</a><a href="../Q3/Sheet_3.html">Sheet 3</a><a href="../Q4/Sheet_4.html">Sheet 4</a><a href="../Q5/Sheet_5.html">Sheet 5</a></nav>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner">Copyright Thomas E. Woolley, unless otherwise stated.</div></footer>
+</body>
+</html>
