@@ -10,6 +10,8 @@ import re
 import sys
 from urllib.parse import unquote, urlsplit
 
+from build_sitemap import GAME_PATH, SITE_URL, render_sitemap, sitemap_urls
+
 
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC_PAGES = {
@@ -41,6 +43,8 @@ class PageParser(HTMLParser):
         self.has_viewport = False
         self.has_description = False
         self.has_canonical = False
+        self.canonical_urls: list[str] = []
+        self.noindex = False
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         values = {name.lower(): value or "" for name, value in attrs}
@@ -66,8 +70,12 @@ class PageParser(HTMLParser):
                 self.has_viewport = True
             elif name == "description" and values.get("content", "").strip():
                 self.has_description = True
+            elif name in {"robots", "googlebot"}:
+                directives = re.split(r"[\s,]+", values.get("content", "").lower())
+                self.noindex |= bool({"noindex", "none"}.intersection(directives))
         elif tag == "link" and "canonical" in values.get("rel", "").lower().split():
             self.has_canonical = bool(values.get("href", "").strip())
+            self.canonical_urls.append(values.get("href", "").strip())
 
         if tag == "img" and "alt" not in values:
             self.errors.append(f"{self.relative_path}:{line}: image is missing alt text")
@@ -196,6 +204,37 @@ def check_stylesheets() -> list[str]:
     return errors
 
 
+def check_sitemap(pages: dict[str, PageParser]) -> list[str]:
+    errors: list[str] = []
+    path = ROOT / "sitemap.xml"
+    if not path.is_file() or path.read_text(encoding="utf-8") != render_sitemap():
+        errors.append("sitemap.xml: missing or stale; run python scripts/build_sitemap.py")
+    for url in sitemap_urls():
+        parts = urlsplit(url)
+        if parts.path == GAME_PATH:
+            continue  # Checked on the live site; belongs to another repository.
+        relative = unquote(parts.path).lstrip("/") or "index.html"
+        target = ROOT / relative
+        if not target.is_file():
+            errors.append(f"sitemap.xml: missing public resource {relative}")
+        parser = pages.get(relative)
+        if relative.endswith(".html"):
+            if parser is None or parser.canonical_urls != [url]:
+                errors.append(f"{relative}: expected exactly one canonical link to {url}")
+            if parser is not None and parser.noindex:
+                errors.append(f"{relative}: sitemap page must not have noindex")
+    for relative, parser in pages.items():
+        for tag, attribute, raw_url, line in parser.references:
+            if tag == "a" and attribute == "href" and raw_url:
+                resolved = resolve_local(ROOT / relative, raw_url)
+                if resolved is not None and resolved[0] == ROOT / "index.html":
+                    if urlsplit(raw_url).path.endswith("index.html"):
+                        errors.append(f"{relative}:{line}: link to the canonical homepage / instead of index.html")
+    if f"Sitemap: {SITE_URL}sitemap.xml" not in (ROOT / "robots.txt").read_text(encoding="utf-8"):
+        errors.append("robots.txt: expected the HTTPS sitemap URL")
+    return errors
+
+
 def check_insecure_urls() -> list[str]:
     errors: list[str] = []
     for extension in ("*.html", "*.css"):
@@ -231,6 +270,7 @@ def main() -> int:
     pages, errors = parse_pages()
     errors.extend(check_references(pages))
     errors.extend(check_public_pages(pages))
+    errors.extend(check_sitemap(pages))
     errors.extend(check_stylesheets())
     errors.extend(check_insecure_urls())
     errors.extend(check_tex_sources())

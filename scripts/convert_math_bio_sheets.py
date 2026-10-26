@@ -283,7 +283,7 @@ def page(content, number):
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header"><div class="container header-inner">
-    <a class="site-name" href="../index.html">Dr Thomas E. Woolley</a>
+    <a class="site-name" href="/">Dr Thomas E. Woolley</a>
     <nav aria-label="Course navigation"><a href="../lecturing.html#mathematical-biology">Teaching resources</a></nav>
   </div></header>
   <main id="main-content" class="sheet-page">

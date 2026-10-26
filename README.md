@@ -20,7 +20,20 @@ Run the built-in checker before publishing:
 python scripts/check_site.py
 ```
 
-It checks internal links and fragments, referenced local assets, LaTeX image paths, duplicate element IDs, key page metadata, image alternative text, iframe titles, and insecure asset URLs. The same command runs automatically for pushes and pull requests through GitHub Actions.
+It checks internal links and fragments, referenced local assets, LaTeX image paths, duplicate element IDs, key page metadata, image alternative text, iframe titles, and insecure asset URLs. It also checks sitemap coverage, matching canonical links, accidental noindex tags on sitemap pages, and links to the preferred homepage address. The same command runs automatically for pushes and pull requests through GitHub Actions.
+
+## Search indexing
+
+The preferred site address is `https://thomaswoolley.co.uk/`. Link to `/` for the homepage. Each public HTML resource has its own HTTPS canonical link.
+
+After changing the links on the teaching page, regenerate the sitemap and run the checks:
+
+```sh
+python scripts/build_sitemap.py
+python scripts/check_site.py
+```
+
+The sitemap includes the main pages, the lecture notes and problem sheets linked from the teaching page in HTML and PDF formats, and Math Bio Surfers. It excludes the question editor, error pages and unlinked legacy files. The game is deployed from the separate `open-learning-material` repository. Modification dates are omitted because the build does not track reliable per-resource dates.
 
 ## Structure
 
