@@ -214,6 +214,8 @@ def check_sitemap(pages: dict[str, PageParser]) -> list[str]:
         if parts.path == GAME_PATH:
             continue  # Checked on the live site; belongs to another repository.
         relative = unquote(parts.path).lstrip("/") or "index.html"
+        if relative.endswith("/"):
+            relative += "index.html"
         target = ROOT / relative
         if not target.is_file():
             errors.append(f"sitemap.xml: missing public resource {relative}")

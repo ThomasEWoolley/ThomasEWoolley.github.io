@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 460" role="img" aria-label="Surge heart and excitation waves">
+  <defs>
+    <radialGradient id="heart"><stop stop-color="#9463c9"/><stop offset="1" stop-color="#382754"/></radialGradient>
+    <linearGradient id="wave"><stop stop-color="#ff758c"/><stop offset="1" stop-color="#ffe170"/></linearGradient>
+  </defs>
+  <rect width="960" height="460" fill="#101222"/>
+  <path d="M480 353C410 302 320 226 341 151C358 84 443 94 480 149C517 94 602 84 619 151C640 226 550 302 480 353Z" fill="url(#heart)" stroke="#d49cff" stroke-width="3"/>
+  <g fill="none" stroke="url(#wave)" stroke-width="6">
+    <path d="M347 195Q480 255 613 195"/>
+    <path d="M371 257Q480 305 589 257"/>
+  </g>
+  <path d="M464 238l16-35 16 35-16-7Z" fill="#a7fff2" stroke="#fff" stroke-width="2"/>
+  <path d="M480 204v-29" stroke="#8ffff0" stroke-width="4"/>
+  <path d="M40 52h218l12-13 14 31 18-43 18 25h600" fill="none" stroke="#ff7185" stroke-width="2"/>
+  <text x="40" y="410" fill="#ffe170" font-family="Arial,sans-serif" font-size="38" font-weight="700" letter-spacing="5">SURGE</text>
+  <text x="920" y="405" text-anchor="end" fill="#dde2ee" font-family="Arial,sans-serif" font-size="20">Explore the science of waves</text>
+</svg>

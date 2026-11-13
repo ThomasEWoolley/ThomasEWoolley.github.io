@@ -1,0 +1,36 @@
+// Public explanations first; mathematical detail is always optional.
+export const SCIENCE = [
+ {label:'Excitation and recovery',prompt:'Watch the bright front and the darker wake behind it.',title:'Why is the wake safe?',summary:"The bright wave front is an excitation of the domain and leaves the medium temporarily unable to respond again. The recovery interval is called the refractory period. Your ship can follow behind the bright wave front.",detail:"Behind this game is the Barkley Model of excitable media, which is a model of calcium waves spreading over the heart. Excitation of the media is governed by a two-variable reaction-diffusion system consisting of a fast activator variable, u, and a slow recovery variable, v."},
+ {label:'Interrupting a wave',prompt:'Notice the gap your cutter makes in a wave front.',title:'How does a gap open?',summary:'Your cutter briefly suppresses excitation and raises recovery along its beam. That gives you a passage through the front, but the surrounding waves keep evolving.',detail:"The cutter sets u near zero and raises v in a narrow region. It changes the current state, not the model parameters."},
+ {label:'Wave collisions',prompt:'Watch what happens where two fronts meet.',title:'Why can colliding waves disappear?',summary:'Excitable waves can annihilate when they meet. Each front encounters the recovering region behind the other, which cannot immediately support another wave.',detail:"The wave fronts are maintained by local excitation and diffusion. They do not simply pass through one another. The result depends on the medium’s state."},
+ {label:'Timing and recovery',prompt:'Look for safe wakes between successive fronts.',title:'Why does timing matter?',summary:'A new wave needs a medium that has recovered enough to respond. The interval between stimuli and the recovery time together shape which waves can spread.',detail:"Changing stimulus timing changes the forcing while the equations stay fixed. This is one reason repeated stimulation can produce different wave patterns."},
+ {label:'Repeated sources',prompt:'Identify the sources that repeatedly launch waves.',title:'What keeps making new waves?',summary:'The marked emitters repeatedly excite nearby points. Disabling an emitter stops its future pulses; waves already travelling can continue until they meet a boundary, another wave or recovering tissue.',detail:"Emitters are prescribed stimuli added by the game. They are distinct from the wave circling back into recovered tissue, which can sustain itself without repeated pulses from the original source."},
+ {label:'From the game to a heart',prompt:'Separate the repeated sources from the waves they send out.',title:'How does this connect to a real heart?',summary:'The game explores spreading excitation and recovery on a curved surface. A real heart has a muscular wall, specialised cells and many interacting processes. Those extra layers are where the science becomes richer.',detail:"Two-dimensional spirals extend to scroll waves in three-dimensional media. Our game runs on a two-dimensional chart displayed on a heart: it does not simulate scroll waves within a heart wall, calcium concentrations or clinical fibrillation."}
+];
+
+export class ScienceJourney {
+ constructor(){this.reset();}
+ reset(){this.seen=new Set([1]);this.hidden=false;}
+ reach(stage){this.seen.add(stage);}
+ transition(previous,next){this.reach(next);return previous!==next&&!this.hidden;}
+ get topics(){return [...this.seen].sort((a,b)=>a-b).map(stage=>({stage,...SCIENCE[stage-1]}));}
+}
+
+export function installScienceUI(arena,onContinue){
+ const dialog=document.createElement('dialog');dialog.id='scienceDialog';dialog.className='science-dialog';
+ dialog.setAttribute('aria-labelledby','scienceTitle');
+ dialog.innerHTML='<div class="dialog-top"><span id="scienceContext">Science · game paused</span><button id="scienceClose" aria-label="Close explanation">✕</button></div><h2 id="scienceTitle"></h2><p id="scienceSummary"></p><button class="secondary" id="scienceMore" aria-expanded="false" aria-controls="scienceDetail">Tell me more</button><section id="scienceDetail" hidden></section><div class="science-actions"><button class="primary" id="scienceContinue">Continue</button><button class="practice-link" id="scienceHide">Hide science notes for this run</button></div>';
+ arena.append(dialog);const el=id=>dialog.querySelector('#'+id);let interlude=false;
+ function close(){dialog.close();if(interlude)onContinue(false);}
+ el('scienceClose').onclick=close;el('scienceContinue').onclick=close;
+ el('scienceHide').onclick=()=>{dialog.close();onContinue(true);};
+ dialog.addEventListener('cancel',event=>{event.preventDefault();close();});
+ el('scienceMore').onclick=()=>{const open=el('scienceDetail').hidden;el('scienceDetail').hidden=!open;el('scienceMore').textContent=open?'Less detail':'Tell me more';el('scienceMore').setAttribute('aria-expanded',String(open));};
+ return {dialog,open(stage,isInterlude=true){
+  const topic=SCIENCE[stage-1];interlude=isInterlude;el('scienceContext').textContent=isInterlude?`Round ${stage} complete · game paused`:'Science from your run';
+  el('scienceTitle').textContent=topic.title;el('scienceSummary').textContent=topic.summary;
+  el('scienceDetail').innerHTML=`<p>${topic.detail}</p><figure class="wave-diagram"><svg viewBox="0 0 420 90" role="img" aria-label="Schematic wave travelling right: recovering wake on the left, excited front in the middle, resting medium ahead"><rect x="2" y="10" width="150" height="32" fill="#514a87"/><path d="M5 36h142" stroke="#ddd8ff" stroke-dasharray="4 4"/><rect x="152" y="10" width="36" height="32" fill="#ffe170"/><rect x="188" y="10" width="228" height="32" fill="#203445"/><path d="M235 26h130l-10-7m10 7-10 7" stroke="#d9fffa" fill="none" stroke-width="2"/><g fill="#f3f4ff" font-size="13" font-family="Arial"><text x="10" y="66">Recovering wake</text><text x="150" y="85">Front</text><text x="275" y="66">Resting ahead</text></g></svg><figcaption>Schematic of a travelling wave, not a recording of your run.</figcaption></figure><h3>The two-variable model</h3><p><b>u</b> tracks excitation; <b>v</b> tracks recovery. Local reactions control their rise and fall; diffusion spreads excitation between neighbouring points.</p><div class="science-equations" aria-label="Barkley equations">∂u/∂t = ∇²u + u(1 − u)(u − (v + b)/a)/ε<br>∂v/∂t = u − v</div><p>Here a = 0.75, b = 0.025 and ε = 0.04. Diffusion runs in the flat chart wrapped around the heart, with periodic longitude and reflecting ends. It is not a calibrated model of diffusion through curved cardiac tissue.</p><div class="sources"><a href="https://www.scholarpedia.org/article/Barkley_model" target="_blank" rel="noopener">Barkley’s introduction ↗</a><a href="https://www.scholarpedia.org/article/Excitable_media" target="_blank" rel="noopener">Excitable media ↗</a></div>`;
+  el('scienceDetail').hidden=true;el('scienceMore').textContent='Tell me more';el('scienceMore').setAttribute('aria-expanded','false');el('scienceHide').hidden=!isInterlude;el('scienceContinue').textContent=isInterlude?'Continue to next round':'Back to results';
+  dialog.showModal();el('scienceContinue').focus({preventScroll:true});
+ }};
+}
