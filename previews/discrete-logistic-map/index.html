@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <meta name="description" content="Explore the discrete logistic map with linked cobweb, bifurcation and iteration plots. A responsive, self-contained browser app.">
+  <title>Discrete logistic map | Thomas E. Woolley</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172638;
+      --muted: #57677b;
+      --faint: #8a98a8;
+      --line: #dce4ee;
+      --line-soft: #eaf0f6;
+      --paper: #fff;
+      --background: #f5f7fb;
+      --blue: #2459c4;
+      --black: #172638;
+      --orange: #c66a0a;
+      --teal: #087e96;
+      --math: "STIX Two Math", "Cambria Math", "Latin Modern Math", "Times New Roman", serif;
+      --ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-width: 320px; }
+    body { font-family: var(--ui); color: var(--ink); background: var(--background); font-size: 15px; }
+    button, input { font: inherit; }
+    .app { max-width: 1550px; margin: auto; padding: 28px 24px 27px; }
+    .masthead { display: flex; gap: 20px; align-items: start; justify-content: space-between; margin-bottom: 21px; }
+    .eyebrow { text-transform: uppercase; font-size: 11px; letter-spacing: .14em; font-weight: 800; color: #55718e; margin-bottom: 8px; }
+    h1 { font-size: clamp(24px, 2.8vw, 35px); letter-spacing: -.045em; margin: 0; line-height: 1.18; font-weight: 760; }
+    .intro { color: var(--muted); margin: 8px 0 0; line-height: 1.6; max-width: 850px; }
+    .equation { font: 25px var(--math); white-space: nowrap; border: 1px solid #dce6f1; border-radius: 13px; background: #fff; padding: 17px 22px; box-shadow: 0 5px 15px rgba(29,60,95,.035); }
+    math { font-family: var(--math); }
+    .controls { background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 18px 22px 17px; box-shadow: 0 6px 30px rgba(30,53,86,.035); }
+    .controls-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 15px; }
+    h2, h3, p { margin-top: 0; }
+    .controls-head h2 { font-size: 15px; margin: 0; letter-spacing: -.012em; }
+    .controls-head p { font-size: 12px; color: var(--muted); margin: 0; }
+    .controls-grid { display: grid; grid-template-columns: minmax(235px,1.7fr) minmax(155px,1.12fr) minmax(155px,1fr) minmax(155px,1fr); gap: 21px; align-items: start; }
+    .control { min-width: 0; }
+    .control label, .control .label { display: block; font-size: 13px; color: #415269; font-weight: 680; margin-bottom: 9px; }
+    .field-row { display: flex; align-items: center; gap: 10px; }
+    .field-row input[type="range"] { flex: 1; min-width: 55px; }
+    .control input[type="number"] { width: 100%; max-width: 126px; border-radius: 8px; border: 1px solid #cbd6e4; padding: 9px 10px; background: #fff; color: var(--ink); outline-offset: 2px; font-variant-numeric: tabular-nums; }
+    .control .field-row input[type="number"] { width: 78px; text-align: right; flex: 0 0 78px; }
+    .control input:focus-visible, .plot-canvas:focus-visible { outline: 3px solid #84b6f4; outline-offset: 2px; }
+    input[type="range"] { cursor: pointer; accent-color: #205fa9; min-height: 24px; }
+    .range-limits { margin-top: 4px; display:flex; justify-content:space-between; font-size:11px; color:var(--faint); }
+    .input-line { display: flex; align-items: center; gap: 8px; }
+    .input-line input { flex: 1; }
+    .trace-swatch { width: 24px; height: 0; border-top: 3px solid var(--black); flex: 0 0 24px; }
+    .trace-swatch.blue { border-color: var(--blue); border-top-style: dashed; }
+    .slider-value { text-align: right; font-weight: 700; min-width: 32px; font-variant-numeric: tabular-nums; }
+    .section-line { margin: 23px 1px 12px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .section-line h2 { margin:0; font-size:16px; letter-spacing:-.012em; }
+    .legend { display: flex; gap: 17px; align-items: center; color: #48596c; font-size: 12px; flex-wrap: wrap; }
+    .legend-item { white-space: nowrap; display: inline-flex; align-items: center; gap: 7px; }
+    .key { display: inline-block; width: 19px; border-top: 3px solid var(--black); }
+    .key.blue { border-color: var(--blue); border-top-style: dashed; }
+    .key.orange { border-color: var(--orange); }
+    .plot-scroll { overflow-x: auto; overflow-y: hidden; border-radius: 13px; padding-bottom: 6px; scrollbar-color: #bcc7d8 transparent; }
+    .plots { display: grid; grid-template-columns: repeat(3, minmax(320px, 1fr)); gap: 15px; min-width: 995px; }
+    .panel { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 18px 15px 14px; box-shadow: 0 6px 26px rgba(26,50,80,.035); min-width:0; }
+    .panel-heading { height: 61px; padding-left: 2px; }
+    .panel-heading h3 { font-weight: 740; font-size: 16px; letter-spacing: -.015em; margin: 0 0 5px; }
+    .panel-heading p { color: var(--muted); font-size: 12px; line-height: 1.45; margin: 0; }
+    .plot-canvas { display: block; width: 100%; height: 363px; border-radius: 8px; }
+    .plot-canvas.interactive { cursor: crosshair; touch-action: auto; }
+    .readout { display: flex; flex-wrap: wrap; align-items: baseline; gap: 5px; }
+    .bottom-info { min-height: 64px; display: flex; gap: 14px; justify-content: space-between; flex-wrap: wrap; align-items: center; padding: 15px 4px 0; }
+    #linkReadout { color: #53677e; font-size: 13px; line-height: 1.55; }
+    #linkReadout strong { color: var(--ink); }
+    #linkReadout .value1 { color: var(--black); font-weight: 750; }
+    #linkReadout .value2 { color: var(--blue); font-weight: 750; }
+    #dynamics { color: #627187; font-size: 12px; }
+    .footnote { color: #728096; font-size: 11px; margin: 10px 2px 0; line-height: 1.65; }
+    .math-inline { font-family: var(--math); font-style: italic; font-size: 1.06em; }
+    .mobile-note { display: none; color: #718298; font-size: 12px; margin: 0 2px 9px; }
+    .clear-link { background: none; border: 0; color: #2459c4; padding: 0 4px; font-size: 12px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+    .clear-link[hidden] { display: none; }
+    @media (max-width: 1050px) {
+      .app { padding: 22px 16px; }
+      .masthead { align-items: start; }
+      .controls-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 19px 24px; }
+      .plots { min-width: 995px; }
+      .mobile-note { display: block; }
+      .equation { font-size: 22px; padding: 13px 16px; }
+    }
+    @media (max-width: 620px) {
+      .app { padding: 18px 11px; }
+      .masthead { display: block; }
+      .equation { margin-top: 16px; display: inline-block; }
+      .controls { padding: 15px 14px; }
+      .controls-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px 13px; }
+      .control .field-row { flex-wrap: wrap; }
+      .control .field-row input[type="number"] { width: 100%; flex: 1 0 100%; max-width: none; text-align: left; }
+      .control input[type="number"] { max-width: 100%; }
+      .controls-head p { display: none; }
+      .section-line { align-items: start; }
+      .legend { gap: 8px 14px; }
+      .panel { padding: 16px 12px 12px; }
+      .plots { min-width: 985px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+<main class="app">
+  <header class="masthead">
+    <div>
+      <div class="eyebrow">Interactive mathematical biology</div>
+      <h1>Discrete logistic map</h1>
+      <p class="intro">Explore how two nearby initial conditions evolve, and compare their trajectories with the cobweb and bifurcation diagrams.</p>
+    </div>
+    <div class="equation" aria-label="x sub t plus 1 equals r x sub t times one minus x sub t">
+      <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+        <msub><mi>x</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub>
+        <mo>=</mo><mi>r</mi><msub><mi>x</mi><mi>t</mi></msub>
+        <mo>(</mo><mn>1</mn><mo>−</mo><msub><mi>x</mi><mi>t</mi></msub><mo>)</mo>
+      </math>
+    </div>
+  </header>
+
+  <section class="controls" aria-labelledby="control-title">
+    <div class="controls-head"><h2 id="control-title">Input parameters</h2><p>All figures update immediately</p></div>
+    <div class="controls-grid">
+      <div class="control">
+        <label for="growth">Growth rate, <span class="math-inline">r</span></label>
+        <div class="field-row">
+          <input type="range" id="growth" min="0" max="4" value="1" step="0.001" aria-label="Growth rate slider">
+          <input type="number" id="growthNumber" min="0" max="4" value="1.000" step="0.001" aria-label="Growth rate exact value">
+        </div>
+        <div class="range-limits"><span>0</span><span>4</span></div>
+      </div>
+      <div class="control">
+        <label for="iterations">Number of iterations</label>
+        <div class="field-row">
+          <input type="range" id="iterations" min="10" max="100" value="50" step="10" aria-label="Number of iterations">
+          <span class="slider-value" id="iterationValue">50</span>
+        </div>
+        <div class="range-limits"><span>10</span><span>100</span></div>
+      </div>
+      <div class="control">
+        <label for="initialOne">First initial condition, <span class="math-inline">x₀</span></label>
+        <div class="input-line"><span class="trace-swatch" aria-hidden="true"></span><input id="initialOne" type="number" min="0" max="1" step="0.001" value="0.60" aria-label="First initial condition"></div>
+      </div>
+      <div class="control">
+        <label for="initialTwo">Second initial condition, <span class="math-inline">x₀</span></label>
+        <div class="input-line"><span class="trace-swatch blue" aria-hidden="true"></span><input id="initialTwo" type="number" min="0" max="1" step="0.001" value="0.61" aria-label="Second initial condition"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-line">
+    <h2>Simulation results</h2>
+    <div class="legend" aria-label="Plot legend">
+      <span class="legend-item"><span class="key" aria-hidden="true"></span>Initial condition 1</span>
+      <span class="legend-item"><span class="key blue" aria-hidden="true"></span>Initial condition 2</span>
+      <span class="legend-item"><span class="key orange" aria-hidden="true"></span>Selected growth rate</span>
+    </div>
+  </div>
+  <p class="mobile-note">Scroll horizontally to see all three aligned figures.</p>
+  <div class="plot-scroll" role="region" aria-label="Three horizontally aligned linked plots" tabindex="0">
+    <div class="plots">
+      <section class="panel" aria-label="Cobweb diagram">
+        <div class="panel-heading"><h3>01 · Cobweb diagram</h3><p>Map <span class="math-inline">f(x)</span>, identity line and both orbits</p></div>
+        <canvas class="plot-canvas" id="cobweb" role="img" aria-label="Cobweb diagram with both initial conditions and fixed points"></canvas>
+      </section>
+      <section class="panel" aria-label="Bifurcation diagram">
+        <div class="panel-heading"><h3>02 · Bifurcation diagram</h3><p>Long-term states for <span class="math-inline">0 ≤ r ≤ 4</span></p></div>
+        <canvas class="plot-canvas" id="bifurcation" role="img" aria-label="Bifurcation diagram, with vertical marker at selected growth rate"></canvas>
+      </section>
+      <section class="panel" aria-label="Iteration plot">
+        <div class="panel-heading"><h3>03 · Iterated trajectories</h3><p>Choose an iteration to trace its values across the figures</p></div>
+        <canvas class="plot-canvas interactive" id="series" tabindex="0" aria-label="Trajectories. Hover, tap or use left and right arrow keys to select an iteration"></canvas>
+      </section>
+    </div>
+  </div>
+  <div class="bottom-info">
+    <div class="readout"><span id="linkReadout" aria-live="polite">Hover over or tap the right-hand plot to follow an iteration across all three figures.</span><button class="clear-link" id="clearSelection" type="button" hidden>Clear</button></div>
+    <div id="dynamics" aria-live="polite"></div>
+  </div>
+  <p class="footnote">All three vertical axes use the same 0 to 1 scale and aligned gridlines. The middle plot shows long-term states after transients have decayed, which may include periodic or chaotic orbits rather than fixed points. Squares in the cobweb diagram mark fixed points.</p>
+</main>
+<script>
+(() => {
+  'use strict';
+
+  const $ = id => document.getElementById(id);
+  const el = {
+    growth: $('growth'), growthNumber: $('growthNumber'), steps: $('iterations'),
+    stepsValue: $('iterationValue'), first: $('initialOne'), second: $('initialTwo'),
+    readout: $('linkReadout'), clear: $('clearSelection'), dynamics: $('dynamics'),
+    cobweb: $('cobweb'), bifurcation: $('bifurcation'), series: $('series')
+  };
+  const colours = {
+    ink: '#172638', muted: '#617187', axis: '#718198', grid: '#e5ecf3',
+    blue: '#2459c4', black: '#172638', orange: '#c66a0a', teal: '#087e96',
+    identity: '#8796a7', cloud: '#394e68'
+  };
+  const font = '"STIX Two Math", "Cambria Math", "Latin Modern Math", Georgia, serif';
+  const M = { left: 52, right: 12, top: 15, bottom: 48 };
+  const state = { r: 1, n: 50, a: .6, b: .61, orbitA: [], orbitB: [], selected: null, locked: false };
+  let frameRequested = false;
+  let bifurcationCache = null;
+  let dimensions = new Map();
+
+  const clamp = (value, lo, hi) => Math.min(hi, Math.max(lo, value));
+  const next = (x, r) => r * x * (1 - x);
+  const fmt = (x, decimals = 5) => Number.isFinite(x) ? x.toFixed(decimals) : '–';
+
+  function orbit(x0) {
+    const values = new Array(state.n + 1);
+    values[0] = x0;
+    for (let t = 1; t <= state.n; t++) values[t] = next(values[t - 1], state.r);
+    return values;
+  }
+  function updateModel() {
+    state.orbitA = orbit(state.a);
+    state.orbitB = orbit(state.b);
+    if (state.selected !== null) state.selected = clamp(state.selected, 0, state.n);
+    updateLabels();
+    requestDraw();
+  }
+  function updateLabels() {
+    if (state.selected !== null) {
+      const t = state.selected;
+      const a = fmt(state.orbitA[t]);
+      const b = fmt(state.orbitB[t]);
+      el.readout.innerHTML = `<strong>Iteration ${t}:</strong> <span class="value1">xₜ¹ = ${a}</span> &nbsp;·&nbsp; <span class="value2">xₜ² = ${b}</span> &nbsp;·&nbsp; <span>Difference = ${fmt(Math.abs(state.orbitA[t] - state.orbitB[t]))}</span>`;
+      el.clear.hidden = false;
+    } else {
+      el.readout.textContent = 'Hover over or tap the right-hand plot to follow an iteration across all three figures.';
+      el.clear.hidden = true;
+    }
+    const r = state.r;
+    if (r < 1 - 1e-9) el.dynamics.textContent = 'Long-term behaviour: convergence to x = 0';
+    else if (Math.abs(r - 1) < 1e-9) el.dynamics.textContent = 'Long-term behaviour: non-hyperbolic fixed point at x = 0';
+    else if (r < 3 - 1e-9) el.dynamics.textContent = `Long-term behaviour: stable fixed point x ≈ ${fmt(1 - 1 / r, 4)}`;
+    else if (Math.abs(r - 3) < 1e-9) el.dynamics.textContent = 'Long-term behaviour: onset of period doubling';
+    else if (r < 3.569945672) el.dynamics.textContent = 'Long-term behaviour: period-doubling region';
+    else el.dynamics.textContent = 'Long-term behaviour: chaotic dynamics and periodic windows';
+  }
+  function clearSelection() {
+    state.selected = null;
+    state.locked = false;
+    updateLabels();
+    requestDraw();
+  }
+  el.clear.addEventListener('click', clearSelection);
+  function setSelected(t, lock = false) {
+    const index = clamp(Math.round(t), 0, state.n);
+    if (state.selected !== index || state.locked !== lock) {
+      state.selected = index;
+      state.locked = lock;
+      updateLabels();
+      requestDraw();
+    }
+  }
+  function readNumber(input, previous, lo, hi) {
+    const value = Number(input.value);
+    return input.value.trim() === '' || !Number.isFinite(value) ? previous : clamp(value, lo, hi);
+  }
+  function syncGrowth(fromSlider) {
+    const source = fromSlider ? el.growth : el.growthNumber;
+    const r = readNumber(source, state.r, 0, 4);
+    state.r = r;
+    if (fromSlider) el.growthNumber.value = r.toFixed(3);
+    else el.growth.value = String(r);
+    updateModel();
+  }
+  el.growth.addEventListener('input', () => syncGrowth(true));
+  el.growthNumber.addEventListener('input', () => {
+    if (el.growthNumber.value.trim() !== '') syncGrowth(false);
+  });
+  el.growthNumber.addEventListener('change', () => {
+    state.r = readNumber(el.growthNumber, state.r, 0, 4);
+    el.growthNumber.value = state.r.toFixed(3);
+    el.growth.value = String(state.r);
+    updateModel();
+  });
+  el.steps.addEventListener('input', () => {
+    state.n = Number(el.steps.value);
+    el.stepsValue.textContent = String(state.n);
+    updateModel();
+  });
+  function initialChanged(which) {
+    const input = which === 'a' ? el.first : el.second;
+    state[which] = readNumber(input, state[which], 0, 1);
+    updateModel();
+  }
+  function clampInitial(which) {
+    const input = which === 'a' ? el.first : el.second;
+    state[which] = readNumber(input, state[which], 0, 1);
+    input.value = state[which].toFixed(3);
+    updateModel();
+  }
+  el.first.addEventListener('input', () => { if (el.first.value.trim() !== '') initialChanged('a'); });
+  el.second.addEventListener('input', () => { if (el.second.value.trim() !== '') initialChanged('b'); });
+  el.first.addEventListener('change', () => clampInitial('a'));
+  el.second.addEventListener('change', () => clampInitial('b'));
+
+  function measure(canvas) {
+    const rectangle = canvas.getBoundingClientRect();
+    const width = Math.max(200, rectangle.width);
+    const height = Math.max(250, rectangle.height);
+    const pixelRatio = Math.min(2, window.devicePixelRatio || 1);
+    const pixelWidth = Math.round(width * pixelRatio);
+    const pixelHeight = Math.round(height * pixelRatio);
+    if (canvas.width !== pixelWidth || canvas.height !== pixelHeight) {
+      canvas.width = pixelWidth;
+      canvas.height = pixelHeight;
+    }
+    const ctx = canvas.getContext('2d', { alpha: false });
+    ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    ctx.imageSmoothingEnabled = false;
+    const dimensionsForCanvas = {
+      ctx, width, height, x0: M.left, x1: width - M.right,
+      y0: M.top, y1: height - M.bottom,
+      plotW: width - M.left - M.right, plotH: height - M.top - M.bottom,
+      px: x => M.left + x * (width - M.left - M.right),
+      py: x => M.top + (1 - x) * (height - M.top - M.bottom)
+    };
+    dimensions.set(canvas, dimensionsForCanvas);
+    return dimensionsForCanvas;
+  }
+  function axes(d, kind) {
+    const { ctx, width, height, x0, x1, y0, y1, py } = d;
+    ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, width, height);
+    ctx.lineWidth = 1;
+    for (let i = 0; i <= 4; i++) {
+      const y = py(i / 4);
+      ctx.strokeStyle = colours.grid;
+      ctx.beginPath(); ctx.moveTo(x0, y + .5); ctx.lineTo(x1, y + .5); ctx.stroke();
+      ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
+      ctx.fillStyle = colours.muted; ctx.font = `13px ${font}`;
+      ctx.fillText((i / 4).toFixed(i === 0 || i === 4 ? 0 : 2), x0 - 10, y);
+    }
+    ctx.strokeStyle = colours.axis; ctx.lineWidth = 1.1;
+    ctx.beginPath(); ctx.moveTo(x0 + .5, y0); ctx.lineTo(x0 + .5, y1 + .5);
+    ctx.lineTo(x1, y1 + .5); ctx.stroke();
+    const xmax = kind === 'bifurcation' ? 4 : kind === 'series' ? state.n : 1;
+    const ticks = kind === 'series' ? 5 : 4;
+    for (let i = 0; i <= ticks; i++) {
+      const x = x0 + (i / ticks) * d.plotW;
+      ctx.strokeStyle = colours.grid;
+      if (i > 0) {
+        ctx.beginPath(); ctx.moveTo(x + .5, y0); ctx.lineTo(x + .5, y1); ctx.stroke();
+      }
+      ctx.fillStyle = colours.muted; ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+      ctx.font = `13px ${font}`;
+      const value = i * xmax / ticks;
+      const text = Number.isInteger(value) ? String(value) : value.toFixed(kind === 'series' ? 1 : 2);
+      ctx.fillText(text, x, y1 + 8);
+    }
+    ctx.fillStyle = colours.ink;
+    ctx.font = `italic 16px ${font}`;
+    ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+    ctx.fillText(kind === 'cobweb' ? 'xₜ' : kind === 'bifurcation' ? 'r' : 'Iteration t', (x0 + x1) / 2, height - 7);
+    ctx.save();
+    ctx.translate(15, (y0 + y1) / 2); ctx.rotate(-Math.PI / 2);
+    ctx.fillText(kind === 'cobweb' ? 'xₜ₊₁' : kind === 'bifurcation' ? 'Long-term x' : 'xₜ', 0, 0);
+    ctx.restore();
+  }
+  function line(ctx, x1, y1, x2, y2) {
+    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+  }
+  function marker(ctx, x, y, colour, type = 'circle', size = 3.5) {
+    ctx.save();
+    ctx.lineWidth = 1.6;
+    if (type === 'square') {
+      ctx.fillStyle = '#fff'; ctx.strokeStyle = colour;
+      ctx.fillRect(x - size, y - size, 2 * size, 2 * size);
+      ctx.strokeRect(x - size, y - size, 2 * size, 2 * size);
+    } else {
+      ctx.fillStyle = '#fff'; ctx.strokeStyle = '#fff';
+      ctx.beginPath(); ctx.arc(x, y, size + 1.6, 0, 2 * Math.PI); ctx.fill();
+      ctx.fillStyle = colour;
+      ctx.beginPath(); ctx.arc(x, y, size, 0, 2 * Math.PI); ctx.fill();
+    }
+    ctx.restore();
+  }
+  function linkedGuides(d) {
+    if (state.selected === null) return;
+    const {ctx, x0, x1, py} = d;
+    [ [state.orbitA[state.selected], colours.black], [state.orbitB[state.selected], colours.blue] ].forEach(([value, colour], i) => {
+      ctx.save(); ctx.strokeStyle = colour; ctx.globalAlpha = .54;
+      ctx.lineWidth = 1; ctx.setLineDash(i ? [3, 5] : [6, 5]);
+      line(ctx, x0, py(value), x1, py(value)); ctx.restore();
+    });
+  }
+  function drawOrbitCobweb(d, values, colour, dash) {
+    const {ctx, px, py} = d;
+    ctx.save(); ctx.strokeStyle = colour; ctx.lineWidth = 1.35;
+    if (dash) ctx.setLineDash([4.5, 3.8]);
+    ctx.globalAlpha = .82;
+    ctx.beginPath(); ctx.moveTo(px(values[0]), py(values[0]));
+    for (let t = 1; t < values.length; t++) {
+      ctx.lineTo(px(values[t - 1]), py(values[t]));
+      ctx.lineTo(px(values[t]), py(values[t]));
+    }
+    ctx.stroke(); ctx.restore();
+    marker(ctx, px(values[0]), py(values[0]), colour, 'circle', 3.1);
+  }
+  function drawCobweb() {
+    const d = measure(el.cobweb), {ctx, px, py} = d;
+    axes(d, 'cobweb');
+    ctx.save(); ctx.beginPath(); ctx.rect(d.x0, d.y0, d.plotW, d.plotH); ctx.clip();
+    ctx.strokeStyle = colours.identity; ctx.lineWidth = 1.8; ctx.setLineDash([7, 5]);
+    line(ctx, px(0), py(0), px(1), py(1)); ctx.setLineDash([]);
+    ctx.strokeStyle = colours.teal; ctx.lineWidth = 2.3;
+    ctx.beginPath();
+    for (let i = 0; i <= 250; i++) {
+      const x = i / 250;
+      if (i === 0) ctx.moveTo(px(x), py(next(x, state.r)));
+      else ctx.lineTo(px(x), py(next(x, state.r)));
+    }
+    ctx.stroke();
+    drawOrbitCobweb(d, state.orbitB, colours.blue, true);
+    drawOrbitCobweb(d, state.orbitA, colours.black, false);
+    linkedGuides(d);
+    const fixed = [0];
+    if (state.r > 1) fixed.push(1 - 1 / state.r);
+    for (const x of fixed) marker(ctx, px(x), py(x), colours.orange, 'square', 4.2);
+    if (state.selected !== null) {
+      for (const [values, colour] of [[state.orbitA, colours.black], [state.orbitB, colours.blue]]) {
+        const t = state.selected;
+        const prior = t === 0 ? values[0] : values[t - 1];
+        marker(ctx, px(prior), py(values[t]), colour, 'circle', 4.3);
+        marker(ctx, px(values[t]), py(values[t]), colour, 'circle', 3.4);
+      }
+    }
+    ctx.restore();
+  }
+  function buildBifurcation(d) {
+    // Compute the attractor cloud once per canvas size. It does not depend on the chosen r.
+    const cacheCanvas = document.createElement('canvas');
+    const pixelRatio = Math.min(2, window.devicePixelRatio || 1);
+    cacheCanvas.width = Math.ceil(d.width * pixelRatio);
+    cacheCanvas.height = Math.ceil(d.height * pixelRatio);
+    const ctx = cacheCanvas.getContext('2d');
+    ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    ctx.fillStyle = colours.cloud;
+    const samples = Math.max(700, Math.min(1350, Math.round(d.plotW * 2.6)));
+    const radius = pixelRatio > 1 ? .63 : .7;
+    for (let i = 0; i <= samples; i++) {
+      const r = 4 * i / samples;
+      let x = .43129;
+      for (let k = 0; k < 700; k++) x = next(x, r);
+      ctx.globalAlpha = r < 3.45 ? .26 : .13;
+      for (let k = 0; k < 120; k++) {
+        x = next(x, r);
+        if (Number.isFinite(x) && x >= 0 && x <= 1) {
+          ctx.fillRect(d.px(r / 4), d.py(x), radius, radius);
+        }
+      }
+    }
+    ctx.globalAlpha = 1;
+    return { image: cacheCanvas, width: d.width, height: d.height, ratio: pixelRatio };
+  }
+  function drawBifurcation() {
+    const d = measure(el.bifurcation), {ctx, px, py} = d;
+    axes(d, 'bifurcation');
+    const ratio = Math.min(2, window.devicePixelRatio || 1);
+    if (!bifurcationCache || bifurcationCache.width !== d.width || bifurcationCache.height !== d.height || bifurcationCache.ratio !== ratio) {
+      bifurcationCache = buildBifurcation(d);
+    }
+    ctx.save(); ctx.beginPath(); ctx.rect(d.x0, d.y0, d.plotW, d.plotH); ctx.clip();
+    ctx.drawImage(bifurcationCache.image, 0, 0, d.width, d.height);
+    linkedGuides(d);
+    const x = px(state.r / 4);
+    ctx.strokeStyle = colours.orange; ctx.lineWidth = 2.2;
+    line(ctx, x, d.y0, x, d.y1);
+    // Mark the currently selected iterates on this vertical slice, not necessarily attractors.
+    if (state.selected !== null) {
+      marker(ctx, x, py(state.orbitB[state.selected]), colours.blue, 'circle', 4);
+      marker(ctx, x, py(state.orbitA[state.selected]), colours.black, 'circle', 4);
+    }
+    ctx.restore();
+    ctx.font = `bold 12px ${font}`; ctx.textAlign = 'right'; ctx.textBaseline = 'top';
+    ctx.fillStyle = colours.orange;
+    const label = `r = ${state.r.toFixed(3)}`;
+    let labelX = x + 8;
+    ctx.textAlign = 'left';
+    if (x + ctx.measureText(label).width + 10 > d.x1) {
+      labelX = x - 8; ctx.textAlign = 'right';
+    }
+    if (labelX < d.x0) labelX = d.x0;
+    ctx.fillText(label, labelX, d.y0 + 6);
+  }
+  function drawSeriesTrace(d, values, colour, dashed) {
+    const {ctx, py} = d;
+    ctx.save(); ctx.strokeStyle = colour; ctx.lineWidth = 1.9;
+    if (dashed) ctx.setLineDash([5, 3]);
+    ctx.beginPath();
+    values.forEach((value, i) => {
+      const x = d.x0 + i / state.n * d.plotW;
+      if (i === 0) ctx.moveTo(x, py(value)); else ctx.lineTo(x, py(value));
+    });
+    ctx.stroke(); ctx.setLineDash([]);
+    values.forEach((value, i) => {
+      const x = d.x0 + i / state.n * d.plotW;
+      ctx.fillStyle = '#fff'; ctx.strokeStyle = colour; ctx.lineWidth = 1.15;
+      ctx.beginPath(); ctx.arc(x, py(value), 2.05, 0, 2 * Math.PI); ctx.fill(); ctx.stroke();
+    });
+    ctx.restore();
+  }
+  function drawSeries() {
+    const d = measure(el.series), {ctx, py} = d;
+    axes(d, 'series');
+    ctx.save(); ctx.beginPath(); ctx.rect(d.x0, d.y0, d.plotW, d.plotH); ctx.clip();
+    drawSeriesTrace(d, state.orbitB, colours.blue, true);
+    drawSeriesTrace(d, state.orbitA, colours.black, false);
+    linkedGuides(d);
+    if (state.selected !== null) {
+      const x = d.x0 + state.selected / state.n * d.plotW;
+      ctx.strokeStyle = '#a5b2c3'; ctx.lineWidth = 1.3; ctx.setLineDash([4, 4]);
+      line(ctx, x, d.y0, x, d.y1); ctx.setLineDash([]);
+      marker(ctx, x, py(state.orbitB[state.selected]), colours.blue, 'circle', 5);
+      marker(ctx, x, py(state.orbitA[state.selected]), colours.black, 'circle', 5);
+    }
+    ctx.restore();
+  }
+  function draw() {
+    frameRequested = false;
+    drawCobweb(); drawBifurcation(); drawSeries();
+  }
+  function requestDraw() {
+    if (!frameRequested) {
+      frameRequested = true;
+      requestAnimationFrame(draw);
+    }
+  }
+  function timeAtPointer(event) {
+    const dims = dimensions.get(el.series) || measure(el.series);
+    const x = event.clientX - el.series.getBoundingClientRect().left;
+    return clamp(Math.round((x - dims.x0) / dims.plotW * state.n), 0, state.n);
+  }
+  el.series.addEventListener('pointermove', event => {
+    if (!state.locked && event.pointerType !== 'touch') setSelected(timeAtPointer(event));
+  });
+  el.series.addEventListener('pointerleave', () => {
+    if (!state.locked) clearSelection();
+  });
+  el.series.addEventListener('pointerdown', event => {
+    const t = timeAtPointer(event);
+    if (state.locked && state.selected === t) clearSelection();
+    else setSelected(t, true);
+  });
+  el.series.addEventListener('keydown', event => {
+    if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+      event.preventDefault();
+      const t = state.selected === null ? 0 : state.selected;
+      setSelected(t + (event.key === 'ArrowRight' ? 1 : -1), true);
+    } else if (event.key === 'Home') { event.preventDefault(); setSelected(0, true); }
+    else if (event.key === 'End') { event.preventDefault(); setSelected(state.n, true); }
+    else if (event.key === 'Escape') { clearSelection(); }
+  });
+  if ('ResizeObserver' in window) {
+    const observer = new ResizeObserver(() => requestDraw());
+    observer.observe(el.cobweb); observer.observe(el.bifurcation); observer.observe(el.series);
+  } else {
+    window.addEventListener('resize', requestDraw);
+  }
+  updateModel();
+})();
+</script>
+</body>
+</html>
