@@ -25,6 +25,8 @@ PUBLIC_PAGES = {
     "outreach.html",
     "ode-explorer.html",
     "ode-explorer/index.html",
+    "discrete-logistic-map.html",
+    "discrete-logistic-map/index.html",
 }
 REFERENCE_ATTRIBUTES = {"action", "href", "poster", "src"}
 IGNORED_SCHEMES = {"data", "javascript", "mailto", "sms", "tel"}
