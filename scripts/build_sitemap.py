@@ -9,7 +9,8 @@ from xml.sax.saxutils import escape
 ROOT = Path(__file__).resolve().parents[1]
 SITE_URL = "https://thomaswoolley.co.uk/"
 MAIN_PAGES = ("", "academia.html", "outreach.html", "lecturing.html",
-              "apps.html", "codes.html", "contact.html", "surge/")
+              "apps.html", "codes.html", "contact.html", "surge/",
+              "ode-explorer.html", "ode-explorer/")
 # This GitHub Pages project is served separately from the main repository.
 GAME_PATH = "/open-learning-material/math-bio-surfers/"
 

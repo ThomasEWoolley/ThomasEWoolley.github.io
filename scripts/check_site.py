@@ -23,6 +23,8 @@ PUBLIC_PAGES = {
     "index.html",
     "lecturing.html",
     "outreach.html",
+    "ode-explorer.html",
+    "ode-explorer/index.html",
 }
 REFERENCE_ATTRIBUTES = {"action", "href", "poster", "src"}
 IGNORED_SCHEMES = {"data", "javascript", "mailto", "sms", "tel"}

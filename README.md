@@ -82,3 +82,17 @@ python scripts/check_site.py
 ```
 
 The build requires Pandoc, pdfLaTeX with the source documents' packages, Pillow and PyMuPDF. It leaves the LaTeX sources unchanged, renders TikZ diagrams as SVG, and records source hashes in each course's `notes-build.json`. The HTML includes the complete worked text, equations, tables, figures and linked contents. PDF downloads remain available.
+
+## ODE Explorer
+
+The public applet is served from [`ode-explorer/`](https://thomaswoolley.co.uk/ode-explorer/). [`ode-explorer.html`](https://thomaswoolley.co.uk/ode-explorer.html) embeds it with the site's navigation and an automatic iframe height. It is linked from Teaching and Interactive apps.
+
+The [full user guide and canonical source](https://github.com/ThomasEWoolley/Modelling_with_Differential_Equations/tree/main/simulator) live in the course repository. To update this deployment copy from a local checkout:
+
+```sh
+python3 scripts/sync_ode_explorer.py /path/to/Modelling_with_Differential_Equations
+python3 scripts/build_sitemap.py
+python3 scripts/check_site.py
+```
+
+The helper copies the six runtime files and MIT licence. No build service, login or server-side solver is needed.
