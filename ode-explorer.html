@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explore differential equations with editable models, parameter sliders, phase planes, nullclines, eigenvalues and time solutions.">
+    <meta name="theme-color" content="#17324d">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ODE Explorer | Dr Thomas E. Woolley">
+    <meta property="og:description" content="Explore differential equations with editable models, parameter sliders, phase planes, nullclines, eigenvalues and time solutions.">
+    <meta property="og:url" content="https://thomaswoolley.co.uk/ode-explorer.html">
+    <meta property="og:image" content="https://thomaswoolley.co.uk/assets/images/thomas-woolley-header.png">
+    <title>ODE Explorer | Dr Thomas E. Woolley</title>
+    <link rel="canonical" href="https://thomaswoolley.co.uk/ode-explorer.html">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="stylesheet" href="assets/css/ode-explorer-page.css">
+  </head>
+  <body>
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="site-name" href="/" aria-label="Thomas Woolley, home">Dr Thomas E. Woolley</a>
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <ul><li><a href="/">Home</a></li><li><a href="academia.html">Academia</a></li><li><a href="outreach.html">Outreach</a></li><li><a href="lecturing.html">Teaching</a></li><li><a href="apps.html" aria-current="page">Interactive apps</a></li><li><a href="codes.html">Software</a></li><li><a href="contact.html">Contact</a></li></ul>
+        </nav>
+        <nav class="social-links" aria-label="Contact and social links">
+          <a href="mailto:woolleyt1@cardiff.ac.uk">Email</a>
+          <a href="https://x.com/ThomasEWoolley">X</a>
+          <a href="https://www.youtube.com/user/newc2282">YouTube</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main-content">
+      <header class="page-heading">
+        <div class="container narrow">
+          <h1>ODE Explorer</h1>
+          <p>Explore how differential equations behave. Choose an example or enter your own equations, click an initial condition and compare its phase trajectory with its time solution.</p>
+          <p><a href="ode-explorer/">Open the applet at full size</a> · <a href="https://github.com/ThomasEWoolley/Modelling_with_Differential_Equations/tree/main/simulator">User guide and source code</a></p>
+        </div>
+      </header>
+      <section class="ode-applet-section" aria-label="Interactive ODE simulator">
+        <div class="ode-applet-wrap">
+          <iframe id="ode-applet" src="ode-explorer/" title="ODE Explorer: interactive ODE simulator and phase-plane plotter" width="100%" height="1650" loading="lazy"></iframe>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container narrow prose">
+          <h2>Using the applet</h2>
+          <p>Choose one or two equations. In the phase plot, click to set u₀ or (u₀,v₀). Parameter sliders update the field, nullclines, equilibria and all retained solutions automatically. Circular markers show initial conditions, and square markers show equilibria. Eigenvalues appear beside each equilibrium classification.</p>
+          <p>Select User defined to start with blank equations. Parameters are detected from the names in your equations. Give each a baseline; supply both Min and Max to enable a slider, or leave both blank to keep it fixed. Use PNG and CSV to download plots and solution data.</p>
+          <p>The examples accompany <a href="lecturing.html#modelling-with-differential-equations">Modelling with Differential Equations</a>. The <a href="https://github.com/ThomasEWoolley/Modelling_with_Differential_Equations/tree/main/simulator">full user guide</a> explains the notation, examples and numerical methods. Equilibria and nullclines are numerical estimates; very stiff systems may need a dedicated stiff solver.</p>
+        </div>
+      </section>
+    </main>
+    <script src="assets/js/ode-explorer-embed.js" defer></script>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>Copyright Thomas E. Woolley, unless otherwise stated.</span>
+      </div>
+    </footer>
+  </body>
+</html>
