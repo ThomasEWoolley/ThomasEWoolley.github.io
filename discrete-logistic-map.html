@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explore the discrete logistic map with interactive cobweb, bifurcation and trajectory diagrams, linked scales and adjustable parameters.">
+    <meta name="theme-color" content="#17324d">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Discrete logistic map | Dr Thomas E. Woolley">
+    <meta property="og:description" content="A free interactive logistic map with linked cobweb, bifurcation and iteration diagrams.">
+    <meta property="og:url" content="https://thomaswoolley.co.uk/discrete-logistic-map.html">
+    <meta property="og:image" content="https://thomaswoolley.co.uk/assets/images/logistic-map-app.png">
+    <title>Discrete logistic map | Dr Thomas E. Woolley</title>
+    <link rel="canonical" href="https://thomaswoolley.co.uk/discrete-logistic-map.html">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="stylesheet" href="assets/css/site.css">
+    <style>
+      .logistic-applet-section {padding:0 16px 34px;background:#f3f6f9;}
+      .logistic-applet-wrap {max-width:1600px;margin:0 auto;}
+      #logistic-applet {display:block;width:100%;height:1080px;border:1px solid #dce4eb;border-radius:12px;background:#f5f7fb;}
+      @media(max-width:720px) {
+        .logistic-applet-section {padding:0 8px 24px;}
+        #logistic-applet {border-radius:8px;}
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="site-name" href="/" aria-label="Thomas Woolley, home">Dr Thomas E. Woolley</a>
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <ul><li><a href="/">Home</a></li><li><a href="academia.html">Academia</a></li><li><a href="outreach.html">Outreach</a></li><li><a href="lecturing.html">Teaching</a></li><li><a href="apps.html" aria-current="page">Interactive apps</a></li><li><a href="codes.html">Software</a></li><li><a href="contact.html">Contact</a></li></ul>
+        </nav>
+        <nav class="social-links" aria-label="Contact and social links">
+          <a href="mailto:woolleyt1@cardiff.ac.uk">Email</a>
+          <a href="https://x.com/ThomasEWoolley">X</a>
+          <a href="https://www.youtube.com/user/newc2282">YouTube</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main-content">
+      <header class="page-heading">
+        <div class="container narrow">
+          <h1>Discrete logistic map</h1>
+          <p>Vary the growth rate and two nearby initial conditions. Follow their evolution through linked cobweb, bifurcation and trajectory diagrams.</p>
+          <p><a href="discrete-logistic-map/">Open the app at full size</a></p>
+        </div>
+      </header>
+      <section class="logistic-applet-section" aria-label="Interactive discrete logistic map">
+        <div class="logistic-applet-wrap">
+          <iframe id="logistic-applet" src="discrete-logistic-map/" title="Interactive discrete logistic map with cobweb, bifurcation and trajectory diagrams" width="100%" height="1080" loading="eager"></iframe>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>Copyright Thomas E. Woolley, unless otherwise stated.</span>
+      </div>
+    </footer>
+    <script>
+      (() => {
+        const frame = document.getElementById('logistic-applet');
+        function fitFrame() {
+          try {
+            const doc = frame.contentDocument;
+            if (!doc || !doc.body) return;
+            const height = Math.ceil(Math.max(doc.documentElement.scrollHeight, doc.body.scrollHeight)) + 5;
+            if (height > 200 && Math.abs(frame.offsetHeight - height) > 6) frame.style.height = height + 'px';
+          } catch (_) {
+            // Retain the explicit iframe height if the document is inaccessible.
+          }
+        }
+        frame.addEventListener('load', () => {
+          fitFrame();
+          const doc = frame.contentDocument;
+          if (doc && 'ResizeObserver' in window) {
+            const observer = new ResizeObserver(fitFrame);
+            observer.observe(doc.documentElement);
+            observer.observe(doc.body);
+          }
+        });
+        window.addEventListener('resize', fitFrame);
+      })();
+    </script>
+  </body>
+</html>
