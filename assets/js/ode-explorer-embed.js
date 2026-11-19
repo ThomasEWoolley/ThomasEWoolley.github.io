@@ -12,7 +12,7 @@ function fitODEApplet() {
     }
   } catch (_) { /* The fixed fallback height still allows normal iframe scrolling. */ }
 }
-odeFrame.addEventListener('load', () => {
+function observeODEApplet() {
   odeResizeObserver?.disconnect();
   fitODEApplet();
   try {
@@ -22,5 +22,7 @@ odeFrame.addEventListener('load', () => {
       odeResizeObserver.observe(body);
     }
   } catch (_) { /* A full-size link remains available if the origin is changed. */ }
-});
+}
+odeFrame.addEventListener('load', observeODEApplet);
+observeODEApplet();
 window.addEventListener('resize', fitODEApplet);
