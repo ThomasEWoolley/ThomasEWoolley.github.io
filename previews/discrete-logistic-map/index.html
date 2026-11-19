@@ -39,14 +39,15 @@
     h2, h3, p { margin-top: 0; }
     .controls-head h2 { font-size: 15px; margin: 0; letter-spacing: -.012em; }
     .controls-head p { font-size: 12px; color: var(--muted); margin: 0; }
-    .controls-grid { display: grid; grid-template-columns: minmax(280px,1.7fr) repeat(2, minmax(175px,1fr)); gap: 21px; align-items: start; }
-    .slider-stack { display: flex; flex-direction: column; gap: 17px; min-width: 0; }
+    .controls-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(220px, .85fr); column-gap: clamp(38px, 6vw, 100px); align-items: start; }
+    .slider-stack, .initial-stack { display: flex; flex-direction: column; gap: 19px; min-width: 0; }
     .control { min-width: 0; }
     .control label, .control .label { display: block; font-size: 13px; color: #415269; font-weight: 680; margin-bottom: 9px; }
-    .field-row { display: flex; align-items: center; gap: 10px; }
-    .field-row input[type="range"] { flex: 1; min-width: 55px; }
+    .field-row { display: grid; grid-template-columns: minmax(0, 1fr) 88px; align-items: start; gap: 12px; }
+    .slider-track { width: 100%; min-width: 0; }
+    .slider-track input[type="range"] { display: block; width: 100%; min-width: 0; margin: 5px 0 0; }
     .control input[type="number"] { width: 100%; max-width: 126px; border-radius: 8px; border: 1px solid #cbd6e4; padding: 9px 10px; background: #fff; color: var(--ink); outline-offset: 2px; font-variant-numeric: tabular-nums; }
-    .control .field-row input[type="number"] { width: 78px; text-align: right; flex: 0 0 78px; }
+    .control .field-row input[type="number"] { width: 88px; min-width: 0; max-width: none; text-align: right; }
     .control input:focus-visible, .plot-canvas:focus-visible { outline: 3px solid #84b6f4; outline-offset: 2px; }
     input[type="range"] { cursor: pointer; accent-color: #205fa9; min-height: 24px; }
     .range-limits { margin-top: 4px; display:flex; justify-content:space-between; font-size:11px; color:var(--faint); }
@@ -54,7 +55,7 @@
     .input-line input { flex: 1; }
     .trace-swatch { width: 24px; height: 0; border-top: 3px solid var(--black); flex: 0 0 24px; }
     .trace-swatch.blue { border-color: var(--blue); border-top-style: dashed; }
-    .slider-value { text-align: right; font-weight: 700; min-width: 32px; font-variant-numeric: tabular-nums; }
+    .initial-stack .input-line input[type="number"] { max-width: 220px; }
     .section-line { margin: 23px 1px 12px; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
     .section-line h2 { margin:0; font-size:16px; letter-spacing:-.012em; }
     .legend { display: flex; gap: 17px; align-items: center; color: #48596c; font-size: 12px; flex-wrap: wrap; }
@@ -83,8 +84,7 @@
     @media (max-width: 1050px) {
       .app { padding: 22px 16px; }
       .masthead { align-items: start; }
-      .controls-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 19px 24px; }
-      .slider-stack { grid-column: 1 / -1; }
+      .controls-grid { grid-template-columns: minmax(0, 1.15fr) minmax(200px, .85fr); column-gap: 35px; }
       .plots { min-width: 995px; }
       .mobile-note { display: block; }
       .equation { font-size: 22px; padding: 13px 16px; }
@@ -94,10 +94,11 @@
       .masthead { display: block; }
       .equation { margin-top: 12px; }
       .controls { padding: 15px 14px; }
-      .controls-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px 13px; }
-      .control .field-row { flex-wrap: wrap; }
-      .control .field-row input[type="number"] { width: 100%; flex: 1 0 100%; max-width: none; text-align: left; }
-      .control input[type="number"] { max-width: 100%; }
+      .controls-grid { grid-template-columns: minmax(0,1fr); row-gap: 23px; }
+      .slider-stack, .initial-stack { gap: 17px; }
+      .field-row { grid-template-columns: minmax(0,1fr) 88px; gap: 12px; }
+      .control .field-row input[type="number"] { width: 88px; text-align: right; }
+      .initial-stack .input-line input[type="number"] { max-width: none; }
       .controls-head p { display: none; }
       .section-line { align-items: start; }
       .legend { gap: 8px 14px; }
@@ -130,28 +131,34 @@
       <div class="slider-stack">
         <div class="control">
           <label for="growth">Growth rate, <span class="math-inline">r</span></label>
-        <div class="field-row">
-          <input type="range" id="growth" min="0" max="4" value="1" step="0.001" aria-label="Growth rate slider">
-          <input type="number" id="growthNumber" min="0" max="4" value="1.000" step="0.001" aria-label="Growth rate exact value">
-        </div>
-        <div class="range-limits"><span>0</span><span>4</span></div>
+          <div class="field-row">
+            <div class="slider-track">
+              <input type="range" id="growth" min="0" max="4" value="1" step="0.001" aria-label="Growth rate slider">
+              <div class="range-limits"><span>0</span><span>4</span></div>
+            </div>
+            <input type="number" id="growthNumber" min="0" max="4" value="1.000" step="0.001" aria-label="Growth rate exact value">
+          </div>
         </div>
         <div class="control">
           <label for="iterations">Number of iterations</label>
-        <div class="field-row">
-          <input type="range" id="iterations" min="10" max="100" value="50" step="10" aria-label="Number of iterations">
-          <span class="slider-value" id="iterationValue">50</span>
-        </div>
-        <div class="range-limits"><span>10</span><span>100</span></div>
+          <div class="field-row">
+            <div class="slider-track">
+              <input type="range" id="iterations" min="10" max="100" value="50" step="1" aria-label="Number of iterations">
+              <div class="range-limits"><span>10</span><span>100</span></div>
+            </div>
+            <input type="number" id="iterationValue" min="10" max="100" value="50" step="1" aria-label="Number of iterations exact value">
+          </div>
         </div>
       </div>
-      <div class="control">
-        <label for="initialOne">First initial condition, <span class="math-inline">x₀</span></label>
-        <div class="input-line"><span class="trace-swatch" aria-hidden="true"></span><input id="initialOne" type="number" min="0" max="1" step="0.001" value="0.60" aria-label="First initial condition"></div>
-      </div>
-      <div class="control">
-        <label for="initialTwo">Second initial condition, <span class="math-inline">x₀</span></label>
-        <div class="input-line"><span class="trace-swatch blue" aria-hidden="true"></span><input id="initialTwo" type="number" min="0" max="1" step="0.001" value="0.61" aria-label="Second initial condition"></div>
+      <div class="initial-stack">
+        <div class="control">
+          <label for="initialOne">First initial condition, <span class="math-inline">x₀</span></label>
+          <div class="input-line"><span class="trace-swatch" aria-hidden="true"></span><input id="initialOne" type="number" min="0" max="1" step="0.001" value="0.60" aria-label="First initial condition"></div>
+        </div>
+        <div class="control">
+          <label for="initialTwo">Second initial condition, <span class="math-inline">x₀</span></label>
+          <div class="input-line"><span class="trace-swatch blue" aria-hidden="true"></span><input id="initialTwo" type="number" min="0" max="1" step="0.001" value="0.61" aria-label="Second initial condition"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -275,10 +282,26 @@
     el.growth.value = String(state.r);
     updateModel();
   });
-  el.steps.addEventListener('input', () => {
-    state.n = Number(el.steps.value);
-    el.stepsValue.textContent = String(state.n);
+  function setIterations(value) {
+    state.n = clamp(Math.round(value), 10, 100);
+    el.steps.value = String(state.n);
+    el.stepsValue.value = String(state.n);
     updateModel();
+  }
+  el.steps.addEventListener('input', () => setIterations(Number(el.steps.value)));
+  el.stepsValue.addEventListener('input', () => {
+    if (el.stepsValue.value.trim() !== '') {
+      const value = Number(el.stepsValue.value);
+      if (Number.isFinite(value)) {
+        state.n = clamp(Math.round(value), 10, 100);
+        el.steps.value = String(state.n);
+        updateModel();
+      }
+    }
+  });
+  el.stepsValue.addEventListener('change', () => {
+    const value = el.stepsValue.value.trim() === '' ? state.n : Number(el.stepsValue.value);
+    setIterations(Number.isFinite(value) ? value : state.n);
   });
   function initialChanged(which) {
     const input = which === 'a' ? el.first : el.second;
